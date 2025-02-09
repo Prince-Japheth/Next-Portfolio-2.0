@@ -76,6 +76,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <CursorTrail />
     </header>
   );
 };

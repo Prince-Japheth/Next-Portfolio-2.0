@@ -62,6 +62,7 @@ a {
 .h-full {
     height: 100%;
 }
+  
 
 /* # Preloader */
 .preloader {
@@ -680,13 +681,14 @@ ol {
     transform: translateX(-50%);
     width: 80%;
     max-width: 800px;
-    background: rgba(var(--dark), 0.5);
+    background: rgba(var(--dark), 0.2);
     backdrop-filter: blur(10px);
     border-radius: 100px;
     padding: 15px 25px;
     box-shadow: 0 8px 32px 0 rgba(var(--primary_color), 0.3), 0 16px 48px 0 rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 1000;
+    pointer-events: auto;
 }
 
 .header-area .logo {
