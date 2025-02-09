@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import type React from "react"; // Import React
 
 export const metadata: Metadata = {
-  title: "Japheth - Personal Portfolio Website",
+  title: "Japheth - Software Engineer",
   description: "A simple website built with Next.js",
 };
 
