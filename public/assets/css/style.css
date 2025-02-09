@@ -2444,7 +2444,8 @@ ol {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
-        background: rgba(15, 15, 15, 0.7);
+        /* background: rgba(15, 15, 15, 0.7); */
+        background: #22222262;
         backdrop-filter: blur(10px);
         border-radius: 20px;
         overflow: hidden;
@@ -2453,6 +2454,7 @@ ol {
         visibility: visible;
         transform: none;
         transition: 0.3s ease-in-out;
+        border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .header-area .navbar .menu {
