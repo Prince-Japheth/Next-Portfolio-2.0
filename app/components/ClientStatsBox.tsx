@@ -10,7 +10,7 @@ const ClientStatsBox = () => {
         <div className="clients d-flex align-items-start gap-24 justify-content-center">
           <div className="client-item">
             <h1>
-              <CountUp end={3} enableScrollSpy scrollSpyOnce duration={2} prefix="+" />
+              <CountUp end={3} enableScrollSpy duration={2} prefix="+" />
             </h1>
             <p>
               Years <br />
@@ -19,7 +19,7 @@ const ClientStatsBox = () => {
           </div>
           <div className="client-item">
             <h1>
-              <CountUp end={30} enableScrollSpy scrollSpyOnce duration={3} prefix="+" />
+              <CountUp end={30} enableScrollSpy duration={3} prefix="+" />
             </h1>
             <p>
               HAPPY <br />
