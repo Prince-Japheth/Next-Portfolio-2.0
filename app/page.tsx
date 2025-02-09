@@ -20,7 +20,7 @@ export default function Home() {
               <div className="infos">
                 <h4>Computer Software Engineer</h4>
                 <h1>Japheth Jerry.</h1>
-                <p>I am a Computer Software Engineer &amp; Uprising Cybersecurity Professional based in
+                <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional based in
                   Nigeria.</p>
                 <a href="#" className="about-btn">
                   <img src="/assets/images/icon.svg" alt="Button" />
@@ -34,10 +34,8 @@ export default function Home() {
                 <div className="banner shadow-box">
                   <div className="marquee">
                     <div>
-                      <span>LATEST WORK AND <b>FEATURED</b> <img src="/assets/images/star1.svg" alt="Star" /> LATEST WORK AND <b>FEATURED</b> <img src="/assets/images/star1.svg" alt="Star" /> LATEST WORK AND
-                        <b>FEATURED</b> <img src="/assets/images/star1.svg" alt="Star" /> LATEST
-                        WORK AND <b>FEATURED</b> LATEST WORK AND <img src="/assets/images/star1.svg" alt="Star" /> LATEST WORK AND
-                        <b>FEATURED</b> LATEST WORK AND <img src="/assets/images/star1.svg" alt="Star" /></span>
+                      <span> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR
+                        <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /></span>
                     </div>
                   </div>
                 </div>
