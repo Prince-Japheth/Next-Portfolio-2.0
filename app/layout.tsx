@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import type React from "react"; // Import React
 
 export const metadata: Metadata = {
-  title: "Japheth - Software Engineer",
-  description: "A simple website built with Next.js",
+  title: "Japheth Jerry - Computer Software Engineer",
+  description: "Japheth Jerry Portfolio Website",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Japheth - Personal Portfolio Website</title>
+        <title>Japheth - Software Engineer</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
