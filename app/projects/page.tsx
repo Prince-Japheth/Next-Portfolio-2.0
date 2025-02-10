@@ -7,8 +7,8 @@ const projectData = [
     title: 'My Portfolio Website',
     category: 'Web Development',
     tools: 'ReactJs + NextJs, Javascript, jQuery, CSS, Bootstrap',
-    image: './assets/images/project-4.png',
-    link: 'https://lincolnfoundations.org',
+    image: './assets/images/project_0.png',
+    link: 'https://yafetport.netlify.app',
   },
   {
     title: 'Lincoln Impact Foundation',
