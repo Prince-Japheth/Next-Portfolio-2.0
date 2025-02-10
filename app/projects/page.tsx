@@ -4,6 +4,13 @@ import ProjectItem from '../components/ProjectItem';
 
 const projectData = [
   {
+    title: 'My Portfolio Website',
+    category: 'Web Development',
+    tools: 'ReactJs + NextJs, Javascript, jQuery, CSS, Bootstrap',
+    image: './assets/images/project-4.png',
+    link: 'https://lincolnfoundations.org',
+  },
+  {
     title: 'Lincoln Impact Foundation',
     category: 'Web Development',
     tools: 'Laravel, MySQL, JavaScript, jQuery, CSS, SASS, Bootstrap',
