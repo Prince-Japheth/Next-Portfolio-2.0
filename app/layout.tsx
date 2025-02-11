@@ -57,7 +57,7 @@ export default function RootLayout({
             scrollFactor={1.5} // Increase for more dramatic scroll effect
             particleSpread={10}
             speed={0.1}
-            particleColors={['#ffbc5e', '#ffffff']}
+            particleColors={['#ffffff', '#ffffff']}
           />
           <Header />
           {children}
