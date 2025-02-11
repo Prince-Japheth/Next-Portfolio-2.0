@@ -1501,7 +1501,7 @@ ol {
     font-size: 18px;
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 19px;
+    margin-bottom: 49px;
 }
 
 .skills2-list {
@@ -1539,24 +1539,15 @@ ol {
 }
 
 .skills2-content-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
+
 .skill-card {
-    position: relative;
-    background: var(--bg-gradient-jet);
-    width: 80px;
-    height: 80px;
-    display: grid;
-    place-items: center;
-    border-radius: 15px;
-    box-shadow: var(--shadow-1);
     cursor: help;
-    border: 1px solid var(--jet);
-    margin: 10px 0px;
 }
 
 .skill-card:hover .tooltip {

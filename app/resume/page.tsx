@@ -318,7 +318,7 @@ export default function Resume() {
               <ul className="skills2-list">
                 {/* Technologies */}
                 <li className="content-card">
-                  <h4 className="h4 skills-title">Some Technologies I Love to Build With</h4>
+                  <h4 className="h4 skills-title" data-aos="zoom-in">Some Technologies I Love to Build With</h4>
                   <div className="skills2-content-box">
                     {skills.map((skill, index) => (
                       <SkillCard
@@ -331,9 +331,10 @@ export default function Resume() {
                     ))}
                   </div>
                 </li>
+                <br /><br /><br /><br /><br /><br />
                 {/* Tools & Productivity */}
                 <li className="content-card">
-                  <h4 className="h4 skills-title">Tools &amp; Productivity</h4>
+                  <h4 className="h4 skills-title" data-aos="zoom-in">Tools &amp; Productivity</h4>
                   <div className="skills2-content-box">
                     {toolsAndProductivity.map((tool, index) => (
                       <SkillCard
