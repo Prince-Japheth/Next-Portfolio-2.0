@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Particles from "./components/Particles";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import type React from "react"; // Import React
 
 export const metadata: Metadata = {
-  title: "Japheth Jerry - Computer Software Engineer",
+  title: "Japheth Jerry - Software Engineer",
   description: "Japheth Jerry Portfolio Website",
 };
 
@@ -51,11 +52,17 @@ export default function RootLayout({
           </div>
         </div>
         <main className="main-homepage">
+          <Particles
+            particleCount={200}
+            scrollFactor={1.5} // Increase for more dramatic scroll effect
+            particleSpread={10}
+            speed={0.1}
+            particleColors={['#ffbc5e', '#ffffff']}
+          />
           <Header />
           {children}
           <Footer />
         </main>
-
         <script src="./assets/js/jquery-3.6.4.js"></script>
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/js/aos.js"></script>

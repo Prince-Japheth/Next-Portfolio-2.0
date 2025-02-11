@@ -22,6 +22,13 @@
     --dark: #323232;
 }
 
+.particles-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+
 /* Customize the entire scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
