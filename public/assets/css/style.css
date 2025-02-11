@@ -1545,6 +1545,14 @@ ol {
     text-align: center;
 }
 
+@media (min-width: 992px) {
+    .skills2-content-box {
+        text-align: start;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
 
 .skill-card {
     cursor: help;
