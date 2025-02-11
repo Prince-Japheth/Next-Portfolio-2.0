@@ -1541,7 +1541,7 @@ ol {
 .skills2-content-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 50px 30px;
     text-align: center;
 }
 
