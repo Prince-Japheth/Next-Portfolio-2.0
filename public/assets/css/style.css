@@ -2123,12 +2123,14 @@ ol {
 .contact-area .social-links li a {
     width: 82px;
     height: 82px;
-    display: block;
-    text-align: center;
-    line-height: 92px;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    font-size: 32px;
+    position: relative;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
     transition: .3s;
 }
 
@@ -2265,10 +2267,6 @@ ol {
     .about-area .about-me-box .infos h1 {
         font-size: 30px;
         line-height: 1.2;
-    }
-
-    .about-area .about-me-box .infos .about-btn {
-        bottom: 25px;
     }
 
     .info-box {
@@ -2585,7 +2583,7 @@ ol {
         margin: auto;
     }
 
-    .service-area .col-md-8>.section-heading {
+    .service-area .col-md-8 .section-heading {
         display: none;
     }
 
@@ -2907,5 +2905,119 @@ ol {
 @media screen and (max-width: 768px) {
   .filter-button-container {
     bottom: 8rem;
+  }
+}
+
+/* Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.image-modal-overlay.closing {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: visible;
+  border-radius: 24px;
+  cursor: default;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: var(--origin-x) var(--origin-y);
+  animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.closing .modal-content {
+  animation: zoomOut 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  padding: 0;
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: calc(90vh - 2rem);
+  object-fit: contain;
+  display: block;
+  border-radius: 24px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
   }
 }

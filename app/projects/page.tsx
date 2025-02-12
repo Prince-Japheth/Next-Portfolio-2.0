@@ -12,6 +12,13 @@ const projectData = [
     link: 'https://yafetport.netlify.app',
   },
   {
+    title: 'Sunny Apartments',
+    category: 'Graphic Design - Logo Design & Branding',
+    tools: '',
+    image: './assets/images/project-19.jpg',
+    link: './assets/images/project-19.jpg',
+  },
+  {
     title: 'Lincoln Impact Foundation',
     category: 'Web Development',
     tools: 'Laravel, MySQL, JavaScript, jQuery, CSS, SASS, Bootstrap',
@@ -26,13 +33,6 @@ const projectData = [
     link: 'https://topix.great-site.net/about',
   },
   {
-    title: 'LaunchFundr',
-    category: 'Web Development',
-    tools: 'Astro & Tailwind Css',
-    image: './assets/images/project-18.jpg',
-    link: 'https://launchfundr.netlify.app/',
-  },
-  {
     title: 'Computer Aided Instruction Studies Dashboard',
     category: 'UI/UX DESIGN',
     tools: 'Figma',
@@ -40,11 +40,11 @@ const projectData = [
     link: 'https://www.figma.com/design/MG9mnjpONtzH7MAdzaQyFx/Computer-aided-instruction-studies?node-id=0-1&t=h4rMUIGZnjfrkUor-1',
   },
   {
-    title: 'Sunny Apartments',
-    category: 'Graphic Design - Logo Design & Branding',
-    tools: '',
-    image: './assets/images/project-19.jpg',
-    link: './assets/images/project-19.jpg',
+    title: 'LaunchFundr',
+    category: 'Web Development',
+    tools: 'Astro & Tailwind Css',
+    image: './assets/images/project-18.jpg',
+    link: 'https://launchfundr.netlify.app/',
   },
   {
     title: 'Serene',
