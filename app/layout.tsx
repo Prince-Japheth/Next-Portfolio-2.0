@@ -52,13 +52,13 @@ export default function RootLayout({
           </div>
         </div>
         <main className="main-homepage">
-          <Particles
+          {/* <Particles
             particleCount={200}
-            scrollFactor={1.5} // Increase for more dramatic scroll effect
+            scrollFactor={1.5}
             particleSpread={10}
             speed={0.1}
             particleColors={['#ffffff', '#ffffff']}
-          />
+          /> */}
           <Header />
           {children}
           <Footer />

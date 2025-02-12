@@ -1517,10 +1517,6 @@ ol {
     gap: 30px;
 }
 
-.skills2-list .content-card {
-    padding-top: 15px !important;
-}
-
 .skills2-item {
     position: relative;
     background: var(--border-gradient-onyx);
@@ -2815,4 +2811,101 @@ ol {
     .blog-details-area .blog-details-content .comments-and-form-wrap .comments .children {
         padding-left: 0;
     }
+}
+
+/* Filter Button Styles */
+.filter-button-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.filter-button {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: levitate 2s ease-in-out infinite;
+}
+
+.filter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.filter-dropdown {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  padding: 0.75rem;
+  min-width: 220px;
+  border: 1px solid #333;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom right;
+}
+
+.filter-dropdown.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.filter-dropdown.hidden {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  visibility: hidden;
+}
+
+.category-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.category-button.selected {
+  background-color: #333;
+  font-weight: 500;
+}
+
+.category-button:hover {
+  background-color: #222;
+}
+
+.category-button.selected:hover {
+  background-color: #333;
+}
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filter-button-container {
+    bottom: 8rem;
+  }
 }

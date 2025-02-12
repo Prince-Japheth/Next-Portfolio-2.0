@@ -1,5 +1,6 @@
-// Projects.tsx
-import React from 'react';
+"use client";
+
+import React, { useState, useRef, useEffect } from 'react';
 import ProjectItem from '../components/ProjectItem';
 
 const projectData = [
@@ -19,7 +20,7 @@ const projectData = [
   },
   {
     title: 'Topix',
-    category: 'Web & Mobile Application Development',
+    category: 'Web & Mobile Development',
     tools: 'PHP, MySQL, JavaScript, jQuery, React Native, Java, CSS, SASS, Bootstrap',
     image: './assets/images/project-42.jpg',
     link: 'https://topix.great-site.net/about',
@@ -257,16 +258,105 @@ const projectData = [
   },
 ];
 
+const categories = [
+  'All Projects',
+  'Mobile Development',
+  'Web Development',
+  'UI/UX DESIGN',
+  'Graphic Design'
+];
+
 export default function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState('All Projects');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const filteredProjects = selectedCategory === 'All Projects'
+    ? projectData
+    : projectData.filter(project => project.category.toLowerCase().includes(selectedCategory.toLowerCase()));
+
+  // Distribute projects based on category selection
+  const { firstColumnProjects, secondColumnProjects } = React.useMemo(() => {
+    if (selectedCategory === 'All Projects') {
+      // For 'All Projects', show first 11 in first column
+      return {
+        firstColumnProjects: filteredProjects.slice(0, 13),
+        secondColumnProjects: filteredProjects.slice(13)
+      };
+    } else {
+      // For filtered categories, split evenly
+      const midPoint = Math.ceil(filteredProjects.length / 2);
+      return {
+        firstColumnProjects: filteredProjects.slice(0, midPoint),
+        secondColumnProjects: filteredProjects.slice(midPoint)
+      };
+    }
+  }, [filteredProjects, selectedCategory]);
+
+  // Handle click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current && 
+        buttonRef.current &&
+        !dropdownRef.current.contains(e.target as Node) &&
+        !buttonRef.current.contains(e.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Handle category change and scroll to top
+  const handleCategoryChange = (newCategory: string) => {
+    setSelectedCategory(newCategory);
+    setIsDropdownOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section className="projects-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
           <img src="./assets/images/star-2.png" alt="Star" /> All Projects <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
+
+        {/* Floating Filter Button */}
+        <div className="filter-button-container">
+          <button
+            ref={buttonRef}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="filter-button"
+          >
+            <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
+          </button>
+
+          {/* Dropdown Menu */}
+          <div 
+            ref={dropdownRef}
+            className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-md-4">
-            {projectData.slice(0, 11).map((project, index) => (
+            {firstColumnProjects.map((project, index) => (
               <ProjectItem key={index} project={project} />
             ))}
           </div>
@@ -275,10 +365,10 @@ export default function Projects() {
               <img src="./assets/images/star-2.png" alt="Star" /> All Projects{" "}
               <img src="./assets/images/star-2.png" alt="Star" />
             </h1>
-            {Array.from({ length: Math.ceil(projectData.slice(14).length / 2) }, (_, i) => (
+            {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
               <div key={i} className="d-flex gap-24">
-                {projectData.slice(11).slice(i * 2, i * 2 + 2).map((project, index) => (
-                  <ProjectItem key={index + 14 + i * 2} project={project} />
+                {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
+                  <ProjectItem key={`second-${index}-${i}`} project={project} />
                 ))}
               </div>
             ))}
