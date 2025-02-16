@@ -471,6 +471,12 @@ ol {
     justify-content: center;
 }
 
+@media (max-width: 1090px) {
+    .section-heading {
+        font-size: 54px;
+    }
+}
+
 .section-heading img {
     display: block;
 }
@@ -935,8 +941,9 @@ ol {
     position: relative;
     overflow: hidden;
     /* background: linear-gradient(90deg, #3C58E3 -15%, #C2EBFF 58%, #5AB5E2 97%); */
-    background: #323232;
-    border-radius: 30px 0 30px 0;
+    background: #2d2d2d;
+    /* border-radius: 30px 0 30px 0; */
+    border-radius: 30px;
     flex: none;
 }
 
