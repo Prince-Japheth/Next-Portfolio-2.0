@@ -28,7 +28,7 @@ const ClientStatsBox = () => {
           </div>
           <div className="client-item">
             <h1>
-              <CountUp end={42} enableScrollSpy scrollSpyOnce duration={4} prefix="+" />
+              <CountUp end={47} enableScrollSpy scrollSpyOnce duration={4} prefix="+" />
             </h1>
             <p>
               Total <br />

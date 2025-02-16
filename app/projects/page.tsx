@@ -12,11 +12,18 @@ const projectData = [
     link: 'https://yafetport.netlify.app',
   },
   {
-    title: 'Sunny Apartments',
-    category: 'Graphic Design - Logo Design & Branding',
-    tools: '',
-    image: './assets/images/project-19.jpg',
-    link: './assets/images/project-19.jpg',
+    title: 'Bondyt Merchant',
+    category: 'Mobile Development',
+    tools: 'React Native & Javascript',
+    image: './assets/images/project-45.jpg',
+    link: 'https://play.google.com/store/apps/details?id=com.bondyt.merchant&hl=en_US',
+  },
+  {
+    title: 'Villac Flyer',
+    category: 'Graphic Design',
+    tools: 'Photoshop',
+    image: './assets/images/project-47.png',
+    link: './assets/images/project-47.png',
   },
   {
     title: 'Lincoln Impact Foundation',
@@ -94,6 +101,13 @@ const projectData = [
     tools: 'Figma',
     image: './assets/images/project-10.jpg',
     link: 'https://www.figma.com/design/pLJIvtEcKIab1RL45jznjP/EAC-Web-View?node-id=0-1&t=A1XsGavjeupOL5E3-1',
+  },
+  {
+    title: 'Sunny Apartments',
+    category: 'Graphic Design - Logo Design & Branding',
+    tools: 'CorelDRAW',
+    image: './assets/images/project-19.jpg',
+    link: './assets/images/project-19.jpg',
   },
   {
     title: 'Jasper Lewis Portfolio Website',
