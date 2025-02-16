@@ -145,16 +145,12 @@ a {
 /* From Uiverse.io by mobinkakei */
 #wifi-loader {
     --primary_color: #ffbc5e;
-    /* Use the global primary color */
     --background: #62abff;
     --front-color: var(--primary_color);
     --back-color: rgba(255, 188, 94, 0.2);
-    /* 20% opacity of primary color */
     --text-color: rgba(255, 188, 94, 0.5);
-    /* 50% opacity of primary color */
-    width: 64px;
-    height: 64px;
-    border-radius: 50px;
+    width: 86px;
+    height: 86px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -163,7 +159,6 @@ a {
     justify-content: center;
     align-items: center;
 }
-
 
 #wifi-loader svg {
     position: absolute;
@@ -178,67 +173,64 @@ a {
     stroke-width: 6px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transform: rotate(-100deg);
     transform-origin: center;
-}
-
-#wifi-loader svg circle.back {
-    stroke: var(--back-color);
-}
-
-#wifi-loader svg circle.front {
-    stroke: var(--front-color);
 }
 
 #wifi-loader svg.circle-outer {
     height: 86px;
     width: 86px;
-}
-
-#wifi-loader svg.circle-outer circle {
-    stroke-dasharray: 62.75 188.25;
-}
-
-#wifi-loader svg.circle-outer circle.back {
-    animation: circle-outer135 1.8s ease infinite 0.3s;
-}
-
-#wifi-loader svg.circle-outer circle.front {
-    animation: circle-outer135 1.8s ease infinite 0.15s;
+    animation: rotate-outer 4.1s linear infinite;
 }
 
 #wifi-loader svg.circle-middle {
     height: 60px;
     width: 60px;
-}
-
-#wifi-loader svg.circle-middle circle {
-    stroke-dasharray: 42.5 127.5;
-}
-
-#wifi-loader svg.circle-middle circle.back {
-    animation: circle-middle6123 1.8s ease infinite 0.25s;
-}
-
-#wifi-loader svg.circle-middle circle.front {
-    animation: circle-middle6123 1.8s ease infinite 0.1s;
+    animation: rotate-middle 3.7s linear infinite;
 }
 
 #wifi-loader svg.circle-inner {
     height: 34px;
     width: 34px;
+    animation: rotate-inner 3.1s linear infinite;
+}
+
+#wifi-loader svg.circle-outer circle {
+    stroke-dasharray: 251;
+    animation: dash-outer 3s ease-in-out infinite;
+}
+
+#wifi-loader svg.circle-middle circle {
+    stroke-dasharray: 170;
+    animation: dash-middle 2s ease-in-out infinite;
 }
 
 #wifi-loader svg.circle-inner circle {
-    stroke-dasharray: 22 66;
+    stroke-dasharray: 88;
+    animation: dash-inner 1.5s ease-in-out infinite;
+}
+
+#wifi-loader svg.circle-outer circle.back {
+    stroke: var(--back-color);
+}
+
+#wifi-loader svg.circle-middle circle.back {
+    stroke: var(--back-color);
 }
 
 #wifi-loader svg.circle-inner circle.back {
-    animation: circle-inner162 1.8s ease infinite 0.2s;
+    stroke: var(--back-color);
+}
+
+#wifi-loader svg.circle-outer circle.front {
+    stroke: var(--front-color);
+}
+
+#wifi-loader svg.circle-middle circle.front {
+    stroke: var(--front-color);
 }
 
 #wifi-loader svg.circle-inner circle.front {
-    animation: circle-inner162 1.8s ease infinite 0.05s;
+    stroke: var(--front-color);
 }
 
 #wifi-loader .text {
@@ -264,92 +256,127 @@ a {
 
 #wifi-loader .text::after {
     color: var(--front-color);
-    animation: text-animation76 3.6s ease infinite;
+    animation: pulse 2s ease-in-out infinite;
     position: absolute;
     left: 0;
 }
 
-@keyframes circle-outer135 {
+@keyframes rotate-outer {
     0% {
-        stroke-dashoffset: 25;
+        transform: rotate(0deg) scale(1);
     }
+    33% {
+        transform: rotate(120deg) scale(1.1);
+    }
+    66% {
+        transform: rotate(240deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
 
+@keyframes rotate-middle {
+    0% {
+        transform: rotate(360deg) scale(1);
+    }
+    40% {
+        transform: rotate(210deg) scale(0.9);
+    }
+    80% {
+        transform: rotate(60deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes rotate-inner {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
     25% {
+        transform: rotate(-90deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(-270deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(-360deg) scale(1);
+    }
+}
+
+@keyframes dash-outer {
+    0% {
+        stroke-dasharray: 25 100;
         stroke-dashoffset: 0;
     }
-
-    65% {
-        stroke-dashoffset: 301;
+    33% {
+        stroke-dasharray: 50 75;
+        stroke-dashoffset: 125;
     }
-
-    80% {
-        stroke-dashoffset: 276;
+    66% {
+        stroke-dasharray: 25 100;
+        stroke-dashoffset: -125;
     }
-
     100% {
-        stroke-dashoffset: 276;
-    }
-}
-
-@keyframes circle-middle6123 {
-    0% {
-        stroke-dashoffset: 17;
-    }
-
-    25% {
+        stroke-dasharray: 25 100;
         stroke-dashoffset: 0;
     }
-
-    65% {
-        stroke-dashoffset: 204;
-    }
-
-    80% {
-        stroke-dashoffset: 187;
-    }
-
-    100% {
-        stroke-dashoffset: 187;
-    }
 }
 
-@keyframes circle-inner162 {
+@keyframes dash-middle {
     0% {
-        stroke-dashoffset: 9;
-    }
-
-    25% {
+        stroke-dasharray: 25 75;
         stroke-dashoffset: 0;
     }
-
-    65% {
-        stroke-dashoffset: 106;
+    40% {
+        stroke-dasharray: 50 50;
+        stroke-dashoffset: -100;
     }
-
     80% {
-        stroke-dashoffset: 97;
+        stroke-dasharray: 25 75;
+        stroke-dashoffset: 100;
     }
-
     100% {
-        stroke-dashoffset: 97;
+        stroke-dasharray: 25 75;
+        stroke-dashoffset: 0;
     }
 }
 
-@keyframes text-animation76 {
+@keyframes dash-inner {
     0% {
-        clip-path: inset(0 100% 0 0);
+        stroke-dasharray: 25 50;
+        stroke-dashoffset: 0;
     }
-
-    50% {
-        clip-path: inset(0);
+    25% {
+        stroke-dasharray: 35 40;
+        stroke-dashoffset: 75;
     }
-
+    75% {
+        stroke-dasharray: 25 50;
+        stroke-dashoffset: -75;
+    }
     100% {
-        clip-path: inset(0 0 0 100%);
+        stroke-dasharray: 25 50;
+        stroke-dashoffset: 0;
     }
 }
 
+@keyframes spin-clockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
+@keyframes spin-counterclockwise {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
 
 
 /* # Margin */
@@ -867,7 +894,8 @@ ol {
     height: 224px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(90deg, #3C58E3 -15%, #C2EBFF 58%, #5AB5E2 97%);
+    /* background: linear-gradient(90deg, #3C58E3 -15%, #C2EBFF 58%, #5AB5E2 97%); */
+    background: #323232;
     border-radius: 30px 0 30px 0;
     flex: none;
 }
@@ -2721,10 +2749,6 @@ ol {
     .project-details-wrap .project-details-3-img,
     .project-details-wrap .project-details-2-img {
         height: 250px;
-    }
-
-    .project-details-wrap .row .col-md-6:first-child .project-details-3-img {
-        margin-bottom: 24px;
     }
 
     .project-details-wrap .project-about-2,
