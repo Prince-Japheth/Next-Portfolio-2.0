@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 import ProjectItem from '../components/ProjectItem';
 import { useSearchParams, useRouter } from 'next/navigation';
 
@@ -288,7 +288,7 @@ const categories = [
   'Graphic Design'
 ];
 
-export default function Projects() {
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All Projects');
@@ -300,16 +300,13 @@ export default function Projects() {
     ? projectData
     : projectData.filter(project => project.category.toLowerCase().includes(selectedCategory.toLowerCase()));
 
-  // Distribute projects based on category selection
   const { firstColumnProjects, secondColumnProjects } = React.useMemo(() => {
     if (selectedCategory === 'All Projects') {
-      // For 'All Projects', show first 11 in first column
       return {
         firstColumnProjects: filteredProjects.slice(0, 13),
         secondColumnProjects: filteredProjects.slice(13)
       };
     } else {
-      // For filtered categories, split evenly
       const midPoint = Math.ceil(filteredProjects.length / 3);
       return {
         firstColumnProjects: filteredProjects.slice(0, midPoint),
@@ -318,7 +315,6 @@ export default function Projects() {
     }
   }, [filteredProjects, selectedCategory]);
 
-  // Handle click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -337,11 +333,9 @@ export default function Projects() {
     };
   }, []);
 
-  // Handle category change and scroll to top
   const handleCategoryChange = (newCategory: string) => {
     setSelectedCategory(newCategory);
     setIsDropdownOpen(false);
-    // Update URL with the new category
     const params = new URLSearchParams();
     if (newCategory !== 'All Projects') {
       params.set('category', newCategory);
@@ -357,7 +351,6 @@ export default function Projects() {
           <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`} <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
 
-        {/* Floating Filter Button */}
         <div className="filter-button-container">
           <button
             ref={buttonRef}
@@ -367,7 +360,6 @@ export default function Projects() {
             <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
           </button>
 
-          {/* Dropdown Menu */}
           <div 
             ref={dropdownRef}
             className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
@@ -406,5 +398,14 @@ export default function Projects() {
         </div>
       </div>
     </section>
+  );
+}
+
+// Main page component
+export default function Projects() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }
