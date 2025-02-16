@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import ProjectItem from '../components/ProjectItem';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 const projectData = [
   {
@@ -288,7 +289,9 @@ const categories = [
 ];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState('All Projects');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All Projects');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -338,6 +341,12 @@ export default function Projects() {
   const handleCategoryChange = (newCategory: string) => {
     setSelectedCategory(newCategory);
     setIsDropdownOpen(false);
+    // Update URL with the new category
+    const params = new URLSearchParams();
+    if (newCategory !== 'All Projects') {
+      params.set('category', newCategory);
+    }
+    router.push(`/projects${params.toString() ? `?${params.toString()}` : ''}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -345,7 +354,7 @@ export default function Projects() {
     <section className="projects-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="./assets/images/star-2.png" alt="Star" /> All Projects <img src="./assets/images/star-2.png" alt="Star" />
+          <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`} <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
 
         {/* Floating Filter Button */}
@@ -383,7 +392,7 @@ export default function Projects() {
           </div>
           <div className="col-md-8">
             <h1 className="section-heading" data-aos="fade-up">
-              <img src="./assets/images/star-2.png" alt="Star" /> All Projects{" "}
+              <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`}{" "}
               <img src="./assets/images/star-2.png" alt="Star" />
             </h1>
             {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
