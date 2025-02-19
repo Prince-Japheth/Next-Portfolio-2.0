@@ -1359,16 +1359,33 @@ ol {
     gap: 80px;
 }
 
+.resume-area .resume-sidebar-wrap {
+    position: sticky;
+    top: 30px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #5651e5 transparent;
+}
+
+.resume-area .resume-sidebar-wrap::-webkit-scrollbar {
+    width: 6px;
+}
+
+.resume-area .resume-sidebar-wrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.resume-area .resume-sidebar-wrap::-webkit-scrollbar-thumb {
+    background-color: #5651e5;
+    border-radius: 3px;
+}
+
 .resume-area .resume-sidebar {
     width: 370px;
     flex: none;
-    position: sticky;
-    top: 15%;
-}
-
-.resume-area .resume-sidebar .shadow-box {
+    position: relative;
     padding: 24px 24px 34px 24px;
-
 }
 
 .resume-area .resume-sidebar::after {
@@ -1978,6 +1995,15 @@ ol {
 
 .blog-details-area .blog-details-content .comments-and-form-wrap .comments .children {
     padding-left: 80px;
+}
+
+.blog-details-area .blog-details-content .comments-and-form-wrap .comments .comment-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #323232;
 }
 
 .blog-details-area .blog-details-content .comments-and-form-wrap .comments .comment-list .comment-avatar {

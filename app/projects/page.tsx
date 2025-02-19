@@ -20,7 +20,7 @@ const projectData = [
     link: 'https://play.google.com/store/apps/details?id=com.bondyt.merchant&hl=en_US',
   },
   {
-    title: 'Villac Flyer',
+    title: 'Villaco Flyer',
     category: 'Graphic Design',
     tools: 'Photoshop',
     image: './assets/images/project-47.png',
