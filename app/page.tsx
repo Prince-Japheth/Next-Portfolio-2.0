@@ -63,8 +63,16 @@ export default function Home() {
           </div>
         </div>
         <div className="row mt-24">
-          <ClientStatsBox />
-          <ContactBox className="col-md-6" />
+          <div className="col-md-12">
+            <div className="d-flex gap-24">
+              <ClientStatsBox />
+              <div className="col-md-6" data-aos="zoom-in">
+                <div className="about-resume-wrap d-flex flex-1 flex-column">
+                  <ContactBox className="flex-1" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
