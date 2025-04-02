@@ -14,7 +14,7 @@
                 setTimeout(function() {
                     AOS.init({
                         duration: 1500,
-                        once: false,
+                        once: true,
                     });
                 }, 500);
             }, 500);
