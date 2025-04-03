@@ -18,17 +18,26 @@ function ProjectsContent() {
     : projectData.filter(project => project.category.toLowerCase().includes(selectedCategory.toLowerCase()));
 
   const { firstColumnProjects, secondColumnProjects } = React.useMemo(() => {
+    // Create a function to interleave projects between columns
+    const interleaveProjects = (projects: typeof projectData) => {
+      const firstColumn: typeof projectData = [];
+      const secondColumn: typeof projectData = [];
+      
+      projects.forEach((project, index) => {
+        if (index % 2 === 0) {
+          firstColumn.push(project);
+        } else {
+          secondColumn.push(project);
+        }
+      });
+      
+      return { firstColumnProjects: firstColumn, secondColumnProjects: secondColumn };
+    };
+    
     if (selectedCategory === 'All Projects') {
-      return {
-        firstColumnProjects: filteredProjects.slice(0, 13),
-        secondColumnProjects: filteredProjects.slice(13)
-      };
+      return interleaveProjects(filteredProjects);
     } else {
-      const midPoint = Math.ceil(filteredProjects.length / 3);
-      return {
-        firstColumnProjects: filteredProjects.slice(0, midPoint),
-        secondColumnProjects: filteredProjects.slice(midPoint)
-      };
+      return interleaveProjects(filteredProjects);
     }
   }, [filteredProjects, selectedCategory]);
 
@@ -93,10 +102,18 @@ function ProjectsContent() {
           </div>
         </div>
 
-        <div className="row">
+        {/* Mobile view - single column */}
+        <div className="d-md-none">
+          {filteredProjects.map((project, index) => (
+            <ProjectItem key={`mobile-${index}`} project={project} />
+          ))}
+        </div>
+
+        {/* Desktop view - two columns */}
+        <div className="row d-none d-md-flex">
           <div className="col-md-4">
             {firstColumnProjects.map((project, index) => (
-              <ProjectItem key={index} project={project} />
+              <ProjectItem key={`desktop-first-${index}`} project={project} />
             ))}
           </div>
           <div className="col-md-8">
@@ -107,7 +124,7 @@ function ProjectsContent() {
             {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
               <div key={i} className="d-flex gap-24">
                 {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
-                  <ProjectItem key={`second-${index}-${i}`} project={project} />
+                  <ProjectItem key={`desktop-second-${index}-${i}`} project={project} />
                 ))}
               </div>
             ))}

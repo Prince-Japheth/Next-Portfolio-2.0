@@ -21,6 +21,13 @@ export const projectData = [
     link: './assets/images/project-47.png',
   },
   {
+    title: 'Computer Aided Instruction Studies Dashboard',
+    category: 'UI/UX DESIGN',
+    tools: 'Figma',
+    image: './assets/images/project-16.png',
+    link: 'https://www.figma.com/design/MG9mnjpONtzH7MAdzaQyFx/Computer-aided-instruction-studies?node-id=0-1&t=h4rMUIGZnjfrkUor-1',
+  },  
+  {
     title: 'Lincoln University College Result Portal',
     category: 'Web Development',
     tools: 'JavaScript, Php, MySQL, jQuery, CSS, SASS, Bootstrap',
@@ -28,11 +35,11 @@ export const projectData = [
     link: 'https://result.lincoln.edu.ng',
   },
   {
-    title: 'Computer Aided Instruction Studies Dashboard',
-    category: 'UI/UX DESIGN',
-    tools: 'Figma',
-    image: './assets/images/project-16.png',
-    link: 'https://www.figma.com/design/MG9mnjpONtzH7MAdzaQyFx/Computer-aided-instruction-studies?node-id=0-1&t=h4rMUIGZnjfrkUor-1',
+    title: 'Bondyt Official Website',
+    category: 'Web Development',
+    tools: 'NextJs, Typescrpt, TailwindCss',
+    image: './assets/images/project-50.png',
+    link: 'https://bondyt.com',
   },
   {
     title: 'Lincoln Impact Foundation',
