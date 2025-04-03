@@ -30,12 +30,6 @@ export default function RootLayout({
         <link rel="stylesheet" href="./assets/css/style.css" />
       </head>
       <body>
-        {/* Custom Cursor */}
-        <div className="cursor-container">
-          <div className="cursor-outer"></div>
-          <div className="cursor-inner"></div>
-        </div>
-        
         <div id="preloader" className="preloader">
           <div className="black_wall"></div>
           <div className="loader"></div>
@@ -74,7 +68,6 @@ export default function RootLayout({
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/js/aos.js"></script>
         <script src="./assets/js/main.js"></script>
-        <script src="/assets/js/cursor.js"></script>
       </body>
     </html>
   );
