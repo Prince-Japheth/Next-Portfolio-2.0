@@ -927,6 +927,12 @@ ol {
     padding-top: 80px;
 }
 
+@media (max-width: 768px) {
+    .about-area {
+        padding-top: 20px;
+    }
+}
+
 .about-area .about-me-box {
     position: relative;
     padding: 50px 46px;
@@ -2216,6 +2222,7 @@ ol {
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
     transition: .3s;
+    font-size: 30px;
 }
 
 .contact-area .social-links li a:hover {
@@ -2532,8 +2539,7 @@ ol {
         background: #22222262;
         backdrop-filter: blur(10px);
         border-radius: 20px;
-        overflow: hidden;
-        padding: 25px 15px;
+        padding: 18px 15px;
         opacity: 1;
         visibility: visible;
         transform: none;
@@ -3102,5 +3108,78 @@ ol {
   to {
     opacity: 0;
     transform: scale(0.5);
+  }
+}
+
+/* About Dropdown Styles */
+.about-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.about-link {
+  cursor: pointer;
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 188, 94, 0.5);
+  transform: translateY(-4px);
+}
+
+.about-dropdown {
+  position: absolute;
+  top: -370%;
+  left: 0;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  padding: 0.75rem;
+  min-width: 180px;
+  border: 1px solid #333;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top left;
+  z-index: 1000;
+}
+
+.about-dropdown.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.about-dropdown.hidden {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  visibility: hidden;
+}
+
+.about-dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.about-dropdown a:hover {
+  background-color: #222;
+}
+
+/* Ensure dropdown is hidden on desktop */
+@media (min-width: 768px) {
+  .about-dropdown {
+    display: none !important;
+  }
+  
+  .about-link {
+    display: none !important;
   }
 }

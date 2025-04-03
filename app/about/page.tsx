@@ -2,6 +2,7 @@ import ServicesIcon from "../components/ServicesIcon";
 import ResumeBox from "../components/ResumeBox";
 import ProfileContactBox from "../components/ProfileContactBox";
 import ContactBox from "../components/ContactBox";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -32,7 +33,7 @@ export default function About() {
         <div className="row mt-24">
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
-              <a className="overlay-link" href="./credentials.html" />
+              <Link href="/resume" className="overlay-link" />
               <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
@@ -47,9 +48,9 @@ export default function About() {
                   <p className="type">Safekan</p>
                 </li>
               </ul>
-              <a href="./resume.html" className="about-btn" style={{ marginLeft: '200px' }}>
+              <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>
                 <img src="./assets/images/icon.svg" alt="Button" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-md-6" data-aos="zoom-in">

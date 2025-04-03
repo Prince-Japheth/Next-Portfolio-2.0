@@ -4,6 +4,7 @@ import ShowcaseProjectsBox from "./components/ShowcaseProjectsBox";
 import ProfileContactBox from "./components/ProfileContactBox";
 import ContactBox from "./components/ContactBox";
 import ClientStatsBox from "./components/ClientStatsBox";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="row">
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-me-box shadow-box">
-              <a className="overlay-link" href="/about" />
+              <Link className="overlay-link" href="/about" />
               <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
               <div className="img-box">
                 <img src="/assets/images/me.png" alt="About Me" />
@@ -22,9 +23,9 @@ export default function Home() {
                 <h1>Japheth Jerry.</h1>
                 <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional based in
                   Nigeria.</p>
-                <a href="#" className="about-btn">
+                <Link href="#" className="about-btn">
                   <img src="/assets/images/icon.svg" alt="Button" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

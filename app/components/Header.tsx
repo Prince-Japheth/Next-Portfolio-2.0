@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -12,6 +12,8 @@ declare global {
 
 const Header = () => {
   const pathname = usePathname();
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -28,6 +30,25 @@ const Header = () => {
     return () => {
       window.removeEventListener("popstate", handleRouteChange);
     };
+  }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsAboutDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Close dropdown when route changes
+  useEffect(() => {
+    setIsAboutDropdownOpen(false);
   }, [pathname]);
 
   return (
@@ -48,8 +69,31 @@ const Header = () => {
                 </Link>
               </li>
               <li className={pathname === "/about" ? "active" : ""}>
-                <Link href="/about" legacyBehavior>
-                  <a>About</a>
+                <div className="about-dropdown-container" ref={dropdownRef}>
+                  <a 
+                    className="about-link d-block d-md-none" 
+                    onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                  >
+                    About
+                  </a>
+                  <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
+                    <Link href="/about" legacyBehavior>
+                      <a>About Me</a>
+                    </Link>
+                    <Link href="/resume" legacyBehavior>
+                      <a>Resume</a>
+                    </Link>
+                  </div>
+                  <div className="d-none d-md-block">
+                    <Link href="/about" legacyBehavior>
+                      <a>About</a>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+              <li className={pathname === "/resume" ? "active d-none d-md-block" : "d-none d-md-block"}>
+                <Link href="/resume" legacyBehavior>
+                  <a>Resume</a>
                 </Link>
               </li>
               <li className={pathname === "/projects" ? "active" : ""}>
