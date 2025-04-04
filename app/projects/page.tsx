@@ -18,28 +18,25 @@ function ProjectsContent() {
     : projectData.filter(project => project.category.toLowerCase().includes(selectedCategory.toLowerCase()));
 
   const { firstColumnProjects, secondColumnProjects } = React.useMemo(() => {
-    // Create a function to interleave projects between columns
+    // Create a function to distribute projects between columns
     const interleaveProjects = (projects: typeof projectData) => {
       const firstColumn: typeof projectData = [];
       const secondColumn: typeof projectData = [];
       
-      projects.forEach((project, index) => {
-        if (index % 2 === 0) {
-          firstColumn.push(project);
+      // Distribute projects in the pattern: first column gets single items, second column gets pairs
+      for (let i = 0; i < projects.length; i++) {
+        if (i % 3 === 0) {
+          firstColumn.push(projects[i]);
         } else {
-          secondColumn.push(project);
+          secondColumn.push(projects[i]);
         }
-      });
+      }
       
       return { firstColumnProjects: firstColumn, secondColumnProjects: secondColumn };
     };
     
-    if (selectedCategory === 'All Projects') {
-      return interleaveProjects(filteredProjects);
-    } else {
-      return interleaveProjects(filteredProjects);
-    }
-  }, [filteredProjects, selectedCategory]);
+    return interleaveProjects(filteredProjects);
+  }, [filteredProjects]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
