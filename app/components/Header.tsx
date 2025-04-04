@@ -7,6 +7,7 @@ import Link from "next/link";
 declare global {
   interface Window {
     showPreloader: () => void;
+    reinitCursorEffect?: () => void;
   }
 }
 
@@ -19,6 +20,11 @@ const Header = () => {
     const handleRouteChange = () => {
       if (typeof window !== "undefined" && window.showPreloader) {
         window.showPreloader();
+      }
+      
+      // Reinitialize cursor effect on route change
+      if (typeof window !== "undefined" && window.reinitCursorEffect) {
+        window.reinitCursorEffect();
       }
     };
 

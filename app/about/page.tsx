@@ -33,12 +33,12 @@ export default function About() {
         <div className="row mt-24">
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
-              <Link href="/resume" className="overlay-link" />
+              {/* <Link href="/resume" className="overlay-link" /> */}
               <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
-                  <p className="date">2023 - Present</p>
+                  <p className="date">2023 - Present</p> 
                   <h2>Software Engineer</h2>
                   <p className="type">Spicodex</p>
                 </li>

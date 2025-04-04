@@ -30,7 +30,7 @@ export const projectData = [
   {
     title: 'Lincoln University College Result Portal',
     category: 'Web Development',
-    tools: 'JavaScript, Php, MySQL, jQuery, CSS, SASS, Bootstrap',
+    tools: 'JavaScript, Laravel, PHP, MySQL, jQuery, CSS, SASS, Bootstrap',
     image: './assets/images/project-49.png',
     link: 'https://result.lincoln.edu.ng',
   },
@@ -51,7 +51,7 @@ export const projectData = [
   {
     title: 'Topix',
     category: 'Web & Mobile Development',
-    tools: 'PHP, MySQL, JavaScript, jQuery, React Native, Java, CSS, SASS, Bootstrap',
+    tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, React Native, Java, CSS, SASS, Bootstrap',
     image: './assets/images/project-42.png',
     link: 'https://topix.great-site.net/about',
   },

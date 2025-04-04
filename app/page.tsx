@@ -13,7 +13,7 @@ export default function Home() {
         <div className="row">
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-me-box shadow-box">
-              <Link className="overlay-link" href="/about" />
+              {/* <Link className="overlay-link" href="/about" /> */}
               <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
               <div className="img-box">
                 <img src="/assets/images/me.png" alt="About Me" />
@@ -23,7 +23,7 @@ export default function Home() {
                 <h1>Japheth Jerry.</h1>
                 <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional based in
                   Nigeria.</p>
-                <Link href="#" className="about-btn">
+                <Link href="/about" className="about-btn">
                   <img src="/assets/images/icon.svg" alt="Button" />
                 </Link>
               </div>
@@ -64,16 +64,8 @@ export default function Home() {
           </div>
         </div>
         <div className="row mt-24">
-          <div className="col-md-12">
-            <div className="d-flex gap-24">
-              <ClientStatsBox />
-              <div className="col-md-6" data-aos="zoom-in">
-                <div className="about-resume-wrap d-flex flex-1 flex-column">
-                  <ContactBox className="flex-1" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <ClientStatsBox />
+          <ContactBox className="col-md-6" />
         </div>
       </div>
     </section>

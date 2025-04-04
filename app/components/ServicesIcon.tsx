@@ -6,9 +6,9 @@ const ServicesIcon = () => {
     return (
         <div data-aos="zoom-in">
             <div className="about-services-box info-box shadow-box h-full">
-                <Link href="/service" legacyBehavior>
+                {/* <Link href="/service" legacyBehavior>
                     <a className="overlay-link" />
-                </Link>
+                </Link> */}
                 <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
                 <div className="icon-boxes">
                     <i className="iconoir-mobile-dev-mode" />
