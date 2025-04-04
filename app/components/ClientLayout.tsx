@@ -17,7 +17,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   
   return (
     <>
-      {isClient && <div className="cursor"></div>}
+      {isClient && <div className="cursor d-none d-md-block"></div>}
       <div id="preloader" className="preloader">
         <div className="black_wall"></div>
         <div className="loader"></div>
