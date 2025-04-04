@@ -49,6 +49,13 @@ export const projectData = [
     link: 'https://lincolnfoundations.org',
   },
   {
+    title: 'Bondyt',
+    category: 'Mobile Development',
+    tools: 'React Native Typescript',
+    image: './assets/images/project-51.png',
+    link: './assets/images/project-51.png',
+  },
+  {
     title: 'Topix',
     category: 'Web & Mobile Development',
     tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, React Native, Java, CSS, SASS, Bootstrap',

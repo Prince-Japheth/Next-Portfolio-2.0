@@ -84,15 +84,15 @@ const Header = () => {
                   </a>
                   <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
                     <Link href="/about" legacyBehavior>
-                      <a>About Me</a>
+                      <a className={pathname === "/about" ? "active" : ""}>About Me</a>
                     </Link>
                     <Link href="/resume" legacyBehavior>
-                      <a>Resume</a>
+                      <a className={pathname === "/resume" ? "active" : ""}>Resume</a>
                     </Link>
                   </div>
                   <div className="d-none d-md-block">
                     <Link href="/about" legacyBehavior>
-                      <a>About</a>
+                      <a className={pathname === "/about" ? "active" : ""}>About</a>
                     </Link>
                   </div>
                 </div>
