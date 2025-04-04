@@ -2642,6 +2642,13 @@ ol {
         border-radius: 10px;
     }
 
+    .dropdown-item {
+        background-color: transparent !important;
+    }
+    .dropdown-item.active {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
     /* Hide unnecessary elements */
     .header-area .navbar .theme-btn,
     .header-area .gx-row>.theme-btn,
@@ -3235,15 +3242,29 @@ ol {
 .about-dropdown a {
     display: block;
     padding: 0.75rem 1rem;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.2s ease;
     font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-dropdown a:last-child {
+    margin-bottom: 0;
 }
 
 .about-dropdown a:hover {
     background-color: #222;
+    color: #ffffff;
+}
+
+/* Separate active classes for about and resume */
+.about-dropdown a.active-about,
+.about-dropdown a.active-resume {
+    background-color: #333 !important;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 /* Ensure dropdown is hidden on desktop */

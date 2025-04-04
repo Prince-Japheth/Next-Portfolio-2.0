@@ -17,6 +17,10 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('Current pathname:', pathname);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleRouteChange = () => {
       if (typeof window !== "undefined" && window.showPreloader) {
         window.showPreloader();
@@ -57,6 +61,9 @@ const Header = () => {
     setIsAboutDropdownOpen(false);
   }, [pathname]);
 
+  const isAboutPage = pathname === "/about";
+  const isResumePage = pathname === "/resume";
+
   return (
     <header className="header-area">
       <div className="container">
@@ -74,7 +81,7 @@ const Header = () => {
                   <a>Home</a>
                 </Link>
               </li>
-              <li className={pathname === "/about" ? "active" : ""}>
+              <li className={pathname === "/about" || pathname === "/resume" ? "active" : ""}>
                 <div className="about-dropdown-container" ref={dropdownRef}>
                   <a 
                     className="about-link d-block d-md-none" 
@@ -84,10 +91,10 @@ const Header = () => {
                   </a>
                   <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
                     <Link href="/about" legacyBehavior>
-                      <a className={pathname === "/about" ? "active" : ""}>About Me</a>
+                      <a className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>About Me</a>
                     </Link>
                     <Link href="/resume" legacyBehavior>
-                      <a className={pathname === "/resume" ? "active" : ""}>Resume</a>
+                      <a className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>Resume</a>
                     </Link>
                   </div>
                   <div className="d-none d-md-block">
