@@ -24,8 +24,7 @@ export default function Home() {
               <div className="infos">
                 <h4>Computer Software Engineer</h4>
                 <h1>Japheth Jerry.</h1>
-                <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional based in
-                  Nigeria.</p>
+                <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional</p>
                 <Link href="/about" className="about-btn">
                   <img src="/assets/images/icon.svg" alt="Button" />
                 </Link>
