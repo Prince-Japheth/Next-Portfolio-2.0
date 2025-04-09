@@ -163,8 +163,8 @@ export const experienceData = [
     companyIcon: "./assets/images/xtm.png",
     companyName: "Web Launch Guys",
     responsibilities: [
-      "Developed responsive websites using React.js, Next.js, and TypeScript.",
-      "Created clean, maintainable code following best practices.",
+      "Developed responsive websites using React.js, Next.js, Angular, Vue.js, Astro, and TypeScript.",
+      "Created clean, maintainable HTML, CSS, and JavaScript code following best practices.",
       "Designed intuitive user interfaces and graphics for client projects.",
       "Collaborated with team members to implement UI/UX designs.",
       "Optimized website performance and ensured cross-browser compatibility.",

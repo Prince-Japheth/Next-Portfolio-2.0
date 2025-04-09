@@ -3300,11 +3300,11 @@ ol {
 }
 
 .profile-image-container img:first-child {
-    animation: fadeInOut 8s infinite;
+    animation: fadeInOut 5s infinite;
 }
 
 .profile-image-container img:last-child {
-    animation: fadeOutIn 8s infinite;
+    animation: fadeOutIn 5s infinite;
 }
 
 @keyframes fadeInOut {
