@@ -202,6 +202,37 @@ export default function Resume() {
                 <a href="/contact" className="theme-btn">Contact Me</a>
               </div>
             </div>
+            
+            {/* Skills Section moved to sidebar - desktop only */}
+            <div className="skills-section mt-5 d-none d-md-block" data-aos="zoom-in">
+              <div className="">
+                <h4 className="h4 skills-title" data-aos="zoom-in">Technologies I Love to Build With</h4>
+                <div className="skills2-content-box">
+                  {skills.map((skill, index) => (
+                    <SkillCard
+                      key={index}
+                      iconSrc={skill.iconSrc}
+                      iconAlt={skill.iconAlt}
+                      delay={index * 50}
+                      tooltipText={skill.tooltipText}
+                    />
+                  ))}
+                </div>
+                
+                <h4 className="h4 skills-title mt-5" data-aos="zoom-in">Tools &amp; Productivity</h4>
+                <div className="skills2-content-box">
+                  {toolsAndProductivity.map((tool, index) => (
+                    <SkillCard
+                      key={index}
+                      iconSrc={tool.iconSrc}
+                      iconAlt={tool.iconAlt}
+                      delay={index * 50}
+                      tooltipText={tool.tooltipText}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
           <div className="resume-content flex-1">
             <div className="resume-about" data-aos="zoom-in">
@@ -213,7 +244,7 @@ export default function Resume() {
                 applications. I specialize in creating both web and mobile solutions that seamlessly
                 integrate functionality with innovative design, ensuring that every user interaction is
                 intuitive and efficient.</p>
-              <p> Throughout my career, I’ve developed a wide range of applications for industries such as
+              <p> Throughout my career, I've developed a wide range of applications for industries such as
                 education, e-commerce, and product innovation, focusing on crafting seamless user
                 experiences and tackling complex technical challenges. My passion lies in merging
                 creative design with technical expertise to deliver high-quality, scalable solutions
@@ -231,6 +262,21 @@ export default function Resume() {
             <div className="resume-edc-exp resume-experience">
               <h2 data-aos="fade-up">Experience</h2>
               <div className="resume-edc-exp-item" data-aos="zoom-in">
+                <h4>2020 - Present</h4>
+                <h3>Web Developer, UI/UX & Graphic Designer</h3> <span>PART-TIME</span>
+                <br />
+                <a href="https://weblaunchguys.online/" target="_blank">
+                  <img src="./assets/images/xtm.png" alt="Company Website" className="company-icon" />
+                  <h5>Web Launch Guys</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
+                </a>
+                <p>• Developed responsive websites using React.js, Next.js, and TypeScript.<br />
+                • Created clean, maintainable code following best practices.<br />
+                • Designed intuitive user interfaces and graphics for client projects.<br />
+                • Collaborated with team members to implement UI/UX designs.<br />
+                • Optimized website performance and ensured cross-browser compatibility.<br />
+                • Integrated third-party APIs and services to enhance functionality.</p>
+              </div>
+              <div className="resume-edc-exp-item" data-aos="zoom-in">
                 <h4>2023 - Present</h4>
                 <h3>Software Engineer</h3> <span>FULL-TIME</span>
                 <br />
@@ -238,14 +284,11 @@ export default function Resume() {
                   <img src="./assets/images/spicodex.png" alt="Company Website" className="company-icon" />
                   <h5>Spicodex</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
                 </a>
-                <p>Developed cross-platform mobile applications using React Native, delivering
-                  consistent performance on iOS and Android devices.
-                  Integrated APIs and consumed endpoints to deliver dynamic and data-driven features.
-                  Built and optimized responsive web applications using React.js, ensuring seamless
-                  user experiences.
-                  Collaborated with back-end teams to implement full-stack solutions using Node.js.
-                  Conducted thorough testing and debugging to maintain high performance and usability
-                  standards across platforms.</p>
+                <p>• Built cross-platform mobile apps with React Native for iOS and Android.<br />
+                • Integrated APIs for dynamic features.<br />
+                • Developed responsive web applications with React.js.<br />
+                • Implemented full-stack solutions using Node.js.<br />
+                • Conducted testing to maintain performance standards.</p>
               </div>
               <div className="resume-edc-exp-item" data-aos="zoom-in">
                 <h4>2024 - Present</h4>
@@ -255,16 +298,11 @@ export default function Resume() {
                   <img src="./assets/images/aquila.png" alt="Company Website" className="company-icon" />
                   <h5>Aquila Cyber</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
                 </a>
-                <p>Developed and maintained full-stack web applications using the MERN and XAMP stacks.
-                  Built responsive and scalable user interfaces with React.js and ensured seamless
-                  user experiences across platforms.
-                  Designed and optimized server-side functionality using Node.js and PHP.
-                  Integrated and managed databases using MongoDB and MySQL to handle dynamic and
-                  data-driven features.
-                  Conducted end-to-end testing and debugging to ensure performance, reliability, and
-                  security of applications.
-                  Collaborated with cross-functional teams to deliver high-quality solutions for
-                  diverse client needs.</p>
+                <p>• Built full-stack web applications using MERN and XAMP stacks.<br />
+                • Created responsive UIs with React.js.<br />
+                • Developed server-side functionality with Node.js and PHP.<br />
+                • Managed databases with MongoDB and MySQL.<br />
+                • Conducted testing for performance and security.</p>
               </div>
               <div className="resume-edc-exp-item" data-aos="zoom-in">
                 <h4>2022 - 2024</h4>
@@ -274,34 +312,10 @@ export default function Resume() {
                   <img src="./assets/images/safekan.png" alt="Company Website" className="company-icon" />
                   <h5>Safekan</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
                 </a>
-                <p>Designed and implemented website layouts and user interfaces based on client
-                  requirements.
-                  Conducted usability tests to ensure new features met quality assurance standards.
-                  Developed and maintained the brand's official website using modern web technologies,
-                  including HTML, CSS, Bootstrap, and JavaScript.
-                  Collected and analyzed user feedback to identify areas for improvement and propose
-                  new feature enhancements.</p>
-              </div>
-              <div className="resume-edc-exp-item" data-aos="zoom-in">
-                <h4>2023 - 2024</h4>
-                <h3>UI/UX and Graphic Designer</h3> <span>FULL-TIME</span>
-                <br />
-                <a href="https://weblaunchguys.online/" target="_blank">
-                  <img src="./assets/images/xtm.png" alt="Company Website" className="company-icon" />
-                  <h5>Web Launch Guys</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
-                </a>
-                <p>Designed intuitive and visually engaging user interfaces for websites, web
-                  applications, and mobile apps.
-                  Developed user flows, wireframes, and prototypes to ensure seamless and accessible
-                  user experiences.
-                  Applied an iterative design process, incorporating user feedback and usability
-                  testing to refine and enhance designs.
-                  Researched emerging trends in graphic design software and techniques to stay
-                  innovative.
-                  Created logos, icons, infographics, and other visual assets to enhance online brand
-                  presence.
-                  Edited and retouched photos to improve quality and relevance for various design
-                  projects.</p>
+                <p>• Designed and built website layouts based on client requirements.<br />
+                • Conducted usability testing for quality assurance.<br />
+                • Developed the brand's website using HTML, CSS, Bootstrap, and JavaScript.<br />
+                • Analyzed user feedback to improve features.</p>
               </div>
             </div>
             <div className="skills-wrap awards-wrap">
@@ -314,7 +328,9 @@ export default function Resume() {
                 </div>
               </div>
             </div>
-            <section className="skill">
+            
+            {/* Skills Section for mobile view - original position */}
+            <section className="skill d-md-none" data-aos="zoom-in">
               <ul className="skills2-list">
                 {/* Technologies */}
                 <li className="content-card">
@@ -325,7 +341,7 @@ export default function Resume() {
                         key={index}
                         iconSrc={skill.iconSrc}
                         iconAlt={skill.iconAlt}
-                        delay={index * 50} // Calculating delay dynamically
+                        delay={index * 50}
                         tooltipText={skill.tooltipText}
                       />
                     ))}
@@ -341,7 +357,7 @@ export default function Resume() {
                         key={index}
                         iconSrc={tool.iconSrc}
                         iconAlt={tool.iconAlt}
-                        delay={index * 50} // Calculating delay dynamically
+                        delay={index * 50}
                         tooltipText={tool.tooltipText}
                       />
                     ))}

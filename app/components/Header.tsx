@@ -81,7 +81,12 @@ const Header = () => {
                   <a>Home</a>
                 </Link>
               </li>
-              <li className={pathname === "/about" || pathname === "/resume" ? "active" : ""}>
+              <li className={pathname === "/about" ? "active d-none d-md-block" : "d-none d-md-block"}>
+                <Link href="/about" legacyBehavior>
+                  <a>About</a>
+                </Link>
+              </li>
+              <li className={pathname === "/about" || pathname === "/resume" ? "active d-block d-md-none" : "d-block d-md-none"}>
                 <div className="about-dropdown-container" ref={dropdownRef}>
                   <a 
                     className="about-link d-block d-md-none" 
