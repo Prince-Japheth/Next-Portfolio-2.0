@@ -3077,7 +3077,7 @@ ol {
         bottom: 8rem;
     }
     .terminal-button-container {
-        bottom: 8rem;
+        bottom: 8rem !important;
     }
 }
 
