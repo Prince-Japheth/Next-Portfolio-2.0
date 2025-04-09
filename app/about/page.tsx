@@ -73,7 +73,10 @@ export default function About() {
         </div>  
         <div className="row mt-24">  
           <div className="col-md-12">  
-            <div className="d-flex flex-column flex-md-row profile-contact-resume-wrap gap-24">  
+            <div 
+              className="d-flex flex-column flex-md-row profile-contact-resume-wrap gap-24"
+              style={{ width: '100vw !important' }} // Inline style added for 100vw width
+            >  
               <ServicesIcon />  
               <ResumeBox />  
               <ProfileContactBox  
