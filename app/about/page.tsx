@@ -2,7 +2,6 @@ import ServicesIcon from "../components/ServicesIcon";
 import ResumeBox from "../components/ResumeBox";
 import ProfileContactBox from "../components/ProfileContactBox";
 import ContactBox from "../components/ContactBox";
-import Link from "next/link";
 
 export default function About() {
   return (
@@ -33,24 +32,24 @@ export default function About() {
         <div className="row mt-24">
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
-              {/* <Link href="/resume" className="overlay-link" /> */}
+              <a className="overlay-link" href="./credentials.html" />
               <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
-                  <p className="date">2023 - Present</p> 
+                  <p className="date">2023 - 2024</p>
                   <h2>Software Engineer</h2>
                   <p className="type">Spicodex</p>
                 </li>
                 <li>
-                  <p className="date">2022 - Present</p>
+                  <p className="date">2022 - 2024</p>
                   <h2>UI/UX and Web Developer</h2>
                   <p className="type">Safekan</p>
                 </li>
               </ul>
-              <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>
+              <a href="./resume.html" className="about-btn" style={{ marginLeft: '200px' }}>
                 <img src="./assets/images/icon.svg" alt="Button" />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="col-md-6" data-aos="zoom-in">
@@ -95,4 +94,3 @@ export default function About() {
     </section>
   )
 }
-
