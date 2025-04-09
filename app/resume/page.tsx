@@ -225,7 +225,7 @@ export default function Resume() {
                 <h4>2022 - Present</h4>
                 <h3>Bachelor Degree in Software Engineering &amp; Cybersecurity</h3>
                 <br />
-                <h5>University University College</h5>
+                <h5>Licnoln University College</h5>
               </div>
             </div>
             <div className="resume-edc-exp resume-experience">
