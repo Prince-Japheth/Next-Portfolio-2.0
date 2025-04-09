@@ -73,13 +73,12 @@ export default function About() {
         </div>  
         <div className="row mt-24">  
           <div className="col-md-12">  
-            <div className="d-flex profile-contact-resume-wrap gap-24 flex-column flex-md-row">
+            <div 
+              className="d-flex flex-column flex-md-row profile-contact-resume-wrap gap-24"
+              style={{ width: '100vw !important' }} // Inline style added for 100vw width
+            >  
               <ServicesIcon />  
-              <br className="d-md-none" />  {/* First break for mobile */}
-              <br className="d-md-none" />  {/* Second break for mobile */}
               <ResumeBox />  
-              <br className="d-md-none" />  {/* First break for mobile */}
-              <br className="d-md-none" />  {/* Second break for mobile */}
               <ProfileContactBox  
                 showGithub={true}  
                 showLinkedin={false}  
@@ -88,8 +87,6 @@ export default function About() {
                 showWhatsapp={false}  
                 className="flex-1"  
               />  
-              <br className="d-md-none" />  {/* First break for mobile */}
-              <br className="d-md-none" />  {/* Second break for mobile */}
               <div className="d-block d-md-none">  
                 <ContactBox />  
               </div>  
