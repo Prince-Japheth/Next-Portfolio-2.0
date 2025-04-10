@@ -3225,7 +3225,7 @@ ol {
   /* --- Tablet View (screens between 769px and 1024px wide) --- */
   /* Creates a grid: 2 items in the first row, 1 item spanning the second row */
   /* ASSUMPTION: .profile-contact-resume-wrap has exactly 3 direct children */
-  @media (min-width: 400px) and (max-width: 1024px) {
+  @media (min-width: 300px) and (max-width: 1024px) {
     .profile-contact-resume-wrap {
       display: grid !important;         /* Switch to grid layout */
       grid-template-columns: 1fr 1fr;   /* Define two equal columns */
