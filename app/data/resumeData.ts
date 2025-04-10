@@ -163,13 +163,13 @@ export const experienceData = [
     companyIcon: "./assets/images/xtm.png",
     companyName: "Web Launch Guys",
     responsibilities: [
-      "Developed responsive websites using React.js, Next.js, Angular, Vue.js, Astro, and TypeScript.",
-      "Designed intuitive user interfaces, wireframes, and user flows to enhance usability and user experience.",
-      "Created brand identities, logos, social media graphics, marketing materials, and other design assets for clients.",
-      "Collaborated closely with developers and content teams to implement cohesive UI/UX strategies.",
-      "Created clean, maintainable HTML, CSS, and JavaScript code following best practices.",
-      "Optimized website performance and ensured cross-browser and mobile compatibility.",
-      "Integrated third-party APIs and services to enhance functionality."
+      "Led the design and development of responsive, user-centric websites using modern frameworks including React.js, Next.js, Angular, Vue.js, and Astro",
+      "Created comprehensive UI/UX solutions including wireframes, high-fidelity prototypes, and end-to-end user flows to enhance product usability and experience",
+      "Developed cohesive brand identities, marketing materials, and social media content that aligned with client objectives and campaign strategies",
+      "Implemented pixel-perfect, responsive designs that maintained consistency across all digital touchpoints",
+      "Optimized website performance through code optimization, image compression, and implementing best practices for SEO and accessibility",
+      "Collaborated with cross-functional teams to ensure seamless integration between design and development phases",
+      "Conducted user research and A/B testing to validate design decisions and improve conversion rates"
     ]
   },  
   {
@@ -180,11 +180,13 @@ export const experienceData = [
     companyIcon: "./assets/images/spicodex.png",
     companyName: "Spicodex",
     responsibilities: [
-      "Built cross-platform mobile apps with React Native for iOS and Android.",
-      "Integrated APIs for dynamic features.",
-      "Developed responsive web applications with React.js.",
-      "Implemented full-stack solutions using Node.js.",
-      "Conducted testing to maintain performance standards."
+      "Engineered cross-platform mobile applications using React Native, ensuring consistent performance across iOS and Android devices",
+      "Architected and implemented scalable backend solutions using Node.js, optimizing for performance and maintainability",
+      "Developed responsive web applications with React.js, implementing modern state management and component architecture",
+      "Led the integration of third-party APIs and services, ensuring secure and efficient data flow",
+      "Implemented comprehensive testing strategies including unit tests, integration tests, and performance testing",
+      "Collaborated with product managers and designers to translate business requirements into technical solutions",
+      "Mentored junior developers and conducted code reviews to maintain high code quality standards"
     ]
   },
   {
@@ -195,11 +197,13 @@ export const experienceData = [
     companyIcon: "./assets/images/aquila.png",
     companyName: "Aquila Cyber",
     responsibilities: [
-      "Built full-stack web applications using MERN and XAMP stacks.",
-      "Created responsive UIs with React.js.",
-      "Developed server-side functionality with Node.js and PHP.",
-      "Managed databases with MongoDB and MySQL.",
-      "Conducted testing for performance and security."
+      "Architected and developed full-stack web applications using MERN and XAMP stacks, implementing secure and scalable solutions",
+      "Designed and implemented RESTful APIs with Node.js and PHP, ensuring optimal performance and security",
+      "Developed responsive front-end interfaces using React.js, implementing modern UI/UX principles",
+      "Managed and optimized database operations with MongoDB and MySQL, implementing efficient querying and indexing",
+      "Implemented comprehensive security measures including authentication, authorization, and data encryption",
+      "Conducted code reviews and implemented CI/CD pipelines to ensure code quality and deployment efficiency",
+      "Collaborated with cross-functional teams to deliver end-to-end solutions that met business requirements"
     ]
   },
   {
@@ -210,10 +214,13 @@ export const experienceData = [
     companyIcon: "./assets/images/safekan.png",
     companyName: "Safekan",
     responsibilities: [
-      "Designed and built website layouts based on client requirements.",
-      "Conducted usability testing for quality assurance.",
-      "Developed the brand's website using HTML, CSS, Bootstrap, and JavaScript.",
-      "Analyzed user feedback to improve features."
+      "Designed and implemented responsive website layouts using modern web technologies including HTML, CSS, Bootstrap, and JavaScript",
+      "Created comprehensive UI/UX designs including wireframes, prototypes, and user flows to enhance user experience",
+      "Conducted user research and usability testing to gather insights and improve product features",
+      "Developed and maintained brand guidelines to ensure consistency across all digital platforms",
+      "Optimized website performance through code optimization and implementing best practices",
+      "Collaborated with stakeholders to translate business requirements into effective digital solutions",
+      "Implemented analytics tracking to measure user engagement and inform design decisions"
     ]
   }
 ];
