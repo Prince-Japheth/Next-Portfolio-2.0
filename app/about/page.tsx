@@ -77,7 +77,9 @@ export default function About() {
               className="d-flex flex-column flex-md-row profile-contact-resume-wrap gap-24"
               style={{ width: '100vw !important' }} // Inline style added for 100vw width
             >  
-              <ServicesIcon />  
+              <div className="gx-row d-flex gap-24 h-full">
+                <ServicesIcon />
+              </div>  
               <ResumeBox />  
               <ProfileContactBox  
                 showGithub={true}  
