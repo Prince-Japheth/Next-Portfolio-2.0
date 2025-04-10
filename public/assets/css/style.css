@@ -2553,7 +2553,7 @@ ol {
 
     .profile-contact-resume-wrap {
         display: grid !important;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr !important;
     }
 
     .project-details-wrap .project-about-2,
@@ -6064,8 +6064,10 @@ ol {
     }
 
     .profile-contact-resume-wrap {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
+        /* display: grid !important;
+        grid-template-columns: 1fr 1fr; */
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .project-details-wrap .project-about-2,

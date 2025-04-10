@@ -164,13 +164,14 @@ export const experienceData = [
     companyName: "Web Launch Guys",
     responsibilities: [
       "Developed responsive websites using React.js, Next.js, Angular, Vue.js, Astro, and TypeScript.",
+      "Designed intuitive user interfaces, wireframes, and user flows to enhance usability and user experience.",
+      "Created brand identities, logos, social media graphics, marketing materials, and other design assets for clients.",
+      "Collaborated closely with developers and content teams to implement cohesive UI/UX strategies.",
       "Created clean, maintainable HTML, CSS, and JavaScript code following best practices.",
-      "Designed intuitive user interfaces and graphics for client projects.",
-      "Collaborated with team members to implement UI/UX designs.",
-      "Optimized website performance and ensured cross-browser compatibility.",
+      "Optimized website performance and ensured cross-browser and mobile compatibility.",
       "Integrated third-party APIs and services to enhance functionality."
     ]
-  },
+  },  
   {
     period: "2023 - Present",
     title: "Software Engineer",

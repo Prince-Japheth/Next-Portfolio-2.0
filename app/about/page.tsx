@@ -38,14 +38,14 @@ export default function About() {
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
+                  <p className="date">2020 - Present</p>
+                  <h2>Web Developer, UI/UX & Graphic Designer</h2>
+                  <p className="type">Web Launch Guys</p>
+                </li>
+                <li>
                   <p className="date">2023 - Present</p> 
                   <h2>Software Engineer</h2>
                   <p className="type">Spicodex</p>
-                </li>
-                <li>
-                  <p className="date">2022 - Present</p>
-                  <h2>UI/UX and Web Developer</h2>
-                  <p className="type">Safekan</p>
                 </li>
               </ul>
               <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>
@@ -69,6 +69,25 @@ export default function About() {
                   <p className="type">Print Xpert</p>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div className="row mt-24">
+          <div className="col-md-12">
+            <div className="d-flex profile-contact-resume-wrap gap-24">
+              <ServicesIcon />
+              <ResumeBox />
+              <ProfileContactBox
+                showGithub={true}
+                showLinkedin={false}
+                showMail={true}
+                showInstagram={true}
+                showWhatsapp={false}
+                className="flex-1"
+              />
+              <div className="d-block d-md-none">
+                <ContactBox />
+              </div>
             </div>
           </div>
         </div>
