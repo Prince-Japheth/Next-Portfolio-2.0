@@ -43,7 +43,7 @@ export default function About() {
                   <p className="type">Web Launch Guys</p>
                 </li>
                 <li>
-                  <p className="date">2023 - Present</p> 
+                  <p className="date">2023 - Present</p>
                   <h2>Software Engineer</h2>
                   <p className="type">Spicodex</p>
                 </li>
@@ -72,38 +72,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="row mt-24">
-          <div className="col-md-12">
-            <div className="d-flex profile-contact-resume-wrap gap-24 justify-content-between">
-              <ServicesIcon />
-              
-              <ResumeBox />
-              <div className="d-none d-lg-flex">
-              <ProfileContactBox
-                showGithub={true}
-                showLinkedin={false}
-                showMail={true}
-                showInstagram={true}
-                showWhatsapp={false}
-                className="flex-1"
-              />
-              </div>
-              <div className="d-flex d-lg-none">
-              <ProfileContactBox
-                showGithub={true}
-                showLinkedin={true}
-                showMail={true}
-                showInstagram={true}
-                showWhatsapp={true}
-                className="flex-1"
-              />
-              </div>
-              <div className="d-block d-md-none">
-                <ContactBox />
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   )
