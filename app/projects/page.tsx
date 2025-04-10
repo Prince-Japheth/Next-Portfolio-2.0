@@ -114,10 +114,6 @@ function ProjectsContent() {
             ))}
           </div>
           <div className="col-md-8">
-            <h1 className="section-heading" data-aos="fade-up">
-              <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`}{" "}
-              <img src="./assets/images/star-2.png" alt="Star" />
-            </h1>
             {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
               <div key={i} className="d-flex gap-24">
                 {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
