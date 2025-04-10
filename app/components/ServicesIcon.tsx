@@ -13,21 +13,19 @@ const ServicesIcon = () => {
                 <div className="icon-boxes">
                     <i className="iconoir-mobile-dev-mode" />
                     <i className="iconoir-laptop-dev-mode" />
-                    <i>
-                        <img
+                    <i className="iconoir-figma">
+                        {/* <img
                             src="https://cdn-icons-png.flaticon.com/128/9529/9529941.png"
                             alt=""
                             style={{ filter: "invert(100%)" }}
-                            width={40}
-                        />
+                        /> */}
                     </i>
-                    <i>
-                        <img
+                    <i className="iconoir-adobe-photoshop">
+                        {/* <img
                             src="https://cdn-icons-png.flaticon.com/128/7859/7859071.png"
                             alt=""
                             style={{ filter: "invert(100%)" }}
-                            width={40}
-                        />
+                        /> */}
                     </i>
                 </div>
                 <div className="d-flex align-items-center justify-content-between">

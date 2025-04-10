@@ -74,9 +74,11 @@ export default function About() {
         </div>
         <div className="row mt-24">
           <div className="col-md-12">
-            <div className="d-flex profile-contact-resume-wrap gap-24">
+            <div className="d-flex profile-contact-resume-wrap gap-24 justify-content-between">
               <ServicesIcon />
+              
               <ResumeBox />
+              <div className="d-none d-lg-flex">
               <ProfileContactBox
                 showGithub={true}
                 showLinkedin={false}
@@ -85,6 +87,17 @@ export default function About() {
                 showWhatsapp={false}
                 className="flex-1"
               />
+              </div>
+              <div className="d-flex d-lg-none">
+              <ProfileContactBox
+                showGithub={true}
+                showLinkedin={true}
+                showMail={true}
+                showInstagram={true}
+                showWhatsapp={true}
+                className="flex-1"
+              />
+              </div>
               <div className="d-block d-md-none">
                 <ContactBox />
               </div>
