@@ -1382,8 +1382,9 @@ ol {
 }
 
 @media (max-width: 768px) {
-    .about-area {
-        padding-top: 20px;
+    .about-area,
+    .resume-area {
+        padding-top: 20px !important;
     }
 }
 @media (max-width: 585px) {
