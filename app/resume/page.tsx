@@ -14,10 +14,15 @@ export default function Resume() {
           <ResumeSidebar />
           <div className="resume-content flex-1">
             <AboutSection />
+            <SkillsSection />
+            <br />
+            <br />
+            <br />
+            <br />
             <EducationSection />
             <ExperienceSection />
             <CertificationSection />
-            <SkillsSection />
+            {/* <SkillsSection /> */}
           </div>
         </div>
       </div>

@@ -1699,6 +1699,14 @@ ol {
     .terminal-button-container {
         bottom: 8rem !important;
     }
+    .terminal-container {
+        width: 90%;
+        height: 40vh;
+    }
+    .terminal-overlay {
+        align-items: start;
+        padding-top: 30px;
+    }
 }
 
 /* Image Modal Styles */

@@ -10,6 +10,7 @@ const ExperienceSection = () => {
           <h4>{experience.period}</h4>
           <h3>{experience.title}</h3> <span>{experience.employmentType}</span>
           <br />
+          <br />
           <a href={experience.companyUrl} target="_blank">
             <img src={experience.companyIcon} alt="Company Website" className="company-icon" />
             <h5>{experience.companyName}</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />

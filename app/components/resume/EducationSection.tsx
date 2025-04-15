@@ -11,6 +11,7 @@ const EducationSection = () => {
           <h3>{education.title}</h3>
           <br />
           <h5>{education.school}</h5>
+          {education.details && <p>{education.details}</p>}
         </div>
       ))}
     </div>
