@@ -16,6 +16,20 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
+  // Add effect to handle body scroll locking
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
   const loadingFrames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
   const [loadingFrame, setLoadingFrame] = useState(0);
 
@@ -198,8 +212,8 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="terminal-overlay" onClick={() => inputRef.current?.focus()}>
-      <div className={`terminal-container ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`}>
+    <div className="terminal-overlay" onClick={onClose}>
+      <div className={`terminal-container ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`} onClick={(e) => e.stopPropagation()}>
         <div className="terminal-header">
           <div className="terminal-title">Terminal</div>
           <div className="terminal-controls">
