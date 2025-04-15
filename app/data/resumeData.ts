@@ -223,10 +223,36 @@ export const educationData = [
     school: "Lincoln University College, Malaysia"
   },
   {
-    period: "2023 - 2025",
-    title: "Diploma in Software Engineering",
+    period: "2023 - Present",
+    title: "Diploma in Computer Software Engineering",
     school: "Lincoln University College, Nigeria",
-    details: "Including core Information Technology fundamentals"
+    details: "Comprehensive Software Engineering Program",
+    coursework: [
+      "Software Development & Engineering Principles",
+      "Relational Database Management Systems",
+      "Embedded Systems Development",
+      "Web Development (Frontend & Backend)",
+      "Mobile Application Development",
+      "Backend Development with PHP & Laravel",
+      "IT Infrastructure & Systems Administration",
+      "Computer Networks & Protocols",
+      "Database Systems & Management",
+      "Introduction to Cybersecurity"
+    ],
+    technicalSkills: [
+      "Full-stack web development",
+      "Database design and management",
+      "Mobile app development",
+      "Backend API development",
+      "System administration",
+      "Network fundamentals",
+      "Cybersecurity basics"
+    ],
+    achievements: [
+      "Completed comprehensive software engineering curriculum",
+      "Developed practical projects across multiple domains",
+      "Gained hands-on experience with industry-standard technologies"
+    ]
   }
 ];
 

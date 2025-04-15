@@ -15,10 +15,6 @@ export default function Resume() {
           <div className="resume-content flex-1">
             <AboutSection />
             <SkillsSection />
-            <br />
-            <br />
-            <br />
-            <br />
             <EducationSection />
             <ExperienceSection />
             <CertificationSection />
