@@ -5,6 +5,8 @@ import Particles from "./Particles";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useRouteChange } from "../hooks/useRouteChange";
+import { BrowserProvider } from "../context/BrowserContext";
+import MinimizedBrowsers from "./MinimizedBrowsers";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   useRouteChange(); // Use our custom hook to handle route changes
@@ -16,7 +18,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   }, []);
   
   return (
-    <>
+    <BrowserProvider>
       {isClient && <div className="cursor d-none d-md-block"></div>}
       <div id="preloader" className="preloader">
         <div className="black_wall"></div>
@@ -52,6 +54,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         {children}
         <Footer />
       </main>
-    </>
+      <MinimizedBrowsers />
+    </BrowserProvider>
   );
 } 

@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import Browser from './Browser';
+import { useBrowser } from '../context/BrowserContext';
 
 interface ProjectItemProps {
   project: {
@@ -14,14 +16,23 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrowserOpen, setIsBrowserOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const isImageLink = project.link.includes('./assets/images/');
+  const { minimizedBrowsers, activeBrowser } = useBrowser();
+
+  // Watch for active browser changes
+  useEffect(() => {
+    if (activeBrowser && activeBrowser.id === `${project.title}-${project.link}`) {
+      setIsBrowserOpen(true);
+    }
+  }, [activeBrowser, project.title, project.link]);
 
   const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (isImageLink) {
-      e.preventDefault();
       const rect = imageRef.current?.getBoundingClientRect();
       if (rect) {
         setClickPosition({
@@ -30,6 +41,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
         });
       }
       setIsModalOpen(true);
+    } else {
+      // Check if this browser is already minimized
+      const isMinimized = minimizedBrowsers.some(
+        browser => browser.id === `${project.title}-${project.link}`
+      );
+      if (!isMinimized) {
+        setIsBrowserOpen(true);
+      }
     }
   };
 
@@ -38,7 +57,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     setTimeout(() => {
       setIsModalOpen(false);
       setIsClosing(false);
-    }, 300); // Match this with CSS animation duration
+    }, 300);
   };
 
   return (
@@ -48,8 +67,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           <a 
             className="overlay-link" 
             href={project.link} 
-            target={isImageLink ? undefined : "_blank"} 
-            rel="noopener noreferrer"
             onClick={handleClick}
           />
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
@@ -64,8 +81,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             </div>
             <a 
               href={project.link} 
-              target={isImageLink ? undefined : "_blank"} 
-              rel="noopener noreferrer"
               onClick={handleClick}
               className="project-btn"
             >
@@ -97,6 +112,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           </div>
         </div>
       )}
+
+      {/* Browser Modal */}
+      <Browser
+        isOpen={isBrowserOpen}
+        onClose={() => setIsBrowserOpen(false)}
+        url={project.link}
+        title={project.title}
+      />
     </>
   );
 };

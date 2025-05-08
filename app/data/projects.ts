@@ -7,6 +7,13 @@ export const projectData = [
     link: 'https://yafetport.netlify.app',
   },
   {
+    title: 'Onarietta Remet | Official Site',
+    category: 'Web Development',
+    tools: 'React.js, Next.js, Tailwind, CSS',
+    image: './assets/images/project-53.png',
+    link: 'https://onariettaremet.com',
+  },
+  {
     title: 'Bondyt Merchant',
     category: 'Mobile Development',
     tools: 'React Native, JavaScript',
@@ -30,7 +37,7 @@ export const projectData = [
   {
     title: 'LCDP School Management System',
     category: 'Web Development',
-    tools: 'React.js, JavaScript, Laravel, MySQL, jQuery, CSS, Bootstrap',
+    tools: 'JavaScript, Html, PHP Laravel, MySQL, jQuery, CSS, Bootstrap',
     image: './assets/images/project-52.png',
     link: 'https://gudu.lcpd.net/',
   },
