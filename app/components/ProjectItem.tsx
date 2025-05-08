@@ -21,6 +21,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const isImageLink = project.link.includes('./assets/images/');
+  const isExternalLink = project.link.includes('play') || project.link.includes('figma');
   const { minimizedBrowsers, activeBrowser } = useBrowser();
 
   // Watch for active browser changes
@@ -32,6 +33,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    
+    if (isExternalLink) {
+      // Open external links in a new tab
+      window.open(project.link, '_blank');
+      return;
+    }
+    
     if (isImageLink) {
       const rect = imageRef.current?.getBoundingClientRect();
       if (rect) {
@@ -68,6 +76,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             className="overlay-link" 
             href={project.link} 
             onClick={handleClick}
+            target={isExternalLink ? "_blank" : undefined}
+            rel={isExternalLink ? "noopener noreferrer" : undefined}
           />
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="project-img">
@@ -83,6 +93,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               href={project.link} 
               onClick={handleClick}
               className="project-btn"
+              target={isExternalLink ? "_blank" : undefined}
+              rel={isExternalLink ? "noopener noreferrer" : undefined}
             >
               <img src="./assets/images/icon.svg" alt="Button" />
             </a>
@@ -113,13 +125,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
         </div>
       )}
 
-      {/* Browser Modal */}
-      <Browser
-        isOpen={isBrowserOpen}
-        onClose={() => setIsBrowserOpen(false)}
-        url={project.link}
-        title={project.title}
-      />
+      {/* Browser Modal - only render if not an external link */}
+      {!isExternalLink && (
+        <Browser
+          isOpen={isBrowserOpen}
+          onClose={() => setIsBrowserOpen(false)}
+          url={project.link}
+          title={project.title}
+        />
+      )}
     </>
   );
 };
