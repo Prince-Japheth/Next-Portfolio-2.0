@@ -111,6 +111,32 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
     };
   }, [isDragging]);
 
+  // Add resize handler to snap to edges
+  React.useEffect(() => {
+    const handleResize = () => {
+      const thumbnail = thumbnailRef.current;
+      if (thumbnail) {
+        const rect = thumbnail.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const screenCenter = window.innerWidth / 2;
+        
+        // Determine which edge is closer
+        const snapToLeft = centerX < screenCenter;
+        
+        // Calculate new position
+        const newX = snapToLeft ? 20 : window.innerWidth - rect.width - 20;
+        
+        onPositionChange({
+          x: newX,
+          y: position.y
+        });
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [position.y, onPositionChange]);
+
   return (
     <div
       ref={thumbnailRef}

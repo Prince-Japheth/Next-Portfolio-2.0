@@ -25,7 +25,7 @@ const THUMBNAIL_WIDTH = 200;
 const THUMBNAIL_HEIGHT = 100;
 const PADDING = 20;
 const FILTER_BUTTON_HEIGHT = 60; // Height of the filter button
-const FILTER_BUTTON_BOTTOM = 32; // Bottom padding of the filter button (2rem)
+const FILTER_BUTTON_BOTTOM = 128; // Bottom padding of the filter button (8rem)
 const BOTTOM_PADDING = FILTER_BUTTON_HEIGHT + FILTER_BUTTON_BOTTOM + PADDING; // Total space needed at bottom
 
 export function BrowserProvider({ children }: { children: React.ReactNode }) {
