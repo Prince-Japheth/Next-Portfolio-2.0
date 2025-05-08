@@ -21,16 +21,42 @@ interface BrowserContextType {
 
 const BrowserContext = createContext<BrowserContextType | undefined>(undefined);
 
+const THUMBNAIL_WIDTH = 200;
+const THUMBNAIL_HEIGHT = 100;
+const PADDING = 20;
+const FILTER_BUTTON_HEIGHT = 60; // Height of the filter button
+const FILTER_BUTTON_BOTTOM = 32; // Bottom padding of the filter button (2rem)
+const BOTTOM_PADDING = FILTER_BUTTON_HEIGHT + FILTER_BUTTON_BOTTOM + PADDING; // Total space needed at bottom
+
 export function BrowserProvider({ children }: { children: React.ReactNode }) {
   const [minimizedBrowsers, setMinimizedBrowsers] = useState<MinimizedBrowser[]>([]);
   const [activeBrowser, setActiveBrowser] = useState<MinimizedBrowser | null>(null);
 
+  const calculateNewPosition = () => {
+    const count = minimizedBrowsers.length;
+    
+    // Position from bottom to top on the right side, accounting for filter button
+    const x = window.innerWidth - THUMBNAIL_WIDTH - PADDING;
+    const y = window.innerHeight - THUMBNAIL_HEIGHT - BOTTOM_PADDING - (count * (THUMBNAIL_HEIGHT + PADDING));
+
+    // If the thumbnail would go above the top of the screen, start from the bottom again
+    if (y < PADDING) {
+      return {
+        x: x - (THUMBNAIL_WIDTH + PADDING), // Move one column to the left
+        y: window.innerHeight - THUMBNAIL_HEIGHT - BOTTOM_PADDING
+      };
+    }
+
+    return { x, y };
+  };
+
   const minimizeBrowser = (browser: Omit<MinimizedBrowser, 'position'>) => {
+    const position = calculateNewPosition();
     setMinimizedBrowsers(prev => [
       ...prev,
       {
         ...browser,
-        position: { x: window.innerWidth - 200, y: window.innerHeight - 100 }
+        position
       }
     ]);
     setActiveBrowser(null);

@@ -77,6 +77,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
   };
 
   const handleClose = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
     onClose();
   };
