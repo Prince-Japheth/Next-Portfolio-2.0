@@ -32,7 +32,7 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
       const timer = setTimeout(() => {
         setShowCloseTooltip(false);
         setShowExpandTooltip(false);
-      }, 2000);
+      }, 1000);
       return () => clearTimeout(timer);
     } else {
       document.body.style.overflow = 'auto';
@@ -86,17 +86,20 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
               className="browser-close" 
               onClick={handleClose}
               data-tooltip="Close (Esc)"
+              data-tooltip-position="bottom"
               data-show-tooltip={showCloseTooltip}
             >×</button>
             <button 
               className="browser-minimize" 
               onClick={handleMinimize}
               data-tooltip="Minimize"
+              data-tooltip-position="bottom"
             >−</button>
             <button 
               className="browser-maximize" 
               onClick={handleMaximize}
               data-tooltip={isMaximized ? "Restore" : "Maximize"}
+              data-tooltip-position="bottom"
             >□</button>
           </div>
           <div className="browser-address-bar">
@@ -117,6 +120,7 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
               className="browser-expand" 
               onClick={handleOpenInNewTab} 
               data-tooltip="Open in new tab"
+              data-tooltip-position="bottom"
               data-show-tooltip={showExpandTooltip}
             >
               <svg viewBox="0 0 24 24" width="16" height="16">

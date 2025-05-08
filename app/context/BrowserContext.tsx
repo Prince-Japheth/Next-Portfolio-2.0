@@ -51,6 +51,14 @@ export function BrowserProvider({ children }: { children: React.ReactNode }) {
   };
 
   const minimizeBrowser = (browser: Omit<MinimizedBrowser, 'position'>) => {
+    // Check if a thumbnail already exists for this browser
+    const existingBrowser = minimizedBrowsers.find(b => b.id === browser.id);
+    if (existingBrowser) {
+      // If it exists, just update the active browser state
+      setActiveBrowser(null);
+      return;
+    }
+
     const position = calculateNewPosition();
     setMinimizedBrowsers(prev => [
       ...prev,
@@ -63,11 +71,7 @@ export function BrowserProvider({ children }: { children: React.ReactNode }) {
   };
 
   const restoreBrowser = (id: string) => {
-    const browser = minimizedBrowsers.find(b => b.id === id);
-    if (browser) {
-      setActiveBrowser(browser);
-      setMinimizedBrowsers(prev => prev.filter(b => b.id !== id));
-    }
+    setMinimizedBrowsers(prev => prev.filter(b => b.id !== id));
   };
 
   const updatePosition = (id: string, position: { x: number; y: number }) => {

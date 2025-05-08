@@ -50,13 +50,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       }
       setIsModalOpen(true);
     } else {
-      // Check if this browser is already minimized
-      const isMinimized = minimizedBrowsers.some(
-        browser => browser.id === `${project.title}-${project.link}`
-      );
-      if (!isMinimized) {
-        setIsBrowserOpen(true);
-      }
+      // Always open the browser, regardless of whether it's minimized
+      setIsBrowserOpen(true);
     }
   };
 

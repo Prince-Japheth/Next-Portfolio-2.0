@@ -62,8 +62,24 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
   };
 
   const handleMouseUp = () => {
-    if (isDragging && !hasMoved) {
-      onRestore();
+    if (isDragging) {
+      const thumbnail = thumbnailRef.current;
+      if (thumbnail) {
+        const rect = thumbnail.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const screenCenter = window.innerWidth / 2;
+        
+        // Determine which edge is closer
+        const snapToLeft = centerX < screenCenter;
+        
+        // Calculate new position
+        const newX = snapToLeft ? 20 : window.innerWidth - rect.width - 20;
+        
+        onPositionChange({
+          x: newX,
+          y: position.y
+        });
+      }
     }
     setIsDragging(false);
     setHasMoved(false);
@@ -71,6 +87,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     if (!hasMoved) {
       onRestore();
     }
@@ -79,6 +96,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
     onClose();
   };
 
@@ -103,7 +121,6 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
         cursor: isDragging ? 'grabbing' : 'grab'
       }}
       onMouseDown={handleMouseDown}
-      onClick={handleClick}
     >
       <div className="browser-thumbnail-header">
         <span className="browser-thumbnail-title">{title}</span>
@@ -111,9 +128,14 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
           className="browser-thumbnail-close"
           onClick={handleClose}
           data-tooltip="Close"
+          style={{ cursor: 'pointer' }}
         >×</button>
       </div>
-      <div className="browser-thumbnail-content">
+      <div 
+        className="browser-thumbnail-content"
+        onClick={handleClick}
+        style={{ cursor: 'pointer' }}
+      >
         <div className="browser-thumbnail-favicon">
           <img src={`https://www.google.com/s2/favicons?domain=${url}`} alt="favicon" />
         </div>
