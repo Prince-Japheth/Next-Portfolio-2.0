@@ -3287,7 +3287,7 @@ ol {
         /* background: rgba(15, 15, 15, 0.7); */
         background: #22222262;
         backdrop-filter: blur(10px);
-        border-radius: 20px;
+        border-radius: 30px;
         padding: 18px 15px;
         opacity: 1;
         visibility: visible;
