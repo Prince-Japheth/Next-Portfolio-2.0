@@ -139,7 +139,6 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
           <iframe 
             src={url} 
             title={title}
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             onLoad={handleIframeLoad}
             style={{ opacity: isLoading ? 0 : 1 }}
           />
