@@ -1702,6 +1702,7 @@ ol {
     }
     .terminal-container {
         width: 90%;
+        height: 60vh;
     }
     .terminal-overlay {
         align-items: start;
