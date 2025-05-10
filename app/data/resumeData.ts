@@ -219,7 +219,7 @@ export const experienceData = [
 export const educationData = [
   {
     period: "2025 - 2027 (Expected)",
-    title: "Bachelor of Computer Science (Hons) Network & Cyber Security",
+    title: "Bachelor of Computer Science (Hons) Networking & Cyber Security",
     school: "Lincoln University College, Malaysia"
   },
   {
