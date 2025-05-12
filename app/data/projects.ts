@@ -46,7 +46,7 @@ export const projectData = [
     category: 'Mobile Development',
     tools: 'React Native, TypeScript',
     image: './assets/images/project-51.png',
-    link: './assets/images/project-51.png',
+    link: 'https://play.google.com/store/apps/details?id=com.bondyt.dateapp&hl=en',
   },
   {
     title: 'Safekan Technovation Branding',
