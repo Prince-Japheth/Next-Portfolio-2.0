@@ -10,6 +10,7 @@ function ProjectsContent() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All Projects');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isFiltering, setIsFiltering] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -57,6 +58,11 @@ function ProjectsContent() {
   }, []);
 
   const handleCategoryChange = (newCategory: string) => {
+    setIsFiltering(true);
+    if (typeof window !== "undefined" && window.showPreloader) {
+      window.showPreloader();
+    }
+    
     setSelectedCategory(newCategory);
     setIsDropdownOpen(false);
     const params = new URLSearchParams();
@@ -66,6 +72,16 @@ function ProjectsContent() {
     router.push(`/projects${params.toString() ? `?${params.toString()}` : ''}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Add effect to handle filtering state
+  useEffect(() => {
+    if (isFiltering) {
+      const timer = setTimeout(() => {
+        setIsFiltering(false);
+      }, 500); // Match the preloader animation duration
+      return () => clearTimeout(timer);
+    }
+  }, [isFiltering]);
 
   return (
     <section className="projects-area">
@@ -79,6 +95,7 @@ function ProjectsContent() {
             ref={buttonRef}
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="filter-button"
+            disabled={isFiltering}
           >
             <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
           </button>
@@ -92,6 +109,7 @@ function ProjectsContent() {
                 key={category}
                 onClick={() => handleCategoryChange(category)}
                 className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+                disabled={isFiltering}
               >
                 {category}
               </button>
