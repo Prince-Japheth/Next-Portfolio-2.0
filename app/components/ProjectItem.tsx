@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import Browser from './Browser';
 import { useBrowser } from '../context/BrowserContext';
 
@@ -34,8 +35,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   // Add effect to handle image loading
   useEffect(() => {
-    const img = new Image();
-    img.src = project.image;
+    const img = new window.Image();
+    img.src = project.image.startsWith('http') ? project.image : project.image.replace('./', '/');
     img.onload = () => {
       setIsImageLoading(false);
     };
@@ -90,25 +91,50 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="project-img">
             <div className={`image-container ${isImageLoading ? 'loading' : ''}`}>
-              <img 
+              <Image 
                 ref={imageRef} 
-                src={project.image} 
-                alt="Project" 
+                src={project.image.startsWith('http') ? project.image : project.image.replace('./', '/')} 
+                alt={project.title}
+                width={800}
+                height={600}
+                quality={75}
+                priority={false}
+                loading="lazy"
                 style={{ 
                   opacity: isImageLoading ? 0 : 1,
-                  transition: 'opacity 0.3s ease-in-out'
+                  transition: 'opacity 0.3s ease-in-out',
+                  objectFit: 'cover',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '30px'
                 }}
+                onLoad={() => setIsImageLoading(false)}
               />
               {isImageLoading && (
                 <>
                   <div className="image-loading-overlay">
                     <div className="image-loading-spinner"></div>
                   </div>
-                  <img 
-                    src={project.image} 
+                  <Image 
+                    src={project.image.startsWith('http') ? project.image : project.image.replace('./', '/')} 
                     alt="Project blur" 
                     className="blur-placeholder"
-                    style={{ opacity: isImageLoading ? 0.5 : 0 }}
+                    width={800}
+                    height={600}
+                    quality={10}
+                    priority={true}
+                    style={{ 
+                      opacity: isImageLoading ? 0.5 : 0,
+                      filter: 'blur(20px)',
+                      transform: 'scale(1.1)',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '30px'
+                    }}
                   />
                 </>
               )}
