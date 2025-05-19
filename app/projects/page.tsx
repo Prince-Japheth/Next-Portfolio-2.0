@@ -69,8 +69,10 @@ function ProjectsContent() {
     if (newCategory !== 'All Projects') {
       params.set('category', newCategory);
     }
-    router.push(`/projects${params.toString() ? `?${params.toString()}` : ''}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Use direct navigation instead of router.push
+    const newUrl = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
+    window.location.href = newUrl;
   };
 
   // Add effect to handle filtering state

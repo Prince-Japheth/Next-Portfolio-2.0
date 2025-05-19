@@ -18,6 +18,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const isImageLink = project.link.includes('./assets/images/');
@@ -30,6 +31,18 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       setIsBrowserOpen(true);
     }
   }, [activeBrowser, project.title, project.link]);
+
+  // Add effect to handle image loading
+  useEffect(() => {
+    const img = new Image();
+    img.src = project.image;
+    img.onload = () => {
+      setIsImageLoading(false);
+    };
+    img.onerror = () => {
+      setIsImageLoading(false); // Also clear loading state on error
+    };
+  }, [project.image]);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -76,7 +89,30 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           />
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="project-img">
-            <img ref={imageRef} src={project.image} alt="Project" />
+            <div className={`image-container ${isImageLoading ? 'loading' : ''}`}>
+              <img 
+                ref={imageRef} 
+                src={project.image} 
+                alt="Project" 
+                style={{ 
+                  opacity: isImageLoading ? 0 : 1,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
+              />
+              {isImageLoading && (
+                <>
+                  <div className="image-loading-overlay">
+                    <div className="image-loading-spinner"></div>
+                  </div>
+                  <img 
+                    src={project.image} 
+                    alt="Project blur" 
+                    className="blur-placeholder"
+                    style={{ opacity: isImageLoading ? 0.5 : 0 }}
+                  />
+                </>
+              )}
+            </div>
           </div>
           <div className="d-flex align-items-center justify-content-between">
             <div className="project-info">

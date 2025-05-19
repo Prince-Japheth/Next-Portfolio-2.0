@@ -1852,11 +1852,64 @@ ol {
 .projects-area .project-item .project-img {
     border-radius: 30px;
     margin-bottom: 13px;
+    position: relative;
+    overflow: hidden;
 }
 
-.projects-area .project-item .project-img img {
-    display: block;
+.projects-area .project-item .project-img .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
     border-radius: 30px;
+    overflow: hidden;
+}
+
+.projects-area .project-item .project-img .image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.projects-area .project-item .project-img .image-container .blur-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.projects-area .project-item .project-img .image-container .image-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.projects-area .project-item .project-img .image-container .image-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary_color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .projects-area .project-item .project-info p {
