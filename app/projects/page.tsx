@@ -70,9 +70,8 @@ function ProjectsContent() {
       params.set('category', newCategory);
     }
     
-    // Use direct navigation instead of router.push
-    const newUrl = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
-    window.location.href = newUrl;
+    // Use Next.js router for navigation
+    router.push(`/projects${params.toString() ? `?${params.toString()}` : ''}`);
   };
 
   // Add effect to handle filtering state
