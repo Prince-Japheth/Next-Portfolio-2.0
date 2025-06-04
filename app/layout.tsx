@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type React from "react"; // Import React
 import ClientLayout from "./components/ClientLayout";
+import "./globals.css"; // Add this import for global styles
 
 export const metadata: Metadata = {
   title: "Japheth Jerry - Software Engineer",
@@ -22,18 +23,18 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
-        <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="./assets/css/aos.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/css/aos.css" />
+        <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
-        <script src="./assets/js/jquery-3.6.4.js"></script>
-        <script src="./assets/js/bootstrap.bundle.min.js"></script>
-        <script src="./assets/js/aos.js"></script>
-        <script src="./assets/js/main.js"></script>
-        <script src="./assets/js/cursor.js"></script>
+        <script src="/assets/js/jquery-3.6.4.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/aos.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/cursor.js"></script>
       </body>
     </html>
   );

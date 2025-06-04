@@ -1,0 +1,64 @@
+import React from 'react';
+import { notFound } from 'next/navigation';
+import { projectData } from '../../data/projects';
+import ProjectDetailsClient from './ProjectDetailsClient';
+import { Suspense } from 'react';
+
+// This is the server component
+export default function ProjectDetailsPage({ params }: { params: { slug: string } }) {
+  const slug = decodeURIComponent(params.slug);
+
+  // Find the current project
+  const currentProjectIndex = projectData.findIndex(project => {
+    const normalizedTitle = project.title
+      .toLowerCase()
+      .replace(/[|]/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+    
+    const normalizedSlug = slug
+      .toLowerCase()
+      .replace(/[|]/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+    
+    return normalizedTitle === normalizedSlug;
+  });
+
+  const currentProject = projectData[currentProjectIndex];
+
+  // Find the next project with an HTTP link
+  let nextProjectIndex = (currentProjectIndex + 1) % projectData.length;
+  while (!projectData[nextProjectIndex].link.startsWith('http')) {
+    nextProjectIndex = (nextProjectIndex + 1) % projectData.length;
+    // If we've gone through all projects and found none with HTTP links, use the current project
+    if (nextProjectIndex === currentProjectIndex) {
+      nextProjectIndex = currentProjectIndex;
+      break;
+    }
+  }
+  const nextProject = projectData[nextProjectIndex];
+
+  if (!currentProject) {
+    notFound();
+  }
+
+  return (
+    <Suspense fallback={
+      <div className="project-details-wrap">
+        <div className="container">
+          <div className="loading-spinner">
+            <div className="spinner"></div>
+            <p>Loading project details...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <ProjectDetailsClient 
+        currentProject={currentProject} 
+        nextProject={nextProject} 
+        allProjects={projectData}
+      />
+    </Suspense>
+  );
+} 

@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="footer-content text-center">
           <Link href="/" legacyBehavior>
             <a className="logo">
-              <img src="./assets/images/logo.svg" alt="Logo" />
+              <img src="/assets/images/logo.svg" alt="Logo" />
             </a>
           </Link>
-          <ul className="footer-menu">
+          <ul className="footer-menu"> 
             <li>
               <Link href="/" legacyBehavior>
                 <a>Home</a>

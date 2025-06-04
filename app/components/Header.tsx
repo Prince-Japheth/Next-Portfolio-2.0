@@ -148,7 +148,7 @@ const Header = () => {
         <button
           className="terminal-button"
           onClick={() => setIsTerminalOpen(true)}
-        >
+        > 
           <i className="iconoir-terminal" style={{ fontSize: '24px', color: '#fff' }} />
         </button>
 

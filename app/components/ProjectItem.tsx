@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Browser from './Browser';
 import { useBrowser } from '../context/BrowserContext';
+import { useRouter } from 'next/navigation';
 
 interface ProjectItemProps {
   project: {
@@ -25,6 +26,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const isImageLink = project.link.includes('./assets/images/');
   const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('topix');
   const { minimizedBrowsers, activeBrowser } = useBrowser();
+  const router = useRouter();
 
   // Watch for active browser changes
   useEffect(() => {
@@ -77,9 +79,20 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     }, 300);
   };
 
+  const handleDetailsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const slug = project.title
+      .toLowerCase()
+      .replace(/[|]/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+    router.push(`/projects/${slug}`);
+  };
+
   return (
     <>
-      <div data-aos="zoom-in" className="flex-1 d-flex">
+      <div data-aos="zoom-in" className="flex-1 d-flex flex-column">
         <div className="project-item flex-1 shadow-box">
           <a 
             className="overlay-link" 
@@ -157,6 +170,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             </a>
           </div>
         </div>
+        {project.link.startsWith('http') && (
+          <button 
+            onClick={handleDetailsClick}
+            className="view-details-btn mb-5 shadow-box"
+            title="View Details"
+          >
+            View Details
+          </button>
+        )}
       </div>
 
       {/* Image Modal */}
