@@ -5,8 +5,9 @@ import ProjectDetailsClient from './ProjectDetailsClient';
 import { Suspense } from 'react';
 
 // This is the server component
-export default function ProjectDetailsPage({ params }: { params: { slug: string } }) {
-  const slug = decodeURIComponent(params.slug);
+export default async function ProjectDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
 
   // Find the current project
   const currentProjectIndex = projectData.findIndex(project => {
@@ -16,7 +17,7 @@ export default function ProjectDetailsPage({ params }: { params: { slug: string 
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
     
-    const normalizedSlug = slug
+    const normalizedSlug = decodedSlug
       .toLowerCase()
       .replace(/[|]/g, '-')
       .replace(/\s+/g, '-')
