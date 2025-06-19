@@ -65,7 +65,7 @@ export const projectData: Project[] = [
     about: 'This UI/UX project demonstrates my ability to create user-centered designs that enhance learning experiences. The dashboard provides clear information hierarchy and easy access to key features.',
     description: 'Designed a comprehensive educational dashboard for computer-aided instruction studies. Created an intuitive interface with a focus on user experience and accessibility. Developed a robust design system with reusable components to ensure consistency across multiple dashboard views. Implemented data visualization techniques using progressive disclosure patterns and interactive charts to present information clearly. Engineered a responsive layout system that maintains usability across different device types while adhering to accessibility standards (WCAG 2.1 AA). Designed a notification system with smart prioritization and contextual awareness. This project demonstrates my ability to create user-centered designs that effectively address educational needs while maintaining technical excellence.',
     status: 'Completed'
-  },
+  },  
   {
     title: 'LCDP School Management System',
     category: 'Web Development',

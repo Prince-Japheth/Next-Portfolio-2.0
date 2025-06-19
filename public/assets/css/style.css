@@ -3208,7 +3208,9 @@ ol {
         justify-content: space-between;
     }
 
-    .about-area .container>.row:nth-child(2) .blog-service-profile-wrap>div {
+    /* This CSS rule targets each direct child <div> of .blog-service-profile-wrap inside the second .row of .about-area's .container, 
+       and sets their width to 50% minus 12px. This is typically used to create a two-column layout with a 24px gap between columns (12px on each side). */
+    .about-area .container > .row:nth-child(2) .blog-service-profile-wrap > div {
         width: calc(50% - 12px);
     }
 
