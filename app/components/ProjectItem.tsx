@@ -35,10 +35,17 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     }
   }, [activeBrowser, project.title, project.link]);
 
+  const getImageSrc = (src: string) => {
+    if (src.startsWith('http')) return src;
+    // Remove any leading './' or '/' and ensure it starts with '/assets/images/'
+    const cleaned = src.replace(/^\.{0,2}\/?assets\/images\//, '');
+    return `/assets/images/${cleaned}`;
+  };
+
   // Add effect to handle image loading
   useEffect(() => {
     const img = new window.Image();
-    img.src = project.image.startsWith('http') ? project.image : project.image.replace('./', '/');
+    img.src = getImageSrc(project.image);
     img.onload = () => {
       setIsImageLoading(false);
     };
@@ -106,7 +113,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             <div className={`image-container ${isImageLoading ? 'loading' : ''}`}>
               <Image 
                 ref={imageRef} 
-                src={project.image.startsWith('http') ? project.image : project.image.replace('./', '/')} 
+                src={getImageSrc(project.image)}
                 alt={project.title}
                 width={800}
                 height={600}
@@ -129,7 +136,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                     <div className="image-loading-spinner"></div>
                   </div>
                   <Image 
-                    src={project.image.startsWith('http') ? project.image : project.image.replace('./', '/')} 
+                    src={getImageSrc(project.image)}
                     alt="Project blur" 
                     className="blur-placeholder"
                     width={800}

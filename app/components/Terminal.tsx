@@ -76,7 +76,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
         '  whoami            - Show current user',
         '  pwd               - Show current directory',
         '  ls                - List available pages',
-        '  cat <page>        - Show page content'
+        // '  cat <page>        - Show page content'
       ];
     },
     clear: () => {
