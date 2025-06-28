@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type React from "react"; // Import React
 import ClientLayout from "./components/ClientLayout";
 import "./globals.css"; // Add this import for global styles
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "Japheth Jerry - Software Engineer",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body>
+        <NextTopLoader color="#ffbc5e" showSpinner={false} /> 
         <ClientLayout>{children}</ClientLayout>
         <script src="/assets/js/jquery-3.6.4.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>

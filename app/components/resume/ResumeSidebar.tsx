@@ -47,10 +47,10 @@ const ResumeSidebar = () => {
       </div>
       
       {/* Skills Section moved to sidebar - desktop only */}
-      <div className="skills-section mt-5 d-none d-md-block" data-aos="zoom-in">
-        <div className="shadow-box text-center p-3 py-4">
+      <div className="resume-sidebar skills-section mt-5 d-none d-md-block" data-aos="zoom-in">
+        <div className="shadow-box text-center py-4">
           <h4 className="h4 skills-title" data-aos="zoom-in">Technologies I Love to Build With</h4>
-          <div className="skills2-content-box ps-2">
+          <div className="skills2-content-box">
             {skills.map((skill, index) => (
               <SkillCard
                 key={index}

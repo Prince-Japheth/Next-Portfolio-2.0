@@ -22,7 +22,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {isClient && <div className="cursor d-none d-md-block"></div>}
       <div id="preloader" className="preloader">
         <div className="black_wall"></div>
-        <div className="loader"></div>
+        {/* <div className="loader"></div> */}
         <div id="wifi-loader">
           <svg className="circle-outer" viewBox="0 0 86 86">
             <circle className="back" cx="43" cy="43" r="40" />
