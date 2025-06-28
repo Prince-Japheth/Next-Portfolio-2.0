@@ -44,6 +44,8 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
     notFound();
   }
 
+  await new Promise(res => setTimeout(res, 400)); // Artificial delay for loader demo
+
   return (
     <Suspense fallback={
       <div className="project-details-wrap">

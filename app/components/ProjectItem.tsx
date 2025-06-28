@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Browser from './Browser';
 import { useBrowser } from '../context/BrowserContext';
 import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
 interface ProjectItemProps {
   project: {
@@ -84,16 +85,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     }, 300);
   };
 
-  const handleDetailsClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const slug = project.title
-      .toLowerCase()
-      .replace(/[|]/g, '-')
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
-    router.push(`/projects/${slug}`);
-  };
+  // Generate slug for project details link
+  const slug = project.title
+    .toLowerCase()
+    .replace(/[|]/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 
   return (
     <>
@@ -108,7 +105,18 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           />
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="project-img">
-            <div className={`image-container ${isImageLoading ? 'loading' : ''}`}>
+            <div
+              className={`image-container ${isImageLoading ? 'loading' : ''}`}
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                minHeight: '180px', // Ensures the box is always visible
+                background: '#f3f3f3', // Light background for skeleton effect
+                borderRadius: '30px',
+                overflow: 'hidden',
+              }}
+            >
               <img 
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
@@ -119,13 +127,27 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                   objectFit: 'cover',
                   width: '100%',
                   height: '100%',
-                  borderRadius: '30px'
+                  borderRadius: '30px',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
                 }}
                 onLoad={() => setIsImageLoading(false)}
               />
               {isImageLoading && (
                 <>
-                  <div className="image-loading-overlay">
+                  <div className="image-loading-overlay" style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'rgba(243,243,243,0.7)',
+                    zIndex: 2,
+                  }}>
                     <div className="image-loading-spinner"></div>
                   </div>
                   <img 
@@ -133,7 +155,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                     alt="Project blur" 
                     className="blur-placeholder"
                     style={{ 
-                      opacity: isImageLoading ? 0.5 : 0,
+                      opacity: 0.5,
                       filter: 'blur(20px)',
                       transform: 'scale(1.1)',
                       position: 'absolute',
@@ -142,7 +164,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      borderRadius: '30px'
+                      borderRadius: '30px',
+                      zIndex: 1,
                     }}
                   />
                 </>
@@ -167,13 +190,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           </div>
         </div>
         {project.link.startsWith('http') && (
-          <button 
-            onClick={handleDetailsClick}
+          <Link
+            href={`/projects/${slug}`}
             className="view-details-btn mb-5 shadow-box"
             title="View Details"
           >
             View Details
-          </button>
+          </Link>
         )}
       </div>
 

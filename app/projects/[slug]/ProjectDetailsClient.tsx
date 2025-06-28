@@ -65,19 +65,16 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px' }}>
-              <Image
+              <img
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
-                width={1200}
-                height={800}
-                priority
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
+                style={{
+                  width: '100%',
+                  height: '100%',
                   borderRadius: '30px',
                   objectFit: 'cover'
                 }}
-                className='shadow-box'
+                className="shadow-box"
               />
             </div>
           </div>
@@ -101,6 +98,8 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                 )}
               </div>
             </div>
+
+            <br />
 
             <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto' }}>
               <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
