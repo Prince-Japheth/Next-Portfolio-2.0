@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 import Browser from './Browser';
 import { useBrowser } from '../context/BrowserContext';
 import { useRouter } from 'next/navigation';
@@ -110,15 +109,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="project-img">
             <div className={`image-container ${isImageLoading ? 'loading' : ''}`}>
-              <Image 
+              <img 
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
                 alt={project.title}
-                width={800}
-                height={600}
-                quality={75}
-                priority={false}
-                loading="lazy"
                 style={{ 
                   opacity: isImageLoading ? 0 : 1,
                   transition: 'opacity 0.3s ease-in-out',
@@ -134,14 +128,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                   <div className="image-loading-overlay">
                     <div className="image-loading-spinner"></div>
                   </div>
-                  <Image 
+                  <img 
                     src={getImageSrc(project.image)}
                     alt="Project blur" 
                     className="blur-placeholder"
-                    width={800}
-                    height={600}
-                    quality={10}
-                    priority={true}
                     style={{ 
                       opacity: isImageLoading ? 0.5 : 0,
                       filter: 'blur(20px)',
