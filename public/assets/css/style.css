@@ -2394,6 +2394,9 @@ ol {
 
 .skill-card {
     cursor: help;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-card:hover .tooltip {
@@ -2421,14 +2424,16 @@ ol {
     color: white;
     font-size: 15px;
     font-weight: var(--fw-700);
-    padding: 5px 10px;
-    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    border-radius: 20px !important;
     box-shadow: var(--shadow-1);
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
     transition: var(--transition-1);
     z-index: 1;
+    overflow: hidden;
+    border: 1px solid black;
 }
 
 .card-icon img {
