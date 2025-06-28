@@ -37,9 +37,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   const getImageSrc = (src: string) => {
     if (src.startsWith('http')) return src;
-    // Remove any leading './' or '/' and ensure it starts with '/assets/images/'
-    const cleaned = src.replace(/^\.{0,2}\/?assets\/images\//, '');
-    return `/assets/images/${cleaned}`;
+    // Simple approach: just remove leading './' like ShowcaseProjectsBox does
+    return src.startsWith("/") ? src : src.replace(/^\./, "");
   };
 
   // Add effect to handle image loading
