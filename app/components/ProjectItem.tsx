@@ -112,7 +112,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                 width: '100%',
                 height: '100%',
                 minHeight: '180px', // Ensures the box is always visible
-                background: '#f3f3f3', // Light background for skeleton effect
+                background: '#1b1b1b', // Light background for skeleton effect
                 borderRadius: '30px',
                 overflow: 'hidden',
               }}
@@ -145,7 +145,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: 'rgba(243,243,243,0.7)',
+                    background: '#1b1b1b',
                     zIndex: 2,
                   }}>
                     <div className="image-loading-spinner"></div>
