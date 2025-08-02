@@ -23,8 +23,19 @@ export const projectData: Project[] = [
     status: 'Completed'
   },
   {
-    "title": "Lincoln E-Library Platform",
+    "title": "Qallie AI Customer Agent Platform",
     "category": "Web Development",
+    "tools": "React.js, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, Three.js, Spline, Radix UI",
+    "image": "/assets/images/project-55.png",
+    "link": "https://qallie.online",
+    "brief": "A comprehensive AI customer agent platform website built with React and TypeScript, featuring interactive 3D animations, business automation tools, and a modern responsive design for launching intelligent customer support agents.",
+    "about": "This platform demonstrates advanced frontend development capabilities through a sophisticated landing page with 3D visualizations, interactive components, and seamless user experience design for businesses looking to implement AI-powered customer service solutions.",
+    "description": "The platform features a dynamic hero section with rotating business categories (Real Estates, Restaurants, Hotels, etc.), interactive 3D scenes using Spline and Three.js, comprehensive feature showcases including appointment scheduling and menu inquiries, step-by-step implementation guides, and responsive device showcases for mobile and desktop applications. Built with React 18 and TypeScript for type safety, the application uses Vite for fast development and building, Tailwind CSS for styling with custom animations, and shadcn/ui components for consistent design patterns. Advanced features include 3D product demonstrations, interactive pricing tables, animated preloader with rotating facts, and comprehensive business automation workflows. The application implements modern web technologies with Framer Motion for smooth animations, GSAP for advanced motion effects, and includes comprehensive responsive design patterns for optimal viewing across all devices. The platform showcases enterprise-grade AI capabilities with instant setup processes, toll-free number integration, and business-specific customization options.",
+    "status": "Completed"
+  },
+  {
+    "title": "Lincoln E-Library Platform",
+    "category": "Web Development & UI/UX DESIGN",
     "tools": "Next.js, React.js, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Prisma",
     "image": "/assets/images/project-54.png",
     "link": "https://lincoln-e-library.vercel.app",
