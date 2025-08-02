@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Japheth Jerry - Software Engineer Portfolio',
     short_name: 'Japheth Jerry',
     description: 'Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my projects, skills, and experience.',
-    start_url: '/',
+    start_url: 'https://japhethjerry.space',
     display: 'standalone',
     background_color: '#0a0a0a',
     theme_color: '#ffbc5e',
