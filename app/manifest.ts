@@ -2,32 +2,26 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Japheth Jerry - Software Engineer Portfolio',
+    name: 'Japheth Jerry - Portfolio',
     short_name: 'Japheth Jerry',
-    description: 'Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my projects, skills, and experience.',
-    start_url: 'https://japhethjerry.space',
+    description: 'Full Stack Developer Portfolio',
+    start_url: '/',
     display: 'standalone',
-    background_color: '#0a0a0a',
-    theme_color: '#ffbc5e',
-    orientation: 'portrait-primary',
+    background_color: '#ffffff',
+    theme_color: '#000000',
     icons: [
       {
         src: '/assets/images/logo.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'maskable any',
+        purpose: 'maskable',
       },
       {
         src: '/assets/images/logo.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'maskable any',
+        purpose: 'maskable',
       },
     ],
-    categories: ['business', 'productivity', 'utilities'],
-    lang: 'en',
-    dir: 'ltr',
-    scope: '/',
-    prefer_related_applications: false,
   }
 } 
