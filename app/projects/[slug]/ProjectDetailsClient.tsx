@@ -81,9 +81,18 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
           {/* Right side - Info boxes */}
           <div className="project-details-info-column flex-1 d-flex flex-column">
-            <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto' }}>
+            <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
               <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img src="/assets/images/icon2.png" alt="Icon" />
+              <img
+                src="/assets/images/icon2.png"
+                alt="Icon"
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  left: 'unset',
+                  top: 'unset',
+                }}
+              />
               <div className="project-details-info">
                 <h3>{currentProject.title}</h3>
                 <p>{currentProject.brief}</p>
@@ -101,9 +110,18 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
             <br />
 
-            <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto' }}>
+            <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important' }}>
               <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img src="/assets/images/icon2.png" alt="Icon" />
+              <img
+                src="/assets/images/icon2.png"
+                alt="Icon"
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  left: 'unset',
+                  top: 'unset',
+                }}
+              />
               <div className="project-details-info">
                 <h3>About</h3>
                 <p>{currentProject.about}</p>
@@ -114,9 +132,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
         {/* Rest of the content */}
         <div data-aos="zoom-in">
-          <div className="project-about-2 d-flex shadow-box mb-24">
+          <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important'}}>
             <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-            <div className="left-details">
+            <div className="left-details" style={{ padding: '20px !important' }}>
               <img src="/assets/images/icon3.png" alt="Icon" />
               <ul>
                 <li>
