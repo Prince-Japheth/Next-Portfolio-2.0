@@ -23,6 +23,17 @@ export const projectData: Project[] = [
     status: 'Completed'
   },
   {
+    "title": "Lincoln E-Library Platform",
+    "category": "Web Development",
+    "tools": "Next.js, React.js, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Prisma",
+    "image": "/assets/images/project-54.png",
+    "link": "https://lincoln-e-library.vercel.app",
+    "brief": "A comprehensive digital library platform built with Next.js and Supabase, featuring user authentication, book management, course-based filtering, and an AI tutor system for educational institutions.",
+    "about": "This e-library platform demonstrates full-stack development capabilities through a modern, scalable web application with real-time database operations, user role management, and advanced content filtering systems.",
+    "description": "The platform features a sophisticated user management system with role-based access control (admin/student), comprehensive book catalog with public and private collections, course-based filtering, reading progress tracking, and an integrated AI tutor system. Built with Next.js 14 and TypeScript for type safety, the application uses Supabase for real-time database operations and authentication. The UI is crafted with Tailwind CSS and shadcn/ui components, providing a modern, responsive design with glassmorphism effects and smooth animations. Advanced features include PDF viewer integration, book request system, video content management, and analytics dashboard for administrators. The application implements proper security measures with Row Level Security (RLS) policies and includes comprehensive error handling and loading states throughout the user experience.",
+    "status": "Completed"
+  },
+  {
     title: 'Onarietta Remet | Official Site',
     category: 'Web Development',
     tools: 'React.js, Next.js, Tailwind, CSS',
@@ -65,7 +76,7 @@ export const projectData: Project[] = [
     about: 'This UI/UX project demonstrates my ability to create user-centered designs that enhance learning experiences. The dashboard provides clear information hierarchy and easy access to key features.',
     description: 'Designed a comprehensive educational dashboard for computer-aided instruction studies. Created an intuitive interface with a focus on user experience and accessibility. Developed a robust design system with reusable components to ensure consistency across multiple dashboard views. Implemented data visualization techniques using progressive disclosure patterns and interactive charts to present information clearly. Engineered a responsive layout system that maintains usability across different device types while adhering to accessibility standards (WCAG 2.1 AA). Designed a notification system with smart prioritization and contextual awareness. This project demonstrates my ability to create user-centered designs that effectively address educational needs while maintaining technical excellence.',
     status: 'Completed'
-  },  
+  },
   {
     title: 'LCDP School Management System',
     category: 'Web Development',
