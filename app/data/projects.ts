@@ -16,7 +16,7 @@ export const projectData: Project[] = [
     category: 'Web Development',
     tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
     image: '/assets/images/project_0.png',
-    link: 'https://yafetport.netlify.app',
+    link: 'https://japhethjerry.space',
     brief: 'A modern portfolio website showcasing my work as a software engineer and designer. Built with React.js and Next.js, featuring a responsive design and smooth animations.',
     about: 'This portfolio demonstrates my front-end development capabilities through a modern, performant website with unique interactive elements and a focus on user experience.',
     description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',

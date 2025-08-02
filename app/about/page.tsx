@@ -1,8 +1,30 @@
+import { Metadata } from "next";
 import ServicesIcon from "../components/ServicesIcon";
 import ResumeBox from "../components/ResumeBox";
 import ProfileContactBox from "../components/ProfileContactBox";
 import ContactBox from "../components/ContactBox";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "Learn more about Japheth Jerry - Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education background.",
+  keywords: ["About Japheth Jerry", "Software Engineer Background", "Web Developer Experience", "UI/UX Designer", "Graphic Designer", "Education"],
+  openGraph: {
+    title: "About Japheth Jerry - Software Engineer & Designer",
+    description: "Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
+    images: [
+      {
+        url: "/assets/images/me2.png",
+        width: 400,
+        height: 400,
+        alt: "Japheth Jerry - About Me",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://japhethjerry.space/about",
+  },
+};
 
 export default function About() {
   return (

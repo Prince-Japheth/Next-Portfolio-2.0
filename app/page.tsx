@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import ServicesIcon from "./components/ServicesIcon";
 import ResumeBox from "./components/ResumeBox";
 import ShowcaseProjectsBox from "./components/ShowcaseProjectsBox";
@@ -5,6 +6,27 @@ import ProfileContactBox from "./components/ProfileContactBox";
 import ContactBox from "./components/ContactBox";
 import ClientStatsBox from "./components/ClientStatsBox";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Japheth Jerry - Computer Software Engineer & Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and modern web development. Open for work opportunities.",
+  keywords: ["Software Engineer", "Cybersecurity", "React Developer", "Next.js", "TypeScript", "Web Development", "Open for Work"],
+  openGraph: {
+    title: "Japheth Jerry - Software Engineer & Cybersecurity Professional",
+    description: "Computer Software Engineer & Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and modern web development.",
+    images: [
+      {
+        url: "/assets/images/me.png",
+        width: 400,
+        height: 400,
+        alt: "Japheth Jerry - Software Engineer",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://japhethjerry.space",
+  },
+};
 
 export default function Home() {
   return (
