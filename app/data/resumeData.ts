@@ -249,7 +249,7 @@ export const educationData = [
   //   school: "Lincoln University College, Malaysia"
   // },
   {
-    period: "2023 - Present",
+    period: "2023 - 2025",
     title: "Diploma in Computer Software Engineering",
     school: "Lincoln University College, Nigeria",
     details: "Comprehensive Software Engineering Program",
