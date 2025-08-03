@@ -170,7 +170,7 @@ export const projectData: Project[] = [
     "category": "Web Development",
     "tools": "Next.js, MongoDB, PHP, MySQL",
     "image": "./assets/images/project-56.png",
-    "link": "https://aquillacybertechblog.vercel.app/",
+    "link": "http://aquillablog.vercel.app/",
     "brief": "A centralized blog platform for the Aquilla Cyber Tech community, designed to be a hub for knowledge sharing and community engagement.",
     "about": "This project involved creating a full-stack blogging platform. It features secure content publishing, user engagement tools like comments and likes, and an email notification system to keep users informed of new content.",
     "description": "Developed a centralized blog platform for the Aquilla Cyber Tech community, featuring a custom PHP/MySQL backend for content management and administration. Integrated MongoDB for efficient content storage and retrieval, ensuring high performance and scalability. Implemented user authentication and role-based access control to secure content publishing. Created an email notification system to alert users of new posts and replies, boosting community engagement by 35%. The platform supports rich text editing for a variety of content formats and includes features for user commenting and social sharing.",
