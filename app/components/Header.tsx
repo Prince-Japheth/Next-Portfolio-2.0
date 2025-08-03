@@ -118,7 +118,9 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className={pathname === "/projects" || pathname.startsWith("/projects/") ? "active" : ""}>
-                  <a href="/projects">Projects</a>
+                  <Link href="/projects" legacyBehavior>
+                    <a>Projects</a>
+                  </Link>
                 </li>
                 <li className={pathname === "/contact" ? "active" : ""}>
                   <Link href="/contact" legacyBehavior>

@@ -163,9 +163,9 @@ export const experienceData = [
     companyIcon: "https://qallie.online/favicon.ico",
     companyName: "Qallie",
     responsibilities: [
-      "Co-founded and lead the technology vision for Qallie, overseeing product architecture and engineering direction.",
-      "Drive full-stack development of innovative web and mobile solutions, ensuring scalability and security.",
-      "Collaborate with cross-functional teams to deliver products aligned with business goals and user needs."
+      "Co-founded Qallie, driving the full-stack development of the product's core web and mobile features.",
+      "Responsible for product design and UI/UX, translating early concepts into functional user experiences.",
+      "Building and iterating on the product's architecture to ensure future scalability and security."
     ]
   },
   {
@@ -243,11 +243,11 @@ export const experienceData = [
 ];
 
 export const educationData = [
-  {
-    period: "2025 - 2027 (Expected)",
-    title: "Bachelor of Computer Science (Hons) Networking & Cyber Security",
-    school: "Lincoln University College, Malaysia"
-  },
+  // {
+  //   period: "2025 - 2027 (Expected)",
+  //   title: "Bachelor of Computer Science (Hons) Networking & Cyber Security",
+  //   school: "Lincoln University College, Malaysia"
+  // },
   {
     period: "2023 - Present",
     title: "Diploma in Computer Software Engineering",

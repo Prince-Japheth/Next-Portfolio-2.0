@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-  description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Professional Full Stack Software Engineer and Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
+  description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Professional Full Stack Software Engineer and Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
   keywords: [
     "Japheth Jerry", 
     "Software Engineer", 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup | Full-stack development, mobile apps, secure web solutions.",
+    description: "Co-Founder & CTO at Qallie | Software Engineer and Uprising CyberSecurity Profesional | Full-stack development, mobile apps, secure web solutions.",
     images: [
       {
         url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Japheth Jerry — Full Stack Software Engineer",
-    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup & Spicodex | Full-stack development, mobile apps, secure web solutions.",
+    description: "Co-Founder & CTO at Qallie | Software Engineer and Uprising CyberSecurity Profesional | Full-stack development, mobile apps, secure web solutions.",
     images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim"
   }
