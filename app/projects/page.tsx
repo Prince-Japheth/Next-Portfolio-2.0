@@ -15,6 +15,13 @@ function ProjectsContent() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  // Scroll to top when search query changes
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [searchQuery]);
+
   const filteredProjects = projectData.filter(project => {
     // Category filter
     const categoryMatch = selectedCategory === 'All Projects' || 
@@ -109,7 +116,7 @@ function ProjectsContent() {
             <div className="search-input-group">
               <input
                 type="text"
-                placeholder="Search projects..."
+                placeholder="Search projects by name, category, tools, or brief..."
                 className="search-input"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

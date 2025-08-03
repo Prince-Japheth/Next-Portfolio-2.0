@@ -1597,19 +1597,21 @@ ol {
 
 /* Projects Controls */
 .projects-controls {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
     gap: 24px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1001;
+    padding: 15px 20px;
+    z-index: 1002;
+    transition: all 0.3s ease;
 }
 
 .search-container {
     flex: 1;
-    max-width: 500px;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -1626,7 +1628,7 @@ ol {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
     transition: all 0.3s ease;
-    min-width: 300px;
+    min-width: 600px;
     position: relative;
     z-index: 1002;
     pointer-events: auto;
@@ -1791,7 +1793,8 @@ ol {
     .projects-controls {
         flex-direction: column;
         gap: 20px;
-        padding: 0 10px;
+        padding: 0;
+        padding-top: 20px;
     }
     
     .search-container {

@@ -185,6 +185,38 @@
   text-decoration: none;
 }
 
+/* Loading Styles */
+.search-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 188, 94, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary_color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.search-loading p {
+  color: #888;
+  font-size: 16px;
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 768px) {
   .results-grid {
     grid-template-columns: 1fr;
