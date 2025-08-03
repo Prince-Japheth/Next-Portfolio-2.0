@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-  description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Professional Full Stack Software Engineer and Cybersecurity-aware Web Developer based in Nigeria. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
+  description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Professional Full Stack Software Engineer and Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
   keywords: [
     "Japheth Jerry", 
     "Software Engineer", 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup & Spicodex | Full-stack development, mobile apps, secure web solutions.",
+    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup | Full-stack development, mobile apps, secure web solutions.",
     images: [
       {
         url: "https://japhethjerry.space/assets/images/project_0.png",
@@ -77,7 +77,7 @@ export default function Home() {
                 <div className="infos">
                   <h4>Computer Software Engineer</h4>
                   <h1>Japheth Jerry.</h1>
-                  <p>Computer Software Engineer & Cybersecurity-Aware Developer. Co-founder of Qallie.</p>
+                  <p>Computer Software Engineer & Uprising Cybersecurity Professional. Co-founder of Qallie.</p>
                   <Link href="/about" className="about-btn">
                     <img src="/assets/images/icon.svg" alt="Button" />
                   </Link>
