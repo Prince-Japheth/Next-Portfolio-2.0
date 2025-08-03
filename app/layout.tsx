@@ -102,13 +102,13 @@ export default function RootLayout({
         <meta property="og:site_name" content="Japheth Jerry Portfolio" />
         <meta property="og:title" content="Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer" />
         <meta property="og:description" content="Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development." />
-        <meta property="og:image" content="https://japhethjerry.space/assets/images/project_0.png" />
+        <meta property="og:image" content="/project_0.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Japheth Jerry - Software Engineer Portfolio" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:secure_url" content="https://japhethjerry.space/assets/images/project_0.png" />
-        <meta property="og:image:url" content="https://japhethjerry.space/assets/images/project_0.png" />
+        <meta property="og:image:secure_url" content="/project_0.png" />
+        <meta property="og:image:url" content="/project_0.png" />
         <meta property="og:image:caption" content="Japheth Jerry - Software Engineer Portfolio" />
         <meta property="og:image:description" content="Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development." />
         <meta property="og:image:title" content="Japheth Jerry - Software Engineer Portfolio" />
@@ -117,7 +117,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer" />
         <meta name="twitter:description" content="Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development." />
-        <meta name="twitter:image" content="https://japhethjerry.space/assets/images/project_0.png" />
+        <meta name="twitter:image" content="/project_0.png" />
         <meta name="twitter:creator" content="@Yafet_Tim" />
 
         {/* Robots and SEO */}
@@ -155,7 +155,7 @@ export default function RootLayout({
               "jobTitle": "Software Engineer & Co-founder",
               "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Co-founder of Qallie, a technology company focused on innovative solutions.",
               "url": "https://japhethjerry.space",
-              "image": "https://japhethjerry.space/assets/images/project_0.png",
+              "image": "/project_0.png",
               "sameAs": [
                 "https://www.wikidata.org/wiki/Q135583647",
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
@@ -268,7 +268,7 @@ export default function RootLayout({
               "jobTitle": "Software Engineer & Co-founder",
               "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Co-founder of Qallie, a technology company focused on innovative solutions.",
               "url": "https://japhethjerry.space",
-              "image": "https://japhethjerry.space/assets/images/project_0.png",
+              "image": "/project_0.png",
               "sameAs": [
                 "https://www.wikidata.org/wiki/Q135583647",
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
