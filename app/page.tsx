@@ -8,7 +8,7 @@ import ClientStatsBox from "./components/ClientStatsBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
+  title: "Japheth Jerry — Software Engineer | React, Next.js, TypeScript",
   description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Professional Full Stack Software Engineer and Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
   keywords: [
     "Japheth Jerry", 
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Qallie.online"
   ],
   openGraph: {
-    title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
+    title: "Japheth Jerry — Software Engineer | React, Next.js, TypeScript",
     description: "Co-Founder & CTO at Qallie | Software Engineer and Uprising CyberSecurity Profesional | Full-stack development, mobile apps, secure web solutions.",
     images: [
       {
