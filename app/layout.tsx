@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type React from "react"; // Import React
 import ClientLayout from "./components/ClientLayout";
-import Breadcrumbs from "./components/Breadcrumbs";
+// import Breadcrumbs from "./components/Breadcrumbs";
 import "./globals.css"; // Add this import for global styles
 import NextTopLoader from "nextjs-toploader";
 
@@ -196,7 +196,7 @@ export default function RootLayout({
         />
         
         <ClientLayout>
-          <Breadcrumbs />
+          {/* <Breadcrumbs /> */}
           {children}
         </ClientLayout>
         <script src="/assets/js/jquery-3.6.4.js"></script>
