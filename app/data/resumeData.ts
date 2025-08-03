@@ -156,20 +156,31 @@ export const toolsAndProductivity = [
 
 export const experienceData = [
   {
-    period: "2020 - Present",
-    title: "Web Developer, UI/UX & Graphic Designer",
-    employmentType: "PART-TIME",
-    companyUrl: "https://weblaunchguys.online/",
-    companyIcon: "./assets/images/xtm.png",
-    companyName: "Web Launch Guys",
+    period: "2025 - Present",
+    title: "Co-Founder & CTO",
+    employmentType: "FULL-TIME",
+    companyUrl: "https://qallie.online/",
+    companyIcon: "https://qallie.online/favicon.ico",
+    companyName: "Qallie",
     responsibilities: [
-      "Developed responsive websites using React.js, Next.js, Angular, Vue.js, and Astro",
-      "Created UI/UX designs, wireframes, and prototypes",
-      "Built brand identities and marketing materials",
-      "Optimized websites for performance and SEO",
-      "Integrated RESTful APIs and GraphQL endpoints"
+      "Co-founded and lead the technology vision for Qallie, overseeing product architecture and engineering direction.",
+      "Drive full-stack development of innovative web and mobile solutions, ensuring scalability and security.",
+      "Collaborate with cross-functional teams to deliver products aligned with business goals and user needs."
     ]
-  },  
+  },
+  {
+    period: "2025 - Present",
+    title: "Software Engineer",
+    employmentType: "FULL-TIME",
+    companyUrl: "https://www.popkup.com/",
+    companyIcon: "https://www.popkup.com/lovable-uploads/0023e22d-e6f9-4b6c-accd-59e0b1eab9e4.png",
+    companyName: "Popkup",
+    responsibilities: [
+      "Spearheaded the development of intuitive web and mobile app interfaces, translating design concepts into functional prototypes and high-quality user experiences.",
+      "Managed effective integration and consumption of APIs, with a strong focus on mobile-optimized feature design.",
+      "Actively monitored industry trends to ensure innovative and compliant software solutions, meeting all project specifications and deadlines."
+    ]
+  },
   {
     period: "2024 - Present",
     title: "Software Engineer",
@@ -212,6 +223,21 @@ export const experienceData = [
       "Conducted user research and testing",
       "Developed brand guidelines",
       "Optimized website performance"
+    ]
+  },
+  {
+    period: "2020 - Present",
+    title: "Web Developer, UI/UX & Graphic Designer",
+    employmentType: "PART-TIME",
+    companyUrl: "https://weblaunchguys.online/",
+    companyIcon: "./assets/images/xtm.png",
+    companyName: "Web Launch Guys",
+    responsibilities: [
+      "Developed responsive websites using React.js, Next.js, Angular, Vue.js, and Astro",
+      "Created UI/UX designs, wireframes, and prototypes",
+      "Built brand identities and marketing materials",
+      "Optimized websites for performance and SEO",
+      "Integrated RESTful APIs and GraphQL endpoints"
     ]
   }
 ];

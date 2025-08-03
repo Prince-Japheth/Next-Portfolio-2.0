@@ -9,18 +9,36 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-  description:
-    "Japheth Jerry is a professional Full Stack Software Engineer and Cybersecurity-aware Web Developer based in Nigeria. Specializing in React, Next.js, TypeScript, and secure scalable web apps. Hire today. Co-founder of Qallie (qallie.online).",
+  description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Professional Full Stack Software Engineer and Cybersecurity-aware Web Developer based in Nigeria. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
   keywords: [
-    "Japheth Jerry", "Software Engineer", "Software Engineer Nigeria", "React Developer", "Next.js Developer", "TypeScript Developer", "Cybersecurity Professional", "MERN Stack Developer", "Laravel Developer", "UI/UX Developer", "Mobile App Developer Nigeria", "Hire Software Engineer", "Web Development Services", "Secure Web Developer", "Remote React Developer", "Nigeria-based Web Developer", "Hire Software Engineer", "Professional Portfolio Web Developer", "Responsive Frontend Developer", "Secure App Development", "Co-founder Qallie", "Qallie.online"
+    "Japheth Jerry", 
+    "Software Engineer", 
+    "Software Engineer Nigeria", 
+    "React Developer", 
+    "Next.js Developer", 
+    "TypeScript Developer", 
+    "Cybersecurity Professional", 
+    "MERN Stack Developer", 
+    "Laravel Developer", 
+    "UI/UX Developer", 
+    "Mobile App Developer Nigeria", 
+    "Hire Software Engineer", 
+    "Web Development Services", 
+    "Secure Web Developer", 
+    "Remote React Developer", 
+    "Nigeria-based Web Developer", 
+    "Professional Portfolio Web Developer", 
+    "Responsive Frontend Developer", 
+    "Secure App Development", 
+    "Co-founder & CTO Qallie", 
+    "Qallie.online"
   ],
   openGraph: {
     title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
-    description:
-      "Hire a results-driven Software Engineer. Specialized in React, Next.js, TypeScript, Laravel, and mobile-first secure web apps. Co-founder of Qallie.",
+    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup & Spicodex | Full-stack development, mobile apps, secure web solutions.",
     images: [
       {
-        url: "/assets/images/project_0.png",
+        url: "https://japhethjerry.space/assets/images/project_0.png",
         width: 1200,
         height: 630,
         alt: "Japheth Jerry - Software Engineer",
@@ -35,51 +53,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Japheth Jerry — Full Stack Software Engineer",
-    description: "Scalable, secure, high-performance web development services. Hire Japheth Jerry today. Co-founder of Qallie.",
-    site: "https://x.com/Yafet_Tim"
+    description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup & Spicodex | Full-stack development, mobile apps, secure web solutions.",
+    images: ["https://japhethjerry.space/assets/images/project_0.png"],
+    creator: "@Yafet_Tim"
   }
 };
 
 export default function Home() {
   return (
     <>
-      {/* SEO Content for better indexing */}
-      <div style={{ display: 'none' }}>
-        <h1>Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional</h1>
-        <h3>Co-founder of Qallie — https://qallie.online</h3>
-        <h3>Professional Mobile, Computer and Web Development Services with UI/UX Precision and Cybersecurity Awareness</h3>
-        <h3>Custom Full Stack Solutions: From Concept to Deployment</h3>
-
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Japheth Jerry",
-            "url": "https://japhethjerry.space",
-            "jobTitle": "Full Stack Software Engineer",
-            "worksFor": [
-              { "@type": "Organization", "name": "Qallie", "url": "https://qallie.online" }
-            ],
-            "knowsAbout": [
-              "React.js", "Next.js", "TypeScript", "Laravel", "MERN Stack",
-              "Cybersecurity in Web Development", "UI/UX Design",
-              "Mobile App Development", "Progressive Web Apps"
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "Nigeria"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/japheth-jerry-34a513274/",
-              "https://japhethjerry.space",
-              "https://www.instagram.com/_prince_yafet/",
-              "https://x.com/Yafet_Tim",
-              "https://qallie.online"
-            ]
-          })
-        }} />
-      </div>
-
       <section className="about-area">
         <div className="container">
           <div className="row">
