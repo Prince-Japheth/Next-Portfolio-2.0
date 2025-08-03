@@ -6,10 +6,49 @@
             $(".header-area .navbar").toggleClass('active');
         });
 
+        // Track if audio has been played using localStorage
+        let hasPlayedIntroAudio = localStorage.getItem('hasPlayedIntroAudio') === 'true';
+        
+        // For debugging: uncomment the line below to reset the audio state
+        // localStorage.removeItem('hasPlayedIntroAudio');
+
         // Handle preloader removal
         function removePreloader() {
             setTimeout(function () {
                 document.getElementById("preloader")?.classList.add("off");
+
+                // Play intro audio only on initial site load, not on navigation
+                if (!hasPlayedIntroAudio) {
+                    setTimeout(function () {
+                        const introAudio = new Audio('/assets/audio/intro.mp3');
+                        introAudio.volume = 0.3; // Set volume to 30%
+                        
+                        // Play audio with user interaction requirement
+                        const playIntroAudio = () => {
+                            introAudio.play().catch(function(error) {
+                                console.log('Audio play failed:', error);
+                            });
+                            // Remove the event listener after first interaction
+                            document.removeEventListener('click', playIntroAudio);
+                            document.removeEventListener('keydown', playIntroAudio);
+                            document.removeEventListener('touchstart', playIntroAudio);
+                        };
+                        
+                        // Add event listeners for user interaction
+                        document.addEventListener('click', playIntroAudio, { once: true });
+                        document.addEventListener('keydown', playIntroAudio, { once: true });
+                        document.addEventListener('touchstart', playIntroAudio, { once: true });
+                        
+                        // Also try to play immediately (may work if user has already interacted)
+                        introAudio.play().catch(function(error) {
+                            console.log('Initial audio play failed, waiting for user interaction');
+                        });
+                        
+                        // Mark as played and save to localStorage
+                        hasPlayedIntroAudio = true;
+                        localStorage.setItem('hasPlayedIntroAudio', 'true');
+                    }, 300); // Play audio 300ms after preloader disappears
+                }
 
                 setTimeout(function () {
                     AOS.init({
