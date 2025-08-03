@@ -8,24 +8,36 @@ import ClientStatsBox from "./components/ClientStatsBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Japheth Jerry - Software Engineer & Cybersecurity Professional. Expert in React, Next.js, TypeScript, and full-stack development. View portfolio, projects, and hire for web development services.",
-  keywords: ["Japheth Jerry", "Software Engineer", "Cybersecurity Professional", "React Developer", "Next.js Developer", "TypeScript Developer", "Web Developer", "Full Stack Developer", "Nigeria", "Hire Software Engineer", "Web Development Services"],
+  title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
+  description:
+    "Japheth Jerry is a professional Full Stack Software Engineer and Cybersecurity-aware Web Developer based in Nigeria. Specializing in React, Next.js, TypeScript, and secure scalable web apps. Hire today. Co-founder of Qallie (qallie.online).",
+  keywords: [
+    "Japheth Jerry", "Software Engineer", "Software Engineer Nigeria", "React Developer", "Next.js Developer", "TypeScript Developer", "Cybersecurity Professional", "MERN Stack Developer", "Laravel Developer", "UI/UX Developer", "Mobile App Developer Nigeria", "Hire Software Engineer", "Web Development Services", "Secure Web Developer", "Remote React Developer", "Nigeria-based Web Developer", "Hire Software Engineer", "Professional Portfolio Web Developer", "Responsive Frontend Developer", "Secure App Development", "Co-founder Qallie", "Qallie.online"
+  ],
   openGraph: {
-    title: "Japheth Jerry - Software Engineer & Cybersecurity Professional",
-    description: "Computer Software Engineer & Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and modern web development.",
+    title: "Japheth Jerry — Full Stack Software Engineer | React, Next.js, TypeScript",
+    description:
+      "Hire a results-driven Software Engineer. Specialized in React, Next.js, TypeScript, Laravel, and mobile-first secure web apps. Co-founder of Qallie.",
     images: [
       {
-        url: "/assets/images/me.png",
-        width: 400,
-        height: 400,
+        url: "/assets/images/project_0.png",
+        width: 1200,
+        height: 630,
         alt: "Japheth Jerry - Software Engineer",
-      },
+      }
     ],
+    url: "https://japhethjerry.space",
+    type: "website"
   },
   alternates: {
-    canonical: "https://japhethjerry.space",
+    canonical: "https://japhethjerry.space"
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Japheth Jerry — Full Stack Software Engineer",
+    description: "Scalable, secure, high-performance web development services. Hire Japheth Jerry today. Co-founder of Qallie.",
+    site: "https://x.com/Yafet_Tim"
+  }
 };
 
 export default function Home() {
@@ -33,10 +45,39 @@ export default function Home() {
     <>
       {/* SEO Content for better indexing */}
       <div style={{ display: 'none' }}>
-        <h1>Japheth Jerry - Software Engineer & Cybersecurity Professional</h1>
-        <p>Japheth Jerry is a skilled Software Engineer and Cybersecurity Professional with expertise in React, Next.js, TypeScript, and full-stack web development. Based in Nigeria, offering professional web development services and software engineering solutions.</p>
-        <h2>Software Engineer Services</h2>
-        <p>Professional software engineering services including web development, mobile app development, UI/UX design, and cybersecurity solutions. Specializing in React, Next.js, TypeScript, and modern web technologies.</p>
+        <h1>Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional</h1>
+        <h3>Co-founder of Qallie — https://qallie.online</h3>
+        <h3>Professional Mobile, Computer and Web Development Services with UI/UX Precision and Cybersecurity Awareness</h3>
+        <h3>Custom Full Stack Solutions: From Concept to Deployment</h3>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Japheth Jerry",
+            "url": "https://japhethjerry.space",
+            "jobTitle": "Full Stack Software Engineer",
+            "worksFor": [
+              { "@type": "Organization", "name": "Qallie", "url": "https://qallie.online" }
+            ],
+            "knowsAbout": [
+              "React.js", "Next.js", "TypeScript", "Laravel", "MERN Stack",
+              "Cybersecurity in Web Development", "UI/UX Design",
+              "Mobile App Development", "Progressive Web Apps"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Nigeria"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/japheth-jerry-34a513274/",
+              "https://japhethjerry.space",
+              "https://www.instagram.com/_prince_yafet/",
+              "https://x.com/Yafet_Tim",
+              "https://qallie.online"
+            ]
+          })
+        }} />
       </div>
 
       <section className="about-area">
@@ -44,7 +85,6 @@ export default function Home() {
           <div className="row">
             <div className="col-md-6" data-aos="zoom-in">
               <div className="about-me-box shadow-box">
-                {/* <Link className="overlay-link" href="/about" /> */}
                 <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
                 <div className="img-box">
                   <div className="profile-image-container">
@@ -55,7 +95,7 @@ export default function Home() {
                 <div className="infos">
                   <h4>Computer Software Engineer</h4>
                   <h1>Japheth Jerry.</h1>
-                  <p>Computer Software Engineer &amp; Uprising Cybersecurity Professional</p>
+                  <p>Computer Software Engineer & Cybersecurity-Aware Developer. Co-founder of Qallie.</p>
                   <Link href="/about" className="about-btn">
                     <img src="/assets/images/icon.svg" alt="Button" />
                   </Link>
@@ -68,8 +108,14 @@ export default function Home() {
                   <div className="banner shadow-box">
                     <div className="marquee">
                       <div>
-                        <span> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR
-                          <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /> OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" /></span>
+                        <span aria-label="Available for work opportunities">
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -103,6 +149,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
-

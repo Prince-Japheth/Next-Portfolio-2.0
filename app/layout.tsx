@@ -8,10 +8,10 @@ import NextTopLoader from "nextjs-toploader";
 export const metadata: Metadata = {
   metadataBase: new URL('https://japhethjerry.space'), // Replace with your actual domain
   title: {
-    default: "Japheth Jerry - Software Engineer | React, Next.js, TypeScript Developer",
+    default: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
     template: "%s | Japheth Jerry"
   },
-  description: "Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my portfolio, projects, and professional experience.",
+  description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
   keywords: [
     "Software Engineer",
     "React Developer",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://japhethjerry.space",
     siteName: "Japheth Jerry Portfolio",
-    title: "Japheth Jerry - Software Engineer | React, Next.js, TypeScript Developer",
-    description: "Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my portfolio, projects, and professional experience.",
+    title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
+    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
     images: [
       {
         url: "/assets/images/project_0.png",
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry - Software Engineer | React, Next.js, TypeScript Developer",
-    description: "Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my portfolio, projects, and professional experience.",
+    title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
+    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
     images: ["/assets/images/project_0.png"], // Same as OpenGraph
-    creator: "@japhethjerry", // Replace with your Twitter handle
+    creator: "@Yafet_Tim", // Replace with your Twitter handle
   },
   robots: {
     index: true,
@@ -95,7 +95,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
-        <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon" />
+        <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
+        <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+        <link rel="apple-touch-icon" href="/assets/images/logo.png" />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/css/aos.css" />
         <link rel="stylesheet" href="/assets/css/style.css" />
@@ -111,14 +113,15 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Japheth Jerry",
-              "jobTitle": "Software Engineer",
-              "description": "Software Engineer specializing in React, Next.js, TypeScript, and modern web development",
+              "jobTitle": "Software Engineer & Co-founder",
+              "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Co-founder of Qallie, a technology company focused on innovative solutions.",
               "url": "https://japhethjerry.space",
               "image": "https://japhethjerry.space/assets/images/project_0.png",
               "sameAs": [
                 "https://www.wikidata.org/wiki/Q135583647",
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
                 "https://www.instagram.com/_prince_yafet/",
+                "https://x.com/Yafet_Tim",
                 "https://japhethjerry.space/",
                 "https://qallie.online"
               ],
@@ -153,8 +156,8 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Japheth Jerry Portfolio",
               "url": "https://japhethjerry.space",
-              "logo": "https://japhethjerry.space/assets/images/logo.png",
-              "description": "Software Engineer specializing in React, Next.js, TypeScript, and modern web development",
+              "logo": "https://japhethjerry.space/assets/images/logo.svg",
+              "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Co-founder of Qallie.",
               "founder": {
                 "@type": "Person",
                 "name": "Japheth Jerry"
@@ -162,8 +165,28 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
                 "https://www.instagram.com/_prince_yafet/",
+                "https://x.com/Yafet_Tim",
                 "https://qallie.online"
               ]
+            })
+          }}
+        />
+        
+        {/* Qallie Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Qallie",
+              "url": "https://qallie.online",
+              "description": "Technology company focused on innovative solutions",
+              "founder": {
+                "@type": "Person",
+                "name": "Japheth Jerry",
+                "jobTitle": "Co-founder"
+              }
             })
           }}
         />
@@ -177,7 +200,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "Japheth Jerry Portfolio",
               "url": "https://japhethjerry.space",
-              "description": "Software Engineer specializing in React, Next.js, TypeScript, and modern web development",
+              "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development",
               "author": {
                 "@type": "Person",
                 "name": "Japheth Jerry"
