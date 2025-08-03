@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
     template: "%s | Japheth Jerry"
   },
-          description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+          description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
   keywords: [
     "Software Engineer",
     "React Developer",
@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     url: "https://japhethjerry.space",
     siteName: "Japheth Jerry Portfolio",
     title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
-    description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+    description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
     images: [
       {
-        url: "https://japhethjerry.space/assets/images/project_0.png",
+        url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
         width: 1200,
         height: 630,
         alt: "Japheth Jerry - Software Engineer Portfolio",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
-    description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
-    images: ["https://japhethjerry.space/assets/images/project_0.png"],
+    description: "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+    images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim",
   },
   robots: {
@@ -125,7 +125,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Japheth Jerry",
               "jobTitle": "Co-Founder & CTO at Qallie, Software Engineer",
-              "description": "Co-Founder & CTO at Qallie, Software Engineer at Popkup. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
+              "description": "Co-Founder & CTO at Qallie, Software Engineer at Popkup and Spicodex. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
               "url": "https://japhethjerry.space",
               "image": "https://japhethjerry.space/assets/images/me2.png",
               "sameAs": [

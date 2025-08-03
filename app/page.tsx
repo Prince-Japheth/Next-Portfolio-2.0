@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup | Full-stack development, mobile apps, secure web solutions.",
     images: [
       {
-        url: "https://japhethjerry.space/assets/images/project_0.png",
+        url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
         width: 1200,
         height: 630,
         alt: "Japheth Jerry - Software Engineer",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Japheth Jerry — Full Stack Software Engineer",
     description: "Co-Founder & CTO at Qallie | Software Engineer at Popkup & Spicodex | Full-stack development, mobile apps, secure web solutions.",
-    images: ["https://japhethjerry.space/assets/images/project_0.png"],
+    images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim"
   }
 };
