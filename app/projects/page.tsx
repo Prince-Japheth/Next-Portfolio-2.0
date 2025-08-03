@@ -11,12 +11,24 @@ function ProjectsContent() {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All Projects');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const filteredProjects = selectedCategory === 'All Projects'
-    ? projectData
-    : projectData.filter(project => project.category.toLowerCase().includes(selectedCategory.toLowerCase()));
+  const filteredProjects = projectData.filter(project => {
+    // Category filter
+    const categoryMatch = selectedCategory === 'All Projects' || 
+      project.category.toLowerCase().includes(selectedCategory.toLowerCase());
+    
+    // Search filter
+    const searchMatch = !searchQuery.trim() || 
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.tools.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.brief.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    return categoryMatch && searchMatch;
+  });
 
   const { firstColumnProjects, secondColumnProjects } = React.useMemo(() => {
     // Create a function to distribute projects between columns
@@ -91,30 +103,49 @@ function ProjectsContent() {
           <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`} <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
 
-        <div className="filter-button-container">
-          <button
-            ref={buttonRef}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="filter-button"
-            disabled={isFiltering}
-          >
-            <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
-          </button>
-
-          <div 
-            ref={dropdownRef}
-            className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
-          >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
-                disabled={isFiltering}
-              >
-                {category}
+        <div className="projects-controls">
+          {/* Search Bar */}
+          <div className="search-container">
+            <div className="search-input-group">
+              <input
+                type="text"
+                placeholder="Search projects..."
+                className="search-input"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button className="search-btn">
+                <i className="iconoir-search"></i>
               </button>
-            ))}
+            </div>
+          </div>
+
+          {/* Filter Button */}
+          <div className="filter-button-container">
+            <button
+              ref={buttonRef}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="filter-button"
+              disabled={isFiltering}
+            >
+              <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
+            </button>
+
+            <div 
+              ref={dropdownRef}
+              className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+                  disabled={isFiltering}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
