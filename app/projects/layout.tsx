@@ -3,7 +3,23 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies. View case studies, live demos, and project details.",
-  keywords: ["Portfolio Projects", "Web Development Projects", "React Projects", "Next.js Projects", "TypeScript Projects", "Case Studies", "Project Showcase"],
+  keywords: [
+    "Japheth",
+    "Jerry",
+    "Timileyin",
+    "Oluwatimileyin",
+    "Japheth Oluwatimileyin Jerry",
+    "Japheth Jerry", 
+    "Qallie",
+    "Co-Founder of Qallie",
+    "Portfolio Projects",
+    "Web Development Projects",
+    "React Projects",
+    "Next.js Projects",
+    "TypeScript Projects",
+    "Case Studies",
+    "Project Showcase"
+  ],
   openGraph: {
     title: "Japheth Jerry - Project Portfolio",
     description: "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies.",

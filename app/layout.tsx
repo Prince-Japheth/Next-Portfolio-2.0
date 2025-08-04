@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   },
           description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
   keywords: [
+    "Japheth",
+    "Jerry",
+    "Timileyin",
+    "Oluwatimileyin",
+    "Japheth Oluwatimileyin Jerry",
+    "Japheth Jerry", 
+    "Qallie",
+    "Co-Founder of Qallie",
     "Software Engineer",
     "React Developer",
     "Next.js Developer",
@@ -37,6 +45,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/favicon.ico',
+        type: 'image/x-icon',
+      },
+      {
         url: '/assets/images/logo.png',
         sizes: '32x32',
         type: 'image/png',
@@ -47,7 +59,7 @@ export const metadata: Metadata = {
       },
     ],
     apple: '/assets/images/logo.png',
-    shortcut: '/assets/images/logo.png',
+    shortcut: '/favicon.ico',
   },
   openGraph: {
     type: "website",
@@ -124,10 +136,17 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Japheth Jerry",
+              "alternateName": ["Timileyin", "Oluwatimileyin", "Japheth Oluwatimileyin Jerry", "Japheth Jerry", "Qallie"],
               "jobTitle": "Co-Founder & CTO at Qallie, Software Engineer",
               "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
               "url": "https://japhethjerry.space",
-              "image": "https://japhethjerry.space/assets/images/me2.png",
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://japhethjerry.space/assets/images/me2.png",
+                "width": 400,
+                "height": 400,
+                "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie"
+              },
               "sameAs": [
                 "https://www.wikidata.org/wiki/Q135583647",
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
@@ -176,6 +195,30 @@ export default function RootLayout({
           }}
         />
 
+        {/* Additional structured data for profile image optimization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ImageObject",
+              "name": "Japheth Jerry Profile Photo",
+              "description": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
+              "url": "https://japhethjerry.space/assets/images/me2.png",
+              "width": 400,
+              "height": 400,
+              "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
+              "creator": {
+                "@type": "Person",
+                "name": "Japheth Jerry"
+              },
+              "license": "https://japhethjerry.space",
+              "thumbnailUrl": "https://japhethjerry.space/assets/images/me2.png",
+              "contentUrl": "https://japhethjerry.space/assets/images/me2.png"
+            })
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -191,9 +234,11 @@ export default function RootLayout({
                 "name": "Japheth Jerry"
               },
               "sameAs": [
+                "https://www.wikidata.org/wiki/Q135583647",
                 "https://www.linkedin.com/in/japheth-jerry-34a513274/",
                 "https://www.instagram.com/_prince_yafet/",
                 "https://x.com/Yafet_Tim",
+                "https://japhethjerry.space/",
                 "https://qallie.online"
               ]
             })

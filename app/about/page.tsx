@@ -8,7 +8,22 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Me",
   description: "Learn more about Japheth Jerry - Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education background.",
-  keywords: ["About Japheth Jerry", "Software Engineer Background", "Web Developer Experience", "UI/UX Designer", "Graphic Designer", "Education"],
+  keywords: [
+    "About Japheth Jerry",
+    "Software Engineer Background",
+    "Web Developer Experience",
+    "UI/UX Designer",
+    "Graphic Designer",
+    "Education",
+    "Japheth",
+    "Jerry",
+    "Timileyin",
+    "Oluwatimileyin",
+    "Japheth Oluwatimileyin Jerry",
+    "Japheth Jerry", 
+    "Qallie",
+    "Co-Founder of Qallie"
+  ],
   openGraph: {
     title: "About Japheth Jerry - Software Engineer & Designer",
     description: "Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
