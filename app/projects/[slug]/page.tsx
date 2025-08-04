@@ -87,6 +87,10 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
 
   const currentProject = projectData[currentProjectIndex];
 
+  if (!currentProject) {
+    notFound();
+  }
+
   // Find the next project with an HTTP link
   let nextProjectIndex = (currentProjectIndex + 1) % projectData.length;
   while (!projectData[nextProjectIndex].link.startsWith('http')) {
@@ -102,8 +106,6 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
   if (!currentProject) {
     notFound();
   }
-
-  await new Promise(res => setTimeout(res, 400)); // Artificial delay for loader demo
 
   return (
     <>

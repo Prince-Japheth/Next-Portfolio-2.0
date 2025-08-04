@@ -15,6 +15,14 @@ interface ProjectDetailsClientProps {
 export default function ProjectDetailsClient({ currentProject, nextProject, allProjects }: ProjectDetailsClientProps) {
   const router = useRouter();
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Handle loading state
+  React.useEffect(() => {
+    if (currentProject) {
+      setIsLoading(false);
+    }
+  }, [currentProject]);
   const hasHttpLink = currentProject.link.startsWith('http');
   const isExternalLink = currentProject.link.includes('play') || 
                         currentProject.link.includes('figma') || 
@@ -57,6 +65,20 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     if (path.startsWith('http')) return path;
     return path.startsWith('/') ? path : `/${path}`;
   };
+
+  // Show loading state if project data is not ready
+  if (isLoading || !currentProject) {
+    return (
+      <main className="project-details-wrap">
+        <div className="container">
+          <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+            <div className="spinner" style={{ width: 40, height: 40, border: '4px solid #eee', borderTop: '4px solid #ffbc5e', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+            <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="project-details-wrap">
