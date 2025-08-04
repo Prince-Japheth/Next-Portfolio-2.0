@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Project } from '../../data/projects';
 import Browser from '../../components/Browser';
+import Link from 'next/link';
 
 interface ProjectDetailsClientProps {
   currentProject: Project;
@@ -186,9 +187,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
         <div className="container d-flex align-items-center justify-content-center" data-aos="zoom-in">
           {nextProject.link.startsWith('http') && (
-            <button onClick={handleNextProject} className="big-btn shadow-box">
+            <Link href={`/projects/${nextProject.title.toLowerCase().replace(/[|]/g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} className="big-btn shadow-box">
               Next Project: {nextProject.title}
-            </button>
+            </Link>
           )}
         </div>
       </div>
@@ -204,4 +205,4 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
       )}
     </main>
   );
-} 
+}
