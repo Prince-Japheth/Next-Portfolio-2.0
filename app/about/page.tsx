@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "About Japheth Jerry - Software Engineer & Designer",
-    description: "Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
+    description: "Co-Founder of Qallie, Computer Software Engineer, and Uprising Cybersecurity Professional with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
     images: [
       {
         url: "/assets/images/me2.png",
@@ -60,10 +60,9 @@ export default function About() {
             <div className="about-details-inner shadow-box">
               <img src="./assets/images/icon2.png" alt="Star" />
               <h1>Japheth Jerry</h1>
-              <p>I am a Computer Software Engineer with a focus on Web and Mobile Application Development,
-                UI/UX Design &amp; Graphic Design. I have a diverse range of experience having worked across
-                various
-                fields and industries.</p>
+              <p>
+                I am a Computer Software Engineer, Co-Founder of Qallie, and an Uprising Cybersecurity Professional. My expertise spans Web and Mobile Application Development, UI/UX Design, and Graphic Design. I have a diverse range of experience, having worked across various fields and industries.
+              </p>
             </div>
           </div>
         </div>

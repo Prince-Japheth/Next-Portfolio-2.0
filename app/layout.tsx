@@ -214,7 +214,10 @@ export default function RootLayout({
               },
               "license": "https://japhethjerry.space",
               "thumbnailUrl": "https://japhethjerry.space/assets/images/me2.png",
-              "contentUrl": "https://japhethjerry.space/assets/images/me2.png"
+              "contentUrl": "https://japhethjerry.space/assets/images/me2.png",
+              "creditText": "Japheth Jerry",
+              "copyrightNotice": "© 2024 Japheth Jerry. All rights reserved.",
+              "acquireLicensePage": "https://japhethjerry.space"
             })
           }}
         />
