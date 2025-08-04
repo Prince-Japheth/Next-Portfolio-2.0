@@ -1697,7 +1697,6 @@ ol {
     bottom: 2rem;
     right: 2rem;
     z-index: 1000;
-    pointer-events: auto;
 }
 
 .filter-button {

@@ -24,16 +24,16 @@ function ProjectsContent() {
 
   const filteredProjects = projectData.filter(project => {
     // Category filter
-    const categoryMatch = selectedCategory === 'All Projects' || 
+    const categoryMatch = selectedCategory === 'All Projects' ||
       project.category.toLowerCase().includes(selectedCategory.toLowerCase());
-    
+
     // Search filter
-    const searchMatch = !searchQuery.trim() || 
+    const searchMatch = !searchQuery.trim() ||
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.tools.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.brief.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     return categoryMatch && searchMatch;
   });
 
@@ -42,7 +42,7 @@ function ProjectsContent() {
     const interleaveProjects = (projects: typeof projectData) => {
       const firstColumn: typeof projectData = [];
       const secondColumn: typeof projectData = [];
-      
+
       // Distribute projects in the pattern: first column gets single items, second column gets pairs
       for (let i = 0; i < projects.length; i++) {
         if (i % 3 === 0) {
@@ -51,17 +51,17 @@ function ProjectsContent() {
           secondColumn.push(projects[i]);
         }
       }
-      
+
       return { firstColumnProjects: firstColumn, secondColumnProjects: secondColumn };
     };
-    
+
     return interleaveProjects(filteredProjects);
   }, [filteredProjects]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
-        dropdownRef.current && 
+        dropdownRef.current &&
         buttonRef.current &&
         !dropdownRef.current.contains(e.target as Node) &&
         !buttonRef.current.contains(e.target as Node)
@@ -81,14 +81,14 @@ function ProjectsContent() {
     if (typeof window !== "undefined" && window.showPreloader) {
       window.showPreloader();
     }
-    
+
     setSelectedCategory(newCategory);
     setIsDropdownOpen(false);
     const params = new URLSearchParams();
     if (newCategory !== 'All Projects') {
       params.set('category', newCategory);
     }
-    
+
     // Use Next.js router for navigation
     router.push(`/projects${params.toString() ? `?${params.toString()}` : ''}`);
   };
@@ -110,11 +110,11 @@ function ProjectsContent() {
           <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`} <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
 
-        <div className="projects-controls">
+        <div className="projects-controls" data-aos="fade-up">
           {/* Search Bar */}
           <div className="search-container">
             <div className="search-input-group">
-              <input 
+              <input
                 type="text"
                 placeholder="Search projects by name, category, tools, or brief..."
                 className="search-input"
@@ -124,34 +124,6 @@ function ProjectsContent() {
               <button className="search-btn">
                 <i className="iconoir-search"></i>
               </button>
-            </div>
-          </div>
-
-          {/* Filter Button */}
-          <div className="filter-button-container">
-            <button
-              ref={buttonRef}
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="filter-button"
-              disabled={isFiltering}
-            >
-              <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
-            </button>
-
-            <div 
-              ref={dropdownRef}
-              className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
-            >
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => handleCategoryChange(category)}
-                  className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
-                  disabled={isFiltering}
-                >
-                  {category}
-                </button>
-              ))}
             </div>
           </div>
         </div>
@@ -177,6 +149,34 @@ function ProjectsContent() {
                   <ProjectItem key={`desktop-second-${index}-${i}`} project={project} />
                 ))}
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Filter Button */}
+        <div className="filter-button-container">
+          <button
+            ref={buttonRef}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="filter-button"
+            disabled={isFiltering}
+          >
+            <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
+          </button>
+
+          <div
+            ref={dropdownRef}
+            className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+                disabled={isFiltering}
+              >
+                {category}
+              </button>
             ))}
           </div>
         </div>
