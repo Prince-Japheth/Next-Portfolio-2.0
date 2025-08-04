@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     "Qallie",
     "Co-Founder of Qallie",
     "Software Engineer",
-    "Software Engineer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
