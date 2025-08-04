@@ -43,7 +43,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   // Add effect to handle image loading
   useEffect(() => {
-    setIsImageLoading(true); // Reset loading state for each project
     const img = new window.Image();
     img.src = getImageSrc(project.image);
     img.onload = () => {
@@ -52,7 +51,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     img.onerror = () => {
       setIsImageLoading(false); // Also clear loading state on error
     };
-  }, [project.image, project.title]); // Add project.title as dependency to ensure unique loading per project
+  }, [project.image]);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -122,7 +121,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
                 alt={project.title}
-                key={`${project.title}-${project.image}`}
                 style={{ 
                   opacity: isImageLoading ? 0 : 1,
                   transition: 'opacity 0.3s ease-in-out',
@@ -155,7 +153,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                   <img 
                     src={getImageSrc(project.image)}
                     alt="Project blur" 
-                    key={`blur-${project.title}-${project.image}`}
                     className="blur-placeholder"
                     style={{ 
                       opacity: 0.5,

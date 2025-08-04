@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Nigeria-based Web Developer", 
     "Professional Portfolio Web Developer", 
     "Responsive Frontend Developer", 
-    "Secure App Development", 
+    "Secure App Development",  
     "Co-founder & CTO Qallie", 
     "Qallie.online"
   ],

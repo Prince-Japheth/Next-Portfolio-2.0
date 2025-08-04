@@ -250,7 +250,7 @@ export const educationData = [
   // },
   {
     period: "2023 - 2025",
-    title: "Diploma in Computer Software Engineering",
+    title: "Associate Degree in Computer Software Engineering",
     school: "Lincoln University College, Nigeria",
     details: "Comprehensive Software Engineering Program",
     coursework: [
