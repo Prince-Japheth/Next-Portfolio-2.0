@@ -139,22 +139,11 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
         }}
       />
       
-      <Suspense fallback={
-        <div className="project-details-wrap">
-          <div className="container">
-            <div className="loading-spinner">
-              <div className="spinner"></div>
-              <p>Loading project details...</p>
-            </div>
-          </div>
-        </div>
-      }>
-        <ProjectDetailsClient 
+      <ProjectDetailsClient 
           currentProject={currentProject} 
           nextProject={nextProject} 
           allProjects={projectData}
         />
-      </Suspense>
     </>
   );
 } 

@@ -64,7 +64,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         <div className="project-details-content d-flex gap-24" data-aos="zoom-in">
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
-            <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px' }}>
+            <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
               <img
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}

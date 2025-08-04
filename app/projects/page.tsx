@@ -114,7 +114,7 @@ function ProjectsContent() {
           {/* Search Bar */}
           <div className="search-container">
             <div className="search-input-group">
-              <input
+              <input 
                 type="text"
                 placeholder="Search projects by name, category, tools, or brief..."
                 className="search-input"

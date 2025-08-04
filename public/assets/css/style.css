@@ -1623,7 +1623,7 @@ ol {
     display: flex;
     gap: 8px;
     background: #1a1a1a;
-    border-radius: 16px;
+    border-radius: 100px;
     padding: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
@@ -1643,7 +1643,7 @@ ol {
     flex: 1;
     border: none;
     padding: 12px 16px;
-    border-radius: 12px;
+    border-radius: 100px;
     font-size: 14px;
     outline: none;
     background: transparent;
@@ -1667,7 +1667,7 @@ ol {
     background: var(--primary_color);
     border: none;
     padding: 12px 16px;
-    border-radius: 12px;
+    border-radius: 100px;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -3684,7 +3684,6 @@ ol {
 
 .project-details-image {
   position: relative;
-  height: 100%;
 }
 
 .project-details-image .project-details-2-img {

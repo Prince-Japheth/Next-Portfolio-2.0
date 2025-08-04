@@ -1,17 +1,14 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Loading() {
-  const [show, setShow] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 300); // 300ms delay
-    return () => clearTimeout(timer);
+    // Show the default preloader when this loading component mounts
+    if (typeof window !== "undefined" && window.showPreloader) {
+      window.showPreloader();
+    }
   }, []);
-  if (!show) return null;
-  return (
-    <div style={{ minHeight: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div className="spinner" style={{ width: 40, height: 40, border: '4px solid #eee', borderTop: '4px solid #ffbc5e', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-      <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
-    </div>
-  );
+
+  // Return null to let the default preloader handle the loading state
+  return null;
 } 
