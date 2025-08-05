@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Project } from '../../data/projects';
@@ -19,16 +19,17 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   const [isLoading, setIsLoading] = useState(true);
 
   // Handle loading state
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentProject) {
       setIsLoading(false);
     }
   }, [currentProject]);
-  const hasHttpLink = currentProject.link.startsWith('http');
-  const isExternalLink = currentProject.link.includes('play') || 
-                        currentProject.link.includes('figma') || 
-                        currentProject.link.includes('bondyt') || 
-                        currentProject.link.includes('topix');
+
+  const hasHttpLink = currentProject?.link?.startsWith('http');
+  const isExternalLink = currentProject?.link?.includes('play') || 
+                        currentProject?.link?.includes('figma') || 
+                        currentProject?.link?.includes('bondyt') || 
+                        currentProject?.link?.includes('topix');
 
   const handleNextProject = () => {
     const currentIndex = allProjects.findIndex(p => p.title === currentProject.title);
@@ -82,13 +83,14 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   }
 
   return (
-    <main className="project-details-wrap">
+    <main className="project-details-wrap" key={currentProject.title}>
       <div className="container">
         <div className="project-details-content d-flex gap-24" data-aos="zoom-in">
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
               <img
+                key={currentProject.image}
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
                 style={{

@@ -56,6 +56,17 @@ export const projectData: Project[] = [
     status: 'In Progress'
   },
   {
+    "title": "Web Launch Guys - Web Development & Design Agency",
+    "category": "Web Development & Design",
+    "tools": "HTML5, Tailwind CSS, GSAP, jQuery, Slick Slider, Magnific Popup, Remix Icons",
+    "image": "./assets/images/project-57.png",
+    "link": "https://weblaunchguys.netlify.app/",
+    "brief": "A modern, dynamic web development agency website showcasing professional web design and development services. Built with cutting-edge technologies and featuring smooth animations, responsive design, and an intuitive user interface.",
+    "about": "Web Launch Guys demonstrates excellence in web development through a sophisticated landing page that combines modern design elements, interactive animations, and comprehensive service showcases. The website effectively communicates the agency's expertise in delivering custom web solutions and brand identity services.",
+    "description": "The website features a dynamic hero section with smooth animations powered by GSAP, showcasing the agency's focus on building digital experiences that drive results. The platform includes comprehensive service sections highlighting custom web development, e-commerce solutions, and website maintenance. Built with HTML5 and styled using Tailwind CSS for modern, responsive design, the site incorporates interactive elements like project galleries, testimonial sliders, and animated preloaders. Key features include a modern navigation system, portfolio showcase with lightbox integration, client testimonials carousel, detailed service breakdowns, and a streamlined pricing structure. The website demonstrates technical excellence through performance optimization, responsive design implementation, and seamless integration of various JavaScript libraries for enhanced functionality. The design emphasizes user experience with clear call-to-actions, smooth scrolling, and intuitive navigation, while maintaining professional aesthetics with carefully chosen typography and color schemes.",
+    "status": "Completed"
+  },
+  {
     title: 'Bondyt Merchant',
     category: 'Mobile Development',
     tools: 'React Native, JavaScript',

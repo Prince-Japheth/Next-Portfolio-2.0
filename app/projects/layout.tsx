@@ -43,4 +43,4 @@ export default function ProjectsLayout({
   children: React.ReactNode;
 }) {
   return children;
-} 
+}
