@@ -103,6 +103,11 @@ function ProjectsContent() {
     }
   }, [isFiltering]);
 
+  // Create unique keys that include project title to prevent image mixing
+  const createUniqueKey = (project: any, prefix: string, index: number) => {
+    return `${prefix}-${project.title.replace(/\s+/g, '-').toLowerCase()}-${index}`;
+  };
+
   return (
     <section className="projects-area">
       <div className="container">
@@ -131,7 +136,10 @@ function ProjectsContent() {
         {/* Mobile view - single column */}
         <div className="d-md-none">
           {filteredProjects.map((project, index) => (
-            <ProjectItem key={`mobile-${index}`} project={project} />
+            <ProjectItem 
+              key={createUniqueKey(project, 'mobile', index)} 
+              project={project} 
+            />
           ))}
         </div>
 
@@ -139,14 +147,20 @@ function ProjectsContent() {
         <div className="row d-none d-md-flex">
           <div className="col-md-4">
             {firstColumnProjects.map((project, index) => (
-              <ProjectItem key={`desktop-first-${index}`} project={project} />
+              <ProjectItem 
+                key={createUniqueKey(project, 'desktop-first', index)} 
+                project={project} 
+              />
             ))}
           </div>
           <div className="col-md-8">
             {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
-              <div key={i} className="d-flex gap-24">
+              <div key={`row-${i}`} className="d-flex gap-24">
                 {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
-                  <ProjectItem key={`desktop-second-${index}-${i}`} project={project} />
+                  <ProjectItem 
+                    key={createUniqueKey(project, `desktop-second-${i}`, index)} 
+                    project={project} 
+                  />
                 ))}
               </div>
             ))}
@@ -188,7 +202,7 @@ function ProjectsContent() {
 // Main page component
 export default function Projects() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={null}>
       <ProjectsContent />
     </Suspense>
   );

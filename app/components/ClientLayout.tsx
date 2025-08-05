@@ -34,7 +34,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <circle className="front" cx="30" cy="30" r="27" />
             <circle className="glow" cx="30" cy="30" r="27" />
           </svg>
-          <svg className="circle-inner" viewBox="0 0 34 34">
+          <svg className="circle-inner" viewBox="0 0 34 34"> 
             <circle className="back" cx="17" cy="17" r="14" />
             <circle className="front" cx="17" cy="17" r="14" />
             <circle className="glow" cx="17" cy="17" r="14" />

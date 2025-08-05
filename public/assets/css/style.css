@@ -1955,6 +1955,9 @@ ol {
     margin-bottom: 15px;
 }
 
+.projects-area .project-item-card {
+    height: fit-content !important;
+}
 .projects-area .project-item {
     margin-bottom: 18px;
     padding: 16px 16px 26px 16px;
@@ -2151,14 +2154,14 @@ ol {
 }
 
 .project-details-wrap .project-about-2 {
-    padding: 36px;
+    padding: 20px;
     gap: 80px;
 }
 
 .project-details-wrap .project-about-2 .left-details {
     position: relative;
     flex: none;
-    padding: 30px 54px;
+    padding: 30px;
     width: 290px;
 }
 
@@ -3380,7 +3383,6 @@ ol {
 
     .project-details-wrap .project-infos-wrap {
         flex-direction: column;
-        padding: 50px 24px 24px 24px;
     }
 
     .about-area .about-details .section-heading {

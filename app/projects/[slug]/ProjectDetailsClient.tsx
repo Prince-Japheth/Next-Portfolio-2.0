@@ -18,18 +18,42 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Handle loading state
+  // Handle loading state using the site preloader
   useEffect(() => {
-    if (currentProject) {
-      setIsLoading(false);
+    // Show preloader on mount
+    if (typeof window !== 'undefined' && window.showPreloader) {
+      window.showPreloader();
     }
-  }, [currentProject]);
 
-  const hasHttpLink = currentProject?.link?.startsWith('http');
-  const isExternalLink = currentProject?.link?.includes('play') || 
-                        currentProject?.link?.includes('figma') || 
-                        currentProject?.link?.includes('bondyt') || 
-                        currentProject?.link?.includes('topix');
+    // Hide preloader after component is ready
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      if (typeof window !== 'undefined' && window.hidePreloader) {
+        window.hidePreloader();
+      }
+    }, 800); // Give enough time for proper loading
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Early return if no currentProject
+  if (!currentProject) {
+    return (
+      <main className="project-details-wrap">
+        <div className="container">
+          <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+            <div>Project not found</div>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  const hasHttpLink = currentProject.link.startsWith('http');
+  const isExternalLink = currentProject.link.includes('play') || 
+                        currentProject.link.includes('figma') || 
+                        currentProject.link.includes('bondyt') || 
+                        currentProject.link.includes('topix');
 
   const handleNextProject = () => {
     const currentIndex = allProjects.findIndex(p => p.title === currentProject.title);
@@ -68,29 +92,20 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     return path.startsWith('/') ? path : `/${path}`;
   };
 
-  // Show loading state if project data is not ready
-  if (isLoading || !currentProject) {
-    return (
-      <main className="project-details-wrap">
-        <div className="container">
-          <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
-            <div className="spinner" style={{ width: 40, height: 40, border: '4px solid #eee', borderTop: '4px solid #ffbc5e', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-            <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
-          </div>
-        </div>
-      </main>
-    );
+  // Show loading state only if still loading and after a brief delay
+  if (isLoading) {
+    // Don't render anything, let the preloader handle it
+    return null;
   }
 
   return (
-    <main className="project-details-wrap" key={currentProject.title}>
+    <main className="project-details-wrap">
       <div className="container">
         <div className="project-details-content d-flex gap-24" data-aos="zoom-in">
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
               <img
-                key={currentProject.image}
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
                 style={{
@@ -100,6 +115,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                   objectFit: 'cover'
                 }}
                 className="shadow-box"
+                key={`project-image-${currentProject.title}`} // Add key for proper re-rendering
               />
             </div>
           </div>

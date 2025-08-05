@@ -94,7 +94,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   return (
     <>
-      <div data-aos="zoom-in" className="flex-1 d-flex flex-column" style={{ height: 'fit-content !important' }}>
+      <div data-aos="zoom-in" className="project-item-card flex-1 d-flex flex-column">
         <div className="project-item flex-1 shadow-box">
           <a 
             className="overlay-link" 

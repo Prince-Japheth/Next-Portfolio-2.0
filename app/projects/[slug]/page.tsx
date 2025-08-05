@@ -103,10 +103,6 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
   }
   const nextProject = projectData[nextProjectIndex];
 
-  if (!currentProject) {
-    notFound();
-  }
-
   return (
     <>
       {/* Structured Data for Project */}
@@ -141,11 +137,13 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
         }}
       />
       
-      <ProjectDetailsClient 
+      <Suspense fallback={null}>
+        <ProjectDetailsClient 
           currentProject={currentProject} 
           nextProject={nextProject} 
           allProjects={projectData}
         />
+      </Suspense>
     </>
   );
-} 
+}
