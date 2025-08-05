@@ -1605,7 +1605,7 @@ ol {
     margin-bottom: 40px;
     gap: 24px;
     padding: 15px 20px;
-    z-index: 1002;
+    z-index: 900;
     transition: all 0.3s ease;
 }
 
@@ -1615,7 +1615,7 @@ ol {
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: 1002;
+    z-index: 900;
     pointer-events: auto;
 }
 
@@ -1630,7 +1630,7 @@ ol {
     transition: all 0.3s ease;
     min-width: 600px;
     position: relative;
-    z-index: 1002;
+    z-index: 900;
     pointer-events: auto;
 }
 
@@ -1651,7 +1651,7 @@ ol {
     font-family: inherit;
     pointer-events: auto;
     position: relative;
-    z-index: 1002;
+    z-index: 900;
 }
 
 .search-input::placeholder {
@@ -1678,7 +1678,7 @@ ol {
     font-size: 16px;
     pointer-events: auto;
     position: relative;
-    z-index: 1002;
+    z-index: 900;
 }
 
 .search-btn:hover {
@@ -1696,7 +1696,7 @@ ol {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 1000;
+    z-index: 900;
 }
 
 .filter-button {
