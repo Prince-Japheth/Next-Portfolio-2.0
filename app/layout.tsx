@@ -163,9 +163,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Check if we're on the Netlify domain
-  const isNetlifyDomain = typeof window !== 'undefined' && window.location.hostname.includes('netlify.app');
-  
+
   return (
     <html lang="en" dir="ltr">
       <head>
