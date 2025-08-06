@@ -1,0 +1,7 @@
+# Redirect Netlify domain to main domain
+/* https://japhethjerry.space/:splat 301
+
+# Add noindex headers for Netlify domain
+/* 
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+  200 
