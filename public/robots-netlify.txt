@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /
-
-# Block all search engines from indexing this site
-# This is a staging/development domain that should not be indexed 
