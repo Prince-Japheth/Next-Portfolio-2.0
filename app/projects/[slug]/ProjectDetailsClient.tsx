@@ -16,25 +16,6 @@ interface ProjectDetailsClientProps {
 export default function ProjectDetailsClient({ currentProject, nextProject, allProjects }: ProjectDetailsClientProps) {
   const router = useRouter();
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Handle loading state using the site preloader
-  useEffect(() => {
-    // Show preloader on mount
-    if (typeof window !== 'undefined' && window.showPreloader) {
-      window.showPreloader();
-    }
-
-    // Hide preloader after component is ready
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      if (typeof window !== 'undefined' && window.hidePreloader) {
-        window.hidePreloader();
-      }
-    }, 800); // Give enough time for proper loading
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Early return if no currentProject
   if (!currentProject) {
@@ -92,12 +73,6 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     return path.startsWith('/') ? path : `/${path}`;
   };
 
-  // Show loading state only if still loading and after a brief delay
-  if (isLoading) {
-    // Don't render anything, let the preloader handle it
-    return null;
-  }
-
   return (
     <main className="project-details-wrap">
       <div className="container">
@@ -105,9 +80,11 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
-              <img
+              <Image
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
+                width={600}
+                height={400}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -116,6 +93,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                 }}
                 className="shadow-box"
                 key={`project-image-${currentProject.title}`} // Add key for proper re-rendering
+                priority
               />
             </div>
           </div>
@@ -123,10 +101,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Right side - Info boxes */}
           <div className="project-details-info-column flex-1 d-flex flex-column">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
-              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img
+              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
+              <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
+                width={32}
+                height={32}
                 style={{
                   position: 'absolute',
                   right: 0,
@@ -152,10 +132,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
             <br />
 
             <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important' }}>
-              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img
+              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
+              <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
+                width={32}
+                height={32}
                 style={{
                   position: 'absolute',
                   right: 0,
@@ -174,9 +156,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         {/* Rest of the content */}
         <div data-aos="zoom-in">
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important'}}>
-            <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
+            <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
             <div className="left-details" style={{ padding: '20px !important' }}>
-              <img src="/assets/images/icon3.png" alt="Icon" />
+              <Image src="/assets/images/icon3.png" alt="Icon" width={32} height={32} />
               <ul>
                 <li>
                   <p>Category</p>

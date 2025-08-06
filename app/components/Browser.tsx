@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useBrowser } from '../context/BrowserContext';
 import '../../public/assets/css/browser.css';
 
@@ -15,25 +15,59 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [currentUrl, setCurrentUrl] = useState(url);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [showCloseTooltip, setShowCloseTooltip] = useState(false);
   const [showExpandTooltip, setShowExpandTooltip] = useState(false);
   const { minimizeBrowser, activeBrowser, closeBrowser } = useBrowser();
+  
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const loadingTimeoutRef = useRef<NodeJS.Timeout>();
+  const initialLoadTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     setCurrentUrl(url);
+    setIsLoading(true);
+    setLoadError(false);
   }, [url]);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setIsLoading(true);
+      setLoadError(false);
       setShowCloseTooltip(true);
       setShowExpandTooltip(true);
-      const timer = setTimeout(() => {
+      
+      // Reduced timeout for better UX - 5 seconds instead of 15
+      loadingTimeoutRef.current = setTimeout(() => {
+        if (isLoading) {
+          setLoadError(true);
+          setIsLoading(false);
+        }
+      }, 5000);
+      
+      // Initial load timeout - show iframe after 2 seconds regardless
+      initialLoadTimeoutRef.current = setTimeout(() => {
+        if (isLoading) {
+          setIsLoading(false);
+          // Don't set error, just show the iframe
+        }
+      }, 2000);
+      
+      const tooltipTimer = setTimeout(() => {
         setShowCloseTooltip(false);
         setShowExpandTooltip(false);
       }, 1000);
-      return () => clearTimeout(timer);
+      
+      return () => {
+        if (loadingTimeoutRef.current) {
+          clearTimeout(loadingTimeoutRef.current);
+        }
+        if (initialLoadTimeoutRef.current) {
+          clearTimeout(initialLoadTimeoutRef.current);
+        }
+        clearTimeout(tooltipTimer);
+      };
     } else {
       document.body.style.overflow = 'auto';
       setShowCloseTooltip(false);
@@ -65,7 +99,54 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
 
   const handleIframeLoad = () => {
     setIsLoading(false);
+    setLoadError(false);
+    
+    // Clear timeouts when iframe loads successfully
+    if (loadingTimeoutRef.current) {
+      clearTimeout(loadingTimeoutRef.current);
+    }
+    if (initialLoadTimeoutRef.current) {
+      clearTimeout(initialLoadTimeoutRef.current);
+    }
   };
+
+  const handleIframeError = () => {
+    setIsLoading(false);
+    setLoadError(true);
+    
+    // Clear timeouts on error
+    if (loadingTimeoutRef.current) {
+      clearTimeout(loadingTimeoutRef.current);
+    }
+    if (initialLoadTimeoutRef.current) {
+      clearTimeout(initialLoadTimeoutRef.current);
+    }
+  };
+
+  // Add this to check if iframe content is accessible
+  const checkIframeContent = () => {
+    if (iframeRef.current) {
+      try {
+        // Try to access iframe content - if blocked, this will throw
+        const iframeDoc = iframeRef.current.contentDocument;
+        if (iframeDoc && iframeDoc.readyState === 'complete') {
+          handleIframeLoad();
+        }
+      } catch (error) {
+        // Iframe is blocked or cross-origin, but might still be loading
+        // Don't set error immediately
+        console.log('Iframe content not accessible, but may be loading');
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen && !isLoading && !loadError) {
+      // Check iframe content periodically
+      const contentCheckInterval = setInterval(checkIframeContent, 1000);
+      return () => clearInterval(contentCheckInterval);
+    }
+  }, [isOpen, isLoading, loadError]);
 
   const handleClose = () => {
     closeBrowser();
@@ -136,11 +217,41 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
               <span>Loading {title}... <br/> Please wait...</span>
             </div>
           )}
+          {loadError && (
+            <div className="browser-loading">
+              <div className="browser-error-icon">⚠️</div>
+              <span>Unable to load {title} <br/> 
+                <small>This site may not allow embedding</small><br/>
+                <button 
+                  onClick={handleOpenInNewTab}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    color: '#fff',
+                    padding: '8px 16px',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    marginTop: '8px'
+                  }}
+                >
+                  Open in New Tab
+                </button>
+              </span>
+            </div>
+          )}
           <iframe 
+            ref={iframeRef}
             src={url} 
             title={title}
             onLoad={handleIframeLoad}
-            style={{ opacity: isLoading ? 0 : 1 }}
+            onError={handleIframeError}
+            style={{ 
+              opacity: isLoading ? 0.3 : 1,
+              transition: 'opacity 0.3s ease'
+            }}
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+            // Add loading attribute for better performance
+            loading="eager"
           />
         </div>
       </div>
@@ -148,4 +259,4 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
   );
 };
 
-export default Browser; 
+export default Browser;

@@ -193,13 +193,18 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           </div>
         </div>
         {project.link.startsWith('http') && (
-          <Link
+          <a
             href={`/projects/${slug}`}
             className="view-details-btn mb-5 shadow-box"
             title="View Details"
+            onClick={(e) => {
+              // Force a full page reload to avoid navigation issues
+              e.preventDefault();
+              window.location.href = `/projects/${slug}`;
+            }}
           >
             View Details
-          </Link>
+          </a>
         )}
       </div>
 

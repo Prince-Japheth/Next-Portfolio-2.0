@@ -311,6 +311,11 @@
   animation: spin 1s linear infinite;
 }
 
+.browser-error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
