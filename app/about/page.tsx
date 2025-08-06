@@ -6,7 +6,7 @@ import ContactBox from "../components/ContactBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Me",
+  title: "About Japheth Jerry",
   description: "Learn more about Japheth Jerry - Computer Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education background.",
   keywords: [
     "Japheth",
@@ -87,7 +87,7 @@ export default function About() {
               Self-summary <img src="./assets/images/star-2.png" alt="Star" /></h1>
             <div className="about-details-inner shadow-box">
               <img src="./assets/images/icon2.png" alt="Star" />
-              <h1>Japheth Jerry</h1>
+              <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
                 I am a Computer Software Engineer, Co-Founder of Qallie, and an Uprising Cybersecurity Professional. My expertise spans Web and Mobile Application Development, UI/UX Design, and Graphic Design. I have a diverse range of experience, having worked across various fields and industries.
               </p>
