@@ -7,7 +7,7 @@ import Terminal from "./Terminal";
 
 declare global {
   interface Window {
-    showPreloader: () => void;
+    showPreloader?: () => void;
     reinitCursorEffect?: () => void;
   }
 }
