@@ -102,12 +102,12 @@ export default function About() {
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
-                  <p className="date">2020 - Present</p>
-                  <h2>Web Developer, UI/UX & Graphic Designer</h2>
-                  <p className="type">Web Launch Guys</p>
+                  <p className="date">2025 - Present</p>
+                  <h2>Software Engineer</h2>
+                  <p className="type">Popkup</p>
                 </li>
                 <li>
-                  <p className="date">2023 - Present</p>
+                  <p className="date">2024 - 2025</p>
                   <h2>Software Engineer</h2>
                   <p className="type">Spicodex</p>
                 </li>
@@ -124,7 +124,7 @@ export default function About() {
               <ul>
                 <li>
                   <p className="date">2023 - 2025</p>
-                  <h2>Diploma in Software Engineering &amp; Cybersecurity</h2>
+                  <h2>Associate Degree in Software Engineering &amp; Cybersecurity</h2>
                   <p className="type">Lincoln University College</p>
                 </li>
                 <li>
