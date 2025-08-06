@@ -103,13 +103,13 @@ export default function About() {
               <ul style={{ display: 'inline-block' }}>
                 <li>
                   <p className="date">2025 - Present</p>
-                  <h2>Software Engineer</h2>
-                  <p className="type">Popkup</p>
+                  <h2>Co-Founder & CTO</h2>
+                  <p className="type">Qallie</p>
                 </li>
                 <li>
-                  <p className="date">2024 - 2025</p>
+                  <p className="date">2025 - Present</p>
                   <h2>Software Engineer</h2>
-                  <p className="type">Spicodex</p>
+                  <p className="type">Popkup</p>
                 </li>
               </ul>
               <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>

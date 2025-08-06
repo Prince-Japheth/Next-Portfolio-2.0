@@ -70,7 +70,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   // Helper function to ensure absolute paths
   const getImagePath = (path: string) => {
     if (path.startsWith('http')) return path;
-    return path.startsWith('/') ? path : `/${path}`;
+    // Remove leading ./ and ensure it starts with /
+    const cleanPath = path.replace(/^\.\//, '');
+    return cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
   };
 
   return (
