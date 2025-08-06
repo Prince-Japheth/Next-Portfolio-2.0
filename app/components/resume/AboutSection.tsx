@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <div className="resume-about" data-aos="zoom-in">
       <h2>About Me</h2>
-      <p>I'm Japheth, a Computer Software Engineer; Full-Stack Web Developer, Cross-Platform
+      <p>I'm Japheth Oluwatimilehin Jerry, a Computer Software Engineer; Full-Stack Web Developer, Cross-Platform
         Mobile App
         Developer, UI/UX Designer &amp; Graphic Designer with over 3 years of experience in building
         responsive, user-friendly
