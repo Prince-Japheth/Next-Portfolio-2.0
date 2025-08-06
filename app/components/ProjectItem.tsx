@@ -43,6 +43,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   // Add effect to handle image loading
   useEffect(() => {
+    setIsImageLoading(true); // Reset loading state when project changes
     const img = new window.Image();
     img.src = getImageSrc(project.image);
     img.onload = () => {
@@ -51,7 +52,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     img.onerror = () => {
       setIsImageLoading(false); // Also clear loading state on error
     };
-  }, [project.image]);
+  }, [project.image, project.title]); // Also depend on project title to ensure re-render when project changes
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -118,6 +119,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               }}
             >
               <img 
+                key={project.image} // Force re-render when image changes
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
                 alt={project.title}
@@ -151,6 +153,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                     <div className="image-loading-spinner"></div>
                   </div>
                   <img 
+                    key={`blur-${project.image}`} // Force re-render when image changes
                     src={getImageSrc(project.image)}
                     alt="Project blur" 
                     className="blur-placeholder"

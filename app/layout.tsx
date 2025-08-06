@@ -68,6 +68,7 @@ export const metadata: Metadata = {
       {
         url: '/favicon.ico',
         type: 'image/x-icon',
+        sizes: '32x32',
       },
       {
         url: '/assets/images/logo.png',
@@ -79,8 +80,40 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
     ],
-    apple: '/assets/images/logo.png',
+    apple: [
+      {
+        url: '/assets/images/logo.png',
+        sizes: '180x180',
+        type: 'image/png',
+      }
+    ],
     shortcut: '/favicon.ico',
+    other: [
+      {
+        rel: 'icon',
+        url: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        rel: 'icon',
+        url: '/assets/images/logo.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        rel: 'icon',
+        url: '/assets/images/logo.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        url: '/assets/images/logo.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
   },
   openGraph: {
     type: "website",
@@ -133,6 +166,13 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
+        {/* Favicon Links */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo.png" />
+        <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
+        
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -157,9 +197,16 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Japheth Jerry",
-              "alternateName": ["Timileyin", "Oluwatimileyin", "Japheth Oluwatimileyin Jerry", "Japheth Jerry", "Qallie"],
+              "alternateName": [
+                "Timileyin", 
+                "Oluwatimileyin", 
+                "Japheth Oluwatimileyin Jerry", 
+                "Japheth Jerry",
+                "Yafet",
+                "Prince Yafet"
+              ],
               "jobTitle": "Co-Founder & CTO at Qallie, Software Engineer",
-              "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
+              "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Professional. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
               "url": "https://japhethjerry.space",
               "image": {
                 "@type": "ImageObject",
@@ -189,7 +236,9 @@ export default function RootLayout({
                 "Cybersecurity",
                 "Web Development",
                 "Frontend Development",
-                "Full Stack Development"
+                "Full Stack Development",
+                "Graphic Design",
+                "Software Engineering"
               ],
               "worksFor": [
                 {
@@ -211,6 +260,15 @@ export default function RootLayout({
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "US"
+              },
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Software Engineer",
+                "description": "Full Stack Software Engineer specializing in React, TypeScript, and modern web development"
+              },
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Lincoln University College"
               }
             })
           }}
@@ -308,6 +366,33 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 "target": "https://japhethjerry.space/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+
+        {/* Additional SEO Schema for better search rankings */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": "Japheth Jerry Portfolio",
+              "author": {
+                "@type": "Person",
+                "name": "Japheth Jerry",
+                "alternateName": ["Japheth Jerry", "Yafet", "Prince Yafet"],
+                "jobTitle": "Software Engineer",
+                "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising Cybersecurity Professional"
+              },
+              "description": "Portfolio website of Japheth Jerry - Software Engineer specializing in React, TypeScript, and modern web development",
+              "url": "https://japhethjerry.space",
+              "mainEntity": {
+                "@type": "Person",
+                "name": "Japheth Jerry",
+                "jobTitle": "Software Engineer",
+                "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising Cybersecurity Professional"
               }
             })
           }}

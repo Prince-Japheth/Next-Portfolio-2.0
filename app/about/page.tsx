@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "About Japheth Jerry - Software Engineer & Designer",
-    description: "Co-Founder of Qallie, Computer Software Engineer, and Uprising Cybersecurity Professional with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
+    description: "Co-Founder and CTO of Qallie, Computer Software Engineer, and Uprising Cybersecurity Professional with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
     images: [
       {
         url: "/assets/images/me2.png",
@@ -89,7 +89,7 @@ export default function About() {
               <img src="./assets/images/icon2.png" alt="Star" />
               <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
-                I am a Computer Software Engineer, Co-Founder of Qallie, and an Uprising Cybersecurity Professional. My expertise spans Web and Mobile Application Development, UI/UX Design, and Graphic Design. I have a diverse range of experience, having worked across various fields and industries.
+                Computer Software Engineer, Co-Founder &amp; CTO of Qallie, and an Uprising Cybersecurity Professional. My expertise spans Web and Mobile Application Development, UI/UX Design, and Graphic Design. I have a diverse range of experience, having worked across various fields and industries.
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function About() {
               <ul>
                 <li>
                   <p className="date">2023 - 2025</p>
-                  <h2>Associate Degree in Software Engineering &amp; Cybersecurity</h2>
+                  <h2>Associate Degree in Software Engineering</h2>
                   <p className="type">Lincoln University College</p>
                 </li>
                 <li>

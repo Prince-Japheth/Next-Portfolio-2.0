@@ -103,9 +103,11 @@ function ProjectsContent() {
     }
   }, [isFiltering]);
 
-  // Create unique keys that include project title to prevent image mixing
+  // Create unique keys that include project title and image to prevent image mixing
   const createUniqueKey = (project: any, prefix: string, index: number) => {
-    return `${prefix}-${project.title.replace(/\s+/g, '-').toLowerCase()}-${index}`;
+    // Find the original index of the project in the full projectData array
+    const originalIndex = projectData.findIndex(p => p.title === project.title);
+    return `${prefix}-${originalIndex}-${project.title.replace(/\s+/g, '-').toLowerCase()}-${project.image.replace(/[^a-zA-Z0-9]/g, '')}-${index}`;
   };
 
   return (
@@ -137,7 +139,7 @@ function ProjectsContent() {
         <div className="d-md-none">
           {filteredProjects.map((project, index) => (
             <ProjectItem 
-              key={createUniqueKey(project, 'mobile', index)} 
+              key={`mobile-${project.title}-${project.image}`} 
               project={project} 
             />
           ))}
@@ -148,7 +150,7 @@ function ProjectsContent() {
           <div className="col-md-4">
             {firstColumnProjects.map((project, index) => (
               <ProjectItem 
-                key={createUniqueKey(project, 'desktop-first', index)} 
+                key={`desktop-first-${project.title}-${project.image}`} 
                 project={project} 
               />
             ))}
@@ -158,7 +160,7 @@ function ProjectsContent() {
               <div key={`row-${i}`} className="d-flex gap-24">
                 {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
                   <ProjectItem 
-                    key={createUniqueKey(project, `desktop-second-${i}`, index)} 
+                    key={`desktop-second-${i}-${project.title}-${project.image}`} 
                     project={project} 
                   />
                 ))}

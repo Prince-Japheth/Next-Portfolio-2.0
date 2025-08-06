@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="infos">
                   <h4>Computer Software Engineer</h4>
                   <h1>Japheth Jerry.</h1>
-                  <p>Computer Software Engineer & Uprising Cybersecurity Professional. Co-founder of Qallie.</p>
+                  <p>Co-Founder &amp; CTO of Qallie. Computer Software Engineer and Uprising Cybersecurity Professional, specializing in React, TypeScript, and modern web development.</p>
                   <Link href="/about" className="about-btn">
                     <img src="/assets/images/icon.svg" alt="Button" />
                   </Link>
