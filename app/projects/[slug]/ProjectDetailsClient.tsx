@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { Project } from '../../data/projects';
 import Browser from '../../components/Browser';
 import Link from 'next/link';
@@ -72,6 +71,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     if (path.startsWith('http')) return path;
     // Remove leading ./ and ensure it starts with /
     const cleanPath = path.replace(/^\.\//, '');
+    // Ensure it starts with / for Next.js Image component
     return cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
   };
 
@@ -82,11 +82,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
-              <Image
+              <img
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
-                width={600}
-                height={400}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -95,7 +93,6 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                 }}
                 className="shadow-box"
                 key={`project-image-${currentProject.title}`} // Add key for proper re-rendering
-                priority
               />
             </div>
           </div>
@@ -103,17 +100,17 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Right side - Info boxes */}
           <div className="project-details-info-column flex-1 d-flex flex-column">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
-              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
-              <Image
+              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
+              <img
                 src="/assets/images/icon2.png"
                 alt="Icon"
-                width={32}
-                height={32}
                 style={{
                   position: 'absolute',
                   right: 0,
                   left: 'unset',
                   top: 'unset',
+                  width: '32px',
+                  height: '32px'
                 }}
               />
               <div className="project-details-info">
@@ -134,17 +131,17 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
             <br />
 
             <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important' }}>
-              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
-              <Image
+              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
+              <img
                 src="/assets/images/icon2.png"
                 alt="Icon"
-                width={32}
-                height={32}
                 style={{
                   position: 'absolute',
                   right: 0,
                   left: 'unset',
                   top: 'unset',
+                  width: '32px',
+                  height: '32px'
                 }}
               />
               <div className="project-details-info">
@@ -158,9 +155,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         {/* Rest of the content */}
         <div data-aos="zoom-in">
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important'}}>
-            <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={400} height={300} />
+            <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
             <div className="left-details" style={{ padding: '20px !important' }}>
-              <Image src="/assets/images/icon3.png" alt="Icon" width={32} height={32} />
+              <img src="/assets/images/icon3.png" alt="Icon" style={{ width: '32px', height: '32px' }} />
               <ul>
                 <li>
                   <p>Category</p>
