@@ -217,7 +217,7 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
               <span>Loading {title}... <br/> Please wait...</span>
             </div>
           )}
-          {loadError && (
+          {/* {loadError && (
             <div className="browser-loading">
               <div className="browser-error-icon">⚠️</div>
               <span>Unable to load {title} <br/> 
@@ -238,7 +238,7 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
                 </button>
               </span>
             </div>
-          )}
+          )} */}
           <iframe 
             ref={iframeRef}
             src={url} 

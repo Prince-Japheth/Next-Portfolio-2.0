@@ -30,20 +30,20 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   }
 
   const hasHttpLink = currentProject.link.startsWith('http');
-  const isExternalLink = currentProject.link.includes('play') || 
-                        currentProject.link.includes('figma') || 
-                        currentProject.link.includes('bondyt') || 
-                        currentProject.link.includes('topix');
+  const isExternalLink = currentProject.link.includes('play') ||
+    currentProject.link.includes('figma') ||
+    currentProject.link.includes('bondyt') ||
+    currentProject.link.includes('topix');
 
   const handleNextProject = () => {
     const currentIndex = allProjects.findIndex(p => p.title === currentProject.title);
-    
+
     let nextIndex = (currentIndex + 1) % allProjects.length;
     while (!allProjects[nextIndex].link.startsWith('http')) {
       nextIndex = (nextIndex + 1) % allProjects.length;
       if (nextIndex === currentIndex) break;
     }
-    
+
     const nextProjectWithLink = allProjects[nextIndex];
     const nextSlug = nextProjectWithLink.title
       .toLowerCase()
@@ -55,13 +55,13 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
   const handleVisitProject = (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     if (isExternalLink) {
       // Open external links in a new tab
       window.open(currentProject.link, '_blank');
       return;
     }
-    
+
     // Open in browser component
     setIsBrowserOpen(true);
   };
@@ -101,23 +101,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           <div className="project-details-info-column flex-1 d-flex flex-column">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
               <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img
-                src="/assets/images/icon2.png"
-                alt="Icon"
-                style={{
-                  position: 'absolute',
-                  right: 0,
-                  left: 'unset',
-                  top: 'unset',
-                  width: '32px',
-                  height: '32px'
-                }}
-              />
+              <img src="/assets/images/icon2.png" alt="Icon" className="star-icon" />
               <div className="project-details-info">
                 <h3>{currentProject.title}</h3>
                 <p>{currentProject.brief}</p>
                 {hasHttpLink && (
-                  <button 
+                  <button
                     onClick={handleVisitProject}
                     className="view-project-btn shadow-box"
                     title="View Project"
@@ -154,7 +143,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
         {/* Rest of the content */}
         <div data-aos="zoom-in">
-          <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important'}}>
+          <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important' }}>
             <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
             <div className="left-details" style={{ padding: '20px !important' }}>
               <img src="/assets/images/icon3.png" alt="Icon" style={{ width: '32px', height: '32px' }} />
