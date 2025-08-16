@@ -184,16 +184,29 @@ function ProjectsContent() {
             ref={dropdownRef}
             className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
           >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
-                disabled={isFiltering}
-              >
-                {category}
-              </button>
-            ))}
+            {categories.map((category) => {
+              const params = new URLSearchParams();
+              if (category !== 'All Projects') {
+                params.set('category', category);
+              }
+              const href = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
+              
+              return (
+                <a
+                  key={category}
+                  href={href}
+                  className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    if (typeof window !== "undefined" && window.showPreloader) {
+                      window.showPreloader();
+                    }
+                  }}
+                >
+                  {category}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1776,6 +1776,26 @@ ol {
     background-color: #333;
 }
 
+/* Override link hover styles for category buttons */
+.category-button {
+    text-decoration: none;
+    color: white !important;
+}
+
+.category-button:hover {
+    background-color: #222;
+    color: white !important;
+    text-decoration: none;
+}
+
+.category-button:visited {
+    color: white !important;
+}
+
+.category-button:active {
+    color: white !important;
+}
+
 @keyframes levitate {
 
     0%,

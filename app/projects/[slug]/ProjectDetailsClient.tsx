@@ -101,7 +101,16 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           <div className="project-details-info-column flex-1 d-flex flex-column">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
               <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img src="/assets/images/icon2.png" alt="Icon" className="star-icon" />
+              <img
+                src="/assets/images/icon2.png"
+                alt="Icon"
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  left: 'unset',
+                  top: 'unset',
+                }}
+              />
               <div className="project-details-info">
                 <h3>{currentProject.title}</h3>
                 <p>{currentProject.brief}</p>
@@ -129,8 +138,6 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                   right: 0,
                   left: 'unset',
                   top: 'unset',
-                  width: '32px',
-                  height: '32px'
                 }}
               />
               <div className="project-details-info">
@@ -146,7 +153,15 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important' }}>
             <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
             <div className="left-details" style={{ padding: '20px !important' }}>
-              <img src="/assets/images/icon3.png" alt="Icon" style={{ width: '32px', height: '32px' }} />
+            <img
+                src="/assets/images/icon3.png"
+                alt="Icon"
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  left: 'unset',
+                }}
+              />
               <ul>
                 <li>
                   <p>Category</p>
