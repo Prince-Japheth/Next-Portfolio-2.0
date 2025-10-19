@@ -21,6 +21,13 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
   const outputRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  // Utility function to scroll to bottom
+  const scrollToBottom = () => {
+    if (outputRef.current) {
+      outputRef.current.scrollTop = outputRef.current.scrollHeight;
+    }
+  };
+
   // Add effect to handle body scroll locking
   useEffect(() => {
     if (isOpen) {
@@ -35,12 +42,13 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
     };
   }, [isOpen]);
 
-  // Auto-scroll to bottom when output changes
+  // Auto-scroll to bottom when output changes, loading state changes, or terminal opens
   useEffect(() => {
-    if (outputRef.current) {
-      outputRef.current.scrollTop = outputRef.current.scrollHeight;
-    }
-  }, [output]);
+    // Use setTimeout to ensure DOM has updated
+    setTimeout(() => {
+      scrollToBottom();
+    }, 0);
+  }, [output, isLoading, isOpen]);
 
 
   const loadingFrames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
@@ -822,6 +830,10 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
     if (e.key === 'Enter') {
       handleCommand(input);
       setInput('');
+      // Ensure auto-scroll after command execution
+      setTimeout(() => {
+        scrollToBottom();
+      }, 10);
     }
   };
 
@@ -847,6 +859,11 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
         ''
       ]);
       inputRef.current?.focus();
+      
+      // Ensure scroll to bottom when terminal opens
+      setTimeout(() => {
+        scrollToBottom();
+      }, 50);
     }
   }, [isOpen]);
 

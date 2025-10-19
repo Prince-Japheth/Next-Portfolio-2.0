@@ -44,6 +44,22 @@ const Header = () => {
     };
   }, [pathname]);
 
+  // Add keyboard shortcut for terminal (Ctrl + Alt + T)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 't') {
+        event.preventDefault();
+        setIsTerminalOpen(true);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
