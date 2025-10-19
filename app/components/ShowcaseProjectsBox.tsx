@@ -19,9 +19,9 @@ const ShowcaseProjectsBox = () => {
   // Only show projects up to and including 'XTM Launch Website Redesign'
   const lastProjectTitle = "XTM Launch Website Redesign";
   const lastIndex = projectData.findIndex(p => p.title === lastProjectTitle);
-  // Filter out projects that should be hidden
+  // Filter out projects that should be hidden and graphic design projects
   const showcaseProjects = (lastIndex !== -1 ? projectData.slice(0, lastIndex + 1) : projectData)
-    .filter(p => !hideImageTitles.includes(p.title));
+    .filter(p => !hideImageTitles.includes(p.title) && p.category !== 'Graphic Design' && !p.category.includes('Graphic Design'));
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

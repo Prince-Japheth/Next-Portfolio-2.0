@@ -89,7 +89,7 @@ export default function About() {
               <img src="./assets/images/icon2.png" alt="Star" />
               <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
-                Computer Software Engineer, Co-Founder &amp; CTO of Qallie, and an Uprising Cybersecurity Professional. My expertise spans Web and Mobile Application Development, UI/UX Design, and Graphic Design. I have a diverse range of experience, having worked across various fields and industries.
+                Computer Software Engineer, Co-Founder &amp; CTO of Qallie, and an emerging cybersecurity professional. With expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries.
               </p>
             </div>
           </div>

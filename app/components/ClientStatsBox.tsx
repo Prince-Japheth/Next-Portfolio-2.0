@@ -10,20 +10,20 @@ const ClientStatsBox = () => {
         <div className="clients d-flex align-items-start gap-24 justify-content-center">
           <div className="client-item">
             <h1>
-              <CountUp end={3} enableScrollSpy duration={2} prefix="+" />
+              <CountUp end={8} enableScrollSpy duration={2} prefix="+" />
             </h1>
             <p>
               Years <br />
-              Experience
+              Learning
             </p>
           </div>
           <div className="client-item d-none d-md-block">
             <h1>
-              <CountUp end={30} enableScrollSpy duration={3} prefix="+" />
+              <CountUp end={10} enableScrollSpy duration={3} prefix="+" />
             </h1>
             <p>
-              HAPPY <br />
-              CLIENT
+              TECHNOLOGIES <br />
+              MASTERED
             </p>
           </div>
           <div className="client-item">
@@ -31,8 +31,8 @@ const ClientStatsBox = () => {
               <CountUp end={47} enableScrollSpy scrollSpyOnce duration={4} prefix="+" />
             </h1>
             <p>
-              Total <br />
-              Projects
+              Projects <br />
+              Built
             </p>
           </div>
         </div>

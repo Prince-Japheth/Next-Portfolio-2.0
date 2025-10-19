@@ -131,7 +131,7 @@ const Header = () => {
             </nav>
 
             <Link href="/contact" legacyBehavior>
-              <a className="theme-btn">Let's talk</a>
+              <a className="theme-btn">Say hello</a>
             </Link>
 
             <div className="show-menu">

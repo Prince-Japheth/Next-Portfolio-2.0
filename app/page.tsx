@@ -8,8 +8,8 @@ import ClientStatsBox from "./components/ClientStatsBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Japheth Jerry — Software Engineer | React, Next.js, TypeScript",
-  description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Professional Full Stack Software Engineer and Uprising Cybersecurity Professional. Specializing in React, Next.js, TypeScript, and secure scalable web apps.",
+  title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
+  description: "Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions.",
   keywords: [
     "Japheth",
     "Jerry",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     "Education"
   ],
   openGraph: {
-    title: "Japheth Jerry — Software Engineer | React, Next.js, TypeScript",
-    description: "Co-Founder & CTO at Qallie | Software Engineer and Uprising CyberSecurity Profesional | Full-stack development, mobile apps, secure web solutions.",
+    title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
+    description: "Co-Founder & CTO at Qallie. Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
     images: [
       {
         url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry — Full Stack Software Engineer",
-    description: "Co-Founder & CTO at Qallie | Software Engineer and Uprising CyberSecurity Profesional | Full-stack development, mobile apps, secure web solutions.",
+    title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
+    description: "Co-Founder & CTO at Qallie. Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
     images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim"
   }
@@ -95,9 +95,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="infos">
-                  <h4>Computer Software Engineer</h4>
+                  <h4>Software Engineer & Uprising Cybersecurity Professional</h4>
                   <h1>Japheth Jerry.</h1>
-                  <p>Co-Founder &amp; CTO of Qallie. Computer Software Engineer and Uprising Cybersecurity Professional, specializing in React, TypeScript, and modern web development.</p>
+                  <p>Software Engineer and Uprising Cybersecurity Professional. Always learning, always building.</p>
                   <Link href="/about" className="about-btn">
                     <img src="/assets/images/icon.svg" alt="Button" />
                   </Link>
@@ -110,13 +110,13 @@ export default function Home() {
                   <div className="banner shadow-box">
                     <div className="marquee">
                       <div>
-                        <span aria-label="Available for work opportunities">
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          OPEN FOR <b>WORK</b> <img src="/assets/images/star1.svg" alt="Star" />
+                        <span aria-label="Personal interests and passions">
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
                         </span>
                       </div>
                     </div>

@@ -15,7 +15,7 @@ const ContactBox: React.FC<ContactBoxProps> = ({ className = "col-md-6" }) => {
         <img src="/assets/images/icon2.png" alt="Icon" className="star-icon" />
         <h1>
           Let's <br />
-          work <span>together.</span>
+          connect <span>sometime.</span>
         </h1>
         <Link href="/contact" className="about-btn">
           <img src="/assets/images/icon.svg" alt="Button" />
