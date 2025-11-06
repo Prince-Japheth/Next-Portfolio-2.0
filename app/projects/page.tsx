@@ -5,15 +5,75 @@ import ProjectItem from '../components/ProjectItem';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { projectData, categories } from '../data/projects';
 
+// URL parameter mapping for shorter URLs and combined categories
+const categoryMapping: Record<string, string | string[]> = {
+  'DESIGN': ['UI/UX DESIGN', 'Graphic Design'], // Combined category
+  'design': ['UI/UX DESIGN', 'Graphic Design'], // Case-insensitive
+  'mobile': 'Mobile Development',
+  'mob': 'Mobile Development',
+  'web': 'Web Development',
+  'ui': 'UI/UX DESIGN',
+  'ux': 'UI/UX DESIGN',
+  'graphic': 'Graphic Design',
+  'gd': 'Graphic Design',
+};
+
+// Function to normalize category from URL parameter
+const getCategoryFromUrl = (urlCategory: string | null): string | string[] => {
+  if (!urlCategory) return 'All Projects';
+  
+  const normalized = urlCategory.trim();
+  
+  // Check if it's a mapped category
+  if (categoryMapping[normalized]) {
+    return categoryMapping[normalized];
+  }
+  
+  // Check if it matches any actual category (case-insensitive)
+  const matchedCategory = categories.find(
+    cat => cat.toLowerCase() === normalized.toLowerCase()
+  );
+  
+  return matchedCategory || normalized;
+};
+
+// Reverse mapping: get short URL alias from full category name
+const getShortUrlAlias = (category: string): string => {
+  const reverseMapping: Record<string, string> = {
+    'Mobile Development': 'mobile',
+    'Web Development': 'web',
+    'UI/UX DESIGN': 'ui',
+    'Graphic Design': 'graphic',
+    'DESIGN': 'DESIGN',
+    'All Projects': '',
+  };
+  
+  return reverseMapping[category] || category;
+};
+
 function ProjectsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All Projects');
+
+  const urlCategory = searchParams.get('category');
+  const resolvedCategory = getCategoryFromUrl(urlCategory);
+  const [selectedCategory, setSelectedCategory] = useState(
+    Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // Update selected category when URL parameter changes
+  useEffect(() => {
+    const urlCategory = searchParams.get('category');
+    const resolvedCategory = getCategoryFromUrl(urlCategory);
+    setSelectedCategory(
+      Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
+    );
+  }, [searchParams]);
 
   // Scroll to top when search query changes
   useEffect(() => {
@@ -23,9 +83,21 @@ function ProjectsContent() {
   }, [searchQuery]);
 
   const filteredProjects = projectData.filter(project => {
-    // Category filter
-    const categoryMatch = selectedCategory === 'All Projects' ||
-      project.category.toLowerCase().includes(selectedCategory.toLowerCase());
+    // Category filter - handle combined DESIGN category
+    let categoryMatch = false;
+    
+    if (selectedCategory === 'All Projects') {
+      categoryMatch = true;
+    } else if (selectedCategory === 'DESIGN' || selectedCategory === 'design') {
+      // Show both UI/UX DESIGN and Graphic Design
+      categoryMatch = 
+        project.category === 'UI/UX DESIGN' || 
+        project.category === 'Graphic Design' ||
+        project.category.includes('Graphic Design');
+    } else {
+      // Regular category matching
+      categoryMatch = project.category.toLowerCase().includes(selectedCategory.toLowerCase());
+    }
 
     // Search filter
     const searchMatch = !searchQuery.trim() ||
@@ -86,7 +158,13 @@ function ProjectsContent() {
     setIsDropdownOpen(false);
     const params = new URLSearchParams();
     if (newCategory !== 'All Projects') {
-      params.set('category', newCategory);
+      // Use shorter URL alias if available
+      const urlAlias = getShortUrlAlias(newCategory);
+      if (urlAlias) {
+        params.set('category', urlAlias);
+      } else {
+        params.set('category', newCategory);
+      }
     }
 
     // Use Next.js router for navigation
@@ -114,7 +192,13 @@ function ProjectsContent() {
     <section className="projects-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="./assets/images/star-2.png" alt="Star" /> {selectedCategory === 'All Projects' ? selectedCategory : `${selectedCategory} Projects`} <img src="./assets/images/star-2.png" alt="Star" />
+          <img src="./assets/images/star-2.png" alt="Star" /> {
+            selectedCategory === 'All Projects' 
+              ? selectedCategory 
+              : selectedCategory === 'DESIGN' || selectedCategory === 'design'
+              ? 'Design Projects'
+              : `${selectedCategory} Projects`
+          } <img src="./assets/images/star-2.png" alt="Star" />
         </h1>
 
         <div className="projects-controls" data-aos="fade-up">
@@ -187,7 +271,13 @@ function ProjectsContent() {
             {categories.map((category) => {
               const params = new URLSearchParams();
               if (category !== 'All Projects') {
-                params.set('category', category);
+                // Use shorter URL alias if available
+                const urlAlias = getShortUrlAlias(category);
+                if (urlAlias) {
+                  params.set('category', urlAlias);
+                } else {
+                  params.set('category', category);
+                }
               }
               const href = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
               
