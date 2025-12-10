@@ -34,7 +34,7 @@ export function BrowserProvider({ children }: { children: React.ReactNode }) {
 
   const calculateNewPosition = () => {
     const count = minimizedBrowsers.length;
-    
+
     // Position from bottom to top on the right side, accounting for filter button
     const x = window.innerWidth - THUMBNAIL_WIDTH - PADDING;
     const y = window.innerHeight - THUMBNAIL_HEIGHT - BOTTOM_PADDING - (count * (THUMBNAIL_HEIGHT + PADDING));
@@ -50,7 +50,7 @@ export function BrowserProvider({ children }: { children: React.ReactNode }) {
     return { x, y };
   };
 
-  const minimizeBrowser = (browser: Omit<MinimizedBrowser, 'position'>) => {
+  const minimizeBrowser = React.useCallback((browser: Omit<MinimizedBrowser, 'position'>) => {
     // Check if a thumbnail already exists for this browser
     const existingBrowser = minimizedBrowsers.find(b => b.id === browser.id);
     if (existingBrowser) {
@@ -68,28 +68,28 @@ export function BrowserProvider({ children }: { children: React.ReactNode }) {
       }
     ]);
     setActiveBrowser(null);
-  };
+  }, [minimizedBrowsers]); // Depend on minimizedBrowsers for position calculation
 
-  const restoreBrowser = (id: string) => {
+  const restoreBrowser = React.useCallback((id: string) => {
     setMinimizedBrowsers(prev => prev.filter(b => b.id !== id));
-  };
+  }, []);
 
-  const updatePosition = (id: string, position: { x: number; y: number }) => {
+  const updatePosition = React.useCallback((id: string, position: { x: number; y: number }) => {
     setMinimizedBrowsers(prev =>
       prev.map(browser =>
         browser.id === id ? { ...browser, position } : browser
       )
     );
-  };
+  }, []);
 
-  const openBrowser = (browser: MinimizedBrowser) => {
+  const openBrowser = React.useCallback((browser: MinimizedBrowser) => {
     setActiveBrowser(browser);
     setMinimizedBrowsers(prev => prev.filter(b => b.id !== browser.id));
-  };
+  }, []);
 
-  const closeBrowser = () => {
+  const closeBrowser = React.useCallback(() => {
     setActiveBrowser(null);
-  };
+  }, []);
 
   return (
     <BrowserContext.Provider

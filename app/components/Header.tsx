@@ -87,22 +87,20 @@ const Header = () => {
       <header className="header-area">
         <div className="container">
           <div className="gx-row d-flex align-items-center justify-content-between">
-            <Link href="/" legacyBehavior>
-              <a className="logo">
-                <img src="/assets/images/logo.svg" alt="Logo" />
-              </a>
+            <Link href="/" className="logo">
+              <img src="/assets/images/logo.svg" alt="Logo" />
             </Link>
 
             <nav className="navbar">
               <ul className="menu">
                 <li className={pathname === "/" ? "active" : ""}>
-                  <Link href="/" legacyBehavior>
-                    <a>Home</a>
+                  <Link href="/">
+                    Home
                   </Link>
                 </li>
                 <li className={pathname === "/about" ? "active d-none d-md-block" : "d-none d-md-block"}>
-                  <Link href="/about" legacyBehavior>
-                    <a>About</a>
+                  <Link href="/about">
+                    About
                   </Link>
                 </li>
                 <li className={pathname === "/about" || pathname === "/resume" ? "active d-block d-md-none" : "d-block d-md-none"}>
@@ -114,40 +112,40 @@ const Header = () => {
                       About
                     </a>
                     <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
-                      <Link href="/about" legacyBehavior>
-                        <a className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>About Me</a>
+                      <Link href="/about" className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>
+                        About Me
                       </Link>
-                      <Link href="/resume" legacyBehavior>
-                        <a className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>Resume</a>
+                      <Link href="/resume" className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>
+                        Resume
                       </Link>
                     </div>
                     <div className="d-none d-md-block">
-                      <Link href="/about" legacyBehavior>
-                        <a className={pathname === "/about" ? "active" : ""}>About</a>
+                      <Link href="/about" className={pathname === "/about" ? "active" : ""}>
+                        About
                       </Link>
                     </div>
                   </div>
                 </li>
                 <li className={pathname === "/resume" ? "active d-none d-md-block" : "d-none d-md-block"}>
-                  <Link href="/resume" legacyBehavior>
-                    <a>Resume</a>
+                  <Link href="/resume">
+                    Resume
                   </Link>
                 </li>
                 <li className={pathname === "/projects" || pathname.startsWith("/projects/") ? "active" : ""}>
-                  <Link href="/projects" legacyBehavior>
-                    <a>Projects</a>
+                  <Link href="/projects">
+                    Projects
                   </Link>
                 </li>
                 <li className={pathname === "/contact" ? "active" : ""}>
-                  <Link href="/contact" legacyBehavior>
-                    <a>Contact</a>
+                  <Link href="/contact">
+                    Contact
                   </Link>
                 </li>
               </ul>
             </nav>
 
-            <Link href="/contact" legacyBehavior>
-              <a className="theme-btn">Say hello</a>
+            <Link href="/contact" className="theme-btn">
+              Say hello
             </Link>
 
             <div className="show-menu">
@@ -164,7 +162,7 @@ const Header = () => {
         <button
           className="terminal-button"
           onClick={() => setIsTerminalOpen(true)}
-        > 
+        >
           <i className="iconoir-terminal" style={{ fontSize: '24px', color: '#fff' }} />
         </button>
 
