@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="__variable_835543">
+
 <head>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../_next_static/static/css/styles.css"
-        data-precedence="next" />
+    <link rel="stylesheet" href="../_next_static/static/css/styles.css" data-precedence="next" />
     <meta name="next-size-adjust" content="" />
     <title>digibouquet</title>
     <meta name="description" content="create and share a digital flower bouquet" />
@@ -16,14 +16,15 @@
     <meta name="twitter:description" content="create and share a digital flower bouquet" />
     <meta name="twitter:image" content="https://digibouquet.vercel.app/metapreview.png" />
     <link rel="icon" href="../favicon.ico" />
-    
+
 </head>
+
 <body class="font-martian">
     <div hidden=""><!--$--><!--/$--></div>
     <div class="min-h-screen text-center p-6 pb-24 bg-[#F9F9EE]">
-        <div class="animate-in fade-in-0 slide-in-from-bottom-4 duration-700 delay-150 [animation-fill-mode:both]"><a
-                href="../index.html" style="display:none !important;"><img alt="digibouquet" width="200" height="80" decoding="async" data-nimg="1"
-                    class="object-cover mx-auto my-10" style="color:transparent"
+        <div id="bouquet-container" style="opacity: 0;"><a
+                href="../index.html" style="display:none !important;"><img alt="digibouquet" width="200" height="80"
+                    decoding="async" data-nimg="1" class="object-cover mx-auto my-10" style="color:transparent"
                     src="../digibouquet.png" /></a>
             <h2 class="text-lg mb-14 ">Hi, I made this bouquet for you!</h2>
             <div class="text-center">
@@ -32,8 +33,7 @@
                         <div class="relative w-[500px] min-h-[410px]"><img alt="bush background" width="600"
                                 height="500" decoding="async" data-nimg="1"
                                 class="absolute top-1/2 left-1/2 z-0 transform -translate-x-1/2 -translate-y-1/2"
-                                style="color:transparent"
-                                src="../color/bush/bush-3.png" />
+                                style="color:transparent" src="../color/bush/bush-3.png" />
                             <div
                                 class="flex flex-wrap reverse w-[300px] justify-center items-center -space-x-4 -space-y-20 relative m-auto">
                                 <div class="flex relative justify-center items-center pt-4" style="order:0"><img
@@ -75,8 +75,7 @@
                             </div>
                             <div><img alt="bush top" width="600" height="500" decoding="async" data-nimg="1"
                                     class="absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2"
-                                    style="color:transparent"
-                                    src="../color/bush/bush-3-top.png" />
+                                    style="color:transparent" src="../color/bush/bush-3-top.png" />
                             </div>
                         </div>
                     </div>
@@ -88,7 +87,8 @@
                             <div class="space-y-4">
                                 <div class="flex flex-row gap-2 items-left justify-left">
                                     <p class="bg-transparent border-none focus:outline-none focus:ring-0">Dear
-                                        <!-- -->𝕹𝖎𝖈𝖔𝖑𝖊𝖙𝖙𝖊🌹</p>
+                                        <!-- -->𝕹𝖎𝖈𝖔𝖑𝖊𝖙𝖙𝖊🌹
+                                    </p>
                                 </div>
                                 <div class="text-left">
                                     <p>Happy Valentine&#x27;s Day, turkey 🎔</p>
@@ -112,35 +112,100 @@
             </div>
             <p class="text-sm text-black" style="display:none !important;">made with digibouquet, a tool by<!-- --> <a
                     class="text-sm underline text-black mt-2" href="https://x.com/pau_wee_">@pau_wee_</a></p><a
-                class="text-sm underline text-black mt-2" href="../index.html" style="display:none !important;">make a bouquet now!</a>
+                class="text-sm underline text-black mt-2" href="../index.html" style="display:none !important;">make a
+                bouquet now!</a>
         </div>
     </div><!--$--><!--/$-->
-    
-    
 
-<script src="../confetti.js"></script>
+
+
+
+
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var duration = 3 * 1000;
-        var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-        function random(min, max) {
-            return Math.random() * (max - min) + min;
+    function launchParticles() {
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'fixed';
+        canvas.style.inset = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.zIndex = '9999';
+        canvas.style.pointerEvents = 'none';
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const colors = ['#fafaf5', '#e8e8e8', '#fdfdf9', '#f3f3f3', '#feffef'];
+        const originPoints = [0.2, 0.35, 0.5, 0.65, 0.8]; // 5 origins across the width
+
+        for (let i = 0; i < 160; i++) {
+            const originX = originPoints[i % originPoints.length] * width;
+            particles.push({
+                x: originX,
+                y: height * 0.4, // Bursting from the center-ish area horizontally
+                vx: (Math.random() - 0.5) * 8,
+                vy: (Math.random() - 0.7) * 12, // Initially moving upwards
+                size: Math.random() * 2.5 + 2.5, // 2.5 to 5 pixels
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
         }
 
-        var interval = setInterval(function() {
-            var timeLeft = animationEnd - Date.now();
+        const startTime = Date.now();
+        
+        function animate() {
+            const now = Date.now();
+            const elapsed = now - startTime;
 
-            if (timeLeft <= 0) {
-                return clearInterval(interval);
+            if (elapsed > 4500) {
+                canvas.remove();
+                return;
             }
 
-            var particleCount = 50 * (timeLeft / duration);
-            // since particles fall down, start a bit higher than random
-            confetti(Object.assign({}, defaults, { particleCount, origin: { x: random(0.1, 0.3), y: Math.random() - 0.2 } }));
-            confetti(Object.assign({}, defaults, { particleCount, origin: { x: random(0.7, 0.9), y: Math.random() - 0.2 } }));
-        }, 250);
+            ctx.clearRect(0, 0, width, height);
+
+            if (elapsed > 3200) {
+                ctx.globalAlpha = Math.max(0, 1 - (elapsed - 3200) / 1300);
+            }
+
+            particles.forEach(p => {
+                p.vy += 0.04;    // Gravity
+                p.vx *= 0.998;   // Friction
+                p.x += p.vx;
+                p.y += p.vy;
+
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        setTimeout(function() {
+            var container = document.getElementById("bouquet-container");
+            if (container) {
+                container.style.opacity = "1";
+                container.classList.add("animate-in", "fade-in-0", "slide-in-from-bottom-4", "duration-700", "delay-150");
+                container.style.animationFillMode = "both";
+            }
+            // Launch the custom particle effect when the bouquet appears
+            launchParticles();
+        }, 2000);
+
     });
 </script>
 </body>

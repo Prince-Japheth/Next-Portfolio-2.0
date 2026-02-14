@@ -1,11 +1,11 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'Nicolette\'s Bouquet',
-    description: 'A special bouquet for Nicolette.',
+    title: 'Happy Valntine\'s, Nicolette ✨',
+    description: 'A digital bouquet because why not.....',
     openGraph: {
-        title: 'Nicolette\'s Bouquet',
-        description: 'A special bouquet for Nicolette.',
+        title: 'Happy Valntine\'s, Nicolette ✨',
+        description: 'A digital bouquet because why not.....',
         images: [
             {
                 url: '/digibouquet/nicolette.png',
