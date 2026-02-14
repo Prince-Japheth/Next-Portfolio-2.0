@@ -1,11 +1,11 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'I don\'t believe in consistency.',
-    description: 'Proper name, backstory stuff. Bit by a radioactive spider. You know the rest.',
+    title: 'Bla bla bla',
+    description: 'Proper name, backstory stuff',
     openGraph: {
-        title: 'I don\'t believe in consistency.',
-        description: 'Proper name, backstory stuff. Bit by a radioactive spider. You know the rest.',
+        title: 'Bla bla bla',
+        description: 'Proper name, backstory stuff',
         images: [
             {
                 url: '/digibouquet/nicolette.png',
