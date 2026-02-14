@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     },
 };
 
+import Oneko from '../components/Oneko';
+
 export default function Layout({
     children,
 }: {
@@ -22,6 +24,7 @@ export default function Layout({
 }) {
     return (
         <>
+            <Oneko />
             <div className="v-layout-container">{children}</div>
         </>
     );

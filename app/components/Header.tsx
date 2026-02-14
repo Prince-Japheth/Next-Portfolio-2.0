@@ -98,55 +98,61 @@ const Header = () => {
                     Home
                   </Link>
                 </li>
-                <li className={pathname === "/about" ? "active d-none d-md-block" : "d-none d-md-block"}>
-                  <Link href="/about">
-                    About
-                  </Link>
-                </li>
-                <li className={pathname === "/about" || pathname === "/resume" ? "active d-block d-md-none" : "d-block d-md-none"}>
-                  <div className="about-dropdown-container" ref={dropdownRef}>
-                    <a
-                      className="about-link d-block d-md-none"
-                      onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
-                    >
-                      About
-                    </a>
-                    <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
-                      <Link href="/about" className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>
-                        About Me
-                      </Link>
-                      <Link href="/resume" className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>
-                        Resume
-                      </Link>
-                    </div>
-                    <div className="d-none d-md-block">
-                      <Link href="/about" className={pathname === "/about" ? "active" : ""}>
+                {!pathname?.startsWith('/v/') && (
+                  <>
+                    <li className={pathname === "/about" ? "active d-none d-md-block" : "d-none d-md-block"}>
+                      <Link href="/about">
                         About
                       </Link>
-                    </div>
-                  </div>
-                </li>
-                <li className={pathname === "/resume" ? "active d-none d-md-block" : "d-none d-md-block"}>
-                  <Link href="/resume">
-                    Resume
-                  </Link>
-                </li>
-                <li className={pathname === "/projects" || pathname.startsWith("/projects/") ? "active" : ""}>
-                  <Link href="/projects">
-                    Projects
-                  </Link>
-                </li>
-                <li className={pathname === "/contact" ? "active" : ""}>
-                  <Link href="/contact">
-                    Contact
-                  </Link>
-                </li>
+                    </li>
+                    <li className={pathname === "/about" || pathname === "/resume" ? "active d-block d-md-none" : "d-block d-md-none"}>
+                      <div className="about-dropdown-container" ref={dropdownRef}>
+                        <a
+                          className="about-link d-block d-md-none"
+                          onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                        >
+                          About
+                        </a>
+                        <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
+                          <Link href="/about" className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>
+                            About Me
+                          </Link>
+                          <Link href="/resume" className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>
+                            Resume
+                          </Link>
+                        </div>
+                        <div className="d-none d-md-block">
+                          <Link href="/about" className={pathname === "/about" ? "active" : ""}>
+                            About
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
+                    <li className={pathname === "/resume" ? "active d-none d-md-block" : "d-none d-md-block"}>
+                      <Link href="/resume">
+                        Resume
+                      </Link>
+                    </li>
+                    <li className={pathname === "/projects" || pathname.startsWith("/projects/") ? "active" : ""}>
+                      <Link href="/projects">
+                        Projects
+                      </Link>
+                    </li>
+                    <li className={pathname === "/contact" ? "active" : ""}>
+                      <Link href="/contact">
+                        Contact
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
 
-            <Link href="/contact" className="theme-btn">
-              Say hello
-            </Link>
+            {!pathname?.startsWith('/v/') && (
+              <Link href="/contact" className="theme-btn">
+                Say hello
+              </Link>
+            )}
 
             <div className="show-menu">
               <span></span>
@@ -158,15 +164,16 @@ const Header = () => {
       </header>
 
 
-      <div className="terminal-button-container">
-        <button
-          className="terminal-button"
-          onClick={() => setIsTerminalOpen(true)}
-        >
-          <i className="iconoir-terminal" style={{ fontSize: '24px', color: '#fff' }} />
-        </button>
-
-      </div>
+      {!pathname?.startsWith('/v/') && (
+        <div className="terminal-button-container">
+          <button
+            className="terminal-button"
+            onClick={() => setIsTerminalOpen(true)}
+          >
+            <i className="iconoir-terminal" style={{ fontSize: '24px', color: '#fff' }} />
+          </button>
+        </div>
+      )}
 
       <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
     </>
