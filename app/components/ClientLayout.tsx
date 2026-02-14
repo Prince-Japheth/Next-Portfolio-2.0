@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
 import Particles from "./Particles";
 import Header from "./Header";
@@ -10,13 +12,14 @@ import MinimizedBrowsers from "./MinimizedBrowsers";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   useRouteChange(); // Use our custom hook to handle route changes
+  const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
-  
+
   // Only render cursor on client-side to avoid hydration errors
   useEffect(() => {
     setIsClient(true);
   }, []);
-  
+
   return (
     <BrowserProvider>
       {isClient && <div className="cursor d-none d-md-block"></div>}
@@ -34,7 +37,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <circle className="front" cx="30" cy="30" r="27" />
             <circle className="glow" cx="30" cy="30" r="27" />
           </svg>
-          <svg className="circle-inner" viewBox="0 0 34 34"> 
+          <svg className="circle-inner" viewBox="0 0 34 34">
             <circle className="back" cx="17" cy="17" r="14" />
             <circle className="front" cx="17" cy="17" r="14" />
             <circle className="glow" cx="17" cy="17" r="14" />
@@ -52,7 +55,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         />
         <Header />
         {children}
-        <Footer />
+        {!pathname?.startsWith('/v/') && <Footer />}
       </main>
       <MinimizedBrowsers />
     </BrowserProvider>
