@@ -12,6 +12,9 @@ interface ProfileContactBoxProps {
   className?: string;
 }
 
+import WhatsAppLink from './shared/WhatsAppLink';
+import { CONTACT_EMAILS } from '@/lib/constants/contact';
+
 const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
   showGithub = true,
   showLinkedin = true,
@@ -36,7 +39,7 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
             </a>
           )}
           {showMail && (
-            <a href="mailto:princejaphethjj@gmail.com">
+            <a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>
               <i className="iconoir-mail" />
             </a>
           )}
@@ -46,9 +49,9 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
             </a>
           )}
           {showWhatsapp && (
-            <a href="https://wa.me/c/2348034766310" target="_blank" rel="noopener noreferrer">
+            <WhatsAppLink>
               <i className="iconoir-whatsapp" />
-            </a>
+            </WhatsAppLink>
           )}
         </div>
         <div className="d-flex align-items-center justify-content-between">

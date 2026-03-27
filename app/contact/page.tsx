@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Timileyin",
     "Oluwatimileyin",
     "Japheth Oluwatimileyin Jerry",
-    "Japheth Jerry", 
+    "Japheth Jerry",
     "Qallie",
     "Co-Founder of Qallie"
   ],
@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
 };
 
+import WhatsAppLink from "../components/shared/WhatsAppLink";
+import { CONTACT_NUMBERS, CONTACT_EMAILS } from "@/lib/constants/contact";
+
 export default function Contact() {
   return (
     <section className="contact-area">
@@ -49,8 +52,8 @@ export default function Contact() {
                 </div>
                 <div className="right">
                   <span>MAIL us</span>
-                  <h4>princejaphethjj@gmail.com</h4>
-                  <h4>japhethjerryjj@gmail.com</h4>
+                  <h4>{CONTACT_EMAILS.PRIMARY}</h4>
+                  <h4>{CONTACT_EMAILS.SECONDARY}</h4>
                 </div>
               </li>
               <li className="d-flex align-items-center" data-aos="zoom-in">
@@ -59,27 +62,27 @@ export default function Contact() {
                 </div>
                 <div className="right">
                   <span>Contact Us</span>
-                  <h4>+234 803 476 6310</h4>
-                  <h4>+234 905 444 1614</h4>
+                  <h4>{CONTACT_NUMBERS.PRIMARY}</h4>
+                  <h4>{CONTACT_NUMBERS.SECONDARY}</h4>
                 </div>
               </li>
             </ul>
             <h3 data-aos="fade-up">Social Info</h3>
             <ul className="social-links d-flex align-center" data-aos="zoom-in">
               <li>
-                <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank">
+                <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank" rel="noopener noreferrer">
                   <i className="iconoir-linkedin" />
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/_prince_yafet_/" target="_blank">
+                <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="noopener noreferrer">
                   <i className="iconoir-instagram" />
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/c/2348034766310" target="_blank">
+                <WhatsAppLink>
                   <i className="iconoir-whatsapp" />
-                </a>
+                </WhatsAppLink>
               </li>
             </ul>
           </div>

@@ -2,6 +2,9 @@ import React from 'react';
 import SkillCard from "../SkillCard";
 import { skills, toolsAndProductivity } from '../../data/resumeData';
 
+import WhatsAppLink from '../shared/WhatsAppLink';
+import { CONTACT_EMAILS } from '@/lib/constants/contact';
+
 const ResumeSidebar = () => {
   return (
     <div className="resume-sidebar-wrap" data-aos="zoom-in">
@@ -12,32 +15,32 @@ const ResumeSidebar = () => {
             <img src="./assets/images/me2.png" alt="About Me" />
           </div>
           <h2>Japheth Jerry</h2>
-          <p><a href="mailto:princejaphethjj@gmail.com">princejaphethjj@gmail.com</a></p>
+          <p><a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>{CONTACT_EMAILS.PRIMARY}</a></p>
           <ul className="social-links d-flex justify-content-center">
             <li>
-              <a href="https://github.com/Prince-Japheth" target="_blank">
+              <a href="https://github.com/Prince-Japheth" target="_blank" rel="noopener noreferrer">
                 <i className="iconoir-github" />
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank">
+              <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank" rel="noopener noreferrer">
                 <i className="iconoir-linkedin" />
               </a>
             </li>
             <li>
-              <a href="mailto:princejaphethjj@gmail.com">
+              <a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>
                 <i className="iconoir-mail" />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/_prince_yafet_/" target="_blank">
+              <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="noopener noreferrer">
                 <i className="iconoir-instagram" />
               </a>
             </li>
             <li>
-              <a href="https://wa.me/c/2348034766310" target="_blank">
+              <WhatsAppLink>
                 <i className="iconoir-whatsapp" />
-              </a>
+              </WhatsAppLink>
             </li>
           </ul>
           <a href="/assets/Japheth-Jerry-Cv.pdf" className="theme-btn" download="Japheth-Jerry-Cv.pdf">Download Resume</a>
@@ -45,7 +48,7 @@ const ResumeSidebar = () => {
           <a href="/contact" className="theme-btn">Contact Me</a>
         </div>
       </div>
-      
+
       {/* Skills Section moved to sidebar - desktop only */}
       <div className="resume-sidebar skills-section mt-5 d-none d-md-block" data-aos="zoom-in">
         <div className="shadow-box text-center py-4">
@@ -61,7 +64,7 @@ const ResumeSidebar = () => {
               />
             ))}
           </div>
-          
+
           <h4 className="h4 skills-title mt-5" data-aos="zoom-in">Tools &amp; Productivity</h4>
           <div className="skills2-content-box">
             {toolsAndProductivity.map((tool, index) => (
