@@ -67,9 +67,7 @@ const ShowcaseProjectsBox = () => {
       `}</style>
       <div data-aos="zoom-in">
         <div className="about-profile-box info-box shadow-box h-full">
-          <Link href="/projects" legacyBehavior>
-            <a className="overlay-link" />
-          </Link>
+          <Link href="/projects" className="overlay-link" />
           <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
           <img
             src={getImagePath(currentProject.image)}
@@ -81,10 +79,8 @@ const ShowcaseProjectsBox = () => {
               <h4>SHOWCASE</h4>
               <h1>Projects</h1>
             </div>
-            <Link href="#" legacyBehavior>
-              <a className="about-btn">
-                <img src="/assets/images/icon.svg" alt="Button" />
-              </a>
+            <Link href="#" className="about-btn">
+              <img src="/assets/images/icon.svg" alt="Button" />
             </Link>
           </div>
         </div>

@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: "Co-Founder and CTO of Qallie, Computer Software Engineer, and Uprising Cybersecurity Professional with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
     images: [
       {
-        url: "/assets/images/me2.png",
+        url: "/assets/images/me2.avif",
         width: 400,
         height: 400,
         alt: "Japheth Jerry - About Me",
@@ -78,7 +78,7 @@ export default function About() {
             <div className="about-image-box shadow-box">
               <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
               <div className="image-inner">
-                <img src="./assets/images/me2.png" alt="About Me" />
+                <img src="./assets/images/me2.avif" alt="About Me" />
               </div>
             </div>
           </div>

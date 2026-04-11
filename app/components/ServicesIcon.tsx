@@ -6,9 +6,6 @@ const ServicesIcon = () => {
     return (
         <div data-aos="zoom-in">
             <div className="about-services-box info-box shadow-box h-full">
-                {/* <Link href="/service" legacyBehavior>
-                    <a className="overlay-link" />
-                </Link> */}
                 <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
                 <div className="icon-boxes">
                     <div className="skill-card">
@@ -33,10 +30,8 @@ const ServicesIcon = () => {
                         <h4>passions</h4>
                         <h1>What I Love</h1>
                     </div>
-                    <Link href="/about" legacyBehavior>
-                        <a className="about-btn">
-                            <img src="/assets/images/icon.svg" alt="Button" />
-                        </a>
+                    <Link href="/about" className="about-btn">
+                        <img src="/assets/images/icon.svg" alt="Button" />
                     </Link>
                 </div>
             </div>

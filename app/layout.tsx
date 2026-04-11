@@ -215,7 +215,7 @@ export default function RootLayout({
               "url": "https://japhethjerry.space",
               "image": {
                 "@type": "ImageObject",
-                "url": "https://japhethjerry.space/assets/images/me2.png",
+                "url": "https://japhethjerry.space/assets/images/me2.avif",
                 "width": 400,
                 "height": 400,
                 "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie"
@@ -288,7 +288,7 @@ export default function RootLayout({
               "@type": "ImageObject",
               "name": "Japheth Jerry Profile Photo",
               "description": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
-              "url": "https://japhethjerry.space/assets/images/me2.png",
+              "url": "https://japhethjerry.space/assets/images/me2.avif",
               "width": 400,
               "height": 400,
               "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
@@ -297,8 +297,8 @@ export default function RootLayout({
                 "name": "Japheth Jerry"
               },
               "license": "https://japhethjerry.space",
-              "thumbnailUrl": "https://japhethjerry.space/assets/images/me2.png",
-              "contentUrl": "https://japhethjerry.space/assets/images/me2.png",
+              "thumbnailUrl": "https://japhethjerry.space/assets/images/me2.avif",
+              "contentUrl": "https://japhethjerry.space/assets/images/me2.avif",
               "creditText": "Japheth Jerry",
               "copyrightNotice": "© 2024 Japheth Jerry. All rights reserved.",
               "acquireLicensePage": "https://japhethjerry.space"

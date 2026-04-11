@@ -90,8 +90,8 @@ export default function Home() {
                 <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
                 <div className="img-box">
                   <div className="profile-image-container">
-                    <img src="/assets/images/me2.png" alt="About Me Alternate" />
-                    <img src="/assets/images/me.png" alt="About Me" />
+                    <img src="/assets/images/me2.avif" alt="About Me Alternate" />
+                    <img src="/assets/images/me.avif" alt="About Me" />
                   </div>
                 </div>
                 <div className="infos">

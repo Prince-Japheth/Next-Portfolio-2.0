@@ -91,7 +91,7 @@
 
 ### 2. Optimize Image Alt Tags
 ```html
-<img src="/assets/images/me2.png" alt="Japheth Jerry - Software Engineer and Co-Founder of Qallie" />
+<img src="/assets/images/me2.avif" alt="Japheth Jerry - Software Engineer and Co-Founder of Qallie" />
 ```
 
 ### 3. Add Schema Markup for Images

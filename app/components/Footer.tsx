@@ -5,31 +5,21 @@ const Footer = () => {
     <footer className="footer-area">
       <div className="container">
         <div className="footer-content text-center">
-          <Link href="/" legacyBehavior>
-            <a className="logo">
-              <img src="/assets/images/logo.svg" alt="Logo" />
-            </a>
+          <Link href="/" className="logo">
+            <img src="/assets/images/logo.svg" alt="Logo" />
           </Link>
           <ul className="footer-menu"> 
             <li>
-              <Link href="/" legacyBehavior>
-                <a>Home</a>
-              </Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/about" legacyBehavior>
-                <a>About</a>
-              </Link>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/projects" legacyBehavior>
-                <a>Projects</a>
-              </Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link href="/contact" legacyBehavior>
-                <a>Contact</a>
-              </Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
           <p className="copyright">

@@ -12,36 +12,24 @@ declare global {
   }
 }
 
+import { useLoading } from "../context/LoadingContext";
+
 const Header = () => {
   const pathname = usePathname();
+  const { setIsLoading } = useLoading();
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log('Current pathname:', pathname);
-  }, [pathname]);
-
-  useEffect(() => {
     const handleRouteChange = () => {
-      if (typeof window !== "undefined" && window.showPreloader) {
-        window.showPreloader();
-      }
-
       // Reinitialize cursor effect on route change
       if (typeof window !== "undefined" && window.reinitCursorEffect) {
         window.reinitCursorEffect();
       }
     };
 
-    handleRouteChange(); // Initial load
-
-    // Add event listener for route changes
-    window.addEventListener("popstate", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
+    handleRouteChange();
   }, [pathname]);
 
   // Add keyboard shortcut for terminal (Ctrl + Alt + T)

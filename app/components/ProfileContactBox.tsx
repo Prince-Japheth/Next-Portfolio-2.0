@@ -59,10 +59,8 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
             <h4>Stay with me</h4>
             <h1>Profiles &amp; Contacts</h1>
           </div>
-          <Link href="/contact" legacyBehavior>
-            <a className="about-btn">
-              <img src="/assets/images/icon.svg" alt="Button" />
-            </a>
+          <Link href="/contact" className="about-btn">
+            <img src="/assets/images/icon.svg" alt="Button" />
           </Link>
         </div>
       </div>

@@ -12,7 +12,7 @@ const ResumeSidebar = () => {
         <div className="shadow-box">
           <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
           <div className="img-box">
-            <img src="./assets/images/me2.png" alt="About Me" />
+            <img src="./assets/images/me2.avif" alt="About Me" />
           </div>
           <h2>Japheth Jerry</h2>
           <p><a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>{CONTACT_EMAILS.PRIMARY}</a></p>
