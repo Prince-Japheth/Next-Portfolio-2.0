@@ -3,14 +3,16 @@ import type React from "react";
 import ClientLayout from "./components/ClientLayout";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import StructuredData from "./components/seo/StructuredData";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://japhethjerry.space'),
   title: {
-    default: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
+    default: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
     template: "%s | Japheth Jerry"
   },
-          description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+          description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
   keywords: [
     "Japheth",
     "Jerry",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "Node.js",
     "Full Stack Developer",
-    "Cybersecurity Professional",
+    "Cyber Security Specialist",
     "MERN Stack Developer",
     "Laravel Developer",
     "UI/UX Developer",
@@ -119,9 +121,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://japhethjerry.space",
-    siteName: "Japheth Jerry Portfolio",
-    title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
-    description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+    siteName: "Japheth Jerry",
+    title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
+    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
     images: [
       {
         url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
@@ -133,8 +135,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry - Computer Software Engineer & Uprising Cybersecurity Professional | React, TypeScript Developer",
-    description: "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Profesional. Specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.",
+    title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
+    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
     images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim",
   },
@@ -191,217 +193,13 @@ export default function RootLayout({
         {/* External Stylesheets */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/aos.css" />
         <link rel="stylesheet" href="/assets/css/style.css" />
 
+        {/* SEO - Site Name Optimization */}
+        <meta property="og:site_name" content="Japheth Jerry" />
+
         {/* Structured Data for SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Japheth Jerry",
-              "alternateName": [
-                "Timileyin", 
-                "Oluwatimileyin", 
-                "Japheth Oluwatimileyin Jerry", 
-                "Japheth Jerry",
-                "Yafet",
-                "Prince Yafet"
-              ],
-              "jobTitle": "Co-Founder & CTO at Qallie, Software Engineer",
-              "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising CyberSecurity Professional. Specializing in React, TypeScript, Next.js, and modern cross-platform web, computer and mobile development.",
-              "url": "https://japhethjerry.space",
-              "image": {
-                "@type": "ImageObject",
-                "url": "https://japhethjerry.space/assets/images/me2.avif",
-                "width": 400,
-                "height": 400,
-                "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie"
-              },
-              "sameAs": [
-                "https://www.wikidata.org/wiki/Q135583647",
-                "https://www.linkedin.com/in/japheth-jerry-34a513274/",
-                "https://www.instagram.com/_prince_yafet/",
-                "https://x.com/Yafet_Tim",
-                "https://japhethjerry.space/",
-                "https://qallie.online"
-              ],
-              "knowsAbout": [
-                "React",
-                "Next.js",
-                "TypeScript",
-                "JavaScript",
-                "React Native",
-                "Mobile Development",
-                "UI/UX Design",
-                "API Integration",
-                "Database Management",
-                "Cybersecurity",
-                "Web Development",
-                "Frontend Development",
-                "Full Stack Development",
-                "Graphic Design",
-                "Software Engineering"
-              ],
-              "worksFor": [
-                {
-                  "@type": "Organization",
-                  "name": "Qallie",
-                  "url": "https://qallie.online"
-                },
-                {
-                  "@type": "Organization", 
-                  "name": "Popkup",
-                  "url": "https://www.popkup.com/"
-                },
-                {
-                  "@type": "Organization",
-                  "name": "Spicodex", 
-                  "url": "https://spicodex.com/"
-                }
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-              },
-              "hasOccupation": {
-                "@type": "Occupation",
-                "name": "Software Engineer",
-                "description": "Full Stack Software Engineer specializing in React, TypeScript, and modern web development"
-              },
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Lincoln University College"
-              }
-            })
-          }}
-        />
-
-        {/* Additional structured data for profile image optimization */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ImageObject",
-              "name": "Japheth Jerry Profile Photo",
-              "description": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
-              "url": "https://japhethjerry.space/assets/images/me2.avif",
-              "width": 400,
-              "height": 400,
-              "caption": "Japheth Jerry - Software Engineer and Co-Founder of Qallie",
-              "creator": {
-                "@type": "Person",
-                "name": "Japheth Jerry"
-              },
-              "license": "https://japhethjerry.space",
-              "thumbnailUrl": "https://japhethjerry.space/assets/images/me2.avif",
-              "contentUrl": "https://japhethjerry.space/assets/images/me2.avif",
-              "creditText": "Japheth Jerry",
-              "copyrightNotice": "© 2024 Japheth Jerry. All rights reserved.",
-              "acquireLicensePage": "https://japhethjerry.space"
-            })
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Japheth Jerry Portfolio",
-              "url": "https://japhethjerry.space",
-              "logo": "https://japhethjerry.space/assets/images/logo.svg",
-              "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Co-founder of Qallie.",
-              "founder": {
-                "@type": "Person",
-                "name": "Japheth Jerry"
-              },
-              "sameAs": [
-                "https://www.wikidata.org/wiki/Q135583647",
-                "https://www.linkedin.com/in/japheth-jerry-34a513274/",
-                "https://www.instagram.com/_prince_yafet/",
-                "https://x.com/Yafet_Tim",
-                "https://japhethjerry.space/",
-                "https://qallie.online"
-              ]
-            })
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Qallie",
-              "url": "https://qallie.online",
-              "description": "Technology company focused on innovative solutions",
-              "founder": {
-                "@type": "Person",
-                "name": "Japheth Jerry",
-                "jobTitle": "Co-founder"
-              }
-            })
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Japheth Jerry Portfolio",
-              "url": "https://japhethjerry.space",
-              "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development",
-              "author": {
-                "@type": "Person",
-                "name": "Japheth Jerry"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Japheth Jerry Portfolio"
-              },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://japhethjerry.space/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
-
-        {/* Additional SEO Schema for better search rankings */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "CreativeWork",
-              "name": "Japheth Jerry Portfolio",
-              "author": {
-                "@type": "Person",
-                "name": "Japheth Jerry",
-                "alternateName": ["Japheth Jerry", "Yafet", "Prince Yafet"],
-                "jobTitle": "Software Engineer",
-                "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising Cybersecurity Professional"
-              },
-              "description": "Portfolio website of Japheth Jerry - Software Engineer specializing in React, TypeScript, and modern web development",
-              "url": "https://japhethjerry.space",
-              "mainEntity": {
-                "@type": "Person",
-                "name": "Japheth Jerry",
-                "jobTitle": "Software Engineer",
-                "description": "Co-Founder & CTO at Qallie, Software Engineer and Uprising Cybersecurity Professional"
-              }
-            })
-          }}
-        />
+        <StructuredData />
       </head>
       <body>
         <NextTopLoader color="#ffbc5e" showSpinner={false} />
@@ -410,12 +208,7 @@ export default function RootLayout({
           {children}
         </ClientLayout>
         
-        {/* Scripts */}
-        <script src="/assets/js/jquery-3.6.4.js"></script>
-        <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="/assets/js/aos.js"></script>
-        <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/cursor.js"></script>
+        {/* Optimized Scripts */}
       </body>
     </html>
   );

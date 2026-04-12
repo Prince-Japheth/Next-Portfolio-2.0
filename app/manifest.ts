@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Japheth Jerry - Software Engineer Portfolio',
     short_name: 'Japheth Jerry',
-    description: 'Co-Founder & CTO at Qallie, Software Engineer and Uprising Cybersecurity Professional. Full Stack Developer Portfolio specializing in React, TypeScript, and modern cross-platform web, computer and mobile development.',
+    description: 'Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

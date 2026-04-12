@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     "Education"
   ],
   openGraph: {
-    title: "About Japheth Jerry - Software Engineer & Designer",
-    description: "Co-Founder and CTO of Qallie, Computer Software Engineer, and Uprising Cybersecurity Professional with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design. View my experience and education.",
+    title: "About Japheth Jerry - Software Engineer & Cyber Security Specialist",
+    description: "Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design and Cyber Security Specialist. ",
     images: [
       {
         url: "/assets/images/me2.avif",
@@ -83,13 +83,13 @@ export default function About() {
             </div>
           </div>
           <div className="about-details" data-aos="zoom-in">
-            <h1 className="section-heading" data-aos="fade-up"><img src="./assets/images/star-2.png" alt="Star" />
-              Self-summary <img src="./assets/images/star-2.png" alt="Star" /></h1>
+            <h2 className="section-heading" data-aos="fade-up"><img src="./assets/images/star-2.png" alt="Star" />
+              Self-summary <img src="./assets/images/star-2.png" alt="Star" /></h2>
             <div className="about-details-inner shadow-box">
               <img src="./assets/images/icon2.png" alt="Star" />
               <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
-                Computer Software Engineer, Co-Founder &amp; CTO of Qallie, and an emerging cybersecurity professional. With expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries.
+                Computer Software Engineer with expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries and Cyber Security Specialist.
               </p>
             </div>
           </div>

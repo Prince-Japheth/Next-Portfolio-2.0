@@ -77,7 +77,7 @@
 - "Japheth Jerry"
 - "Japheth Jerry Software Engineer"
 - "Japheth Jerry React Developer"
-- "Japheth Jerry Qallie"
+- "Japheth Jerry"
 - "Japheth Jerry Portfolio"
 
 ## Additional Recommendations:
@@ -91,7 +91,7 @@
 
 ### 2. Optimize Image Alt Tags
 ```html
-<img src="/assets/images/me2.avif" alt="Japheth Jerry - Software Engineer and Co-Founder of Qallie" />
+<img src="/assets/images/me2.avif" alt="Japheth Jerry - Software Engineer and Cyber Security Specialist" />
 ```
 
 ### 3. Add Schema Markup for Images
@@ -99,7 +99,7 @@
 {
   "@type": "ImageObject",
   "name": "Japheth Jerry Profile Photo",
-  "description": "Japheth Jerry - Software Engineer and Co-Founder of Qallie"
+  "description": "Japheth Jerry - Software Engineer and Cyber Security Specialist"
 }
 ```
 

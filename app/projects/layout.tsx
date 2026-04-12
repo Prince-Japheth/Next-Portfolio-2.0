@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Project Portfolio | Japheth Jerry",
   description: "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies. View case studies, live demos, and project details.",
   keywords: [
     "Japheth",

@@ -6,10 +6,11 @@ import ProfileContactBox from "./components/ProfileContactBox";
 import ContactBox from "./components/ContactBox";
 import ClientStatsBox from "./components/ClientStatsBox";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
-  description: "Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions.",
+  title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
+  description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions.",
   keywords: [
     "Japheth",
     "Jerry",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "Node.js",
     "Full Stack Developer",
-    "Cybersecurity Professional",
+    "Cyber Security Specialist",
     "MERN Stack Developer",
     "Laravel Developer",
     "UI/UX Developer",
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
     "Education"
   ],
   openGraph: {
-    title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
-    description: "Co-Founder & CTO at Qallie. Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
+    title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
+    description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
     images: [
       {
         url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
@@ -72,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry — Software Engineer & Uprising Cybersecurity Professional",
-    description: "Co-Founder & CTO at Qallie. Software Engineer and Uprising Cybersecurity Professional, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
+    title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
+    description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
     images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
     creator: "@Yafet_Tim"
   }
@@ -87,17 +88,36 @@ export default function Home() {
           <div className="row">
             <div className="col-md-6" data-aos="zoom-in">
               <div className="about-me-box shadow-box">
-                <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
-                <div className="img-box">
-                  <div className="profile-image-container">
-                    <img src="/assets/images/me2.avif" alt="About Me Alternate" />
-                    <img src="/assets/images/me.avif" alt="About Me" />
-                  </div>
-                </div>
+                 <Image 
+                   src="/assets/images/bg1.png" 
+                   alt="BG" 
+                   className="bg-img" 
+                   width={600} 
+                   height={600} 
+                   priority 
+                 />
+                 <div className="img-box">
+                   <div className="profile-image-container">
+                     <Image 
+                       src="/assets/images/me2.avif" 
+                       alt="About Me Alternate" 
+                       width={300} 
+                       height={300} 
+                       priority 
+                     />
+                     <Image 
+                       src="/assets/images/me.avif" 
+                       alt="About Me" 
+                       width={300} 
+                       height={300} 
+                       priority 
+                     />
+                   </div>
+                 </div>
                 <div className="infos">
-                  <h4>Software Engineer & Uprising Cybersecurity Professional</h4>
+                  <h4>Software Engineer & Cyber Security Specialist</h4>
                   <h1>Japheth Jerry.</h1>
-                  <p>Software Engineer and Uprising Cybersecurity Professional. Always learning, always building.</p>
+                  <p>Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
                   <Link href="/about" className="about-btn">
                     <img src="/assets/images/icon.svg" alt="Button" />
                   </Link>
@@ -110,13 +130,13 @@ export default function Home() {
                   <div className="banner shadow-box">
                     <div className="marquee">
                       <div>
-                        <span aria-label="Personal interests and passions">
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          BUILDING <b>DREAMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                        <span aria-label="Professional focus and expertise">
+                          BUILDING <b>SOLUTIONS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          SECURING <b>SYSTEMS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          SCALING <b>IDEAS</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          CRAFTING <b>CODE</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          DESIGNING <b>EXPERIENCES</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          SOLVING <b>COMPLEXITY</b> <img src="/assets/images/star1.svg" alt="Star" />
                         </span>
                       </div>
                     </div>

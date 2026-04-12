@@ -8,7 +8,7 @@ import CertificationSection from '../components/resume/CertificationSection';
 import SkillsSection from '../components/resume/SkillsSection';
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: "Resume | Japheth Jerry",
   description: "View Japheth Jerry's professional resume, work experience, education, skills, and certifications. Software Engineer with expertise in React, Next.js, TypeScript, and web development.",
   keywords: [
     "Japheth Jerry Resume",
@@ -48,6 +48,12 @@ export default function Resume() {
   return (
     <section className="resume-area">
       <div className="container">
+        <h1 className="section-heading" data-aos="fade-up">
+          <img src="/assets/images/star-2.png" alt="Star" />
+          Interactive Resume
+          <img src="/assets/images/star-2.png" alt="Star" />
+        </h1>
+        <br />
         <div className="gx-row d-flex">
           <ResumeSidebar />
           <div className="resume-content flex-1">

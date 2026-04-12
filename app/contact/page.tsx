@@ -1,39 +1,4 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch with Japheth Jerry for web development projects, collaboration opportunities, or any inquiries. Contact via email, phone, or social media.",
-  keywords: [
-    "Contact Japheth Jerry",
-    "Hire Web Developer",
-    "Software Engineer Contact",
-    "Project Inquiry",
-    "Collaboration",
-    "Japheth",
-    "Jerry",
-    "Timileyin",
-    "Oluwatimileyin",
-    "Japheth Oluwatimileyin Jerry",
-    "Japheth Jerry",
-    "Qallie",
-    "Co-Founder of Qallie"
-  ],
-  openGraph: {
-    title: "Contact Japheth Jerry - Software Engineer",
-    description: "Get in touch with Japheth Jerry for web development projects, collaboration opportunities, or any inquiries.",
-    images: [
-      {
-        url: "/assets/images/project_0.png",
-        width: 1200,
-        height: 630,
-        alt: "Contact Japheth Jerry",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://japhethjerry.space/contact",
-  },
-};
+"use client";
 
 import WhatsAppLink from "../components/shared/WhatsAppLink";
 import { CONTACT_NUMBERS, CONTACT_EMAILS } from "@/lib/constants/contact";
@@ -51,9 +16,14 @@ export default function Contact() {
                   <i className="iconoir-mail" />
                 </div>
                 <div className="right">
-                  <span>MAIL us</span>
-                  <h4>{CONTACT_EMAILS.PRIMARY}</h4>
-                  <h4>{CONTACT_EMAILS.SECONDARY}</h4>
+                  <span>MAIL me</span>
+                  <h4 
+                    onClick={() => window.location.href = `mailto:${CONTACT_EMAILS.PRIMARY}`}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {CONTACT_EMAILS.PRIMARY}
+                  </h4>
+                  {/* <h4>{CONTACT_EMAILS.SECONDARY}</h4> */}
                 </div>
               </li>
               <li className="d-flex align-items-center" data-aos="zoom-in">
@@ -62,8 +32,13 @@ export default function Contact() {
                 </div>
                 <div className="right">
                   <span>Contact Us</span>
-                  <h4>{CONTACT_NUMBERS.PRIMARY}</h4>
-                  <h4>{CONTACT_NUMBERS.SECONDARY}</h4>
+                  <h4 
+                    onClick={() => window.location.href = `tel:${CONTACT_NUMBERS.PRIMARY}`}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {CONTACT_NUMBERS.PRIMARY}
+                  </h4>
+                  {/* <h4>{CONTACT_NUMBERS.SECONDARY}</h4> */}
                 </div>
               </li>
             </ul>

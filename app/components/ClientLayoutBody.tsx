@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Preloader from "./ui/Preloader";
 import MinimizedBrowsers from "./MinimizedBrowsers";
 import { useLoading } from "../context/LoadingContext";
+import ThemeEffects from "./ThemeEffects";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,6 +29,7 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
   return (
     <>
       {isClient && <div className="cursor d-none d-md-block"></div>}
+      <ThemeEffects />
       
       {!isLoading && (
         <Particles

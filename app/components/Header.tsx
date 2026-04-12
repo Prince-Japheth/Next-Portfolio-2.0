@@ -19,18 +19,8 @@ const Header = () => {
   const { setIsLoading } = useLoading();
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      // Reinitialize cursor effect on route change
-      if (typeof window !== "undefined" && window.reinitCursorEffect) {
-        window.reinitCursorEffect();
-      }
-    };
-
-    handleRouteChange();
-  }, [pathname]);
 
   // Add keyboard shortcut for terminal (Ctrl + Alt + T)
   useEffect(() => {
@@ -62,9 +52,10 @@ const Header = () => {
     };
   }, []);
 
-  // Close dropdown when route changes
+  // Close menus when route changes
   useEffect(() => {
     setIsAboutDropdownOpen(false);
+    setIsMobileMenuOpen(false);
   }, [pathname]);
 
   const isAboutPage = pathname === "/about";
@@ -79,7 +70,7 @@ const Header = () => {
               <img src="/assets/images/logo.svg" alt="Logo" />
             </Link>
 
-            <nav className="navbar">
+            <nav className={`navbar ${isMobileMenuOpen ? 'active' : ''}`}>
               <ul className="menu">
                 <li className={pathname === "/" ? "active" : ""}>
                   <Link href="/">
@@ -103,7 +94,7 @@ const Header = () => {
                         </a>
                         <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
                           <Link href="/about" className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>
-                            About Me
+                            About
                           </Link>
                           <Link href="/resume" className={`dropdown-item ${pathname === "/resume" ? "active-resume" : ""}`}>
                             Resume
@@ -123,10 +114,10 @@ const Header = () => {
                     </li>
                     <li className={pathname === "/projects" || pathname.startsWith("/projects/") ? "active" : ""}>
                       <Link href="/projects">
-                        Projects
+                        Portfolio
                       </Link>
                     </li>
-                    <li className={pathname === "/contact" ? "active" : ""}>
+                    <li className={pathname === "/contact" ? "active d-block d-md-none" : "d-block d-md-none"}>
                       <Link href="/contact">
                         Contact
                       </Link>
@@ -142,7 +133,10 @@ const Header = () => {
               </Link>
             )}
 
-            <div className="show-menu">
+            <div 
+              className={`show-menu ${isMobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
               <span></span>
               <span></span>
               <span></span>

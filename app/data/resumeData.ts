@@ -157,6 +157,19 @@ export const toolsAndProductivity = [
 export const experienceData = [
   {
     period: "2025 - Present",
+    title: "Software Engineer",
+    employmentType: "FULL-TIME",
+    companyUrl: "https://www.popkup.com/",
+    companyIcon: "https://popkup.com/favicon.png",
+    companyName: "Popkup",
+    responsibilities: [
+      "Spearheaded the development of intuitive web and mobile app interfaces, translating design concepts into functional prototypes and high-quality user experiences.",
+      "Managed effective integration and consumption of APIs, with a strong focus on mobile-optimized feature design.",
+      "Actively monitored industry trends to ensure innovative and compliant software solutions, meeting all project specifications and deadlines."
+    ]
+  },
+  {
+    period: "2025 - Present",
     title: "Co-Founder & CTO",
     employmentType: "FULL-TIME",
     companyUrl: "https://qallie.online/",
@@ -166,19 +179,6 @@ export const experienceData = [
       "Co-founded Qallie, driving the full-stack development of the product's core web and mobile features.",
       "Responsible for product design and UI/UX, translating early concepts into functional user experiences.",
       "Building and iterating on the product's architecture to ensure future scalability and security."
-    ]
-  },
-  {
-    period: "2025 - Present",
-    title: "Software Engineer",
-    employmentType: "FULL-TIME",
-    companyUrl: "https://www.popkup.com/",
-    companyIcon: "https://www.popkup.com/lovable-uploads/0023e22d-e6f9-4b6c-accd-59e0b1eab9e4.png",
-    companyName: "Popkup",
-    responsibilities: [
-      "Spearheaded the development of intuitive web and mobile app interfaces, translating design concepts into functional prototypes and high-quality user experiences.",
-      "Managed effective integration and consumption of APIs, with a strong focus on mobile-optimized feature design.",
-      "Actively monitored industry trends to ensure innovative and compliant software solutions, meeting all project specifications and deadlines."
     ]
   },
   {
