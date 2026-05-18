@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { projectData } from "../data/projects";
 
@@ -41,20 +42,25 @@ const ShowcaseProjectsBox = () => {
   return (
     <>
       <style jsx>{`
-        .project-shocase-img {
-          width: 220px;
+        .parentofshowcaseprojectbox {
+          flex: 1 !important;
+        }
+        .project-shocase-img-wrap {
+          position: relative;
+          width: 100%;
           height: 130px;
-          aspect-ratio: 16 / 9;
-          object-fit: cover;
           border-radius: 15px;
+          overflow: hidden;
           display: block;
         }
+        .project-shocase-img {
+          object-fit: cover;
+        }
         @media (max-width: 767px) {
-          .project-shocase-img {
+          .project-shocase-img-wrap {
             height: 110px;
             max-width: 100%;
             width: 100%;
-            object-fit: cover;
             border-radius: 20px;
           }
           .about-profile-box {
@@ -65,22 +71,28 @@ const ShowcaseProjectsBox = () => {
           }
         }
       `}</style>
-      <div data-aos="zoom-in">
+      <div data-aos="zoom-in" className="parentofshowcaseprojectbox">
         <div className="about-profile-box info-box shadow-box h-full">
           <Link href="/projects" className="overlay-link" />
-          <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
-          <img
-            src={getImagePath(currentProject.image)}
-            alt={currentProject.title}
-            className="project-shocase-img"
-          />
+          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+          <div className="project-shocase-img-wrap">
+            <Image
+              src={getImagePath(currentProject.image)}
+              alt={currentProject.title}
+              className="project-shocase-img"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 767px) 100vw, 220px"
+              priority
+            />
+          </div>
           <div className="d-flex align-items-center justify-content-between project-showcase-info">
             <div className="infos">
               <h4>SHOWCASE</h4>
               <h1>Projects</h1>
             </div>
             <Link href="#" className="about-btn">
-              <img src="/assets/images/icon.svg" alt="Button" />
+              <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
             </Link>
           </div>
         </div>

@@ -1,8 +1,11 @@
+"use client";
+
 import ContactBox from "../components/ContactBox";
 import ResumeBox from "../components/ResumeBox";
 import ShowcaseProjectsBox from "../components/ShowcaseProjectsBox";
 import ServiceItem from "../components/ServiceItem";
 import SidebarItem from "../components/SidebarItem";
+import Image from "next/image";
 
 const serviceItems = [
   {
@@ -52,11 +55,12 @@ const sidebarItems = [
   {
     icon: (
       <i className="icon">
-        <img
+        <Image
           src="https://cdn-icons-png.flaticon.com/128/7859/7859071.png"
           alt=""
           style={{ filter: "invert(100%)" }}
           width={40}
+          height={40}
         />
       </i>
     ),
@@ -65,11 +69,12 @@ const sidebarItems = [
   {
     icon: (
       <i className="icon">
-        <img
+        <Image
           src="https://cdn-icons-png.flaticon.com/128/9529/9529941.png"
           alt=""
           style={{ filter: "invert(100%)" }}
           width={40}
+          height={40}
         />
       </i>
     ),
@@ -82,8 +87,8 @@ export default function Services() {
     <section className="service-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="./assets/images/star-2.png" alt="Star" /> My Services{" "}
-          <img src="./assets/images/star-2.png" alt="Star" />
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} /> What I Love{" "}
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
         </h1>
         <div className="row">
           {/* Sidebar */}
@@ -101,8 +106,8 @@ export default function Services() {
           {/* Content */}
           <div className="col-md-8">
             <h1 className="section-heading" data-aos="fade-up">
-              <img src="./assets/images/star-2.png" alt="Star" />
-              My Services <img src="./assets/images/star-2.png" alt="Star" />
+              <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
+              What I Love <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
             </h1>
             <div className="service-content-wrap" data-aos="zoom-in">
               <div className="service-content-inner shadow-box">
@@ -121,14 +126,52 @@ export default function Services() {
         </div>
         <div className="row mt-24">
           <div className="col-md-12">
-            <div className="d-flex profile-contact-resume-wrap gap-24">
-              <ShowcaseProjectsBox />
+            {/* Desktop Layout: all three boxes side-by-side */}
+            <div className="profile-contact-resume-wrap desktop-only-layout gap-24">
+              <div style={{ minWidth: '280px', display: 'flex', flexDirection: 'column' }}>
+                <ShowcaseProjectsBox />
+              </div>
               <ContactBox className="flex-1" />
               <ResumeBox />
+            </div>
+
+            {/* Mobile Layout: Row 1 (Projects and Resume side-by-side), Row 2 (Contact full-width) */}
+            <div className="mobile-only-layout">
+              <div className="d-flex gap-24 w-full">
+                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <ShowcaseProjectsBox />
+                </div>
+                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <ResumeBox />
+                </div>
+              </div>
+              <div className="w-full">
+                <ContactBox className="w-full" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .desktop-only-layout {
+          display: flex;
+        }
+        .mobile-only-layout {
+          display: none;
+        }
+        @media (max-width: 1024px) {
+          .desktop-only-layout {
+            display: none !important;
+          }
+          .mobile-only-layout {
+            display: flex !important;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 }

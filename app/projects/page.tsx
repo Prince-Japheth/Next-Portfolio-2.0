@@ -4,8 +4,9 @@ import React, { useState, useRef, useEffect, Suspense } from 'react';
 import ProjectItem from '../components/ProjectItem';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { projectData, categories } from '../data/projects';
+import Image from 'next/image';
 
-// URL parameter mapping for shorter URLs and combined categories
+// URL parameter mapping for shorter URLS and combined categories
 const categoryMapping: Record<string, string | string[]> = {
   'DESIGN': ['UI/UX DESIGN', 'Graphic Design'], // Combined category
   'design': ['UI/UX DESIGN', 'Graphic Design'], // Case-insensitive
@@ -192,13 +193,13 @@ function ProjectsContent() {
     <section className="projects-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="./assets/images/star-2.png" alt="Star" /> {
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} /> {
             selectedCategory === 'All Projects' 
               ? selectedCategory 
               : selectedCategory === 'DESIGN' || selectedCategory === 'design'
               ? 'Design Projects'
               : `${selectedCategory} Projects`
-          } <img src="./assets/images/star-2.png" alt="Star" />
+          } <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
         </h1>
 
         <div className="projects-controls" data-aos="fade-up">
@@ -261,7 +262,7 @@ function ProjectsContent() {
             className="filter-button"
             disabled={isFiltering}
           >
-            <img src="./assets/images/filter.svg" alt="Filter" style={{ width: '24px', height: '24px' }} />
+            <Image src="/assets/images/filter.svg" alt="Filter" width={24} height={24} />
           </button>
 
           <div

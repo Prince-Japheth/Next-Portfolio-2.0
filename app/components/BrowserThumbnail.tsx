@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import '../../public/assets/css/browser.css';
 
 interface BrowserThumbnailProps {
@@ -163,7 +164,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
         style={{ cursor: 'pointer' }}
       >
         <div className="browser-thumbnail-favicon">
-          <img src={`https://www.google.com/s2/favicons?domain=${url}`} alt="favicon" />
+          <Image src={`https://www.google.com/s2/favicons?domain=${url}`} alt="favicon" width={16} height={16} />
         </div>
         <span className="browser-thumbnail-url">{url}</span>
       </div>

@@ -4,6 +4,7 @@ import ResumeBox from "../components/ResumeBox";
 import ProfileContactBox from "../components/ProfileContactBox";
 import ContactBox from "../components/ContactBox";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Japheth Jerry",
@@ -76,17 +77,28 @@ export default function About() {
         <div className="d-flex about-me-wrap align-items-start gap-24">
           <div data-aos="zoom-in">
             <div className="about-image-box shadow-box">
-              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+              <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
               <div className="image-inner">
-                <img src="/assets/images/me2.avif" alt="About Me" />
+                <Image 
+                  src="/assets/images/me2.avif" 
+                  alt="About Me" 
+                  width={0} 
+                  height={0} 
+                  sizes="100vw" 
+                  style={{ width: '100%', height: 'auto' }} 
+                  priority 
+                />
               </div>
             </div>
           </div>
           <div className="about-details" data-aos="zoom-in">
-            <h2 className="section-heading" data-aos="fade-up"><img src="/assets/images/star-2.png" alt="Star" />
-              Self-summary <img src="/assets/images/star-2.png" alt="Star" /></h2>
+            <h2 className="section-heading" data-aos="fade-up">
+              <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
+              Self-summary 
+              <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
+            </h2>
             <div className="about-details-inner shadow-box">
-              <img src="/assets/images/icon2.png" alt="Star" />
+              <Image src="/assets/images/icon2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto' }} />
               <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
                 Computer Software Engineer with expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries and Cyber Security Specialist.
@@ -98,7 +110,7 @@ export default function About() {
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
               {/* <Link href="/resume" className="overlay-link" /> */}
-              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+              <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
@@ -113,13 +125,13 @@ export default function About() {
                 </li>
               </ul>
               <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>
-                <img src="/assets/images/icon.svg" alt="Button" />
+                <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
               </Link>
             </div>
           </div>
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-education shadow-box">
-              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+              <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
               <h3>EDUCATION</h3>
               <ul>
                 <li>

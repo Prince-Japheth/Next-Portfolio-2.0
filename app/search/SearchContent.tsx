@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { projectData } from '../data/projects';
 
 export default function SearchContent() {
@@ -37,7 +38,7 @@ export default function SearchContent() {
     <section className="search-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="./assets/images/star-2.png" alt="Star" /> Search Results <img src="./assets/images/star-2.png" alt="Star" />
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} /> Search Results <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
         </h1>
 
         <div className="search-form-container" data-aos="fade-up">

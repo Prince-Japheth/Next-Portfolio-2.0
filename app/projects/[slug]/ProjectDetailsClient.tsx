@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Project } from '../../data/projects';
 import Browser from '../../components/Browser';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProjectDetailsClientProps {
   currentProject: Project;
@@ -82,9 +83,11 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
-              <img
+              <Image
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}
+                width={800}
+                height={600}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -93,6 +96,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                 }}
                 className="shadow-box"
                 key={`project-image-${currentProject.title}`} // Add key for proper re-rendering
+                priority
               />
             </div>
           </div>
@@ -100,10 +104,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           {/* Right side - Info boxes */}
           <div className="project-details-info-column flex-1 d-flex flex-column">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
-              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img
+              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
+              <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
+                width={40}
+                height={40}
                 style={{
                   position: 'absolute',
                   right: 0,
@@ -129,10 +135,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
             <br />
 
             <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important' }}>
-              <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
-              <img
+              <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
+              <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
+                width={40}
+                height={40}
                 style={{
                   position: 'absolute',
                   right: 0,
@@ -151,11 +159,13 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         {/* Rest of the content */}
         <div data-aos="zoom-in">
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important' }}>
-            <img src="/assets/images/bg1.png" alt="Background" className="bg-img" />
+            <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
             <div className="left-details" style={{ padding: '20px !important' }}>
-            <img
+              <Image
                 src="/assets/images/icon3.png"
                 alt="Icon"
+                width={40}
+                height={40}
                 style={{
                   position: 'absolute',
                   right: 0,

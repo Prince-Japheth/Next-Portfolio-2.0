@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface SkillCardProps {
   iconSrc: string;
   iconAlt: string;
@@ -11,7 +13,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ iconSrc, iconAlt, delay, tooltipT
   return (
     <div className="skill-card" data-aos="fade-up" data-aos-delay={delay}>
       <div className="card-icon">
-        <img src={iconSrc} alt={iconAlt} />
+        <Image src={iconSrc} alt={iconAlt} width={40} height={40} />
       </div>
       <div className="tooltip shadow-box">{tooltipText}</div>
     </div>

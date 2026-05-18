@@ -6,6 +6,7 @@ import EducationSection from '../components/resume/EducationSection';
 import ExperienceSection from '../components/resume/ExperienceSection';
 import CertificationSection from '../components/resume/CertificationSection';
 import SkillsSection from '../components/resume/SkillsSection';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Resume | Japheth Jerry",
@@ -49,9 +50,9 @@ export default function Resume() {
     <section className="resume-area">
       <div className="container">
         <h1 className="section-heading" data-aos="fade-up">
-          <img src="/assets/images/star-2.png" alt="Star" />
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
           Interactive Resume
-          <img src="/assets/images/star-2.png" alt="Star" />
+          <Image src="/assets/images/star-2.png" alt="Star" width={30} height={30} />
         </h1>
         <br />
         <div className="gx-row d-flex">

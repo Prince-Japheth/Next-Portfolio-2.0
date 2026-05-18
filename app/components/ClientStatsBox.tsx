@@ -1,12 +1,13 @@
 "use client";
 
 import CountUp from "react-countup";
+import Image from "next/image";
 
 const ClientStatsBox = () => {
   return (
     <div className="col-md-6" data-aos="zoom-in">
       <div className="about-client-box info-box shadow-box">
-        <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+        <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
         <div className="clients d-flex align-items-start gap-24 justify-content-center">
           <div className="client-item">
             <h1>

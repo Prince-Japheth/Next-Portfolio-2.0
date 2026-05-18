@@ -95,7 +95,6 @@ export default function Home() {
                    width={600} 
                    height={600} 
                    priority 
-                   unoptimized
                  />
                  <div className="img-box">
                    <div className="profile-image-container">
@@ -105,7 +104,6 @@ export default function Home() {
                        width={300} 
                        height={300} 
                        priority 
-                       unoptimized
                      />
                      <Image 
                        src="/assets/images/me.avif" 
@@ -113,7 +111,6 @@ export default function Home() {
                        width={300} 
                        height={300} 
                        priority 
-                       unoptimized
                      />
                    </div>
                  </div>
@@ -122,7 +119,7 @@ export default function Home() {
                   <h1>Japheth Jerry.</h1>
                   <p>Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
                   <Link href="/about" className="about-btn">
-                    <img src="/assets/images/icon.svg" alt="Button" />
+                    <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
                   </Link>
                 </div>
               </div>
@@ -134,12 +131,12 @@ export default function Home() {
                     <div className="marquee">
                       <div>
                         <span aria-label="Professional focus and expertise">
-                          BUILDING <b>SOLUTIONS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          SECURING <b>SYSTEMS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          SCALING <b>IDEAS</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          CRAFTING <b>CODE</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          DESIGNING <b>EXPERIENCES</b> <img src="/assets/images/star1.svg" alt="Star" />
-                          SOLVING <b>COMPLEXITY</b> <img src="/assets/images/star1.svg" alt="Star" />
+                          BUILDING <b>SOLUTIONS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
+                          SECURING <b>SYSTEMS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
+                          SCALING <b>IDEAS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
+                          CRAFTING <b>CODE</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
+                          DESIGNING <b>EXPERIENCES</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
+                          SOLVING <b>COMPLEXITY</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
                         </span>
                       </div>
                     </div>

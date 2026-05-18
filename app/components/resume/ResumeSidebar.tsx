@@ -1,6 +1,7 @@
 import React from 'react';
 import SkillCard from "../SkillCard";
 import { skills, toolsAndProductivity } from '../../data/resumeData';
+import Image from 'next/image';
 
 import WhatsAppLink from '../shared/WhatsAppLink';
 import { CONTACT_EMAILS } from '@/lib/constants/contact';
@@ -10,9 +11,17 @@ const ResumeSidebar = () => {
     <div className="resume-sidebar-wrap" data-aos="zoom-in">
       <div className="resume-sidebar text-center">
         <div className="shadow-box">
-          <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
           <div className="img-box">
-            <img src="/assets/images/me2.avif" alt="About Me" />
+            <Image 
+              src="/assets/images/me2.avif" 
+              alt="About Me" 
+              width={0} 
+              height={0} 
+              sizes="100vw" 
+              style={{ width: '100%', height: 'auto' }} 
+              priority 
+            />
           </div>
           <h2>Japheth Jerry</h2>
           <p><a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>{CONTACT_EMAILS.PRIMARY}</a></p>

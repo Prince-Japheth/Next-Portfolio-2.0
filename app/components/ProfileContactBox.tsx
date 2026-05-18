@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProfileContactBoxProps {
   showGithub?: boolean;
@@ -26,7 +27,7 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
   return (
     <div data-aos="zoom-in" className={className}>
       <div className="about-profile-box info-box shadow-box h-full">
-        <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+        <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
         <div className="inner-profile-icons shadow-box">
           {showGithub && (
             <a href="https://github.com/Prince-Japheth" target="_blank" rel="noopener noreferrer">
@@ -60,7 +61,7 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
             <h1>Profiles &amp; Contacts</h1>
           </div>
           <Link href="/contact" className="about-btn">
-            <img src="/assets/images/icon.svg" alt="Button" />
+            <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
           </Link>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import WhatsAppLink from "../components/shared/WhatsAppLink";
 import { CONTACT_NUMBERS, CONTACT_EMAILS } from "@/lib/constants/contact";
+import Image from "next/image";
 
 export default function Contact() {
   return (
@@ -63,8 +64,8 @@ export default function Contact() {
           </div>
           <div data-aos="zoom-in" className="contact-form">
             <div className="shadow-box">
-              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
-              <img src="/assets/images/icon3.png" alt="Icon" />
+              <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
+              <Image src="/assets/images/icon3.png" alt="Icon" width={40} height={40} />
               <h1>Let’s work <span>together.</span></h1>
               <form action="https://formspree.io/f/mqakppnn" method="POST" id="contactForm">
                 <div className="alert alert-success messenger-box-contact__msg" style={{ display: 'none' }} role="alert">

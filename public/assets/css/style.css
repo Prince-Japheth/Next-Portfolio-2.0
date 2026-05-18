@@ -2600,7 +2600,7 @@ ol {
 
 .service-area .service-sidebar .service-sidebar-inner {
     height: 100%;
-    padding: 91px 24px 90px 50px;
+    padding: 120px 24px;
 }
 
 .service-area .service-sidebar .service-sidebar-inner ul {
@@ -2628,24 +2628,25 @@ ol {
 }
 
 .service-area .service-content-wrap .service-content-inner {
-    padding: 27px 30px;
+    padding: 10px;
 }
 
 .service-area .service-content-wrap .service-content-inner .service-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 10px;
     justify-content: space-between;
 }
 
 .service-area .service-content-wrap .service-content-inner .service-item {
     width: calc(50% - 12px);
-    padding: 24px 47px 15px 30px;
+    padding: 20px;
+    flex: auto;
 }
 
 .service-area .service-content-wrap .service-content-inner .service-item h3 {
     color: #BCBCBC;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     opacity: 0.56;
     text-transform: uppercase;
@@ -2656,7 +2657,7 @@ ol {
     color: #ffffff;
     opacity: 0.8;
     line-height: 25px;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 
@@ -3297,7 +3298,7 @@ ol {
     }
 
     .service-area .service-sidebar .service-sidebar-inner {
-        padding: 50px 24px;
+        padding: 24px;
         height: auto;
     }
 
@@ -3612,14 +3613,14 @@ ol {
     }
 
     .service-area .service-sidebar .service-sidebar-inner {
-        padding: 50px 24px;
+        padding: 24px;
         width: 100%;
         margin: auto auto 30px auto;
     }
 
     .service-area .service-sidebar .service-sidebar-inner ul {
         gap: 50px;
-        max-width: 220px;
+        /* max-width: 220px; */
         margin: auto;
     }
 

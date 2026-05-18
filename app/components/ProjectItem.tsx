@@ -5,6 +5,7 @@ import Browser from './Browser';
 import { useBrowser } from '../context/BrowserContext';
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectItemProps {
   project: {
@@ -90,7 +91,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             onClick={handleClick}
             style={{ cursor: 'pointer' }}
           />
-          <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
+          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
           <div className="project-img">
             <div
               className="image-container"
@@ -103,15 +104,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                 overflow: 'hidden',
               }}
             >
-              <img 
+              <Image 
                 key={project.image} // Force re-render when image changes
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
                 alt={project.title}
+                fill
                 style={{ 
                   objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
                   borderRadius: '30px',
                 }}
               />
@@ -128,7 +128,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="project-btn"
               style={{ cursor: 'pointer' }}
             >
-              <img src="./assets/images/icon.svg" alt="Button" />
+              <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
             </div>
           </div>
         </div>
@@ -162,10 +162,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             <button className="modal-close-btn" onClick={handleClose}>
               ×
             </button>
-            <img 
+            <Image 
               src={project.link} 
               alt={project.title}
               className="modal-image"
+              width={1200}
+              height={800}
+              unoptimized
+              style={{ objectFit: 'contain', width: '100%', height: 'auto', maxHeight: '90vh' }}
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { experienceData } from '../../data/resumeData';
+import Image from 'next/image';
 
 const ExperienceSection = () => {
   return (
@@ -12,8 +13,8 @@ const ExperienceSection = () => {
           <br />
           <br />
           <a href={experience.companyUrl} target="_blank">
-            <img src={experience.companyIcon} alt="Company Website" className="company-icon" />
-            <h5>{experience.companyName}</h5> <img src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" />
+            <Image src={experience.companyIcon} alt="Company Website" className="company-icon" width={30} height={30} />
+            <h5>{experience.companyName}</h5> <Image src="https://cdn-icons-png.flaticon.com/128/1017/1017466.png" alt="Company Website" className="link-icon" width={14} height={14} />
           </a>
           <p>
             {experience.responsibilities.map((responsibility, i) => (

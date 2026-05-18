@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Terminal from "./Terminal";
+import Image from "next/image";
 
 declare global {
   interface Window {
@@ -67,7 +68,7 @@ const Header = () => {
         <div className="container">
           <div className="gx-row d-flex align-items-center justify-content-between">
             <Link href="/" className="logo">
-              <img src="/assets/images/logo.svg" alt="Logo" />
+              <Image src="/assets/images/logo.svg" alt="Logo" width={150} height={50} priority />
             </Link>
 
             <nav className={`navbar ${isMobileMenuOpen ? 'active' : ''}`}>

@@ -186,7 +186,7 @@ export const experienceData = [
     title: "Software Engineer",
     employmentType: "FULL-TIME",
     companyUrl: "https://spicodex.com/",
-    companyIcon: "./assets/images/spicodex.png",
+    companyIcon: "/assets/images/spicodex.png",
     companyName: "Spicodex",
     responsibilities: [
       "Built cross-platform mobile apps with React Native",
@@ -200,7 +200,7 @@ export const experienceData = [
     title: "Full-Stack Engineer",
     employmentType: "PART-TIME",
     companyUrl: "https://aquilacyber.netlify.app/",
-    companyIcon: "./assets/images/aquila.png",
+    companyIcon: "/assets/images/aquila.png",
     companyName: "Aquila Cyber",
     responsibilities: [
       "Developed full-stack applications using MERN and XAMP stacks",
@@ -215,7 +215,7 @@ export const experienceData = [
     title: "UI/UX and Web Developer",
     employmentType: "PART-TIME",
     companyUrl: "https://chinwubajeffrey.github.io/safekan/",
-    companyIcon: "./assets/images/safekan.png",
+    companyIcon: "/assets/images/safekan.png",
     companyName: "Safekan",
     responsibilities: [
       "Built responsive websites with HTML, CSS, Bootstrap, and JavaScript",
@@ -230,7 +230,7 @@ export const experienceData = [
     title: "Web Developer, UI/UX & Graphic Designer",
     employmentType: "PART-TIME",
     companyUrl: "https://weblaunchguys.online/",
-    companyIcon: "./assets/images/xtm.png",
+    companyIcon: "/assets/images/xtm.png",
     companyName: "Web Launch Guys",
     responsibilities: [
       "Developed responsive websites using React.js, Next.js, Angular, Vue.js, and Astro",
