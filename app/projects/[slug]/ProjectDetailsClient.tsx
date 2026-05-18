@@ -108,9 +108,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
               <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
-                width={40}
-                height={40}
+                width={0}
+                height={0}
+                sizes="100vw"
                 style={{
+                  width: 'auto',
+                  height: 'auto',
                   position: 'absolute',
                   right: 0,
                   left: 'unset',
@@ -139,9 +142,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
               <Image
                 src="/assets/images/icon2.png"
                 alt="Icon"
-                width={40}
-                height={40}
+                width={0}
+                height={0}
+                sizes="100vw"
                 style={{
+                  width: 'auto',
+                  height: 'auto',
                   position: 'absolute',
                   right: 0,
                   left: 'unset',
@@ -164,9 +170,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
               <Image
                 src="/assets/images/icon3.png"
                 alt="Icon"
-                width={40}
-                height={40}
+                width={0}
+                height={0}
+                sizes="100vw"
                 style={{
+                  width: 'auto',
+                  height: 'auto',
                   position: 'absolute',
                   right: 0,
                   left: 'unset',

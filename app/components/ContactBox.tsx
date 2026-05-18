@@ -13,7 +13,15 @@ const ContactBox: React.FC<ContactBoxProps> = ({ className = "col-md-6" }) => {
       <div className="about-contact-box info-box shadow-box">
         <Link href="/contact" className="overlay-link" />
         <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
-        <Image src="/assets/images/icon2.png" alt="Icon" className="star-icon" width={40} height={40} />
+        <Image 
+          src="/assets/images/icon2.png" 
+          alt="Icon" 
+          className="star-icon" 
+          width={0} 
+          height={0} 
+          sizes="100vw" 
+          style={{ width: 'auto', height: 'auto' }} 
+        />
         <h1>
           Let's <br />
           connect <span>sometime.</span>
