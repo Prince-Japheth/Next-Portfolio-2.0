@@ -935,6 +935,7 @@ ol {
 
 .profile-image-container img:last-child {
     animation: fadeOutIn 5s infinite;
+    transform: scale(var(--me-scale, 1));
 }
 
 @keyframes fadeInOut {
@@ -1406,8 +1407,9 @@ ol {
 }
 
 .about-area .about-me-box .img-box {
-    width: 224px;
-    height: 224px;
+    width: 350px;
+    height: 350px;
+    --me-scale: 0.64;
     position: relative;
     overflow: hidden;
     /* background: linear-gradient(90deg, #3C58E3 -15%, #C2EBFF 58%, #5AB5E2 97%); */
@@ -3242,8 +3244,9 @@ ol {
     }
 
     .about-area .about-me-box .img-box {
-        width: 190px;
-        height: 190px;
+        width: 280px;
+        height: 280px;
+        --me-scale: 0.68;
     }
 
     .about-area .about-image-box {
@@ -3340,8 +3343,9 @@ ol {
     }
 
     .about-area .about-me-box .img-box {
-        width: 224px;
-        height: 224px;
+        width: 350px;
+        height: 350px;
+        --me-scale: 0.64;
     }
 
     .about-area .about-me-box .infos h1 {

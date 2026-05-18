@@ -101,8 +101,8 @@ export default function Home() {
                      <Image 
                        src="/assets/images/me2.avif" 
                        alt="About Me Alternate" 
-                       width={300} 
-                       height={300} 
+                       width={380} 
+                       height={380} 
                        priority 
                      />
                      <Image 
