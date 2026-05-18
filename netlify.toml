@@ -1,4 +1,5 @@
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+# Netlify Configuration for Next.js
+# The Netlify Next.js Runtime handles all routing, dynamic image optimization,
+# SSR, and redirects automatically. 
+# Avoid manual SPA catch-all redirects (/* -> /index.html) as they intercept 
+# image optimization payloads and break next/image in production.
