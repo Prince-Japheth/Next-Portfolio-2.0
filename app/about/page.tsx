@@ -76,17 +76,17 @@ export default function About() {
         <div className="d-flex about-me-wrap align-items-start gap-24">
           <div data-aos="zoom-in">
             <div className="about-image-box shadow-box">
-              <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
+              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
               <div className="image-inner">
-                <img src="./assets/images/me2.avif" alt="About Me" />
+                <img src="/assets/images/me2.avif" alt="About Me" />
               </div>
             </div>
           </div>
           <div className="about-details" data-aos="zoom-in">
-            <h2 className="section-heading" data-aos="fade-up"><img src="./assets/images/star-2.png" alt="Star" />
-              Self-summary <img src="./assets/images/star-2.png" alt="Star" /></h2>
+            <h2 className="section-heading" data-aos="fade-up"><img src="/assets/images/star-2.png" alt="Star" />
+              Self-summary <img src="/assets/images/star-2.png" alt="Star" /></h2>
             <div className="about-details-inner shadow-box">
-              <img src="./assets/images/icon2.png" alt="Star" />
+              <img src="/assets/images/icon2.png" alt="Star" />
               <h1>Japheth Oluwatimileyin Jerry</h1>
               <p>
                 Computer Software Engineer with expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries and Cyber Security Specialist.
@@ -98,7 +98,7 @@ export default function About() {
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
               {/* <Link href="/resume" className="overlay-link" /> */}
-              <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
+              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
@@ -113,13 +113,13 @@ export default function About() {
                 </li>
               </ul>
               <Link href="/resume" className="about-btn" style={{ marginLeft: '200px' }}>
-                <img src="./assets/images/icon.svg" alt="Button" />
+                <img src="/assets/images/icon.svg" alt="Button" />
               </Link>
             </div>
           </div>
           <div className="col-md-6" data-aos="zoom-in">
             <div className="about-edc-exp about-education shadow-box">
-              <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
+              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
               <h3>EDUCATION</h3>
               <ul>
                 <li>

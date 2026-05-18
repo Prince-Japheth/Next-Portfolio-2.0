@@ -95,6 +95,7 @@ export default function Home() {
                    width={600} 
                    height={600} 
                    priority 
+                   unoptimized
                  />
                  <div className="img-box">
                    <div className="profile-image-container">
@@ -104,6 +105,7 @@ export default function Home() {
                        width={300} 
                        height={300} 
                        priority 
+                       unoptimized
                      />
                      <Image 
                        src="/assets/images/me.avif" 
@@ -111,6 +113,7 @@ export default function Home() {
                        width={300} 
                        height={300} 
                        priority 
+                       unoptimized
                      />
                    </div>
                  </div>

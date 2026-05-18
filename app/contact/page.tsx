@@ -63,8 +63,8 @@ export default function Contact() {
           </div>
           <div data-aos="zoom-in" className="contact-form">
             <div className="shadow-box">
-              <img src="./assets/images/bg1.png" alt="BG" className="bg-img" />
-              <img src="./assets/images/icon3.png" alt="Icon" />
+              <img src="/assets/images/bg1.png" alt="BG" className="bg-img" />
+              <img src="/assets/images/icon3.png" alt="Icon" />
               <h1>Let’s work <span>together.</span></h1>
               <form action="https://formspree.io/f/mqakppnn" method="POST" id="contactForm">
                 <div className="alert alert-success messenger-box-contact__msg" style={{ display: 'none' }} role="alert">
