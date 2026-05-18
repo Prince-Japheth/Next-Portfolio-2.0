@@ -3246,6 +3246,10 @@ ol {
         height: 190px;
     }
 
+    .about-area .about-image-box {
+        width: 100%;
+    }
+
     .about-area .about-me-box .infos {
         padding-top: 10px;
     }
@@ -3259,6 +3263,14 @@ ol {
         padding: 20px;
     }
 
+    .info-box .infos h1 {
+        font-size: 16px;
+    }
+
+    .info-box .infos h4 {
+        font-size: 10px;
+    }
+
     .info-box>img {
         width: 75%;
     }
@@ -3266,6 +3278,10 @@ ol {
     .info-box.about-services-box .icon-boxes {
         margin-bottom: 39px;
         margin-top: 31px;
+    }
+
+    .profile-contact-resume-wrap div .about-services-box .icon-boxes i {
+        font-size: 25px;
     }
 
     .info-box .inner-profile-icons {
