@@ -94,7 +94,8 @@ export default function Home() {
                    className="bg-img" 
                    width={600} 
                    height={600} 
-                   priority 
+                   priority
+                   loading="eager"
                  />
                  <div className="img-box">
                    <div className="profile-image-container">
