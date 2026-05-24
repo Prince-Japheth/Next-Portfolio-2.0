@@ -12,6 +12,17 @@ export interface Project {
 
 export const projectData: Project[] = [
   {
+    title: 'My Portfolio Website',
+    category: 'Web Development',
+    tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
+    image: './assets/images/project_0.avif',
+    link: 'https://japhethjerry.space',
+    brief: 'A modern portfolio website showcasing my work as a software engineer and designer. Built with React.js and Next.js, featuring a responsive design and smooth animations.',
+    about: 'This portfolio demonstrates my front-end development capabilities through a modern, performant website with unique interactive elements and a focus on user experience.',
+    description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',
+    status: 'Completed'
+  },
+  {
     "title": "Popkup",
     "category": "Web Development",
     "tools": "Next.js, React, TypeScript, Tailwind CSS",
@@ -32,17 +43,6 @@ export const projectData: Project[] = [
     "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
     "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
     "status": "Completed"
-  },
-  {
-    title: 'My Portfolio Website',
-    category: 'Web Development',
-    tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
-    image: './assets/images/project_0.avif',
-    link: 'https://japhethjerry.space',
-    brief: 'A modern portfolio website showcasing my work as a software engineer and designer. Built with React.js and Next.js, featuring a responsive design and smooth animations.',
-    about: 'This portfolio demonstrates my front-end development capabilities through a modern, performant website with unique interactive elements and a focus on user experience.',
-    description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',
-    status: 'Completed'
   },
   {
     "title": "Qallie AI Customer Agent Platform",

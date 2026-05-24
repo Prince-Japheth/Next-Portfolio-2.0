@@ -62,8 +62,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       }
       setIsModalOpen(true);
     } else {
-      // Always open the browser, regardless of whether it's minimized
-      setIsBrowserOpen(true);
+      // Check if mobile view
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        window.open(project.link, '_blank');
+      } else {
+        // Always open the browser, regardless of whether it's minimized
+        setIsBrowserOpen(true);
+      }
     }
   };
 

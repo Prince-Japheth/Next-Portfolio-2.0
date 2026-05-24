@@ -63,6 +63,12 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
       return;
     }
 
+    // Check if mobile view
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      window.open(currentProject.link, '_blank');
+      return;
+    }
+
     // Open in browser component
     setIsBrowserOpen(true);
   };
