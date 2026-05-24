@@ -28,6 +28,15 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
   const [hasMoved, setHasMoved] = useState(false);
   const thumbnailRef = useRef<HTMLDivElement>(null);
 
+  const getDomain = (urlString: string) => {
+    try {
+      return new URL(urlString).hostname;
+    } catch (e) {
+      return typeof window !== 'undefined' ? window.location.hostname : urlString;
+    }
+  };
+  const domain = getDomain(url);
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (e.button !== 0) return; // Only left click
     
@@ -148,6 +157,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
         cursor: isDragging ? 'grabbing' : 'grab'
       }}
       onMouseDown={handleMouseDown}
+      onClick={handleClick}
     >
       <div className="browser-thumbnail-header">
         <span className="browser-thumbnail-title">{title}</span>
@@ -160,11 +170,10 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
       </div>
       <div 
         className="browser-thumbnail-content"
-        onClick={handleClick}
         style={{ cursor: 'pointer' }}
       >
         <div className="browser-thumbnail-favicon">
-          <Image src={`https://www.google.com/s2/favicons?domain=${url}`} alt="favicon" width={16} height={16} />
+          <Image src={`https://icon.horse/icon/${domain}`} alt="favicon" width={16} height={16} unoptimized />
         </div>
         <span className="browser-thumbnail-url">{url}</span>
       </div>
