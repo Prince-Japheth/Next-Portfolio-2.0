@@ -12,6 +12,28 @@ export interface Project {
 
 export const projectData: Project[] = [
   {
+    "title": "Popkup",
+    "category": "Web Development",
+    "tools": "Next.js, React, TypeScript, Tailwind CSS",
+    "image": "./assets/images/project59.avif",
+    "link": "https://popkup.com/",
+    "brief": "An all-in-one e-commerce platform built with Next.js, enabling brands to launch storefronts, connect with influencers, and seamlessly manage checkout and shipping workflows.",
+    "about": "This project demonstrates my ability to build complex, scalable SaaS platforms. It bridges the gap between commerce and influence through an intuitive storefront builder, robust administrative modules, and advanced e-commerce capabilities.",
+    "description": "Architected and developed a full-scale e-commerce and influencer marketing platform using Next.js and TypeScript. Built dynamic brand storefront routing to handle individualized creator shops while ensuring high performance and SEO. Integrated complex third-party payment and shipping APIs to calculate real-time delivery summaries and process seamless checkout flows. Engineered a comprehensive admin dashboard featuring a Trust & Reputation system, complete with verification workflows, ticket management, and dispute resolution modules. Implemented advanced features including service worker integration for push notifications and robust state management for a responsive user experience. This project highlights my capability to build and scale complex architectures that handle multi-tenant e-commerce operations while maintaining an intuitive and highly engaging user interface.",
+    "status": "Completed"
+  },
+  {
+    "title": "J3 Global Ventures Limited",
+    "category": "Web Development",
+    "tools": "NextJs, Typescript, CSS, Bootstrap",
+    "image": "./assets/images/project58.avif",
+    "link": "https://j3globalventures.netlify.app/",
+    "brief": "A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.",
+    "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
+    "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
+    "status": "Completed"
+  },
+  {
     title: 'My Portfolio Website',
     category: 'Web Development',
     tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
