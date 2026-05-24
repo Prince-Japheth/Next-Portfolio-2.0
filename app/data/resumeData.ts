@@ -5,7 +5,7 @@ export const skills = [
     tooltipText: "HTML",
   },
   {
-    iconSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/2048px-Official_CSS_Logo.svg.png",
+    iconSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/3840px-Official_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     iconAlt: "CSS3 logo",
     tooltipText: "CSS & SCSS",
   },
