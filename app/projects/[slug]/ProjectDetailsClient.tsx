@@ -168,7 +168,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
 
             <br />
 
-            <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important' }}>
+            <div className="project-infos-wrap shadow-box" style={{ marginTop: 'auto', padding: '15px !important', flex: '1', }}>
               <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
               <Image
                 src="/assets/images/icon2.png"
@@ -185,7 +185,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                   top: 'unset',
                 }}
               />
-              <div className="project-details-info">
+              <div className="project-details-info" style={{ flex: '1', height: '100%' }}>
                 <h3>About</h3>
                 <p>{currentProject.about}</p>
               </div>
