@@ -18,7 +18,7 @@ export default function Contact() {
                 </div>
                 <div className="right">
                   <span>MAIL me</span>
-                  <h4 
+                  <h4
                     onClick={() => window.location.href = `mailto:${CONTACT_EMAILS.PRIMARY}`}
                     style={{ cursor: 'pointer' }}
                   >
@@ -32,8 +32,8 @@ export default function Contact() {
                   <i className="iconoir-phone" />
                 </div>
                 <div className="right">
-                  <span>Contact Us</span>
-                  <h4 
+                  <span>Contact Me</span>
+                  <h4
                     onClick={() => window.location.href = `tel:${CONTACT_NUMBERS.PRIMARY}`}
                     style={{ cursor: 'pointer' }}
                   >
@@ -65,7 +65,14 @@ export default function Contact() {
           <div data-aos="zoom-in" className="contact-form">
             <div className="shadow-box">
               <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
-              <Image src="/assets/images/icon3.png" alt="Icon" width={40} height={40} />
+              <Image src="/assets/images/icon3.png"
+                className="star-icon"
+                alt="Icon"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: 'auto', height: 'auto' }}
+              />
               <h1>Let’s work <span>together.</span></h1>
               <form action="https://formspree.io/f/mqakppnn" method="POST" id="contactForm">
                 <div className="alert alert-success messenger-box-contact__msg" style={{ display: 'none' }} role="alert">

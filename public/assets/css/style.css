@@ -2983,7 +2983,7 @@ ol {
 }
 
 .contact-area .contact-form .shadow-box {
-    padding: 40px 40px 40px 40px;
+    padding: 20px;
 }
 
 .contact-area .contact-form img {
@@ -3712,7 +3712,7 @@ ol {
 
 /* Project Details Page Specific Styles */
 .project-details-wrap {
-  padding-top: 80px;
+  padding-top: 20px;
 }
 
 .project-details-content {

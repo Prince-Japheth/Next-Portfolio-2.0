@@ -87,16 +87,20 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   return (
     <main className="project-details-wrap">
       <div className="container">
-        <div style={{ marginBottom: '30px' }} data-aos="fade-down">
+        <div style={{ marginBottom: '20px' }} data-aos="fade-down">
           <button 
             onClick={() => router.back()} 
-            className="theme-btn"
+            className="big-btn shadow-box"
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 
               gap: '10px', 
               border: 'none',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              width: 'fit-content',
+              marginTop: 0,
+              marginBottom:0,
+              padding: '12px'
             }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
