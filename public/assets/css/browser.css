@@ -58,15 +58,16 @@
 .browser-minimize,
 .browser-maximize,
 .browser-expand {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 14px;
+  padding: 0;
   color: transparent;
   transition: color 0.2s ease;
   position: relative;

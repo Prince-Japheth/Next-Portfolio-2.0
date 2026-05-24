@@ -107,19 +107,34 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
               data-tooltip="Close (Esc)"
               data-tooltip-position="bottom"
               data-show-tooltip={showCloseTooltip}
-            >×</button>
+            >
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
             <button
               className="browser-minimize"
               onClick={handleMinimize}
               data-tooltip="Minimize"
               data-tooltip-position="bottom"
-            >−</button>
+            >
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
             <button
               className="browser-maximize"
               onClick={handleMaximize}
               data-tooltip={isMaximized ? "Restore" : "Maximize"}
               data-tooltip-position="bottom"
-            >□</button>
+            >
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                {isMaximized ? (
+                  <>
+                    <rect x="3" y="3" width="14" height="14" rx="2" ry="2"></rect>
+                    <path d="M7 3V1h14v14h-2"></path>
+                  </>
+                ) : (
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                )}
+              </svg>
+            </button>
           </div>
           <div className="browser-address-bar">
             <input
