@@ -34,6 +34,8 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   const isExternalLink = currentProject.link.includes('play') ||
     currentProject.link.includes('figma') ||
     currentProject.link.includes('bondyt') ||
+    currentProject.link.includes('frat') ||
+    currentProject.link.includes('popkup') ||
     currentProject.link.includes('topix');
 
   const handleNextProject = () => {
@@ -85,6 +87,31 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   return (
     <main className="project-details-wrap">
       <div className="container">
+        <div style={{ marginBottom: '30px' }} data-aos="fade-down">
+          <button 
+            onClick={() => router.back()} 
+            className="shadow-box"
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '10px', 
+              padding: '12px 24px',
+              border: 'none',
+              background: 'transparent',
+              color: 'inherit',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: 500,
+              borderRadius: '16px'
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </button>
+        </div>
         <div className="project-details-content d-flex gap-24" data-aos="zoom-in">
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
@@ -108,7 +135,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           </div>
 
           {/* Right side - Info boxes */}
-          <div className="project-details-info-column flex-1 d-flex flex-column">
+          <div className="project-details-info-column flex-1 d-flex flex-column gap-2">
             <div className="project-infos-wrap shadow-box" style={{ marginBottom: 'auto', padding: '15px !important' }}>
               <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
               <Image

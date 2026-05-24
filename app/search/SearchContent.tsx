@@ -5,11 +5,29 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projectData } from '../data/projects';
+import Browser from '../components/Browser';
 
 export default function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
   const [searchTerm, setSearchTerm] = useState(query);
+  const [browserUrl, setBrowserUrl] = useState('');
+  const [browserTitle, setBrowserTitle] = useState('');
+  const [isBrowserOpen, setIsBrowserOpen] = useState(false);
+
+  const handleVisitProject = (e: React.MouseEvent, project: any) => {
+    e.preventDefault();
+    const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup') || project.link.includes('topix');
+    
+    if (isExternalLink || (typeof window !== 'undefined' && window.innerWidth <= 768)) {
+      window.open(project.link, '_blank');
+      return;
+    }
+
+    setBrowserUrl(project.link);
+    setBrowserTitle(project.title);
+    setIsBrowserOpen(true);
+  };
 
   useEffect(() => {
     setSearchTerm(query);
@@ -82,9 +100,13 @@ export default function SearchContent() {
                       </div>
                       
                       <div className="result-actions">
-                        <Link href={project.link} target="_blank" className="btn btn-outline-primary btn-sm">
+                        <a 
+                          href={project.link} 
+                          className="btn btn-outline-primary btn-sm"
+                          onClick={(e) => handleVisitProject(e, project)}
+                        >
                           View Project
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   ))}
@@ -126,6 +148,12 @@ export default function SearchContent() {
           )}
         </div>
       </div>
+      <Browser
+        isOpen={isBrowserOpen}
+        onClose={() => setIsBrowserOpen(false)}
+        url={browserUrl}
+        title={browserTitle}
+      />
     </section>
   );
 } 

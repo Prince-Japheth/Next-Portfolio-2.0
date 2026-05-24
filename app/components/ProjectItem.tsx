@@ -24,7 +24,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const isImageLink = project.link.includes('./assets/images/');
-  const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat');
+  const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup');
   const { minimizedBrowsers, activeBrowser } = useBrowser();
   const router = useRouter();
 
