@@ -9,7 +9,7 @@ export async function GET() {
   <url>
     <loc>${baseUrl}</loc>
     <image:image>
-      <image:loc>${baseUrl}/assets/images/me2.avif</image:loc>
+      <image:loc>${baseUrl}/assets/images/me.avif</image:loc>
       <image:title>Japheth Jerry - Software Engineer & Cyber Security Specialist</image:title>
       <image:caption>Japheth Jerry - Software Engineer & Cyber Security Specialist</image:caption>
     </image:image>
@@ -22,7 +22,7 @@ export async function GET() {
   <url>
     <loc>${baseUrl}/about</loc>
     <image:image>
-      <image:loc>${baseUrl}/assets/images/me2.avif</image:loc>
+      <image:loc>${baseUrl}/assets/images/me.avif</image:loc>
       <image:title>About Japheth Jerry - Software Engineer</image:title>
       <image:caption>Japheth Jerry - Software Engineer & Cyber Security Specialist</image:caption>
     </image:image>

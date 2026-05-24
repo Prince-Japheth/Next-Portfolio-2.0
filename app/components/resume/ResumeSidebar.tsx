@@ -14,7 +14,7 @@ const ResumeSidebar = () => {
           <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
           <div className="img-box">
             <Image 
-              src="/assets/images/me2.avif" 
+              src="/assets/images/me.avif" 
               alt="About Me" 
               width={0} 
               height={0} 

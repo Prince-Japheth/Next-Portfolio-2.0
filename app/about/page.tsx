@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     description: "Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design and Cyber Security Specialist. ",
     images: [
       {
-        url: "/assets/images/me2.avif",
+        url: "/assets/images/me.avif",
         width: 400,
         height: 400,
         alt: "Japheth Jerry - About Me",
@@ -80,7 +80,7 @@ export default function About() {
               <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
               <div className="image-inner">
                 <Image 
-                  src="/assets/images/me2.avif" 
+                  src="/assets/images/me.avif" 
                   alt="About Me" 
                   width={0} 
                   height={0} 

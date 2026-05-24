@@ -9,7 +9,7 @@ const StructuredData = () => {
   const siteName = 'Japheth Jerry';
   const fullName = 'Japheth Jerry';
   const logoUrl = `${siteUrl}/assets/images/logo.svg`;
-  const profileImageUrl = `${siteUrl}/assets/images/me2.avif`;
+  const profileImageUrl = `${siteUrl}/assets/images/me.avif`;
 
   const personSchema = {
     "@context": "https://schema.org",

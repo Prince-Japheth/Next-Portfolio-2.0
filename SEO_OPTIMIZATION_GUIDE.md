@@ -91,7 +91,7 @@
 
 ### 2. Optimize Image Alt Tags
 ```html
-<img src="/assets/images/me2.avif" alt="Japheth Jerry - Software Engineer and Cyber Security Specialist" />
+<img src="/assets/images/me.avif" alt="Japheth Jerry - Software Engineer and Cyber Security Specialist" />
 ```
 
 ### 3. Add Schema Markup for Images
