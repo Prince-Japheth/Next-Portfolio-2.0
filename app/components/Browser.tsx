@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useBrowser } from '../context/BrowserContext';
 import '../../public/assets/css/browser.css';
 import LoadingBar, { LoadingBarRef } from 'react-top-loading-bar';
@@ -19,9 +20,14 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
   const [showCloseTooltip, setShowCloseTooltip] = useState(false);
   const [showExpandTooltip, setShowExpandTooltip] = useState(false);
   const { minimizeBrowser, activeBrowser, closeBrowser } = useBrowser();
+  const [mounted, setMounted] = useState(false);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const loadingBarRef = useRef<LoadingBarRef>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setCurrentUrl(url);
@@ -90,9 +96,9 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
     onClose();
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
+  return createPortal(
     <div className="browser-overlay" onClick={handleClose}>
       <div
         className={`browser-container ${isMaximized ? 'maximized' : ''}`}
@@ -189,7 +195,8 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
           />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

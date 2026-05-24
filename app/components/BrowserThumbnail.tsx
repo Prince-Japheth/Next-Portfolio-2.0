@@ -92,7 +92,6 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
       }
     }
     setIsDragging(false);
-    setHasMoved(false);
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -159,7 +158,7 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
       onMouseDown={handleMouseDown}
       onClick={handleClick}
     >
-      <div className="browser-thumbnail-header">
+      <div className="browser-thumbnail-header" style={{ cursor: 'pointer' }}>
         <span className="browser-thumbnail-title">{title}</span>
         <button 
           className="browser-thumbnail-close"
