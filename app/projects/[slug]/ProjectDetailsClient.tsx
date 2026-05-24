@@ -90,19 +90,13 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         <div style={{ marginBottom: '30px' }} data-aos="fade-down">
           <button 
             onClick={() => router.back()} 
-            className="shadow-box"
+            className="theme-btn"
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 
               gap: '10px', 
-              padding: '12px 24px',
               border: 'none',
-              background: 'transparent',
-              color: 'inherit',
-              cursor: 'pointer',
-              fontSize: '16px',
-              fontWeight: 500,
-              borderRadius: '16px'
+              cursor: 'pointer'
             }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
