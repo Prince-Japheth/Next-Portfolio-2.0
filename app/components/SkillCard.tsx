@@ -13,15 +13,15 @@ const SkillCard: React.FC<SkillCardProps> = ({ iconSrc, iconAlt, delay, tooltipT
   return (
     <div className="skill-card" data-aos="fade-up" data-aos-delay={delay}>
       <div className="card-icon">
-        <Image 
-          src={iconSrc} 
-          alt={iconAlt} 
-          width={48} 
-          height={48} 
-          style={{ height: 'auto' }} 
+        <Image
+          src={iconSrc}
+          alt={iconAlt}
+          width={48}
+          height={48}
+          style={{ height: 'auto' }}
           unoptimized
         />
-      </div> 
+      </div>
       <div className="tooltip shadow-box">{tooltipText}</div>
     </div>
   );
