@@ -11,17 +11,17 @@ export interface Project {
 }
 
 export const projectData: Project[] = [
-  {
-    title: 'My Portfolio Website',
-    category: 'Web Development',
-    tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
-    image: './assets/images/project_0.avif',
-    link: 'https://japhethjerry.space',
-    brief: 'A modern portfolio website showcasing my work as a software engineer and designer. Built with React.js and Next.js, featuring a responsive design and smooth animations.',
-    about: 'This portfolio demonstrates my front-end development capabilities through a modern, performant website with unique interactive elements and a focus on user experience.',
-    description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',
-    status: 'Completed'
-  },
+  // {
+  //   title: 'My Portfolio Website',
+  //   category: 'Web Development',
+  //   tools: 'React.js, Next.js, TypeScript, jQuery, CSS, Bootstrap',
+  //   image: './assets/images/project_0.avif',
+  //   link: 'https://japhethjerry.space',
+  //   brief: 'A modern portfolio website showcasing my work as a software engineer and designer. Built with React.js and Next.js, featuring a responsive design and smooth animations.',
+  //   about: 'This portfolio demonstrates my front-end development capabilities through a modern, performant website with unique interactive elements and a focus on user experience.',
+  //   description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',
+  //   status: 'Completed'
+  // },
   {
     "title": "Popkup",
     "category": "Web Development",
@@ -32,50 +32,6 @@ export const projectData: Project[] = [
     "about": "This project demonstrates my ability to build complex, scalable SaaS platforms. It bridges the gap between commerce and influence through an intuitive storefront builder, robust administrative modules, and advanced e-commerce capabilities.",
     "description": "Architected and developed a full-scale e-commerce and influencer marketing platform using Next.js and TypeScript. Built dynamic brand storefront routing to handle individualized creator shops while ensuring high performance and SEO. Integrated complex third-party payment and shipping APIs to calculate real-time delivery summaries and process seamless checkout flows. Engineered a comprehensive admin dashboard featuring a Trust & Reputation system, complete with verification workflows, ticket management, and dispute resolution modules. Implemented advanced features including service worker integration for push notifications and robust state management for a responsive user experience. This project highlights my capability to build and scale complex architectures that handle multi-tenant e-commerce operations while maintaining an intuitive and highly engaging user interface.",
     "status": "Completed"
-  },
-  {
-    "title": "J3 Global Ventures Limited",
-    "category": "Web Development",
-    "tools": "NextJs, Typescript, CSS, Bootstrap",
-    "image": "./assets/images/project58.avif",
-    "link": "https://j3globalventures.netlify.app/",
-    "brief": "A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.",
-    "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
-    "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
-    "status": "Completed"
-  },
-  {
-    "title": "Qallie AI Customer Agent Platform",
-    "category": "Web Development",
-    "tools": "React.js, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, Three.js, Spline, Radix UI",
-    "image": "./assets/images/project-55.avif",
-    "link": "https://qallie.online",
-    "brief": "A comprehensive AI customer agent platform website built with React and TypeScript, featuring interactive 3D animations, business automation tools, and a modern responsive design for launching intelligent customer support agents.",
-    "about": "This platform demonstrates advanced frontend development capabilities through a sophisticated landing page with 3D visualizations, interactive components, and seamless user experience design for businesses looking to implement AI-powered customer service solutions.",
-    "description": "The platform features a dynamic hero section with rotating business categories (Real Estates, Restaurants, Hotels, etc.), interactive 3D scenes using Spline and Three.js, comprehensive feature showcases including appointment scheduling and menu inquiries, step-by-step implementation guides, and responsive device showcases for mobile and desktop applications. Built with React 18 and TypeScript for type safety, the application uses Vite for fast development and building, Tailwind CSS for styling with custom animations, and shadcn/ui components for consistent design patterns. Advanced features include 3D product demonstrations, interactive pricing tables, animated preloader with rotating facts, and comprehensive business automation workflows. The application implements modern web technologies with Framer Motion for smooth animations, GSAP for advanced motion effects, and includes comprehensive responsive design patterns for optimal viewing across all devices. The platform showcases enterprise-grade AI capabilities with instant setup processes, toll-free number integration, and business-specific customization options.",
-    "status": "Completed"
-  },
-  {
-    "title": "Lincoln E-Library Platform",
-    "category": "Web Development",
-    "tools": "Next.js, React.js, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Prisma",
-    "image": "./assets/images/project-54.avif",
-    "link": "https://lincoln-e-library.vercel.app",
-    "brief": "A comprehensive digital library platform built with Next.js and Supabase, featuring user authentication, book management, course-based filtering, and an AI tutor system for educational institutions.",
-    "about": "This e-library platform demonstrates full-stack development capabilities through a modern, scalable web application with real-time database operations, user role management, and advanced content filtering systems.",
-    "description": "The platform features a sophisticated user management system with role-based access control (admin/student), comprehensive book catalog with public and private collections, course-based filtering, reading progress tracking, and an integrated AI tutor system. Built with Next.js 14 and TypeScript for type safety, the application uses Supabase for real-time database operations and authentication. The UI is crafted with Tailwind CSS and shadcn/ui components, providing a modern, responsive design with glassmorphism effects and smooth animations. Advanced features include PDF viewer integration, book request system, video content management, and analytics dashboard for administrators. The application implements proper security measures with Row Level Security (RLS) policies and includes comprehensive error handling and loading states throughout the user experience.",
-    "status": "Completed"
-  },
-  {
-    title: 'Onarietta Remet | Official Site',
-    category: 'Web Development',
-    tools: 'React.js, Next.js, Tailwind, CSS',
-    image: './assets/images/project-53.avif',
-    link: 'https://onariettaremet.com',
-    brief: 'Official website for Onarietta Remet, featuring a modern design and seamless user experience. Built with React.js and Next.js, utilizing Tailwind CSS for styling.',
-    about: 'A captivating digital showcase for the artist Onarietta Remet, designed to immerse visitors in her artistic journey while providing an elegant platform to explore her portfolio and upcoming exhibitions.',
-    description: "This project showcases a perfect blend of technical excellence and artistic sensibility. The website delivers an immersive digital experience that balances technical performance with artistic expression. Built with Next.js and Tailwind CSS, it demonstrates modern web architecture while maintaining clean, maintainable code. The site achieves exceptional performance with a 95+ Lighthouse score while delivering a visually stunning experience that effectively showcases the artist's work. Beyond the frontend implementation, I handled comprehensive SEO optimization including meta tags, structured data, and Google Search Console integration. The server-side implementation leverages Next.js's built-in features for optimal performance and SEO, while implementing proper caching strategies and image optimization. The attention to detail in animations, transitions, and responsive design reflects a deep understanding of how technical implementation should serve user experience. This project exemplifies full-stack thinking - bridging technical implementation with user-centered design while maintaining high performance standards.",
-    status: 'In Progress'
   },
   {
     title: 'Bondyt Merchant',
@@ -89,6 +45,61 @@ export const projectData: Project[] = [
     status: 'Completed'
   },
   {
+    "title": "J3 Global Ventures Limited",
+    "category": "Web Development",
+    "tools": "NextJs, Typescript, CSS, Bootstrap",
+    "image": "./assets/images/project58.avif",
+    "link": "https://j3globalventures.netlify.app/",
+    "brief": "A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.",
+    "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
+    "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
+    "status": "Completed"
+  },
+  {
+    title: 'Topix',
+    category: 'Mobile Development',
+    tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, Java, React Native, CSS, SASS, Bootstrap',
+    image: './assets/images/project-42.avif',
+    link: 'https://topix.great-site.net/about',
+    brief: 'Led the development of Topix as a full-stack engineer, creating a vibrant social platform that enables users to connect through shared interests.',
+    about: 'A social platform connecting people through shared interests, built with PHP Laravel for web and Java for Android, expanding to iOS with React Native. Features include real-time chat, community building, and content sharing.',
+    description: 'Led the development of a full-stack social platform serving diverse communities across web and mobile platforms. Architected a scalable backend using Laravel with microservices architecture, implementing real-time features including chat, notifications, and content updates using WebSockets. Built a native Android application in Java with smooth animations and gesture handling, achieving 60fps performance and a 4.7/5 rating. Currently developing an iOS version using React Native to provide a consistent experience across all mobile platforms. Implemented advanced features including community management, content moderation, and targeted advertising based on user interests. Developed a sophisticated content recommendation system using machine learning algorithms to personalize user feeds. Created a robust authentication system with role-based access control and comprehensive security measures. Optimized database performance through efficient query design and caching strategies, handling 1M+ monthly transactions with 99.95% uptime. The platform successfully fosters meaningful connections among users with shared interests, resulting in high user engagement and retention rates.',
+    status: 'In Progress'
+  },
+  {
+    title: 'LCDP School Management System',
+    category: 'Web Development',
+    tools: 'JavaScript, Html, PHP Laravel, MySQL, jQuery, CSS, Bootstrap',
+    image: './assets/images/project-52.avif',
+    link: 'https://gudu.lcpd.net/',
+    brief: 'A school management system designed for LCDP, providing efficient and user-friendly management of school activities. Built with JavaScript, HTML, PHP Laravel, MySQL, and various front-end technologies.',
+    about: 'This project showcases my ability to develop robust and scalable web applications. The system is designed to handle various school activities efficiently and effectively.',
+    description: 'Led the development of a comprehensive school management system serving 5000+ students and staff at Lincoln University College\'s Lincoln College Development Program. Architected a scalable full-stack solution using Laravel\'s MVC pattern, implementing clean code principles and SOLID design patterns while achieving a 95+ Lighthouse performance score. Engineered a robust authentication system with multi-factor authentication, role-based access control, and comprehensive audit logging for security compliance with OWASP Top 10 standards. Built real-time features including attendance tracking and grade management using Laravel\'s event system and WebSockets, ensuring data consistency across concurrent users while maintaining WCAG 2.1 AA accessibility standards. Implemented advanced database optimization techniques including query optimization, indexing strategies, and Redis caching, achieving consistent sub-200ms page load times under heavy load and 99.9% uptime SLA. Developed a modular architecture allowing easy feature additions and maintenance, with comprehensive test coverage using PHPUnit and 90%+ code coverage metrics. Created a responsive frontend using Bootstrap and jQuery, ensuring accessibility and cross-browser compatibility while maintaining a 4.8/5 user satisfaction rating. The system\'s success led to its adoption as a commercial product, with Lincoln University College selling it to other educational institutions. This project demonstrates my ability to architect and deliver enterprise-grade software that solves complex business problems while maintaining high performance, security, and scalability standards.',
+    status: 'Completed'
+  },
+  {
+    title: 'Onarietta Remet | Official Site',
+    category: 'Web Development',
+    tools: 'React.js, Next.js, Tailwind, CSS',
+    image: './assets/images/project-53.avif',
+    link: 'https://onariettaremet.com',
+    brief: 'Official website for Onarietta Remet, featuring a modern design and seamless user experience. Built with React.js and Next.js, utilizing Tailwind CSS for styling.',
+    about: 'A captivating digital showcase for the artist Onarietta Remet, designed to immerse visitors in her artistic journey while providing an elegant platform to explore her portfolio and upcoming exhibitions.',
+    description: "This project showcases a perfect blend of technical excellence and artistic sensibility. The website delivers an immersive digital experience that balances technical performance with artistic expression. Built with Next.js and Tailwind CSS, it demonstrates modern web architecture while maintaining clean, maintainable code. The site achieves exceptional performance with a 95+ Lighthouse score while delivering a visually stunning experience that effectively showcases the artist's work. Beyond the frontend implementation, I handled comprehensive SEO optimization including meta tags, structured data, and Google Search Console integration. The server-side implementation leverages Next.js's built-in features for optimal performance and SEO, while implementing proper caching strategies and image optimization. The attention to detail in animations, transitions, and responsive design reflects a deep understanding of how technical implementation should serve user experience. This project exemplifies full-stack thinking - bridging technical implementation with user-centered design while maintaining high performance standards.",
+    status: 'Completed'
+  },
+  {
+    title: 'Lincoln Impact Foundation',
+    category: 'Web Development',
+    tools: 'Laravel, MySQL, JavaScript, jQuery, CSS, SASS, Bootstrap',
+    image: './assets/images/project-4.avif',
+    link: 'https://lincolnfoundations.org',
+    brief: 'Official website for Lincoln Impact Foundation, showcasing their mission and impact. Built with Laravel, MySQL, JavaScript, jQuery, CSS, SASS, and Bootstrap.',
+    about: 'This project showcases my ability to develop professional and user-friendly websites. The website is designed to effectively represent the brand and provide a seamless user experience.',
+    description: 'Engineered a full-stack platform serving as the digital backbone of Lincoln Impact Foundation\'s operations. Architected a secure, scalable system handling multiple critical functions: donation processing, scholarship applications for Lincoln University College, news management, and impact tracking. Implemented a robust scholarship application system with document verification, application status tracking, and automated notifications, processing 1000+ applications annually. Built a secure payment infrastructure supporting multiple payment gateways with PCI compliance, handling $500,000+ in donations with zero security incidents. Developed a real-time news management system with content scheduling, analytics, and social media integration. Created an automated impact tracking dashboard visualizing the foundation\'s achievements and scholarship outcomes. Implemented role-based access control and audit logging for sensitive operations. The platform achieved 99.9% uptime, 95/100 accessibility score, and sub-2s page loads while maintaining strict data privacy standards. The system\'s reliability and user experience improvements led to a 55% increase in donation conversions and 40% growth in scholarship applications.',
+    status: 'Completed'
+  },
+  {
     "title": "Web Launch Guys - Web Development & Design Agency",
     "category": "Web Development & Design",
     "tools": "HTML5, Tailwind CSS, GSAP, jQuery, Slick Slider, Magnific Popup, Remix Icons",
@@ -97,6 +108,50 @@ export const projectData: Project[] = [
     "brief": "A modern, dynamic web development agency website showcasing professional web design and development services. Built with cutting-edge technologies and featuring smooth animations, responsive design, and an intuitive user interface.",
     "about": "Web Launch Guys demonstrates excellence in web development through a sophisticated landing page that combines modern design elements, interactive animations, and comprehensive service showcases. The website effectively communicates the agency's expertise in delivering custom web solutions and brand identity services.",
     "description": "The website features a dynamic hero section with smooth animations powered by GSAP, showcasing the agency's focus on building digital experiences that drive results. The platform includes comprehensive service sections highlighting custom web development, e-commerce solutions, and website maintenance. Built with HTML5 and styled using Tailwind CSS for modern, responsive design, the site incorporates interactive elements like project galleries, testimonial sliders, and animated preloaders. Key features include a modern navigation system, portfolio showcase with lightbox integration, client testimonials carousel, detailed service breakdowns, and a streamlined pricing structure. The website demonstrates technical excellence through performance optimization, responsive design implementation, and seamless integration of various JavaScript libraries for enhanced functionality. The design emphasizes user experience with clear call-to-actions, smooth scrolling, and intuitive navigation, while maintaining professional aesthetics with carefully chosen typography and color schemes.",
+    "status": "Completed"
+  },
+  {
+    title: 'Lincoln University College Result Portal',
+    category: 'Web Development',
+    tools: 'JavaScript, Laravel, PHP, MySQL, jQuery, CSS, SASS, Bootstrap',
+    image: './assets/images/project-49.avif',
+    link: 'https://result.lincoln.edu.ng',
+    brief: 'A result portal for Lincoln University College, providing students with easy access to their academic results. Built with JavaScript, Laravel, PHP, MySQL, jQuery, CSS, SASS, and Bootstrap.',
+    about: 'This project showcases my ability to develop robust and scalable web applications. The portal is designed to provide students with easy access to their academic results.',
+    description: 'Led the complete overhaul of Lincoln University College\'s result portal, transforming it from a static CSV-based system to a dynamic database-driven platform. Architected a secure admin dashboard enabling staff to upload and manage result CSV files, with automatic parsing and database population. Implemented a robust data validation system ensuring result integrity during uploads, with rollback capabilities for failed transactions. Built a responsive frontend interface optimized for high-traffic periods, particularly during result releases. Developed a sophisticated caching layer using Redis to handle peak loads of 5000+ concurrent users while maintaining sub-2s response times. Created an audit logging system tracking all result modifications and access attempts for security compliance. The system successfully processed over 50,000 student records across multiple academic sessions, with zero data integrity issues. This project demonstrated my ability to modernize legacy systems while maintaining critical functionality and improving security, performance, and maintainability.',
+    status: 'Completed'
+  },
+  {
+    title: 'Bondyt',
+    category: 'Mobile Development',
+    tools: 'React Native, TypeScript',
+    image: './assets/images/project-51.avif',
+    link: 'https://play.google.com/store/apps/details?id=com.bondyt.dateapp&hl=en',
+    brief: 'A dating application built with React Native and TypeScript, featuring advanced social features like location-based matching, event discovery, and interactive content sharing.',
+    about: 'Joined as a frontend developer to revamp and enhance a struggling dating app, taking ownership of critical user-facing features and implementing complex social interactions.',
+    description: 'Focused on core social features and user engagement. Engineered a performant card-swipe interface with smooth animations and gesture handling, achieving 60fps performance on mid-range devices. Implemented a sophisticated Travel Mode feature enabling users to change locations and discover matches in new areas, integrating with geolocation services and optimizing location-based queries. Developed a real-time matching system with instant notifications and interactive match screens, handling complex state management for user interactions. Built an Instagram-style Reels feature with video playback, social interactions (likes, comments), and content downloading capabilities. Created an event discovery system allowing users to find and purchase tickets for local social events, integrating with payment gateways and implementing real-time ticket availability. Optimized app performance through efficient component rendering and state management, reducing load times by 40% and improving user retention. Implemented robust error handling and offline capabilities to ensure smooth user experience in varying network conditions.',
+    status: 'Completed'
+  },
+  {
+    "title": "Lincoln E-Library Platform",
+    "category": "Web Development",
+    "tools": "Next.js, React.js, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Prisma",
+    "image": "./assets/images/project-54.avif",
+    "link": "https://lincoln-e-library.vercel.app",
+    "brief": "A comprehensive digital library platform built with Next.js and Supabase, featuring user authentication, book management, course-based filtering, and an AI tutor system for educational institutions.",
+    "about": "This e-library platform demonstrates full-stack development capabilities through a modern, scalable web application with real-time database operations, user role management, and advanced content filtering systems.",
+    "description": "The platform features a sophisticated user management system with role-based access control (admin/student), comprehensive book catalog with public and private collections, course-based filtering, reading progress tracking, and an integrated AI tutor system. Built with Next.js 14 and TypeScript for type safety, the application uses Supabase for real-time database operations and authentication. The UI is crafted with Tailwind CSS and shadcn/ui components, providing a modern, responsive design with glassmorphism effects and smooth animations. Advanced features include PDF viewer integration, book request system, video content management, and analytics dashboard for administrators. The application implements proper security measures with Row Level Security (RLS) policies and includes comprehensive error handling and loading states throughout the user experience.",
+    "status": "Completed"
+  },
+  {
+    "title": "Qallie AI Customer Agent Platform",
+    "category": "Web Development",
+    "tools": "React.js, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, Three.js, Spline, Radix UI",
+    "image": "./assets/images/project-55.avif",
+    "link": "https://qallie.online",
+    "brief": "A comprehensive AI customer agent platform website built with React and TypeScript, featuring interactive 3D animations, business automation tools, and a modern responsive design for launching intelligent customer support agents.",
+    "about": "This platform demonstrates advanced frontend development capabilities through a sophisticated landing page with 3D visualizations, interactive components, and seamless user experience design for businesses looking to implement AI-powered customer service solutions.",
+    "description": "The platform features a dynamic hero section with rotating business categories (Real Estates, Restaurants, Hotels, etc.), interactive 3D scenes using Spline and Three.js, comprehensive feature showcases including appointment scheduling and menu inquiries, step-by-step implementation guides, and responsive device showcases for mobile and desktop applications. Built with React 18 and TypeScript for type safety, the application uses Vite for fast development and building, Tailwind CSS for styling with custom animations, and shadcn/ui components for consistent design patterns. Advanced features include 3D product demonstrations, interactive pricing tables, animated preloader with rotating facts, and comprehensive business automation workflows. The application implements modern web technologies with Framer Motion for smooth animations, GSAP for advanced motion effects, and includes comprehensive responsive design patterns for optimal viewing across all devices. The platform showcases enterprise-grade AI capabilities with instant setup processes, toll-free number integration, and business-specific customization options.",
     "status": "Completed"
   },
   {
@@ -120,28 +175,6 @@ export const projectData: Project[] = [
     about: 'This UI/UX project demonstrates my ability to create user-centered, well-prototyped designs that enhance learning experiences. The dashboard provides clear information hierarchy and easy access to key features.',
     description: 'Designed a comprehensive educational dashboard for computer-aided instruction studies. Created an intuitive interface with a focus on user experience and accessibility. Developed a robust design system with reusable components to ensure consistency across multiple dashboard views. Implemented data visualization techniques using progressive disclosure patterns and interactive charts to present information clearly. Engineered a responsive layout system that maintains usability across different device types while adhering to accessibility standards (WCAG 2.1 AA). Designed a notification system with smart prioritization and contextual awareness. This project demonstrates my ability to create user-centered, well-prototyped designs that effectively address educational needs while maintaining technical excellence.',
     status: 'On Hold'
-  },
-  {
-    title: 'LCDP School Management System',
-    category: 'Web Development',
-    tools: 'JavaScript, Html, PHP Laravel, MySQL, jQuery, CSS, Bootstrap',
-    image: './assets/images/project-52.avif',
-    link: 'https://gudu.lcpd.net/',
-    brief: 'A school management system designed for LCDP, providing efficient and user-friendly management of school activities. Built with JavaScript, HTML, PHP Laravel, MySQL, and various front-end technologies.',
-    about: 'This project showcases my ability to develop robust and scalable web applications. The system is designed to handle various school activities efficiently and effectively.',
-    description: 'Led the development of a comprehensive school management system serving 5000+ students and staff at Lincoln University College\'s Lincoln College Development Program. Architected a scalable full-stack solution using Laravel\'s MVC pattern, implementing clean code principles and SOLID design patterns while achieving a 95+ Lighthouse performance score. Engineered a robust authentication system with multi-factor authentication, role-based access control, and comprehensive audit logging for security compliance with OWASP Top 10 standards. Built real-time features including attendance tracking and grade management using Laravel\'s event system and WebSockets, ensuring data consistency across concurrent users while maintaining WCAG 2.1 AA accessibility standards. Implemented advanced database optimization techniques including query optimization, indexing strategies, and Redis caching, achieving consistent sub-200ms page load times under heavy load and 99.9% uptime SLA. Developed a modular architecture allowing easy feature additions and maintenance, with comprehensive test coverage using PHPUnit and 90%+ code coverage metrics. Created a responsive frontend using Bootstrap and jQuery, ensuring accessibility and cross-browser compatibility while maintaining a 4.8/5 user satisfaction rating. The system\'s success led to its adoption as a commercial product, with Lincoln University College selling it to other educational institutions. This project demonstrates my ability to architect and deliver enterprise-grade software that solves complex business problems while maintaining high performance, security, and scalability standards.',
-    status: 'Completed'
-  },
-  {
-    title: 'Bondyt',
-    category: 'Mobile Development',
-    tools: 'React Native, TypeScript',
-    image: './assets/images/project-51.avif',
-    link: 'https://play.google.com/store/apps/details?id=com.bondyt.dateapp&hl=en',
-    brief: 'A dating application built with React Native and TypeScript, featuring advanced social features like location-based matching, event discovery, and interactive content sharing.',
-    about: 'Joined as a frontend developer to revamp and enhance a struggling dating app, taking ownership of critical user-facing features and implementing complex social interactions.',
-    description: 'Focused on core social features and user engagement. Engineered a performant card-swipe interface with smooth animations and gesture handling, achieving 60fps performance on mid-range devices. Implemented a sophisticated Travel Mode feature enabling users to change locations and discover matches in new areas, integrating with geolocation services and optimizing location-based queries. Developed a real-time matching system with instant notifications and interactive match screens, handling complex state management for user interactions. Built an Instagram-style Reels feature with video playback, social interactions (likes, comments), and content downloading capabilities. Created an event discovery system allowing users to find and purchase tickets for local social events, integrating with payment gateways and implementing real-time ticket availability. Optimized app performance through efficient component rendering and state management, reducing load times by 40% and improving user retention. Implemented robust error handling and offline capabilities to ensure smooth user experience in varying network conditions.',
-    status: 'Completed'
   },
   {
     title: 'Safekan Technovation Branding',
@@ -177,17 +210,6 @@ export const projectData: Project[] = [
     status: 'Completed'
   },
   {
-    title: 'Topix',
-    category: 'Web & Mobile Development',
-    tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, Java, React Native, CSS, SASS, Bootstrap',
-    image: './assets/images/project-42.avif',
-    link: 'https://topix.great-site.net/about',
-    brief: 'Led the development of Topix as a full-stack engineer, creating a vibrant social platform that enables users to connect through shared interests.',
-    about: 'A social platform connecting people through shared interests, built with PHP Laravel for web and Java for Android, expanding to iOS with React Native. Features include real-time chat, community building, and content sharing.',
-    description: 'Led the development of a full-stack social platform serving diverse communities across web and mobile platforms. Architected a scalable backend using Laravel with microservices architecture, implementing real-time features including chat, notifications, and content updates using WebSockets. Built a native Android application in Java with smooth animations and gesture handling, achieving 60fps performance and a 4.7/5 rating. Currently developing an iOS version using React Native to provide a consistent experience across all mobile platforms. Implemented advanced features including community management, content moderation, and targeted advertising based on user interests. Developed a sophisticated content recommendation system using machine learning algorithms to personalize user feeds. Created a robust authentication system with role-based access control and comprehensive security measures. Optimized database performance through efficient query design and caching strategies, handling 1M+ monthly transactions with 99.95% uptime. The platform successfully fosters meaningful connections among users with shared interests, resulting in high user engagement and retention rates.',
-    status: 'In Progress'
-  },
-  {
     title: 'Print Xpert Logo Redesign',
     category: 'Graphic Design - Logo Design',
     tools: 'CorelDRAW',
@@ -218,28 +240,6 @@ export const projectData: Project[] = [
     brief: 'A design concept for a KNFT (Non-Fungible Token) platform. Created in Figma, focusing on user experience and intuitive navigation.',
     about: 'This UI/UX project demonstrates my ability to create user-centered designs that enhance learning experiences. The platform is designed to provide clear information hierarchy and easy access to key features.',
     description: 'Designed a blockchain platform interface that increased user conversion by 45%. Created an intuitive dashboard for NFT trading with real-time price charts and transaction history. Implemented a dark mode-first design system optimized for extended viewing sessions. Conducted user testing with 100+ crypto traders to validate design decisions. The platform design was featured in three industry publications for its innovative approach to NFT trading interfaces.',
-    status: 'Completed'
-  },
-  {
-    title: 'Lincoln Impact Foundation',
-    category: 'Web Development',
-    tools: 'Laravel, MySQL, JavaScript, jQuery, CSS, SASS, Bootstrap',
-    image: './assets/images/project-4.avif',
-    link: 'https://lincolnfoundations.org',
-    brief: 'Official website for Lincoln Impact Foundation, showcasing their mission and impact. Built with Laravel, MySQL, JavaScript, jQuery, CSS, SASS, and Bootstrap.',
-    about: 'This project showcases my ability to develop professional and user-friendly websites. The website is designed to effectively represent the brand and provide a seamless user experience.',
-    description: 'Engineered a full-stack platform serving as the digital backbone of Lincoln Impact Foundation\'s operations. Architected a secure, scalable system handling multiple critical functions: donation processing, scholarship applications for Lincoln University College, news management, and impact tracking. Implemented a robust scholarship application system with document verification, application status tracking, and automated notifications, processing 1000+ applications annually. Built a secure payment infrastructure supporting multiple payment gateways with PCI compliance, handling $500,000+ in donations with zero security incidents. Developed a real-time news management system with content scheduling, analytics, and social media integration. Created an automated impact tracking dashboard visualizing the foundation\'s achievements and scholarship outcomes. Implemented role-based access control and audit logging for sensitive operations. The platform achieved 99.9% uptime, 95/100 accessibility score, and sub-2s page loads while maintaining strict data privacy standards. The system\'s reliability and user experience improvements led to a 55% increase in donation conversions and 40% growth in scholarship applications.',
-    status: 'Completed'
-  },
-  {
-    title: 'Lincoln University College Result Portal',
-    category: 'Web Development',
-    tools: 'JavaScript, Laravel, PHP, MySQL, jQuery, CSS, SASS, Bootstrap',
-    image: './assets/images/project-49.avif',
-    link: 'https://result.lincoln.edu.ng',
-    brief: 'A result portal for Lincoln University College, providing students with easy access to their academic results. Built with JavaScript, Laravel, PHP, MySQL, jQuery, CSS, SASS, and Bootstrap.',
-    about: 'This project showcases my ability to develop robust and scalable web applications. The portal is designed to provide students with easy access to their academic results.',
-    description: 'Led the complete overhaul of Lincoln University College\'s result portal, transforming it from a static CSV-based system to a dynamic database-driven platform. Architected a secure admin dashboard enabling staff to upload and manage result CSV files, with automatic parsing and database population. Implemented a robust data validation system ensuring result integrity during uploads, with rollback capabilities for failed transactions. Built a responsive frontend interface optimized for high-traffic periods, particularly during result releases. Developed a sophisticated caching layer using Redis to handle peak loads of 5000+ concurrent users while maintaining sub-2s response times. Created an audit logging system tracking all result modifications and access attempts for security compliance. The system successfully processed over 50,000 student records across multiple academic sessions, with zero data integrity issues. This project demonstrated my ability to modernize legacy systems while maintaining critical functionality and improving security, performance, and maintainability.',
     status: 'Completed'
   },
   {
