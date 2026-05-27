@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     "Japheth Oluwatimileyin Jerry",
     "Japheth Jerry", 
     "Qallie",
-    "Co-Founder of Qallie",
     "Portfolio Projects",
     "Web Development Projects",
     "React Projects",

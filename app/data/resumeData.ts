@@ -5,8 +5,8 @@ export const skills = [
     tooltipText: "HTML",
   },
   {
-    iconSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/3840px-Official_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnailclear",
-    iconAlt: "CSS3 logo",
+    iconSrc: "https://cdn.iconscout.com/icon/free/png-256/free-css3-9-1175237.png",
+    iconAlt: "Modular CSS logo",
     tooltipText: "CSS & SCSS",
   },
   {
@@ -166,6 +166,19 @@ export const experienceData = [
       "Spearheaded the development of intuitive web and mobile app interfaces, translating design concepts into functional prototypes and high-quality user experiences.",
       "Managed effective integration and consumption of APIs, with a strong focus on mobile-optimized feature design.",
       "Actively monitored industry trends to ensure innovative and compliant software solutions, meeting all project specifications and deadlines."
+    ]
+  },
+  {
+    period: "2025 - Present",
+    title: "Software Engineering Consultant / Dir. of Finance",
+    employmentType: "FULL-TIME",
+    companyUrl: "https://j3globalventures.netlify.app/",
+    companyIcon: "https://j3globalventures.netlify.app/assets/img/logo/fav-logo1.png",
+    companyName: "J3 Global Ventures Limited",
+    responsibilities: [
+      "Director of Finance and Software Engineering Consultant for J3 Global Ventures Limited.",
+      "Driving financial strategy and technology solutions for a leading conglomerate.",
+      "Building and iterating on the company's digital architecture to ensure future scalability and security."
     ]
   },
   {

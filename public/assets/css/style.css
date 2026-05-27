@@ -1527,6 +1527,12 @@ ol {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .about-area .about-details .about-details-inner {
+        padding: 30px;
+    }
+}
+
 .about-area .about-details .about-details-inner img {
     position: absolute;
     left: 30px;

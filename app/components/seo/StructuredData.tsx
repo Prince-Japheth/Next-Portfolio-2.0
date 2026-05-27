@@ -11,9 +11,14 @@ const StructuredData = () => {
   const logoUrl = `${siteUrl}/assets/images/logo.svg`;
   const profileImageUrl = `${siteUrl}/assets/images/me.avif`;
 
+  const personId = `${siteUrl}/#person`;
+  const organizationId = `${siteUrl}/#organization`;
+  const websiteId = `${siteUrl}/#website`;
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId,
     "name": fullName,
     "alternateName": [
       "Timileyin",
@@ -61,8 +66,8 @@ const StructuredData = () => {
     "worksFor": [
       {
         "@type": "Organization",
-        "name": "Qallie",
-        "url": "https://qallie.online"
+        "name": "J3 Global Ventures Limited",
+        "url": "https://j3globalventures.netlify.app/"
       },
       {
         "@type": "Organization",
@@ -94,15 +99,12 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "name": `${fullName} Profile Photo`,
-    "description": `${fullName} - Software Engineer and Co-Founder of Qallie`,
+    "description": `${fullName} - Software Engineer & Cyber Security Specialist`,
     "url": profileImageUrl,
     "width": 400,
     "height": 400,
-    "caption": `${fullName} - Software Engineer and Co-Founder of Qallie`,
-    "creator": {
-      "@type": "Person",
-      "name": fullName
-    },
+    "caption": `${fullName} - Software Engineer & Cyber Security Specialist`,
+    "creator": { "@id": personId },
     "license": siteUrl,
     "thumbnailUrl": profileImageUrl,
     "contentUrl": profileImageUrl,
@@ -114,43 +116,38 @@ const StructuredData = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": organizationId,
     "name": `${fullName} Portfolio`,
     "url": siteUrl,
     "logo": logoUrl,
     "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Cyber Security Specialist.",
-    "founder": {
-      "@type": "Person",
-      "name": fullName
-    },
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q135583647",
-      "https://www.linkedin.com/in/japheth-jerry-34a513274/",
-      "https://www.instagram.com/_prince_yafet/",
-      "https://x.com/Yafet_Tim",
-      siteUrl,
-      "https://qallie.online"
-    ]
+    "founder": { "@id": personId },
+    "sameAs": personSchema.sameAs
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     "name": siteName,
     "url": siteUrl,
     "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development",
-    "author": {
-      "@type": "Person",
-      "name": fullName
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": `${fullName} Portfolio`
-    },
+    "author": { "@id": personId },
+    "publisher": { "@id": organizationId },
     "potentialAction": {
       "@type": "SearchAction",
       "target": `${siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
+  };
+
+  const profilePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": siteUrl,
+    "isPartOf": { "@id": websiteId },
+    "mainEntity": { "@id": personId },
+    "about": { "@id": personId }
   };
 
   const siteNavigationSchema = {
@@ -194,51 +191,28 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "name": `${fullName} Portfolio`,
-    "author": {
-      "@type": "Person",
-      "name": fullName,
-      "alternateName": [fullName, "Yafet", "Prince Yafet"],
-      "jobTitle": "Software Engineer",
-      "description": "Co-Founder & CTO at Qallie, Software Engineer and Cybersecurity Specialist"
-    },
+    "author": { "@id": personId },
     "description": `Portfolio website of ${fullName} - Software Engineer specializing in React, TypeScript, and modern web development`,
     "url": siteUrl,
-    "mainEntity": {
-      "@type": "Person",
-      "name": fullName,
-      "jobTitle": "Software Engineer",
-      "description": "Co-Founder & CTO at Qallie, Software Engineer and Cybersecurity Specialist"
-    }
+    "mainEntity": { "@id": personId }
   };
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
-      />
-    </>
-  );
+  try {
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }} />
+      </>
+    );
+  } catch (error) {
+    console.error("[StructuredData] Error generating JSON-LD structured data:", error);
+    return null;
+  }
 };
 
 export default StructuredData;

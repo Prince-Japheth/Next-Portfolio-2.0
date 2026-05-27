@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     "Japheth Oluwatimileyin Jerry",
     "Japheth Jerry", 
     "Qallie",
-    "Co-Founder of Qallie",
     "Software Engineer",
     "React Developer",
     "Next.js Developer",
@@ -44,7 +43,6 @@ export const metadata: Metadata = {
     "Professional Portfolio Web Developer",
     "Responsive Frontend Developer",
     "Secure App Development",
-    "Co-founder & CTO Qallie",
     "Qallie.online",
     "About Japheth Jerry",
     "Software Engineer Background",
@@ -115,8 +113,8 @@ export default function About() {
               <ul style={{ display: 'inline-block' }}>
                 <li>
                   <p className="date">2025 - Present</p>
-                  <h2>Co-Founder & CTO</h2>
-                  <p className="type">Qallie</p>
+                  <h2>Software Engineering Consultant / Dir. of Finance</h2>
+                  <p className="type">J3 Global Ventures Limited</p>
                 </li>
                 <li>
                   <p className="date">2025 - Present</p>

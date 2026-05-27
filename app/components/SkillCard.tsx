@@ -19,6 +19,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ iconSrc, iconAlt, delay, tooltipT
           width={48} 
           height={48} 
           style={{ height: 'auto' }} 
+          unoptimized
         />
       </div> 
       <div className="tooltip shadow-box">{tooltipText}</div>

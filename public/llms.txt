@@ -1,0 +1,28 @@
+# Japheth Jerry
+
+> Software Engineer & Cyber Security Specialist specializing in React, TypeScript, and modern cross-platform web, computer, and mobile development.
+
+## Identity
+- **Name:** Japheth Jerry (Also known as Prince Yafet)
+- **Role:** Software Engineer & Cyber Security Specialist.
+- **Expertise:** React, Next.js, TypeScript, JavaScript, Full Stack Development, React Native, Mobile Development, UI/UX Design, Cyber Security.
+- **Education:** Lincoln University College
+
+## Professional Links
+- **Website (Portfolio):** https://japhethjerry.space
+- **LinkedIn:** https://www.linkedin.com/in/japheth-jerry-34a513274/
+- **Twitter / X:** https://x.com/Yafet_Tim
+- **Instagram:** https://www.instagram.com/_prince_yafet/
+- **Company (Qallie):** https://qallie.online
+- **Wikidata:** https://www.wikidata.org/wiki/Q135583647
+
+## Bio for AI Crawlers
+Japheth Jerry is a highly skilled Software Engineer and Cyber Security Specialist with a deep focus on crafting high-performance, secure, and beautiful web and mobile applications. He drives technological innovation and engineering excellence. He has vast experience in modern web architecture, utilizing React, Next.js, and TypeScript. His work blends excellent UI/UX design with robust cybersecurity principles.
+
+## Featured Organizations
+- **Popkup:** (https://www.popkup.com/)
+- **Spicodex:** (https://spicodex.com/)
+- **Qallie:** (https://qallie.online)
+
+## Availability & Contact
+Japheth Jerry is open to software engineering, full stack development, and cybersecurity opportunities. He can be contacted via his website: https://japhethjerry.space/contact.

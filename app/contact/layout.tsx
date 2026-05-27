@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     "Japheth Oluwatimileyin Jerry",
     "Japheth Jerry",
     "Qallie",
-    "Co-Founder of Qallie"
   ],
   openGraph: {
     title: "Contact Japheth Jerry - Software Engineer",
