@@ -95,13 +95,13 @@ export default function About() {
               Self-summary 
               <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
             </h2>
-            <div className="about-details-inner shadow-box">
+            <article className="about-details-inner shadow-box" itemScope itemType="https://schema.org/Person">
               <Image src="/assets/images/icon2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto' }} />
-              <h1>Japheth Oluwatimileyin Jerry</h1>
-              <p>
-                Computer Software Engineer with expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries and Cyber Security Specialist.
+              <h1 itemProp="name">Japheth Oluwatimileyin Jerry</h1>
+              <p itemProp="description">
+                <strong itemProp="jobTitle">Computer Software Engineer</strong> with expertise spanning Web and Mobile Application Development, UI/UX Design, and Graphic Design. Experience covers a diverse range of projects across various fields and industries and <strong itemProp="jobTitle">Cyber Security Specialist</strong>.
               </p>
-            </div>
+            </article>
           </div>
         </div>
         <div className="row mt-24">

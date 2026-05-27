@@ -20,6 +20,9 @@ const StructuredData = () => {
     "@type": "Person",
     "@id": personId,
     "name": fullName,
+    "givenName": "Japheth",
+    "familyName": "Jerry",
+    "additionalName": "Oluwatimileyin",
     "alternateName": [
       "Timileyin",
       "Oluwatimileyin",
@@ -29,7 +32,7 @@ const StructuredData = () => {
       "Prince Yafet"
     ],
     "jobTitle": "Software Engineer & Cyber Security Specialist",
-    "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
+    "description": "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development. Cyber Security Specialist.",
     "url": siteUrl,
     "image": {
       "@type": "ImageObject",
@@ -41,10 +44,10 @@ const StructuredData = () => {
     "sameAs": [
       "https://www.wikidata.org/wiki/Q135583647",
       "https://www.linkedin.com/in/japheth-jerry-34a513274/",
+      "https://github.com/Prince-Japheth",
       "https://www.instagram.com/_prince_yafet/",
       "https://x.com/Yafet_Tim",
-      siteUrl,
-      "https://qallie.online"
+      siteUrl
     ],
     "knowsAbout": [
       "React",

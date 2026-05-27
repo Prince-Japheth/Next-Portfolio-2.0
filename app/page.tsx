@@ -85,7 +85,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-6" data-aos="zoom-in">
-              <div className="about-me-box shadow-box">
+              <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person">
                  <Image 
                    src="/assets/images/bg1.png" 
                    alt="BG" 
@@ -105,8 +105,9 @@ export default function Home() {
                        priority 
                      />
                      <Image 
+                       itemProp="image"
                        src="/assets/images/me.avif" 
-                       alt="About Me" 
+                       alt="Japheth Jerry" 
                        width={300} 
                        height={300} 
                        priority 
@@ -114,14 +115,14 @@ export default function Home() {
                    </div>
                  </div>
                 <div className="infos">
-                  <h4>Software Engineer & Cyber Security Specialist</h4>
-                  <h1>Japheth Jerry.</h1>
-                  <p>Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
+                  <h4 itemProp="jobTitle">Software Engineer & Cyber Security Specialist</h4>
+                  <h1 itemProp="name">Japheth Jerry.</h1>
+                  <p itemProp="description">Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
                   <Link href="/about" className="about-btn">
                     <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
                   </Link>
                 </div>
-              </div>
+              </article>
             </div>
             <div className="col-md-6 d-flex">
               <div className="about-resume-wrap d-flex flex-1 flex-column">
