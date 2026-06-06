@@ -34,15 +34,15 @@ export const projectData: Project[] = [
     "status": "Completed"
   },
   {
-    title: 'Bondyt Merchant',
+    title: 'Topix',
     category: 'Mobile Development',
-    tools: 'React Native, JavaScript',
-    image: './assets/images/project-45.avif',
-    link: 'https://www.instagram.com/bondyttech/',
-    brief: 'A mobile application for merchants to manage their business operations. Built with React Native, providing a native experience across iOS and Android platforms.',
-    about: 'A cross-platform mobile app empowering merchants to streamline their operations and connect with Bondyt users, enabling them to showcase and deliver their products and services through an integrated business platform.',
-    description: 'Led frontend development of a production-grade merchant app serving thousands of active users daily. Implemented complex UI components and state management using React Native, ensuring smooth 60fps animations and responsive interactions. Integrated REST APIs and WebSocket connections for real-time updates, handling data synchronization and offline capabilities. Managed app signing and keystore configurations for both Android and iOS platforms. Optimized app performance through efficient component rendering and image caching, achieving sub-100ms response times. Implemented secure authentication flows and payment gateway integration on the client side. Developed a robust error handling system with automatic crash reporting and recovery mechanisms. Created a comprehensive analytics dashboard for merchants to track sales, customer engagement, and business metrics in real-time. Built a scalable notification system supporting push notifications, in-app alerts, and email notifications for critical business events.',
-    status: 'Completed'
+    tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, Java, React Native, CSS, SASS, Bootstrap',
+    image: './assets/images/project-42.avif',
+    link: 'https://topix.great-site.net/about',
+    brief: 'Led the development of Topix as a full-stack engineer, creating a vibrant social platform that enables users to connect through shared interests.',
+    about: 'A social platform connecting people through shared interests, built with PHP Laravel for web and Java for Android, expanding to iOS with React Native. Features include real-time chat, community building, and content sharing.',
+    description: 'Led the development of a full-stack social platform serving diverse communities across web and mobile platforms. Architected a scalable backend using Laravel with microservices architecture, implementing real-time features including chat, notifications, and content updates using WebSockets. Built a native Android application in Java with smooth animations and gesture handling, achieving 60fps performance and a 4.7/5 rating. Currently developing an iOS version using React Native to provide a consistent experience across all mobile platforms. Implemented advanced features including community management, content moderation, and targeted advertising based on user interests. Developed a sophisticated content recommendation system using machine learning algorithms to personalize user feeds. Created a robust authentication system with role-based access control and comprehensive security measures. Optimized database performance through efficient query design and caching strategies, handling 1M+ monthly transactions with 99.95% uptime. The platform successfully fosters meaningful connections among users with shared interests, resulting in high user engagement and retention rates.',
+    status: 'In Progress'
   },
   {
     "title": "J3 Global Ventures Limited",
@@ -54,17 +54,6 @@ export const projectData: Project[] = [
     "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
     "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
     "status": "Completed"
-  },
-  {
-    title: 'Topix',
-    category: 'Mobile Development',
-    tools: 'Laravel, PHP, MySQL, JavaScript, jQuery, Java, React Native, CSS, SASS, Bootstrap',
-    image: './assets/images/project-42.avif',
-    link: 'https://topix.great-site.net/about',
-    brief: 'Led the development of Topix as a full-stack engineer, creating a vibrant social platform that enables users to connect through shared interests.',
-    about: 'A social platform connecting people through shared interests, built with PHP Laravel for web and Java for Android, expanding to iOS with React Native. Features include real-time chat, community building, and content sharing.',
-    description: 'Led the development of a full-stack social platform serving diverse communities across web and mobile platforms. Architected a scalable backend using Laravel with microservices architecture, implementing real-time features including chat, notifications, and content updates using WebSockets. Built a native Android application in Java with smooth animations and gesture handling, achieving 60fps performance and a 4.7/5 rating. Currently developing an iOS version using React Native to provide a consistent experience across all mobile platforms. Implemented advanced features including community management, content moderation, and targeted advertising based on user interests. Developed a sophisticated content recommendation system using machine learning algorithms to personalize user feeds. Created a robust authentication system with role-based access control and comprehensive security measures. Optimized database performance through efficient query design and caching strategies, handling 1M+ monthly transactions with 99.95% uptime. The platform successfully fosters meaningful connections among users with shared interests, resulting in high user engagement and retention rates.',
-    status: 'In Progress'
   },
   {
     title: 'LCDP School Management System',
@@ -86,6 +75,17 @@ export const projectData: Project[] = [
     brief: 'Official website for Onarietta Remet, featuring a modern design and seamless user experience. Built with React.js and Next.js, utilizing Tailwind CSS for styling.',
     about: 'A captivating digital showcase for the artist Onarietta Remet, designed to immerse visitors in her artistic journey while providing an elegant platform to explore her portfolio and upcoming exhibitions.',
     description: "This project showcases a perfect blend of technical excellence and artistic sensibility. The website delivers an immersive digital experience that balances technical performance with artistic expression. Built with Next.js and Tailwind CSS, it demonstrates modern web architecture while maintaining clean, maintainable code. The site achieves exceptional performance with a 95+ Lighthouse score while delivering a visually stunning experience that effectively showcases the artist's work. Beyond the frontend implementation, I handled comprehensive SEO optimization including meta tags, structured data, and Google Search Console integration. The server-side implementation leverages Next.js's built-in features for optimal performance and SEO, while implementing proper caching strategies and image optimization. The attention to detail in animations, transitions, and responsive design reflects a deep understanding of how technical implementation should serve user experience. This project exemplifies full-stack thinking - bridging technical implementation with user-centered design while maintaining high performance standards.",
+    status: 'Completed'
+  },
+  {
+    title: 'Bondyt Merchant',
+    category: 'Mobile Development',
+    tools: 'React Native, JavaScript',
+    image: './assets/images/project-45.avif',
+    link: 'https://www.instagram.com/bondyttech/',
+    brief: 'A mobile application for merchants to manage their business operations. Built with React Native, providing a native experience across iOS and Android platforms.',
+    about: 'A cross-platform mobile app empowering merchants to streamline their operations and connect with Bondyt users, enabling them to showcase and deliver their products and services through an integrated business platform.',
+    description: 'Led frontend development of a production-grade merchant app serving thousands of active users daily. Implemented complex UI components and state management using React Native, ensuring smooth 60fps animations and responsive interactions. Integrated REST APIs and WebSocket connections for real-time updates, handling data synchronization and offline capabilities. Managed app signing and keystore configurations for both Android and iOS platforms. Optimized app performance through efficient component rendering and image caching, achieving sub-100ms response times. Implemented secure authentication flows and payment gateway integration on the client side. Developed a robust error handling system with automatic crash reporting and recovery mechanisms. Created a comprehensive analytics dashboard for merchants to track sales, customer engagement, and business metrics in real-time. Built a scalable notification system supporting push notifications, in-app alerts, and email notifications for critical business events.',
     status: 'Completed'
   },
   {
