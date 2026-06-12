@@ -83,15 +83,15 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      // {
+      //   protocol: 'https',
+      //   hostname: 'qallie.vercel.app',
+      //   port: '',
+      //   pathname: '/**',
+      // },
       {
         protocol: 'https',
-        hostname: 'qallie.online',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'j3globalventures.netlify.app',
+        hostname: 'j3globalventures.vercel.app',
         port: '',
         pathname: '/**',
       },

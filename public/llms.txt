@@ -13,7 +13,7 @@
 - **LinkedIn:** https://www.linkedin.com/in/japheth-jerry-34a513274/
 - **Twitter / X:** https://x.com/Yafet_Tim
 - **Instagram:** https://www.instagram.com/_prince_yafet/
-- **Company (Qallie):** https://qallie.online
+- **Company (Qallie):** https://qallie.vercel.app
 - **Wikidata:** https://www.wikidata.org/wiki/Q135583647
 
 ## Bio for AI Crawlers
@@ -22,7 +22,7 @@ Japheth Jerry is a highly skilled Software Engineer and Cyber Security Specialis
 ## Featured Organizations
 - **Popkup:** (https://www.popkup.com/)
 - **Spicodex:** (https://spicodex.com/)
-- **Qallie:** (https://qallie.online)
+- **Qallie:** (https://qallie.vercel.app)
 
 ## Availability & Contact
 Japheth Jerry is open to software engineering, full stack development, and cybersecurity opportunities. He can be contacted via his website: https://japhethjerry.space/contact.

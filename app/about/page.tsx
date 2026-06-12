@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Timileyin",
     "Oluwatimileyin",
     "Japheth Oluwatimileyin Jerry",
-    "Japheth Jerry", 
+    "Japheth Jerry",
     "Qallie",
     "Software Engineer",
     "React Developer",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Professional Portfolio Web Developer",
     "Responsive Frontend Developer",
     "Secure App Development",
-    "Qallie.online",
+    // "qallie.vercel.app",
     "About Japheth Jerry",
     "Software Engineer Background",
     "Web Developer Experience",
@@ -77,14 +77,14 @@ export default function About() {
             <div className="about-image-box shadow-box">
               <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} priority />
               <div className="image-inner">
-                <Image 
-                  src="/assets/images/me.avif" 
-                  alt="About Me" 
-                  width={0} 
-                  height={0} 
-                  sizes="100vw" 
-                  style={{ width: '100%', height: 'auto' }} 
-                  priority 
+                <Image
+                  src="/assets/images/me.avif"
+                  alt="About Me"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                  priority
                 />
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function About() {
           <div className="about-details" data-aos="zoom-in">
             <h2 className="section-heading" data-aos="fade-up">
               <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
-              Self-summary 
+              Self-summary
               <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
             </h2>
             <article className="about-details-inner shadow-box" itemScope itemType="https://schema.org/Person">

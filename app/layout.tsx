@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     default: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
     template: "%s | Japheth Jerry"
   },
-          description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
+  description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
   keywords: [
     "Japheth",
     "Jerry",
     "Timileyin",
     "Oluwatimileyin",
     "Japheth Oluwatimileyin Jerry",
-    "Japheth Jerry", 
+    "Japheth Jerry",
     "Qallie",
     "Software Engineer",
     "React Developer",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "Professional Portfolio Web Developer",
     "Responsive Frontend Developer",
     "Secure App Development",
-    "Qallie.online",
+    // "qallie.vercel.app",
     "About Japheth Jerry",
     "Software Engineer Background",
     "Web Developer Experience",
@@ -170,24 +170,24 @@ export default function RootLayout({
         {/* Noindex for Netlify domains - will be handled by middleware */}
 
         <link rel="canonical" href="https://japhethjerry.space/" />
-        
+
         {/* Favicon Links */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo.png" />
         <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
-        
+
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        
+
         {/* External Stylesheets */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
@@ -205,7 +205,7 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
-        
+
         {/* Optimized Scripts */}
       </body>
     </html>

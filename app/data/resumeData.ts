@@ -172,8 +172,8 @@ export const experienceData = [
     period: "2025 - Present",
     title: "Software Engineering Consultant / Dir. of Finance",
     employmentType: "FULL-TIME",
-    companyUrl: "https://j3globalventures.netlify.app/",
-    companyIcon: "https://j3globalventures.netlify.app/assets/img/logo/fav-logo1.png",
+    companyUrl: "https://j3globalventures.vercel.app/",
+    companyIcon: "https://j3globalventures.vercel.app/assets/img/logo/fav-logo1.png",
     companyName: "J3 Global Ventures Limited",
     responsibilities: [
       "Director of Finance and Software Engineering Consultant for J3 Global Ventures Limited.",
@@ -185,8 +185,8 @@ export const experienceData = [
     period: "2025 - Present",
     title: "Co-Founder & CTO",
     employmentType: "FULL-TIME",
-    companyUrl: "https://qallie.online/",
-    companyIcon: "https://qallie.online/favicon.ico",
+    companyUrl: "https://qallie.vercel.app/",
+    companyIcon: "https://qallie.vercel.app/favicon.ico",
     companyName: "Qallie",
     responsibilities: [
       "Co-founded Qallie, driving the full-stack development of the product's core web and mobile features.",

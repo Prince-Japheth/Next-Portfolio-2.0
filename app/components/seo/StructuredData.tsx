@@ -70,7 +70,7 @@ const StructuredData = () => {
       {
         "@type": "Organization",
         "name": "J3 Global Ventures Limited",
-        "url": "https://j3globalventures.netlify.app/"
+        "url": "https://j3globalventures.vercel.app/"
       },
       {
         "@type": "Organization",

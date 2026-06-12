@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Timileyin",
     "Oluwatimileyin",
     "Japheth Oluwatimileyin Jerry",
-    "Japheth Jerry", 
+    "Japheth Jerry",
     "Qallie",
     "Software Engineer",
     "React Developer",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "Professional Portfolio Web Developer",
     "Responsive Frontend Developer",
     "Secure App Development",
-    "Qallie.online",
+    // "qallie.vercel.app",
     "About Japheth Jerry",
     "Software Engineer Background",
     "Web Developer Experience",
@@ -86,34 +86,34 @@ export default function Home() {
           <div className="row">
             <div className="col-md-6" data-aos="zoom-in">
               <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person">
-                 <Image 
-                   src="/assets/images/bg1.png" 
-                   alt="BG" 
-                   className="bg-img" 
-                   width={600} 
-                   height={600} 
-                   priority
-                   loading="eager"
-                 />
-                 <div className="img-box">
-                   <div className="profile-image-container">
-                     <Image 
-                       src="/assets/images/me2.avif" 
-                       alt="About Me Alternate" 
-                       width={420} 
-                       height={420} 
-                       priority 
-                     />
-                     <Image 
-                       itemProp="image"
-                       src="/assets/images/me.avif" 
-                       alt="Japheth Jerry" 
-                       width={300} 
-                       height={300} 
-                       priority 
-                     />
-                   </div>
-                 </div>
+                <Image
+                  src="/assets/images/bg1.png"
+                  alt="BG"
+                  className="bg-img"
+                  width={600}
+                  height={600}
+                  priority
+                  loading="eager"
+                />
+                <div className="img-box">
+                  <div className="profile-image-container">
+                    <Image
+                      src="/assets/images/me2.avif"
+                      alt="About Me Alternate"
+                      width={420}
+                      height={420}
+                      priority
+                    />
+                    <Image
+                      itemProp="image"
+                      src="/assets/images/me.avif"
+                      alt="Japheth Jerry"
+                      width={300}
+                      height={300}
+                      priority
+                    />
+                  </div>
+                </div>
                 <div className="infos">
                   <h4 itemProp="jobTitle">Software Engineer & Cyber Security Specialist</h4>
                   <h1 itemProp="name">Japheth Jerry.</h1>
