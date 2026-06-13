@@ -97,13 +97,13 @@ export default function Home() {
                 />
                 <div className="img-box">
                   <div className="profile-image-container">
-                    <Image
+                    {/* <Image
                       src="/assets/images/me2.avif"
                       alt="About Me Alternate"
                       width={420}
                       height={420}
                       priority
-                    />
+                    /> */}
                     <Image
                       itemProp="image"
                       src="/assets/images/me.avif"
