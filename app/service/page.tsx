@@ -18,8 +18,8 @@ const serviceItems = [
   },
   {
     title: "Full-Stack Web Development",
-    description: `I design and build robust web applications using modern technologies like
-                  React, Laravel, PHP, and MySQL. From intuitive front-end interfaces to
+    description: `I design and build robust web applications using modern technologies like WordPress, 
+                  React, Laravel, PHP and MySQL. From intuitive front-end interfaces to
                   scalable back-end architecture, I focus on delivering fast, secure, and
                   optimized solutions that drive user engagement and improve business
                   workflows.`,

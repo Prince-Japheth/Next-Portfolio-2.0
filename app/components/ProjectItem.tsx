@@ -15,9 +15,10 @@ interface ProjectItemProps {
     image: string;
     link: string;
   };
+  showWordPress?: boolean;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -126,7 +127,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
             <div className="project-info">
               <p>{project.category}</p>
               <h1>{project.title}</h1>
-              <span style={{ fontSize: '12px !important' }}>{project.tools}</span>
+              <span style={{ fontSize: '12px !important' }}>{showWordPress ? 'WordPress' : project.tools}</span>
             </div>
             <div 
               onClick={handleClick}

@@ -2,7 +2,8 @@
 
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import ProjectItem from '../components/ProjectItem';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { projectData, categories } from '../data/projects';
 import Image from 'next/image';
 
@@ -58,8 +59,12 @@ function ProjectsContent() {
 
   const urlCategory = searchParams.get('category');
   const resolvedCategory = getCategoryFromUrl(urlCategory);
+  const wordpress = searchParams.get('wordpress') === 'true';
+  const onlyWebDev = wordpress;
+  const hideFilter = wordpress;
+  
   const [selectedCategory, setSelectedCategory] = useState(
-    Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
+    onlyWebDev ? 'Web Development' : (Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory)
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
@@ -87,7 +92,10 @@ function ProjectsContent() {
     // Category filter - handle combined DESIGN category
     let categoryMatch = false;
     
-    if (selectedCategory === 'All Projects') {
+    if (onlyWebDev) {
+      // Only show web dev projects
+      categoryMatch = project.category.toLowerCase().includes('web development') || project.category.toLowerCase().includes('web dev');
+    } else if (selectedCategory === 'All Projects') {
       categoryMatch = true;
     } else if (selectedCategory === 'DESIGN' || selectedCategory === 'design') {
       // Show both UI/UX DESIGN and Graphic Design
@@ -226,6 +234,7 @@ function ProjectsContent() {
             <ProjectItem 
               key={`mobile-${project.title}-${project.image}`} 
               project={project} 
+              showWordPress={wordpress}
             />
           ))}
         </div>
@@ -237,6 +246,7 @@ function ProjectsContent() {
               <ProjectItem 
                 key={`desktop-first-${project.title}-${project.image}`} 
                 project={project} 
+                showWordPress={wordpress}
               />
             ))}
           </div>
@@ -247,6 +257,7 @@ function ProjectsContent() {
                   <ProjectItem 
                     key={`desktop-second-${i}-${project.title}-${project.image}`} 
                     project={project} 
+                    showWordPress={wordpress}
                   />
                 ))}
               </div>
@@ -255,51 +266,53 @@ function ProjectsContent() {
         </div>
 
         {/* Filter Button */}
-        <div className="filter-button-container">
-          <button
-            ref={buttonRef}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="filter-button"
-            disabled={isFiltering}
-          >
-            <Image src="/assets/images/filter.svg" alt="Filter" width={24} height={24} />
-          </button>
+        {!hideFilter && (
+          <div className="filter-button-container">
+            <button
+              ref={buttonRef}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="filter-button"
+              disabled={isFiltering}
+            >
+              <Image src="/assets/images/filter.svg" alt="Filter" width={24} height={24} />
+            </button>
 
-          <div
-            ref={dropdownRef}
-            className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
-          >
-            {categories.map((category) => {
-              const params = new URLSearchParams();
-              if (category !== 'All Projects') {
-                // Use shorter URL alias if available
-                const urlAlias = getShortUrlAlias(category);
-                if (urlAlias) {
-                  params.set('category', urlAlias);
-                } else {
-                  params.set('category', category);
+            <div
+              ref={dropdownRef}
+              className={`filter-dropdown ${isDropdownOpen ? 'visible' : 'hidden'}`}
+            >
+              {categories.map((category) => {
+                const params = new URLSearchParams();
+                if (category !== 'All Projects') {
+                  // Use shorter URL alias if available
+                  const urlAlias = getShortUrlAlias(category);
+                  if (urlAlias) {
+                    params.set('category', urlAlias);
+                  } else {
+                    params.set('category', category);
+                  }
                 }
-              }
-              const href = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
-              
-              return (
-                <a
-                  key={category}
-                  href={href}
-                  className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                    if (typeof window !== "undefined" && window.showPreloader) {
-                      window.showPreloader();
-                    }
-                  }}
-                >
-                  {category}
-                </a>
-              );
-            })}
+                const href = `/projects${params.toString() ? `?${params.toString()}` : ''}`;
+                
+                return (
+                  <a
+                    key={category}
+                    href={href}
+                    className={`category-button ${selectedCategory === category ? 'selected' : ''}`}
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      if (typeof window !== "undefined" && window.showPreloader) {
+                        window.showPreloader();
+                      }
+                    }}
+                  >
+                    {category}
+                  </a>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
