@@ -65,6 +65,11 @@ export const skills = [
     tooltipText: "PHP",
   },
   {
+    iconSrc: "https://cdn-icons-png.flaticon.com/128/174/174881.png",
+    iconAlt: "WordPress logo",
+    tooltipText: "WordPress",
+  },
+  {
     iconSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhoVwuJmtF1Lu4t9WcsZ7fESV9KdIQ7pVHw&s",
     iconAlt: "Laravel logo",
     tooltipText: "Laravel",

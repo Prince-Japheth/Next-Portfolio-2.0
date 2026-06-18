@@ -928,14 +928,14 @@ ol {
     object-fit: cover;
     transition: opacity 0.5s ease-in-out;
 }
-
+/* 
 .profile-image-container img:first-child {
     animation: fadeInOut 5s infinite;
 }
 
 .profile-image-container img:last-child {
     animation: fadeOutIn 5s infinite;
-}
+} */
 
 @keyframes fadeInOut {
     0%, 30% {
