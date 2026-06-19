@@ -138,7 +138,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
             </div>
           </div>
         </div>
-        {project.link.startsWith('http') && (
+        {project.link.startsWith('http') && !showWordPress && (
           <a
             href={`/projects/${slug}`}
             className="view-details-btn mb-5 shadow-box"

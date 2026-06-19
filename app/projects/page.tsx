@@ -59,12 +59,20 @@ function ProjectsContent() {
 
   const urlCategory = searchParams.get('category');
   const resolvedCategory = getCategoryFromUrl(urlCategory);
-  const wordpress = searchParams.get('wordpress') === 'true';
+  
+  const [wordpress, setWordpress] = useState(false);
+
+  useEffect(() => {
+    const hasParam = searchParams.has('wordpress') && searchParams.get('wordpress') !== 'false';
+    const hasSession = typeof window !== 'undefined' && sessionStorage.getItem('wordpress') === 'true';
+    setWordpress(hasParam || hasSession);
+  }, [searchParams]);
+
   const onlyWebDev = wordpress;
   const hideFilter = wordpress;
   
   const [selectedCategory, setSelectedCategory] = useState(
-    onlyWebDev ? 'Web Development' : (Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory)
+    Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
@@ -72,14 +80,18 @@ function ProjectsContent() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Update selected category when URL parameter changes
+  // Update selected category when URL parameter or wordpress changes
   useEffect(() => {
-    const urlCategory = searchParams.get('category');
-    const resolvedCategory = getCategoryFromUrl(urlCategory);
-    setSelectedCategory(
-      Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
-    );
-  }, [searchParams]);
+    if (onlyWebDev) {
+      setSelectedCategory('Web Development');
+    } else {
+      const urlCategory = searchParams.get('category');
+      const resolvedCategory = getCategoryFromUrl(urlCategory);
+      setSelectedCategory(
+        Array.isArray(resolvedCategory) ? 'DESIGN' : resolvedCategory
+      );
+    }
+  }, [searchParams, onlyWebDev]);
 
   // Scroll to top when search query changes
   useEffect(() => {

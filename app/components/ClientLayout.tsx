@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useRouteChange } from "../hooks/useRouteChange";
 import { Providers } from "./Providers";
 import { ClientLayoutBody } from "./ClientLayoutBody";
+import WordpressParamSync from "./WordpressParamSync";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   useRouteChange(); // Use our custom hook to handle route changes
@@ -16,6 +17,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <Providers>
       <ClientLayoutBody isClient={isClient}>
+        <WordpressParamSync />
         {children}
       </ClientLayoutBody>
     </Providers>
