@@ -21,7 +21,7 @@ const ClientStatsBox = ({ isWordpress }: ClientStatsBoxProps) => {
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Professional Company Website</span>
-              <strong style={{ color: '#fff' }}>$1,000</strong>
+              <strong style={{ color: '#fff' }}>$997</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>E-Commerce + SEO Setup</span>
