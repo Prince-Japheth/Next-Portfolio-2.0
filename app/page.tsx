@@ -5,6 +5,7 @@ import ShowcaseProjectsBox from "./components/ShowcaseProjectsBox";
 import ProfileContactBox from "./components/ProfileContactBox";
 import ContactBox from "./components/ContactBox";
 import ClientStatsBox from "./components/ClientStatsBox";
+import HeroInfoBox from "./components/HeroInfoBox";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -83,9 +84,6 @@ type PageProps = {
 };
 
 export default async function Home(props: PageProps) {
-  const searchParams = await props.searchParams;
-  const isWordpress = searchParams?.wordpress !== undefined && searchParams?.wordpress !== 'false';
-
   return (
     <>
       <section className="about-area">
@@ -121,28 +119,7 @@ export default async function Home(props: PageProps) {
                     />
                   </div>
                 </div>
-                {isWordpress ? (
-                  <div className="infos">
-                    <h4 itemProp="jobTitle">WordPress Web Design & Security Expert</h4>
-                    <h1 itemProp="name">Japheth Jerry.</h1>
-                    <p itemProp="description">
-                      Premium WordPress websites designed by a professional Software Engineer. 
-                      I build secure, high-performing sites with built-in SEO and SSL/TLS.
-                    </p>
-                    <Link href="/about" className="about-btn">
-                      <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
-                    </Link>
-                  </div>
-                ) : (
-                  <div className="infos">
-                    <h4 itemProp="jobTitle">Software Engineer & Cyber Security Specialist</h4>
-                    <h1 itemProp="name">Japheth Jerry.</h1>
-                    <p itemProp="description">Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
-                    <Link href="/about" className="about-btn">
-                      <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
-                    </Link>
-                  </div>
-                )}
+                <HeroInfoBox />
               </article>
             </div>
             <div className="col-md-6 d-flex">
@@ -186,7 +163,7 @@ export default async function Home(props: PageProps) {
             </div>
           </div>
           <div className="row mt-24">
-            <ClientStatsBox isWordpress={isWordpress} />
+            <ClientStatsBox />
             <ContactBox className="col-md-6" />
           </div>
         </div>

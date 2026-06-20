@@ -2,12 +2,11 @@
 
 import CountUp from "react-countup";
 import Image from "next/image";
+import { useWordpress } from "../providers/WordpressProvider";
 
-interface ClientStatsBoxProps {
-  isWordpress?: boolean;
-}
+const ClientStatsBox = () => {
+  const { isWordpress } = useWordpress();
 
-const ClientStatsBox = ({ isWordpress }: ClientStatsBoxProps) => {
   if (isWordpress) {
     return (
       <div className="col-md-6" data-aos="zoom-in">
