@@ -1,0 +1,27 @@
+
+> my-v0-project@0.1.0 build /home/japheth/Documents/Next-Portfolio-2.0
+> next build
+
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 23.0s
+  Skipping validation of types
+  Finished TypeScript config validation in 77ms ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/20) ...
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/404". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at S (/home/japheth/Documents/Next-Portfolio-2.0/.next/server/chunks/ssr/08c5_next_0qj4g_o._.js:2:2692)
+    at r (/home/japheth/Documents/Next-Portfolio-2.0/.next/server/chunks/ssr/08c5_next_0qj4g_o._.js:4:6757)
+    at /home/japheth/Documents/Next-Portfolio-2.0/.next/server/chunks/ssr/[root-of-the-server]__0813msd._.js:1:5331
+    at an (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:84267)
+    at ai (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:86086)
+    at al (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:107860)
+    at ao (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:105275)
+    at ai (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:104229)
+    at al (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:107860)
+    at ao (/home/japheth/Documents/Next-Portfolio-2.0/node_modules/.pnpm/next@16.2.6_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:105275)
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /_not-found/page: /_not-found, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.

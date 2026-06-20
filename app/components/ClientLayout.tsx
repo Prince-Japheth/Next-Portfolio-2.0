@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useRouteChange } from "../hooks/useRouteChange";
 import { Providers } from "./Providers";
 import { ClientLayoutBody } from "./ClientLayoutBody";
@@ -17,7 +17,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <Providers>
       <ClientLayoutBody isClient={isClient}>
-        <WordpressParamSync />
+        <Suspense fallback={null}>
+          <WordpressParamSync />
+        </Suspense>
         {children}
       </ClientLayoutBody>
     </Providers>

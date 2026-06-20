@@ -14,9 +14,11 @@ export default async function Projects(props: PageProps) {
   const initialWordpress = searchParams?.wordpress !== undefined && searchParams?.wordpress !== 'false';
 
   return (
-    <ProjectsClient 
-      initialCategory={initialCategory} 
-      initialWordpress={initialWordpress} 
-    />
+    <Suspense fallback={null}>
+      <ProjectsClient 
+        initialCategory={initialCategory} 
+        initialWordpress={initialWordpress} 
+      />
+    </Suspense>
   );
 }

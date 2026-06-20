@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface WordpressContextType {
@@ -9,24 +9,27 @@ interface WordpressContextType {
 
 const WordpressContext = createContext<WordpressContextType>({ isWordpress: false });
 
-export function WordpressProvider({ children }: { children: React.ReactNode }) {
+function WordpressParamReader({ setIsWordpress }: { setIsWordpress: (val: boolean) => void }) {
   const searchParams = useSearchParams();
-  const [isWordpress, setIsWordpress] = useState(false);
-
+  
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
-    // Check URL params first
     const hasParam = searchParams?.has("wordpress") && searchParams.get("wordpress") !== "false";
-    
-    // Check session storage as fallback
     const hasSession = sessionStorage.getItem("wordpress") === "true";
-    
     setIsWordpress(Boolean(hasParam || hasSession));
-  }, [searchParams]);
+  }, [searchParams, setIsWordpress]);
+
+  return null;
+}
+
+export function WordpressProvider({ children }: { children: React.ReactNode }) {
+  const [isWordpress, setIsWordpress] = useState(false);
 
   return (
     <WordpressContext.Provider value={{ isWordpress }}>
+      <Suspense fallback={null}>
+        <WordpressParamReader setIsWordpress={setIsWordpress} />
+      </Suspense>
       {children}
     </WordpressContext.Provider>
   );

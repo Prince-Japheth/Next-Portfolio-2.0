@@ -198,6 +198,31 @@ export default function RootLayout({
 
         {/* Structured Data for SEO */}
         <StructuredData />
+
+        {/* Fallback for bots and crawlers without JS or that are headless */}
+        <noscript>
+          <style>{`
+            .preloader { display: none !important; }
+            [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+          `}</style>
+        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var ua = navigator.userAgent || '';
+                var isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|ia_archiver/i.test(ua) || /chatgpt|ai|openai|anthropic|claude/i.test(ua);
+                if (isBot || window.navigator.webdriver) {
+                  document.documentElement.classList.add('is-bot');
+                }
+              })();
+            `,
+          }}
+        />
+        <style>{`
+          html.is-bot .preloader { display: none !important; }
+          html.is-bot [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+        `}</style>
       </head>
       <body>
         <NextTopLoader color="#ffbc5e" showSpinner={false} />
