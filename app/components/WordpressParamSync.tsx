@@ -20,12 +20,10 @@ function WordpressParamSyncInner() {
         sessionStorage.removeItem("wordpress");
       }
     } else {
-      const storedWordpress = sessionStorage.getItem("wordpress");
-      if (storedWordpress && storedWordpress !== "false") {
-        const currentParams = new URLSearchParams(window.location.search);
-        currentParams.set("wordpress", storedWordpress);
-        router.replace(`${pathname}?${currentParams.toString()}`);
-      }
+      // The parameter is not in the URL.
+      // We should NOT auto-add it. Instead, we should clear it from sessionStorage
+      // so the site accurately reflects the current URL.
+      sessionStorage.removeItem("wordpress");
     }
   }, [searchParams, pathname, router]);
 

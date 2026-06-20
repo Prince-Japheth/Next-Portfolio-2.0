@@ -105,7 +105,7 @@ export default function About() {
           </div>
         </div>
         <div className="row mt-24">
-          <div className="col-md-6" data-aos="zoom-in">
+          <div className="col-md-6 mb-24" data-aos="zoom-in">
             <div className="about-edc-exp about-experience shadow-box">
               {/* <Link href="/resume" className="overlay-link" /> */}
               <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
@@ -127,7 +127,7 @@ export default function About() {
               </Link>
             </div>
           </div>
-          <div className="col-md-6" data-aos="zoom-in">
+          <div className="col-md-6 mb-24" data-aos="zoom-in">
             <div className="about-edc-exp about-education shadow-box">
               <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
               <h3>EDUCATION</h3>
@@ -146,7 +146,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="row mt-24">
+        <div className="row ">
           <div className="col-md-12">
             <div className="d-flex profile-contact-resume-wrap gap-24 justify-content-between">
               <ServicesIcon />
