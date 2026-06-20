@@ -186,7 +186,7 @@ export default async function Home(props: PageProps) {
             </div>
           </div>
           <div className="row mt-24">
-            <ClientStatsBox />
+            <ClientStatsBox isWordpress={isWordpress} />
             <ContactBox className="col-md-6" />
           </div>
         </div>
