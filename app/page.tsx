@@ -6,6 +6,7 @@ import ProfileContactBox from "./components/ProfileContactBox";
 import ContactBox from "./components/ContactBox";
 import ClientStatsBox from "./components/ClientStatsBox";
 import HeroInfoBox from "./components/HeroInfoBox";
+import HeroMarquee from "./components/HeroMarquee";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -125,20 +126,7 @@ export default async function Home(props: PageProps) {
             <div className="col-md-6 d-flex">
               <div className="about-resume-wrap d-flex flex-1 flex-column">
                 <div data-aos="zoom-in">
-                  <div className="banner shadow-box">
-                    <div className="marquee">
-                      <div>
-                        <span aria-label="Professional focus and expertise">
-                          BUILDING <b>SOLUTIONS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                          SECURING <b>SYSTEMS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                          SCALING <b>IDEAS</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                          CRAFTING <b>CODE</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                          DESIGNING <b>EXPERIENCES</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                          SOLVING <b>COMPLEXITY</b> <Image src="/assets/images/star1.svg" alt="Star" width={15} height={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 10px' }} />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <HeroMarquee />
                 </div>
                 <div className="gx-row d-flex gap-24 h-full">
                   <ServicesIcon />
