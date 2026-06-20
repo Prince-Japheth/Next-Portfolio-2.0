@@ -83,7 +83,7 @@ function ProjectsContent() {
   // Update selected category when URL parameter or wordpress changes
   useEffect(() => {
     if (onlyWebDev) {
-      setSelectedCategory('Web Development');
+      setSelectedCategory('Web & Design');
     } else {
       const urlCategory = searchParams.get('category');
       const resolvedCategory = getCategoryFromUrl(urlCategory);
@@ -105,8 +105,11 @@ function ProjectsContent() {
     let categoryMatch = false;
     
     if (onlyWebDev) {
-      // Only show web dev projects
-      categoryMatch = project.category.toLowerCase().includes('web development') || project.category.toLowerCase().includes('web dev');
+      // Show web dev projects and ui/ux design projects
+      categoryMatch = 
+        project.category.toLowerCase().includes('web development') || 
+        project.category.toLowerCase().includes('web dev') ||
+        project.category.toLowerCase().includes('ui/ux');
     } else if (selectedCategory === 'All Projects') {
       categoryMatch = true;
     } else if (selectedCategory === 'DESIGN' || selectedCategory === 'design') {
