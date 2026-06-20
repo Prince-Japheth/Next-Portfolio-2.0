@@ -16,15 +16,15 @@ const ClientStatsBox = () => {
             <h4 style={{ fontSize: '18px', marginBottom: '20px', color: '#fff', textTransform: 'uppercase', letterSpacing: '1px' }}>WordPress Packages</h4>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Business Website Package</span>
-              <strong style={{ color: '#fff' }}>$500</strong>
+              <strong style={{ color: '#fff' }}>$697</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Professional Company Website</span>
-              <strong style={{ color: '#fff' }}>$997</strong>
+              <strong style={{ color: '#fff' }}>$999</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>E-Commerce + SEO Setup</span>
-              <strong style={{ color: '#fff' }}>$1,500</strong>
+              <strong style={{ color: '#fff' }}>$1,499</strong>
             </div>
             <p style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.5)', marginTop: '16px', margin: 0 }}>*All packages include advanced cyber security hardening.</p>
           </div>
