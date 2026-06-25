@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const Preloader: React.FC = () => {
   const { isLoading } = useLoading();
-  const [shouldRender, setShouldRender] = useState(true);
+  const [shouldRender, setShouldRender] = useState(isLoading);
 
   useEffect(() => {
     if (!isLoading) {
