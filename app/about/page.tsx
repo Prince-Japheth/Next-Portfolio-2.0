@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicesIcon from "../components/ServicesIcon";
 import ResumeBox from "../components/ResumeBox";
 import ProfileContactBox from "../components/ProfileContactBox";
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     description: "Software Engineer with expertise in Web and Mobile Application Development, UI/UX Design & Graphic Design and Cyber Security Specialist. ",
     images: [
       {
-        url: "/assets/images/me.avif",
-        width: 400,
-        height: 400,
+        url: "/assets/images/me.png",
+        width: 1200,
+        height: 1200,
         alt: "Japheth Jerry - About Me",
       },
     ],

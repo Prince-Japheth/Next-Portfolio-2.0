@@ -124,9 +124,9 @@ export const metadata: Metadata = {
     description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
     images: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
+        url: "/assets/images/me.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Japheth Jerry - Software Engineer Portfolio",
       },
     ],
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
     description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
-    images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
+    images: ["/assets/images/me.png"],
     creator: "@Yafet_Tim",
   },
   robots: {

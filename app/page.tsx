@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicesIcon from "./components/ServicesIcon";
 import ResumeBox from "./components/ResumeBox";
 import ShowcaseProjectsBox from "./components/ShowcaseProjectsBox";
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
     images: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png",
+        url: "/assets/images/me.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Japheth Jerry - Software Engineer",
       }
     ],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
     description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
-    images: ["https://upload.wikimedia.org/wikipedia/commons/c/c2/Portfolio_OG.png"],
+    images: ["/assets/images/me.png"],
     creator: "@Yafet_Tim"
   }
 };
