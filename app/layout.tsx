@@ -7,7 +7,7 @@ import StructuredData from "./components/seo/StructuredData";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://japhethjerry.space'),
+  metadataBase: new URL('https://www.japhethjerry.space'),
   title: {
     default: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
     template: "%s | Japheth Jerry"
@@ -118,7 +118,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://japhethjerry.space",
+    url: "https://www.japhethjerry.space",
     siteName: "Japheth Jerry",
     title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
     description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
@@ -153,7 +153,7 @@ export const metadata: Metadata = {
     google: "gMDB2iuMZJ10xon3Ud-OvJj41EZMhh7W0nAs7Irpt0w",
   },
   alternates: {
-    canonical: "https://japhethjerry.space",
+    canonical: "https://www.japhethjerry.space",
   },
   category: "technology",
 };
@@ -169,7 +169,7 @@ export default function RootLayout({
       <head>
         {/* Noindex for Netlify domains - will be handled by middleware */}
 
-        <link rel="canonical" href="https://japhethjerry.space/" />
+        <link rel="canonical" href="https://www.japhethjerry.space/" />
 
         {/* Favicon Links */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

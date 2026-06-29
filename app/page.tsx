@@ -65,11 +65,11 @@ export const metadata: Metadata = {
         alt: "Japheth Jerry - Software Engineer",
       }
     ],
-    url: "https://japhethjerry.space",
+    url: "https://www.japhethjerry.space",
     type: "website"
   },
   alternates: {
-    canonical: "https://japhethjerry.space"
+    canonical: "https://www.japhethjerry.space"
   },
   twitter: {
     card: "summary_large_image",

@@ -1,16 +1,31 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function SEORedirect({ to }: { to: string }) {
   const router = useRouter();
+  const [isBotUser, setIsBotUser] = useState(false);
+
   useEffect(() => {
+    const ua = navigator.userAgent || '';
+    const isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|ia_archiver/i.test(ua) || /chatgpt|ai|openai|anthropic|claude/i.test(ua);
+    const hasBotClass = document.documentElement.classList.contains('is-bot');
+    const isWebdriver = window.navigator.webdriver;
+
+    if (isBot || hasBotClass || isWebdriver) {
+      setIsBotUser(true);
+      return; // Do not redirect bots, let them index the content!
+    }
+
     if (to.startsWith('/')) {
       router.replace(to);
     } else {
       window.location.replace(to);
     }
   }, [to, router]);
+
+  if (isBotUser) return null;
+
   return (
     <div id="preloader" className="preloader">
       <div className="black_wall"></div>

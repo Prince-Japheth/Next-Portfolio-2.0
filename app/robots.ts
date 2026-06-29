@@ -27,8 +27,8 @@ export default function robots(): MetadataRoute.Robots {
       }
     ],
     sitemap: [
-      'https://japhethjerry.space/sitemap.xml',
-      'https://japhethjerry.space/sitemap-image.xml'
+      'https://www.japhethjerry.space/sitemap.xml',
+      'https://www.japhethjerry.space/sitemap-image.xml'
     ],
   }
 }

@@ -89,7 +89,7 @@ const Breadcrumbs: React.FC = () => {
               "@type": "ListItem",
               "position": index + 1,
               "name": breadcrumb.label,
-              "item": `https://japhethjerry.space${breadcrumb.href}`
+              "item": `https://www.japhethjerry.space${breadcrumb.href}`
             }))
           })
         }}

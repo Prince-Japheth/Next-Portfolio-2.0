@@ -5,7 +5,7 @@ import React from 'react';
  * This helps Google understand the site content better and enables features like Sitelinks.
  */
 const StructuredData = () => {
-  const siteUrl = 'https://japhethjerry.space';
+  const siteUrl = 'https://www.japhethjerry.space';
   const siteName = 'Japheth Jerry';
   const fullName = 'Japheth Jerry';
   const logoUrl = `${siteUrl}/assets/images/logo.svg`;

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { projectData } from './data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://japhethjerry.space' // Replace with your actual domain
+  const baseUrl = 'https://www.japhethjerry.space' // Replace with your actual domain
   
   // Static pages
   const staticPages = [

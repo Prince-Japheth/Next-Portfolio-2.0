@@ -11,7 +11,10 @@ export const metadata: Metadata = {
     'Japheth Jerry Periderm CLI Reddit',
     'Best pre-launch checklist CLI Reddit',
     'Periderm CLI developer Reddit'
-  ]
+  ],
+  alternates: {
+    canonical: 'https://www.japhethjerry.space/periderm-reddit',
+  },
 };
 
 export default function PeridermRedditSEOPage() {

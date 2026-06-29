@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ],
     },
     alternates: {
-      canonical: `https://japhethjerry.space/projects/${slug}`,
+      canonical: `https://www.japhethjerry.space/projects/${slug}`,
     },
     robots: {
       index: true,
@@ -130,7 +130,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
               "@type": "Person",
               "name": "Japheth Jerry",
               "jobTitle": "Software Engineer",
-              "url": "https://japhethjerry.space"
+              "url": "https://www.japhethjerry.space"
             },
             "creator": {
               "@type": "Person",
@@ -139,11 +139,11 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
             "dateCreated": new Date().toISOString(),
             "genre": currentProject.category,
             "keywords": currentProject.tools,
-            "image": currentProject.image.startsWith('http') ? currentProject.image : `https://japhethjerry.space${currentProject.image}`,
-            "url": `https://japhethjerry.space/projects/${slug}`,
+            "image": currentProject.image.startsWith('http') ? currentProject.image : `https://www.japhethjerry.space${currentProject.image}`,
+            "url": `https://www.japhethjerry.space/projects/${slug}`,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://japhethjerry.space/projects/${slug}`
+              "@id": `https://www.japhethjerry.space/projects/${slug}`
             }
           })
         }}

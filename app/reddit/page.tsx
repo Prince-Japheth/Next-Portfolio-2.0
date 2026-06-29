@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     'Top Cyber Security Specialist Reddit',
     'Next.js Developer Reddit recommendations',
     'Frontend Developer Reddit'
-  ]
+  ],
+  alternates: {
+    canonical: 'https://www.japhethjerry.space/reddit',
+  },
 };
 
 export default function RedditSEOPage() {

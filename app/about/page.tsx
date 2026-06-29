@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://japhethjerry.space/about",
+    canonical: "https://www.japhethjerry.space/about",
   },
 };
 
