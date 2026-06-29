@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import SEORedirect from '../components/SEORedirect';
 
 export const metadata: Metadata = {
   title: 'Periderm CLI by Japheth Jerry — Reddit Reviews & Developer Discussions',
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
 export default function PeridermRedditSEOPage() {
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: `window.location.replace("/projects/periderm-cli");` }} />
-      <section className="about-area pt-100 pb-100">
+      <SEORedirect to="https://www.japhethjerry.space/projects/periderm-cli" />
+      <div style={{ position: "absolute", width: "1px", height: "1px", padding: 0, margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: 0 }}>
+        <section className="about-area pt-100 pb-100">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8" data-aos="fade-up">
@@ -63,6 +65,7 @@ export default function PeridermRedditSEOPage() {
         </div>
       </div>
     </section>
+      </div>
     </>
   );
 }

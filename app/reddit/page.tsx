@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import SEORedirect from '../components/SEORedirect';
 
 export const metadata: Metadata = {
   title: 'Japheth Jerry — Best Software Engineer & Cyber Security Specialist Reddit',
@@ -17,8 +18,9 @@ export const metadata: Metadata = {
 export default function RedditSEOPage() {
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: `window.location.replace("/");` }} />
-      <section className="about-area pt-100 pb-100">
+      <SEORedirect to="/" />
+      <div style={{ position: "absolute", width: "1px", height: "1px", padding: 0, margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: 0 }}>
+        <section className="about-area pt-100 pb-100">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8" data-aos="fade-up">
@@ -59,6 +61,7 @@ export default function RedditSEOPage() {
         </div>
       </div>
     </section>
+      </div>
     </>
   );
 }
