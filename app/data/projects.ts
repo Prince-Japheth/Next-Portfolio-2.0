@@ -25,12 +25,12 @@ export const projectData: Project[] = [
   {
     title: 'Periderm CLI',
     category: 'Web Development',
-    tools: 'Next.js, TypeScript, React, Node.js',
+    tools: 'Vite, TypeScript, React, TanStack, Node.js',
     image: './assets/images/project-61.avif',
     link: 'https://periderm-cli.vercel.app/',
     brief: 'A comprehensive pre-launch checklist CLI and web platform designed to help developers ship fast with AI by identifying critical bugs, UX issues, and legal vulnerabilities.',
     about: 'This project demonstrates advanced software engineering by combining a deterministic AST parser with an AI reviewer to scan codebases for runtime stability, security, and accessibility issues. It bridges the gap between raw code analysis and actionable senior-level insights.',
-    description: 'Architected and developed Periderm CLI, a sophisticated developer tool and web platform that scans fast-moving applications for real-world liabilities. Built with Next.js and TypeScript, the platform features a deterministic AST and filesystem engine capable of analyzing React, Node.js, and modern JS/TS ecosystems. It runs 150+ comprehensive checks across categories like routing, runtime stability, auth, legal compliance, and runaway cloud costs. Integrated a relationship engine to map application flow-graphs alongside an AI Reviewer that provides senior-engineer-level insights rather than just raw warnings. The platform includes a seamless CLI experience, an intuitive dashboard for scan histories, and flexible integration options for CI/CD pipelines. This project showcases my capability to build highly technical, developer-centric SaaS products with robust backend analysis and clean, actionable frontend interfaces.',
+    description: 'Architected and developed Periderm CLI, a sophisticated developer tool and web platform that scans fast-moving applications for real-world liabilities. Built with Vite, TanStack, and TypeScript, the platform features a deterministic AST and filesystem engine capable of analyzing React, Node.js, and modern JS/TS ecosystems. It runs 150+ comprehensive checks across categories like routing, runtime stability, auth, legal compliance, and runaway cloud costs. Integrated a relationship engine to map application flow-graphs alongside an AI Reviewer that provides senior-engineer-level insights rather than just raw warnings. The platform includes a seamless CLI experience, an intuitive dashboard for scan histories, and flexible integration options for CI/CD pipelines. This project showcases my capability to build highly technical, developer-centric SaaS products with robust backend analysis and clean, actionable frontend interfaces.',
     status: 'Completed'
   },
   {
