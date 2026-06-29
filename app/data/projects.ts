@@ -23,10 +23,32 @@ export const projectData: Project[] = [
   //   status: 'Completed'
   // },
   {
+    title: 'Periderm CLI',
+    category: 'Web Development',
+    tools: 'Next.js, TypeScript, React, Node.js',
+    image: './assets/images/project-61.avif',
+    link: 'https://periderm-cli.vercel.app/',
+    brief: 'A comprehensive pre-launch checklist CLI and web platform designed to help developers ship fast with AI by identifying critical bugs, UX issues, and legal vulnerabilities.',
+    about: 'This project demonstrates advanced software engineering by combining a deterministic AST parser with an AI reviewer to scan codebases for runtime stability, security, and accessibility issues. It bridges the gap between raw code analysis and actionable senior-level insights.',
+    description: 'Architected and developed Periderm CLI, a sophisticated developer tool and web platform that scans fast-moving applications for real-world liabilities. Built with Next.js and TypeScript, the platform features a deterministic AST and filesystem engine capable of analyzing React, Node.js, and modern JS/TS ecosystems. It runs 150+ comprehensive checks across categories like routing, runtime stability, auth, legal compliance, and runaway cloud costs. Integrated a relationship engine to map application flow-graphs alongside an AI Reviewer that provides senior-engineer-level insights rather than just raw warnings. The platform includes a seamless CLI experience, an intuitive dashboard for scan histories, and flexible integration options for CI/CD pipelines. This project showcases my capability to build highly technical, developer-centric SaaS products with robust backend analysis and clean, actionable frontend interfaces.',
+    status: 'Completed'
+  },
+  {
+    title: 'Simi | Product & UX Designer Portfolio',
+    category: 'Web Development',
+    tools: 'Next.js, TypeScript, Tailwind CSS',
+    image: './assets/images/project-60.avif',
+    link: 'https://simi-portfolio-sigma.vercel.app/',
+    brief: 'A modern, minimalist portfolio website for a Product & UX Designer, showcasing their expertise, design process, and digital product case studies.',
+    about: 'This project demonstrates the ability to build a sophisticated and highly performant personal portfolio. The website effectively communicates the designer\'s multidisciplinary background and design philosophy through a clean, user-centric interface.',
+    description: 'Developed a comprehensive portfolio website for a multidisciplinary Product & UX Designer. The platform features a clean, minimalist design that puts the focus on the designer\'s work, including hero sections, dashboards, mobile screens, and detailed case studies. Engineered with Next.js for optimal performance and SEO, ensuring fast load times and a smooth user experience. Implemented a responsive layout that seamlessly adapts to all devices, highlighting the designer\'s core competencies in product design, UX research, UX writing, and brand experience design. The site also details the designer\'s structured workflow—from discovery and structuring to design and refinement—providing potential clients and employers with deep insights into their professional methodology.',
+    status: 'Completed'
+  },
+  {
     "title": "Popkup",
     "category": "Web Development",
     "tools": "Next.js, React, TypeScript, Tailwind CSS",
-    "image": "./assets/images/project59.avif",
+    "image": "./assets/images/project-59.avif",
     "link": "https://popkup.com/",
     "brief": "An all-in-one e-commerce platform built with Next.js, enabling brands to launch storefronts, connect with influencers, and seamlessly manage checkout and shipping workflows.",
     "about": "This project demonstrates my ability to build complex, scalable SaaS platforms. It bridges the gap between commerce and influence through an intuitive storefront builder, robust administrative modules, and advanced e-commerce capabilities.",
@@ -48,7 +70,7 @@ export const projectData: Project[] = [
     "title": "J3 Global Ventures Limited",
     "category": "Web Development",
     "tools": "NextJs, Typescript, CSS, Bootstrap",
-    "image": "./assets/images/project58.avif",
+    "image": "./assets/images/project-58.avif",
     "link": "https://j3globalventures.vercel.app/",
     "brief": "A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.",
     "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
