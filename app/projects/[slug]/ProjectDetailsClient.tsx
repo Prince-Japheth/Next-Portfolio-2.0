@@ -152,7 +152,22 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
                 }}
               />
               <div className="project-details-info">
-                <h3>{currentProject.title}</h3>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                  {currentProject.title}
+                  {currentProject.isPersonal && (
+                    <span style={{ 
+                      fontSize: '12px', 
+                      padding: '2px 8px', 
+                      borderRadius: '12px', 
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)', 
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      fontWeight: 'normal',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      Personal Project
+                    </span>
+                  )}
+                </h3>
                 <p>{currentProject.brief}</p>
                 {hasHttpLink && (
                   <button

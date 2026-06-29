@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 // URL parameter mapping for shorter URLS and combined categories
 const categoryMapping: Record<string, string | string[]> = {
+  'personal': 'Personal Projects',
   'DESIGN': ['UI/UX DESIGN', 'Graphic Design'], // Combined category
   'design': ['UI/UX DESIGN', 'Graphic Design'], // Case-insensitive
   'mobile': 'Mobile Development',
@@ -42,6 +43,7 @@ const getCategoryFromUrl = (urlCategory: string | null): string | string[] => {
 // Reverse mapping: get short URL alias from full category name
 const getShortUrlAlias = (category: string): string => {
   const reverseMapping: Record<string, string> = {
+    'Personal Projects': 'personal',
     'Mobile Development': 'mobile',
     'Web Development': 'web',
     'UI/UX DESIGN': 'ui',
@@ -121,6 +123,8 @@ export default function ProjectsClient({ initialCategory, initialWordpress }: Pr
         project.category.toLowerCase().includes('ui/ux');
     } else if (selectedCategory === 'All Projects') {
       categoryMatch = true;
+    } else if (selectedCategory === 'Personal Projects') {
+      categoryMatch = project.isPersonal === true;
     } else if (selectedCategory === 'DESIGN' || selectedCategory === 'design') {
       // Show both UI/UX DESIGN and Graphic Design
       categoryMatch = 

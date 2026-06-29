@@ -14,6 +14,7 @@ interface ProjectItemProps {
     tools: string;
     image: string;
     link: string;
+    isPersonal?: boolean;
   };
   showWordPress?: boolean;
 }
@@ -126,7 +127,23 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
           <div className="d-flex align-items-center justify-content-between">
             <div className="project-info">
               <p>{project.category}</p>
-              <h1>{project.title}</h1>
+              <h1 style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                {project.title}
+                {project.isPersonal && (
+                  <span style={{ 
+                    fontSize: '12px', 
+                    padding: '2px 8px', 
+                    borderRadius: '12px', 
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)', 
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    fontWeight: 'normal',
+                    whiteSpace: 'nowrap',
+                    marginTop: 0,
+                  }}>
+                    Personal Project
+                  </span>
+                )}
+              </h1>
               <span style={{ fontSize: '12px !important' }}>{showWordPress ? 'WordPress' : project.tools}</span>
             </div>
             <div 

@@ -8,6 +8,7 @@ export interface Project {
   about: string;        // For the second right-side box
   description: string;  // For the detailed section below
   status: 'Completed' | 'In Progress' | 'On Hold';  // Project status
+  isPersonal?: boolean;
 }
 
 export const projectData: Project[] = [
@@ -31,7 +32,8 @@ export const projectData: Project[] = [
     brief: 'A comprehensive pre-launch checklist CLI and web platform designed to help developers ship fast with AI by identifying critical bugs, UX issues, and legal vulnerabilities.',
     about: 'This project demonstrates advanced software engineering by combining a deterministic AST parser with an AI reviewer to scan codebases for runtime stability, security, and accessibility issues. It bridges the gap between raw code analysis and actionable senior-level insights.',
     description: 'Architected and developed Periderm CLI, a sophisticated developer tool and web platform that scans fast-moving applications for real-world liabilities. Built with Vite, TanStack, and TypeScript, the platform features a deterministic AST and filesystem engine capable of analyzing React, Node.js, and modern JS/TS ecosystems. It runs 150+ comprehensive checks across categories like routing, runtime stability, auth, legal compliance, and runaway cloud costs. Integrated a relationship engine to map application flow-graphs alongside an AI Reviewer that provides senior-engineer-level insights rather than just raw warnings. The platform includes a seamless CLI experience, an intuitive dashboard for scan histories, and flexible integration options for CI/CD pipelines. This project showcases my capability to build highly technical, developer-centric SaaS products with robust backend analysis and clean, actionable frontend interfaces.',
-    status: 'Completed'
+    status: 'Completed',
+    isPersonal: true
   },
   {
     title: 'Simi | Product & UX Designer Portfolio',
@@ -64,7 +66,8 @@ export const projectData: Project[] = [
     brief: 'Led the development of Topix as a full-stack engineer, creating a vibrant social platform that enables users to connect through shared interests.',
     about: 'A social platform connecting people through shared interests, built with PHP Laravel for web and Java for Android, expanding to iOS with React Native. Features include real-time chat, community building, and content sharing.',
     description: 'Led the development of a full-stack social platform serving diverse communities across web and mobile platforms. Architected a scalable backend using Laravel with microservices architecture, implementing real-time features including chat, notifications, and content updates using WebSockets. Built a native Android application in Java with smooth animations and gesture handling, achieving 60fps performance and a 4.7/5 rating. Currently developing an iOS version using React Native to provide a consistent experience across all mobile platforms. Implemented advanced features including community management, content moderation, and targeted advertising based on user interests. Developed a sophisticated content recommendation system using machine learning algorithms to personalize user feeds. Created a robust authentication system with role-based access control and comprehensive security measures. Optimized database performance through efficient query design and caching strategies, handling 1M+ monthly transactions with 99.95% uptime. The platform successfully fosters meaningful connections among users with shared interests, resulting in high user engagement and retention rates.',
-    status: 'In Progress'
+    status: 'In Progress',
+    isPersonal: true
   },
   {
     "title": "J3 Global Ventures Limited",
@@ -75,7 +78,8 @@ export const projectData: Project[] = [
     "brief": "A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.",
     "about": "This project showcases my ability to create a polished, modern corporate portal. The website effectively communicates the scale and professional identity of a diversified business, highlighting its various divisions and commitment to quality.",
     "description": "Developed a comprehensive corporate website for J3 Global Ventures Limited, a dynamic conglomerate operating across multiple sectors including real estate, agriculture, manufacturing, and general supply. The platform features a modern, professional design tailored to a diverse B2B and B2C audience. Designed and implemented clear navigation to seamlessly guide users through the company's extensive service portfolio—from import/export operations to ethical animal husbandry and premium confectionery production. Created dedicated sections highlighting the company's core divisions, leadership team, and client testimonials to build trust and credibility. Built a fully responsive layout ensuring optimal viewing experience across all devices, with fast loading speeds crucial for retaining corporate clients. This project demonstrates my ability to translate complex organizational structures into an intuitive, accessible, and high-performing digital presence that aligns with a company's vision for global impact and excellence.",
-    "status": "Completed"
+    "status": "Completed",
+    isPersonal: true
   },
   {
     title: 'LCDP School Management System',
@@ -130,7 +134,8 @@ export const projectData: Project[] = [
     "brief": "A modern, dynamic web development agency website showcasing professional web design and development services. Built with cutting-edge technologies and featuring smooth animations, responsive design, and an intuitive user interface.",
     "about": "Web Launch Guys demonstrates excellence in web development through a sophisticated landing page that combines modern design elements, interactive animations, and comprehensive service showcases. The website effectively communicates the agency's expertise in delivering custom web solutions and brand identity services.",
     "description": "The website features a dynamic hero section with smooth animations powered by GSAP, showcasing the agency's focus on building digital experiences that drive results. The platform includes comprehensive service sections highlighting custom web development, e-commerce solutions, and website maintenance. Built with HTML5 and styled using Tailwind CSS for modern, responsive design, the site incorporates interactive elements like project galleries, testimonial sliders, and animated preloaders. Key features include a modern navigation system, portfolio showcase with lightbox integration, client testimonials carousel, detailed service breakdowns, and a streamlined pricing structure. The website demonstrates technical excellence through performance optimization, responsive design implementation, and seamless integration of various JavaScript libraries for enhanced functionality. The design emphasizes user experience with clear call-to-actions, smooth scrolling, and intuitive navigation, while maintaining professional aesthetics with carefully chosen typography and color schemes.",
-    "status": "Completed"
+    "status": "Completed",
+    isPersonal: true
   },
   {
     title: 'Lincoln University College Result Portal',
@@ -174,7 +179,8 @@ export const projectData: Project[] = [
     "brief": "A comprehensive AI customer agent platform website built with React and TypeScript, featuring interactive 3D animations, business automation tools, and a modern responsive design for launching intelligent customer support agents.",
     "about": "This platform demonstrates advanced frontend development capabilities through a sophisticated landing page with 3D visualizations, interactive components, and seamless user experience design for businesses looking to implement AI-powered customer service solutions.",
     "description": "The platform features a dynamic hero section with rotating business categories (Real Estates, Restaurants, Hotels, etc.), interactive 3D scenes using Spline and Three.js, comprehensive feature showcases including appointment scheduling and menu inquiries, step-by-step implementation guides, and responsive device showcases for mobile and desktop applications. Built with React 18 and TypeScript for type safety, the application uses Vite for fast development and building, Tailwind CSS for styling with custom animations, and shadcn/ui components for consistent design patterns. Advanced features include 3D product demonstrations, interactive pricing tables, animated preloader with rotating facts, and comprehensive business automation workflows. The application implements modern web technologies with Framer Motion for smooth animations, GSAP for advanced motion effects, and includes comprehensive responsive design patterns for optimal viewing across all devices. The platform showcases enterprise-grade AI capabilities with instant setup processes, toll-free number integration, and business-specific customization options.",
-    "status": "Completed"
+    "status": "Completed",
+    isPersonal: true
   },
   {
     title: 'Villaco Flyer',
@@ -218,7 +224,8 @@ export const projectData: Project[] = [
     brief: 'A beautiful, single-page e-commerce website concept designed entirely as a personal project. Serene is a made-up brand, including the name and logo, created to showcase my skills in visual design, UX writing, and crafting clear, aesthetically pleasing layouts.',
     about: 'This project is a personal exploration of e-commerce UI/UX, where I invented the Serene brand from scratch. The design focuses on clarity, visual appeal, and a mesmerizing, minimalist shopping experience. One seamless, scrollable page that guides the user through the story of the products with thoughtful UX writing and attention to detail.',
     description: `Serene is a visually striking, single-page e-commerce website concept designed in Figma to showcase a fictional brand. The layout features a clean, modern aesthetic with generous white space, soft gradients, and rounded cards that create a sense of calm and clarity. The hero section highlights a featured product with bold, readable typography and a prominent call-to-action, while supporting sections elegantly display product categories, new arrivals, and curated collections. Each product card is thoughtfully arranged with imagery, ratings, and pricing, ensuring information is accessible at a glance. The design emphasizes intuitive navigation through a seamless vertical scroll, with clear visual hierarchy and consistent spacing. Subtle shadows and accent colors guide the user’s attention without overwhelming the content. The footer provides essential links and brand information in a minimal, unobtrusive style. Overall, Serene demonstrates a refined approach to e-commerce UI, balancing aesthetics and usability to deliver a delightful, easy-to-browse shopping experience.`,
-    status: 'Completed'
+    status: 'Completed',
+    isPersonal: true
   },
   {
     title: 'Bondyt Official Website',
@@ -251,7 +258,8 @@ export const projectData: Project[] = [
     "brief": "A centralized blog platform for the Aquilla Cyber Tech community, designed to be a hub for knowledge sharing and community engagement.",
     "about": "This project involved creating a full-stack blogging platform. It features secure content publishing, user engagement tools like comments and likes, and an email notification system to keep users informed of new content.",
     "description": "Developed a centralized blog platform for the Aquilla Cyber Tech community, featuring a custom PHP/MySQL backend for content management and administration. Integrated MongoDB for efficient content storage and retrieval, ensuring high performance and scalability. Implemented user authentication and role-based access control to secure content publishing. Created an email notification system to alert users of new posts and replies, boosting community engagement by 35%. The platform supports rich text editing for a variety of content formats and includes features for user commenting and social sharing.",
-    "status": "Completed"
+    "status": "Completed",
+    isPersonal: true
   },
   {
     title: 'KNFT',
@@ -273,7 +281,8 @@ export const projectData: Project[] = [
     brief: 'A landing page for LaunchFundr, featuring a subscription system for users seeking funding opportunities. Built with Astro and Tailwind CSS for optimal performance.',
     about: 'This project demonstrates my ability to create engaging landing pages with integrated functionality. The page effectively captures user interest while providing a seamless subscription experience.',
     description: 'Designed and developed a high-converting landing page that attracted 2000+ email subscribers in its first month. Built with Astro for exceptional performance and SEO optimization. Implemented a secure email subscription system with double opt-in verification. Created an automated welcome email sequence to engage new subscribers. The landing page achieved a 100/100 Lighthouse score and 0.8s average page load time, resulting in a 45% conversion rate for email subscriptions.',
-    status: 'Completed'
+    status: 'Completed',
+    isPersonal: true
   },
   {
     title: 'Branding Co',
@@ -587,6 +596,7 @@ export const projectData: Project[] = [
 
 export const categories = [
   'All Projects',
+  'Personal Projects',
   'Mobile Development',
   'Web Development',
   'UI/UX DESIGN',
