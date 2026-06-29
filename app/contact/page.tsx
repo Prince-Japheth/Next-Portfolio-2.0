@@ -46,17 +46,17 @@ export default function Contact() {
             <h3 data-aos="fade-up">Social Info</h3>
             <ul className="social-links d-flex align-center" data-aos="zoom-in">
               <li>
-                <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/japheth-jerry-34a513274/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile">
                   <i className="iconoir-linkedin" />
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="me noopener noreferrer" aria-label="Instagram Profile" title="Instagram Profile">
                   <i className="iconoir-instagram" />
                 </a>
               </li>
               <li>
-                <WhatsAppLink>
+                <WhatsAppLink aria-label="WhatsApp Contact" title="WhatsApp Contact">
                   <i className="iconoir-whatsapp" />
                 </WhatsAppLink>
               </li>

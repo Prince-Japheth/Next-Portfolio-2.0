@@ -30,27 +30,27 @@ const ProfileContactBox: React.FC<ProfileContactBoxProps> = ({
         <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
         <div className="inner-profile-icons shadow-box">
           {showGithub && (
-            <a href="https://github.com/Prince-Japheth" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Prince-Japheth" target="_blank" rel="me noopener noreferrer" aria-label="GitHub Profile" title="GitHub Profile">
               <i className="iconoir-github" />
             </a>
           )}
           {showLinkedin && (
-            <a href="https://linkedin.com/in/japheth-jerry-34a513274" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/japheth-jerry-34a513274/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile">
               <i className="iconoir-linkedin" />
             </a>
           )}
           {showMail && (
-            <a href={`mailto:${CONTACT_EMAILS.PRIMARY}`}>
+            <a href={`mailto:${CONTACT_EMAILS.PRIMARY}`} aria-label="Send an Email" title="Send an Email">
               <i className="iconoir-mail" />
             </a>
           )}
           {showInstagram && (
-            <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/_prince_yafet_/" target="_blank" rel="me noopener noreferrer" aria-label="Instagram Profile" title="Instagram Profile">
               <i className="iconoir-instagram" />
             </a>
           )}
           {showWhatsapp && (
-            <WhatsAppLink>
+            <WhatsAppLink aria-label="WhatsApp Contact" title="WhatsApp Contact">
               <i className="iconoir-whatsapp" />
             </WhatsAppLink>
           )}

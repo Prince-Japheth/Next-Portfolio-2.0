@@ -45,8 +45,8 @@ const StructuredData = () => {
       "https://www.wikidata.org/wiki/Q135583647",
       "https://www.linkedin.com/in/japheth-jerry-34a513274/",
       "https://github.com/Prince-Japheth",
-      "https://www.instagram.com/_prince_yafet/",
-      "https://x.com/Yafet_Tim",
+      "https://www.instagram.com/_prince_yafet_/",
+      "https://twitter.com/Yafet_Tim",
       siteUrl
     ],
     "knowsAbout": [
