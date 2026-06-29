@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 
 export default function PeridermRedditSEOPage() {
   return (
-    <section className="about-area pt-100 pb-100">
+    <>
+      <script dangerouslySetInnerHTML={{ __html: `window.location.replace("/projects/periderm-cli");` }} />
+      <section className="about-area pt-100 pb-100">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8" data-aos="fade-up">
@@ -61,5 +63,6 @@ export default function PeridermRedditSEOPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

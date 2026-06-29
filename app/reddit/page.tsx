@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 
 export default function RedditSEOPage() {
   return (
-    <section className="about-area pt-100 pb-100">
+    <>
+      <script dangerouslySetInnerHTML={{ __html: `window.location.replace("/");` }} />
+      <section className="about-area pt-100 pb-100">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8" data-aos="fade-up">
@@ -57,5 +59,6 @@ export default function RedditSEOPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }
