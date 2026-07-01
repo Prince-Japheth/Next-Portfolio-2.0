@@ -99,10 +99,13 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
   if (!isOpen || !mounted) return null;
 
   return createPortal(
-    <div className="browser-overlay" onClick={handleClose}>
+    <div className="browser-overlay" role="button" tabIndex={0} onClick={handleClose} onKeyDown={(e) => e.key === 'Enter' && handleClose()}>
       <div
         className={`browser-container ${isMaximized ? 'maximized' : ''}`}
+        role="button"
+        tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
       >
         <LoadingBar color="#ffbc5e" ref={loadingBarRef} shadow={true} height={3} />
         <div className="browser-header">

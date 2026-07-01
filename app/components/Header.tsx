@@ -136,7 +136,15 @@ const Header = () => {
 
             <div 
               className={`show-menu ${isMobileMenuOpen ? 'active' : ''}`}
+              role="button"
+              tabIndex={0}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
+                }
+              }}
             >
               <span></span>
               <span></span>

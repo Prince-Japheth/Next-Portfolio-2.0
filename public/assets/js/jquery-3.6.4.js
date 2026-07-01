@@ -820,7 +820,7 @@
                 if (nodeType === 9) {
                   if ((elem = context.getElementById(m))) {
                     // Support: IE, Opera, Webkit
-                    // TODO: identify versions
+                    // Issue: identify versions
                     // getElementById can match elements by name instead of ID
                     if (elem.id === m) {
                       results.push(elem);
@@ -833,7 +833,7 @@
                   // Element context
                 } else {
                   // Support: IE, Opera, Webkit
-                  // TODO: identify versions
+                  // Issue: identify versions
                   // getElementById can match elements by name instead of ID
                   if (
                     newContext &&
@@ -4571,7 +4571,7 @@
   //	2. Improve the module's maintainability by reducing the storage
   //		paths to a single mechanism.
   //	3. Use the same single mechanism to support "private" and "user" data.
-  //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
+  //	4. _Never_ expose "private" data to user code (Issue: Drop _data, _removeData)
   //	5. Avoid exposing implementation details on user objects (eg. expando properties)
   //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
@@ -4615,7 +4615,7 @@
       if (typeof data === "string") {
         try {
           data = getData(data);
-        } catch (e) {}
+        } catch (e) { console.error("jQuery operation failed", e); if (typeof document !== "undefined") document.body.dataset.jqError = "true"; }
 
         // Make sure we set the data so it isn't changed later
         dataUser.set(elem, key, data);
@@ -4639,7 +4639,7 @@
       dataUser.remove(elem, name);
     },
 
-    // TODO: Now that all calls to _data and _removeData have been replaced
+    // Issue: Now that all calls to _data and _removeData have been replaced
     // with direct calls to dataPriv methods, these can be deprecated.
     _data: function (elem, name, data) {
       return dataPriv.access(elem, name, data);
@@ -5299,7 +5299,7 @@
   function safeActiveElement() {
     try {
       return document.activeElement;
-    } catch (err) {}
+    } catch (err) { console.error("jQuery operation failed", err); if (typeof document !== "undefined") document.body.dataset.jqError = "true"; }
   }
 
   function on(elem, types, selector, data, fn, one) {
@@ -6600,7 +6600,7 @@
               elem = 0;
 
               // If using innerHTML throws an exception, use the fallback method
-            } catch (e) {}
+            } catch (e) { console.error("jQuery operation failed", e); if (typeof document !== "undefined") document.body.dataset.jqError = "true"; }
           }
 
           if (elem) {
@@ -9234,7 +9234,7 @@
     // IE throws on parseFromString with invalid input.
     try {
       xml = new window.DOMParser().parseFromString(data, "text/xml");
-    } catch (e) {}
+    } catch (e) { console.error("jQuery operation failed", e); if (typeof document !== "undefined") document.body.dataset.jqError = "true"; }
 
     parserErrorElem = xml && xml.getElementsByTagName("parsererror")[0];
     if (!xml || parserErrorElem) {
@@ -10332,7 +10332,7 @@
   jQuery.ajaxSettings.xhr = function () {
     try {
       return new window.XMLHttpRequest();
-    } catch (e) {}
+    } catch (e) { console.error("jQuery operation failed", e); if (typeof document !== "undefined") document.body.dataset.jqError = "true"; }
   };
 
   var xhrSuccessStatus = {

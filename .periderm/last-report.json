@@ -1,0 +1,39 @@
+{
+  "projectName": "Next-Portfolio-2.0",
+  "scannedAt": "2026-06-30T22:50:44.999Z",
+  "filesScanned": 98,
+  "findings": [
+    {
+      "id": "missing-legal-docs",
+      "category": "Legal & Compliance",
+      "severity": "critical",
+      "file": "root",
+      "line": 1,
+      "message": "Missing Documents: Privacy Policy, Terms of Service completely absent.",
+      "why": "Running a web app handling user data without legal policies creates massive liability.",
+      "fix": "Create a Terms of Service and Privacy Policy, and link them in your footer.",
+      "aiPrompt": "Generate a standard Privacy Policy and Terms of Service route for this application."
+    }
+  ],
+  "counts": {
+    "critical": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "score": 85,
+  "scores": {
+    "confidence": 85,
+    "reality": 100,
+    "perceived": 100
+  },
+  "verdict": "blocked",
+  "markdown": "# Periderm CLI report — Next-Portfolio-2.0\n\n> **DO NOT LAUNCH** · 98 files scanned · Tue, 30 Jun 2026 22:50:44 GMT\n\n## Scan audit\n\n- **Deterministic checks run:** 2,172 (22 per source file + repo/SEO/policy passes)\n- **Privacy policy cross-reference:** 8 tracking/legal signals compared against your policy pages\n- **Files analyzed:** 98\n\n| Metric | Score |\n| --- | --- |\n| Launch Confidence | **85 / 100** |\n| Reality Score | **100 / 100** |\n| Perceived Performance | **100 / 100** |\n\n| Severity | Count |\n| --- | --- |\n| critical | 1 |\n| high | 0 |\n| medium | 0 |\n| low | 0 |\n\n## How to use this report\n\nEach finding below has a **Why it matters**, an **Exact fix**, and an **AI prompt** you can paste directly into your coding assistant. Fix the criticals first, then the highs, then re-run `periderm scan`.\n\n## CRITICAL (1)\n\n### CRITICAL #1 — Missing Documents: Privacy Policy, Terms of Service completely absent.\n\n- **File:** `root`\n- **Line:** 1\n- **Category:** Legal & Compliance\n- **Check id:** `missing-legal-docs`\n\n**Why it matters**\n\nRunning a web app handling user data without legal policies creates massive liability.\n\n**Exact fix**\n\nCreate a Terms of Service and Privacy Policy, and link them in your footer.\n\n**Paste into your AI assistant**\n\n```\nGenerate a standard Privacy Policy and Terms of Service route for this application.\n```\n\n---\n\n## One-shot prompt for the whole report\n\n```\nYou are reviewing a Periderm CLI scan: Launch Confidence 85/100, Reality 100/100, Perceived 100/100 — verdict DO NOT LAUNCH.\nThere are 1 critical, 0 high, 0 medium, 0 low findings.\nFix them in priority order. For each finding, open the listed file, apply the Exact fix, and keep the change minimal.\n```\n\n<!-- ✞ Jesus Is Lord ✞ — Philippians 2:10-11 & Jesus Loves You -->",
+  "meta": {
+    "perFileCheckCount": 22,
+    "repoWideCheckCount": 9,
+    "seoCheckCount": 5,
+    "policySignalsChecked": 8,
+    "totalChecksRun": 2172
+  }
+}

@@ -22,9 +22,7 @@
             }
         }, 1000);
 
-        // Track if audio has been played using localStorage
-        let hasPlayedIntroAudio = localStorage.getItem('hasPlayedIntroAudio') === 'true';
-        
+
         // Handle audio (Triggered by user interaction)
         if (!hasPlayedIntroAudio) {
             const playIntroAudio = () => {
@@ -33,8 +31,9 @@
                 introAudio.play().then(() => {
                     hasPlayedIntroAudio = true;
                     localStorage.setItem('hasPlayedIntroAudio', 'true');
-                }).catch(function(error) {
-                    console.log('Audio play failed:', error);
+                }).catch(function() {
+                    // Provide feedback via DOM state
+                    document.body.dataset.audioError = "true";
                 });
                 
                 document.removeEventListener('click', playIntroAudio);

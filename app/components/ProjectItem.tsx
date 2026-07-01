@@ -95,7 +95,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
         <div className="project-item flex-1 shadow-box">
           <div 
             className="overlay-link" 
+            role="button"
+            tabIndex={0}
             onClick={handleClick}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick(e as any);
+              }
+            }}
             style={{ cursor: 'pointer' }}
           />
           <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
@@ -147,7 +155,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
               <span style={{ fontSize: '12px !important' }}>{showWordPress ? 'WordPress' : project.tools}</span>
             </div>
             <div 
+              role="button"
+              tabIndex={0}
               onClick={handleClick}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleClick(e as any);
+                }
+              }}
               className="project-btn"
               style={{ cursor: 'pointer' }}
             >
@@ -175,13 +191,16 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
       {isModalOpen && (
         <div 
           className={`image-modal-overlay ${isClosing ? 'closing' : ''}`} 
+          role="button"
+          tabIndex={0}
           onClick={handleClose}
+          onKeyDown={(e) => e.key === 'Enter' && handleClose()}
           style={{
             '--origin-x': `${clickPosition.x}px`,
             '--origin-y': `${clickPosition.y}px`
           } as React.CSSProperties}
         >
-          <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-content" role="button" tabIndex={-1} onClick={e => e.stopPropagation()} onKeyDown={e => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={handleClose}>
               ×
             </button>

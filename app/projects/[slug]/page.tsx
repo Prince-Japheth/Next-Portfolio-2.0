@@ -4,6 +4,7 @@ import { projectData } from '../../data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import DOMPurify from 'isomorphic-dompurify';
 
 // Generate metadata for each project
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -121,7 +122,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: DOMPurify.sanitize(JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             "name": currentProject.title,
@@ -145,7 +146,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
               "@type": "WebPage",
               "@id": `https://www.japhethjerry.space/projects/${slug}`
             }
-          })
+          }))
         }}
       />
       

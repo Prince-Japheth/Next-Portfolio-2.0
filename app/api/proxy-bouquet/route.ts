@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        console.log(`[Proxy] Fetching content from: ${url}`);
+
         const res = await fetch(url, {
             headers: {
                 'User-Agent': request.headers.get('user-agent') || 'Next-Portfolio-Proxy',
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
 
         if (buttonsRegex.test(html)) {
             html = html.replace(buttonsRegex, '<div class="py-10 pt-4" style="display:none !important;"><div class="flex flex-wrap');
-            console.log('[Proxy] Successfully hid buttons container.');
+
         } else {
             console.warn('[Proxy] Count not find buttons container to hide using regex. Fallback check skipped.');
         }
@@ -57,7 +57,7 @@ export async function GET(request: NextRequest) {
 
         if (footerTextRegex.test(html)) {
             html = html.replace(footerTextRegex, '<p class="text-sm text-black" style="display:none !important;">made with digibouquet');
-            console.log('[Proxy] Successfully hid footer text.');
+
         } else {
             console.warn('[Proxy] Could not find footer text to hide.');
         }
@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
 
         if (linkRegex.test(html)) {
             html = html.replace(linkRegex, '<a class="text-sm underline text-black mt-2" href="/" style="display:none !important;">make a bouquet now!</a>');
-            console.log('[Proxy] Successfully hid call-to-action link.');
+
         } else {
             console.warn('[Proxy] Could not find call-to-action link to hide.');
         }

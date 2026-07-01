@@ -870,8 +870,8 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="terminal-overlay" onClick={onClose}>
-      <div className={`terminal-container ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`} onClick={(e) => e.stopPropagation()}>
+    <div className="terminal-overlay" role="button" tabIndex={0} onClick={onClose} onKeyDown={(e) => e.key === 'Enter' && onClose()}>
+      <div className={`terminal-container ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`} role="button" tabIndex={-1} onClick={(e) => e.stopPropagation()} onKeyDown={(e) => e.stopPropagation()}>
         <div className="terminal-header">
           <div className="terminal-title">Terminal</div>
           <div className="terminal-controls">
@@ -880,7 +880,12 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
             <button className="terminal-maximize" onClick={handleMaximize}>□</button>
           </div>
         </div>
-        <div className="terminal-body" onClick={(e) => {
+        <div className="terminal-body" role="button" tabIndex={0} onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.stopPropagation();
+            inputRef.current?.focus();
+          }
+        }} onClick={(e) => {
           e.stopPropagation();
           inputRef.current?.focus();
         }}>

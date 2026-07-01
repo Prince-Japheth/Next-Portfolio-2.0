@@ -56,7 +56,8 @@ export function useRouteChange() {
           }
         }
       } catch (e) {
-        console.error('Error in appendWordPressParam:', e);
+        // Fallback: indicate error via DOM state
+        document.body.dataset.routerError = "true";
       }
       return url;
     };
@@ -107,7 +108,8 @@ export function useRouteChange() {
               anchor.setAttribute('href', url.pathname + url.search + url.hash);
             }
           } catch (err) {
-            console.error('Error sticking wordpress param to anchor:', err);
+            // Fallback: indicate error via DOM state
+            document.body.dataset.routerError = "true";
           }
         }
       }

@@ -241,7 +241,9 @@ const Oneko = () => {
                         iframe.dataset.onekoAttached = "true";
                     }
                 } catch (e) {
-                    // console.warn("Could not attach Oneko to cross-origin iframe");
+                    // Log and provide DOM-level feedback for debugging tools
+                    console.warn("Could not attach Oneko to cross-origin iframe.", e);
+                    document.body.dataset.onekoIframeError = "true";
                 }
             });
         };

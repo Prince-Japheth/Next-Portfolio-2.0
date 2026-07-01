@@ -17,10 +17,10 @@ const ThemeEffects = () => {
           .then(() => {
             localStorage.setItem("hasPlayedIntroAudio", "true");
           })
-          .catch((error) => {
-            console.log("Audio play failed:", error);
+          .catch(() => {
+            // Provide feedback via DOM state for any UI listeners
+            document.body.dataset.audioError = "true";
           });
-
         document.removeEventListener("click", playIntroAudio);
         document.removeEventListener("keydown", playIntroAudio);
         document.removeEventListener("touchstart", playIntroAudio);

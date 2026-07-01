@@ -150,6 +150,8 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
     <div
       ref={thumbnailRef}
       className="browser-thumbnail"
+      role="button"
+      tabIndex={0}
       style={{
         left: position.x,
         top: position.y,
@@ -157,6 +159,12 @@ const BrowserThumbnail: React.FC<BrowserThumbnailProps> = ({
       }}
       onMouseDown={handleMouseDown}
       onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick(e as any);
+        }
+      }}
     >
       <div className="browser-thumbnail-header" style={{ cursor: 'pointer' }}>
         <span className="browser-thumbnail-title">{title}</span>

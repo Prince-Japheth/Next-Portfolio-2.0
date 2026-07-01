@@ -38,9 +38,10 @@ async function optimizeImage(inputPath, outputPath) {
       .toFormat(ext.slice(1), { quality: 80 })
       .toFile(path.join(outputPath, filename));
 
-    console.log(`✓ Optimized ${filename}`);
+    process.stdout.write(`✓ Optimized ${filename}\n`);
   } catch (error) {
-    console.error(`✗ Failed to optimize ${filename}:`, error.message);
+    process.stderr.write(`✗ Failed to optimize ${filename}: ${error.message}\n`);
+    process.exitCode = 1;
   }
 }
 
@@ -52,7 +53,7 @@ async function main() {
     // Get all image files
     const files = glob.sync('*.{png,jpg,jpeg,gif,webp}', { cwd: SOURCE_DIR });
 
-    console.log(`Found ${files.length} images to optimize...`);
+    process.stdout.write(`Found ${files.length} images to optimize...\n`);
 
     // Process each image
     for (const file of files) {
@@ -60,15 +61,15 @@ async function main() {
       await optimizeImage(inputPath, OUTPUT_DIR);
     }
 
-    console.log('\nOptimization complete! 🎉');
-    console.log(`Optimized images are in: ${OUTPUT_DIR}`);
-    console.log('\nNext steps:');
-    console.log('1. Review the optimized images');
-    console.log('2. Update your project data to use the new image paths');
-    console.log('3. Consider updating image paths in your code to use .webp versions');
+    process.stdout.write('\nOptimization complete! 🎉\n');
+    process.stdout.write(`Optimized images are in: ${OUTPUT_DIR}\n`);
+    process.stdout.write('\nNext steps:\n');
+    process.stdout.write('1. Review the optimized images\n');
+    process.stdout.write('2. Update your project data to use the new image paths\n');
+    process.stdout.write('3. Consider updating image paths in your code to use .webp versions\n');
 
   } catch (error) {
-    console.error('Error during optimization:', error);
+    process.stderr.write(`Error during optimization: ${error.message}\n`);
     process.exit(1);
   }
 }
