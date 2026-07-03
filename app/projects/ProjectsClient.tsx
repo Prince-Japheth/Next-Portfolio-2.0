@@ -55,21 +55,14 @@ const getShortUrlAlias = (category: string): string => {
   return reverseMapping[category] || category;
 };
 
-interface ProjectsClientProps {
-  initialCategory: string | null;
-  initialWordpress: boolean;
-}
-
-export default function ProjectsClient({ initialCategory, initialWordpress }: ProjectsClientProps) {
+export default function ProjectsClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // Initialize from props to ensure SSR matches the initial HTML
-  const [wordpress, setWordpress] = useState(initialWordpress);
-  
-  const urlCategory = searchParams ? searchParams.get('category') : initialCategory;
+  const urlCategory = searchParams?.get('category');
   const resolvedCategory = getCategoryFromUrl(urlCategory);
   
+  const [wordpress, setWordpress] = useState(false);
   const onlyWebDev = wordpress;
   const hideFilter = wordpress;
   
@@ -96,7 +89,7 @@ export default function ProjectsClient({ initialCategory, initialWordpress }: Pr
     if (onlyWebDev) {
       setSelectedCategory('Web & Design');
     } else {
-      const currentUrlCategory = searchParams ? searchParams.get('category') : null;
+      const currentUrlCategory = searchParams?.get('category');
       const currentResolvedCategory = getCategoryFromUrl(currentUrlCategory);
       setSelectedCategory(
         Array.isArray(currentResolvedCategory) ? 'DESIGN' : currentResolvedCategory
