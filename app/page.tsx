@@ -172,9 +172,14 @@ export default async function Home(props: PageProps) {
           <div className="row mt-24">
             <div className="col-md-12">
               <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24">
-                <div className="d-flex gap-24 flex-1">
-                  <ResumeBox />
-                  <ShowcaseProjectsBox />
+                <style dangerouslySetInnerHTML={{__html: `
+                  @media (max-width: 768px) {
+                    .mobile-equal-width > div { width: 50% !important; flex: 0 0 50% !important; }
+                  }
+                `}} />
+                <div className="d-flex gap-24 flex-1 mobile-equal-width">
+                  <ResumeBox className="flex-1" />
+                  <ShowcaseProjectsBox className="flex-1" />
                 </div>
                 <ProfileContactBox
                   showGithub={true}
