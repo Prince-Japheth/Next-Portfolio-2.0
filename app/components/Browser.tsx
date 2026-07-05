@@ -148,6 +148,7 @@ const Browser: React.FC<BrowserProps> = ({ isOpen, onClose, url, title }) => {
           <div className="browser-address-bar">
             <input
               type="text"
+              aria-label="Browser address"
               value={currentUrl}
               onChange={(e) => setCurrentUrl(e.target.value)}
               onKeyPress={(e) => {

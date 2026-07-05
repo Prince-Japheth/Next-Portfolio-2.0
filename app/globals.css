@@ -8,15 +8,7 @@
   width: 100%;
 }
 
-.project-details-wrap .loading-spinner .spinner { 
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--border-color);
-  border-top: 5px solid var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
-}
+
 
 .project-details-wrap .loading-spinner p {
   color: var(--text-color);
@@ -49,11 +41,7 @@
 } 
 
 
-.visit-project-btn,
-.visit-project-btn:hover,
-.visit-project-btn img {
-  display: none;
-}
+
 
 .view-project-btn {
   background-color: var(--primary-color);
@@ -133,7 +121,7 @@
   }
 }
 
-/* Lenis Recommended Styles */
+/* Lenis Recommended Styles (Classes added dynamically by Lenis library) */
 html.lenis, html.lenis body {
   height: auto;
 }

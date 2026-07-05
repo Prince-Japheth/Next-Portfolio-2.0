@@ -64,6 +64,7 @@ export default function SearchContent() {
             <div className="input-group">
               <input
                 type="text"
+                aria-label="Search query"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search projects, experience, skills, services..."

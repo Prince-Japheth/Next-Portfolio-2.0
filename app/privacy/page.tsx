@@ -51,6 +51,11 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-2xl font-semibold mb-4 text-white">6. Your Legal Rights</h2>
           <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, to object to processing, to portability of data and (where the lawful ground of processing is consent) to withdraw consent.</p>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4 text-white">7. GDPR and CCPA Data Rights</h2>
+          <p>If you are a resident of the European Economic Area (EEA) or California, you have certain data protection rights under the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). These include the right to access, delete, update, and restrict the use of your personal information. You also have the right to opt-out of the sale of your personal information. If you wish to exercise any of these rights, please contact us.</p>
+        </section>
       </div>
     </div>
   );

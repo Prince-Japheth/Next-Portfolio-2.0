@@ -232,6 +232,7 @@ export default function ProjectsClient() {
             <div className="search-input-group">
               <input
                 type="text"
+                aria-label="Search projects"
                 placeholder="Search projects by name, category, tools, or brief..."
                 className="search-input"
                 value={searchQuery}

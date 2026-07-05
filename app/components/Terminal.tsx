@@ -904,11 +904,11 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
             <input
               ref={inputRef}
               type="text"
+              aria-label="Terminal input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               className="terminal-input"
-              autoFocus
               disabled={isLoading}
             />
           </div>

@@ -79,13 +79,13 @@ export default function Contact() {
                   Your message was sent successfully.
                 </div>
                 <div className="input-group">
-                  <input type="text" name="name" id="full-name" placeholder="Name *" required data-form-input />
+                  <input type="text" name="name" id="full-name" placeholder="Name *" required data-form-input aria-label="Name" />
                 </div>
                 <div className="input-group">
-                  <input type="email" name="_replyto" id="email" placeholder="Email *" required data-form-input />
+                  <input type="email" name="_replyto" id="email" placeholder="Email *" required data-form-input aria-label="Email" />
                 </div>
                 <div className="input-group">
-                  <textarea name="message" id="message" placeholder="Your Message *" required data-form-input defaultValue={""} />
+                  <textarea name="message" id="message" placeholder="Your Message *" required data-form-input defaultValue={""} aria-label="Message" />
                 </div>
                 <div className="input-group">
                   <button className="theme-btn submit-btn" name="submit" type="submit" data-form-btn>Send
