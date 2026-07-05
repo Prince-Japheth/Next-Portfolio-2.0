@@ -203,7 +203,12 @@ export default function RootLayout({
         <noscript>
           <style>{`
             .preloader { display: none !important; }
-            [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+            [data-aos], [data-aos^=fade][data-aos^=fade], [data-aos^=zoom][data-aos^=zoom], [data-aos^=slide][data-aos^=slide], [data-aos^=flip][data-aos^=flip] { 
+              opacity: 1 !important; 
+              visibility: visible !important; 
+              transform: none !important; 
+              transition: none !important; 
+            }
           `}</style>
         </noscript>
         <script
@@ -211,7 +216,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 var ua = navigator.userAgent || '';
-                var isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|ia_archiver/i.test(ua) || /chatgpt|ai|openai|anthropic|claude/i.test(ua);
+                var isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|ia_archiver|lighthouse|page-speed/i.test(ua) || /chatgpt|ai|openai|anthropic|claude/i.test(ua);
                 if (isBot || window.navigator.webdriver) {
                   document.documentElement.classList.add('is-bot');
                 }
@@ -221,7 +226,16 @@ export default function RootLayout({
         />
         <style>{`
           html.is-bot .preloader { display: none !important; }
-          html.is-bot [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+          html.is-bot [data-aos], 
+          html.is-bot [data-aos^=fade][data-aos^=fade], 
+          html.is-bot [data-aos^=zoom][data-aos^=zoom], 
+          html.is-bot [data-aos^=slide][data-aos^=slide], 
+          html.is-bot [data-aos^=flip][data-aos^=flip] { 
+            opacity: 1 !important; 
+            visibility: visible !important; 
+            transform: none !important; 
+            transition: none !important; 
+          }
         `}</style>
       </head>
       <body>
