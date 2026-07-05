@@ -171,16 +171,34 @@ export default async function Home(props: PageProps) {
           </div>
           <div className="row mt-24">
             <div className="col-md-12">
-              <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24">
-                <style dangerouslySetInnerHTML={{__html: `
-                  @media (max-width: 768px) {
-                    .mobile-equal-width > div { width: 50% !important; flex: 0 0 50% !important; }
-                    .mobile-equal-width { gap: 12px !important; }
+              <style dangerouslySetInnerHTML={{__html: `
+                .desktop-only-layout {
+                  display: flex;
+                }
+                .mobile-only-layout {
+                  display: none;
+                }
+                @media (max-width: 1024px) {
+                  .desktop-only-layout {
+                    display: none !important;
                   }
-                `}} />
-                <div className="d-flex gap-24 flex-1 mobile-equal-width">
-                  <ResumeBox className="flex-1" />
-                  <ShowcaseProjectsBox className="flex-1" />
+                  .mobile-only-layout {
+                    display: flex !important;
+                    flex-direction: column;
+                    gap: 24px;
+                    width: 100%;
+                  }
+                }
+                @media (max-width: 768px) {
+                  .mobile-equal-width > div { width: 50% !important; flex: 0 0 50% !important; }
+                  .mobile-equal-width { gap: 12px !important; }
+                }
+              `}} />
+
+              {/* Desktop Layout: all three boxes side-by-side */}
+              <div className="profile-contact-resume-wrap desktop-only-layout gap-24">
+                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <ResumeBox />
                 </div>
                 <ProfileContactBox
                   showGithub={true}
@@ -190,6 +208,31 @@ export default async function Home(props: PageProps) {
                   showWhatsapp={true}
                   className="flex-1"
                 />
+                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <ShowcaseProjectsBox />
+                </div>
+              </div>
+
+              {/* Mobile Layout: Row 1 (Resume and Projects side-by-side), Row 2 (Profile full-width) */}
+              <div className="mobile-only-layout">
+                <div className="d-flex gap-24 w-full mobile-equal-width">
+                  <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                    <ResumeBox />
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                    <ShowcaseProjectsBox />
+                  </div>
+                </div>
+                <div className="w-full">
+                  <ProfileContactBox
+                    showGithub={true}
+                    showLinkedin={true}
+                    showMail={true}
+                    showInstagram={true}
+                    showWhatsapp={true}
+                    className="w-full"
+                  />
+                </div>
               </div>
             </div>
           </div>
