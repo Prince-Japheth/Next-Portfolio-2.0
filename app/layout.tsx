@@ -9,10 +9,10 @@ import Script from "next/script";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.japhethjerry.space'),
   title: {
-    default: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
+    default: "Japheth Jerry | Software Engineer & Security Specialist",
     template: "%s | Japheth Jerry"
   },
-  description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
+  description: "Software Engineer specializing in React, TypeScript, and secure cross-platform web development. Cyber Security expert.",
   keywords: [
     "Japheth",
     "Jerry",
@@ -120,8 +120,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.japhethjerry.space",
     siteName: "Japheth Jerry",
-    title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
-    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
+    title: "Japheth Jerry | Software Engineer & Security Specialist",
+    description: "Software Engineer specializing in React, TypeScript, and secure cross-platform web development. Cyber Security expert.",
     images: [
       {
         url: "/assets/images/me.png",
@@ -133,8 +133,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry - Computer Software Engineer & Cyber Security Specialist | React, TypeScript Developer",
-    description: "Software Engineer specializing in React, TypeScript, and modern cross-platform web, computer and mobile development and Cyber Security Specialist.",
+    title: "Japheth Jerry | Software Engineer & Security Specialist",
+    description: "Software Engineer specializing in React, TypeScript, and secure cross-platform web development. Cyber Security expert.",
     images: ["/assets/images/me.png"],
     creator: "@Yafet_Tim",
   },

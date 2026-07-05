@@ -13,8 +13,8 @@ import ProjectItem from "./components/ProjectItem";
 import { projectData } from "./data/projects";
 
 export const metadata: Metadata = {
-  title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
-  description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions.",
+  title: "Japheth Jerry | Software Engineer & Security Specialist",
+  description: "Software Engineer & Cyber Security Specialist building secure, innovative web solutions that merge technology with creativity.",
   keywords: [
     "Japheth",
     "Jerry",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     "Education"
   ],
   openGraph: {
-    title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
-    description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
+    title: "Japheth Jerry | Software Engineer & Security Specialist",
+    description: "Software Engineer & Cyber Security Specialist building secure, innovative web solutions that merge technology with creativity.",
     images: [
       {
         url: "/assets/images/me.png",
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
-    description: "Software Engineer and Cyber Security Specialist, passionate about building innovative solutions and exploring the intersection of technology and creativity.",
+    title: "Japheth Jerry | Software Engineer & Security Specialist",
+    description: "Software Engineer & Cyber Security Specialist building secure, innovative web solutions that merge technology with creativity.",
     images: ["/assets/images/me.png"],
     creator: "@Yafet_Tim"
   }
