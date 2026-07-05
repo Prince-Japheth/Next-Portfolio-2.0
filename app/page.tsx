@@ -153,7 +153,7 @@ export default async function Home(props: PageProps) {
                 </h2>
                 <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.4)' }} />
               </div>
-              <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24 projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent', alignItems: 'stretch' }}>
+              <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24 projects-area recent-projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent', alignItems: 'stretch' }}>
                 {[
                   projectData.find(p => p.title === 'Periderm CLI'),
                   projectData.find(p => p.title === 'Lincoln Impact Foundation'),

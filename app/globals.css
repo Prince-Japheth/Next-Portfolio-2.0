@@ -137,3 +137,18 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+/* Recent Projects Specific Adjustments */
+@media (min-width: 768px) {
+  div.projects-area.recent-projects-area .project-item-card {
+    height: auto !important;
+  }
+  div.projects-area.recent-projects-area .project-item {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  div.projects-area.recent-projects-area .project-item > .d-flex {
+    margin-top: auto !important;
+  }
+}
