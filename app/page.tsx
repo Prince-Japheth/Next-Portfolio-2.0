@@ -92,7 +92,7 @@ export default async function Home(props: PageProps) {
       <section className="about-area">
         <div className="container">
           <div className="row">
-            <div className="col-md-6" data-aos="zoom-in">
+            <div className="col-md-6 mb-4 mb-md-0" data-aos="zoom-in">
               <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person">
                 <Image
                   src="/assets/images/bg1.png"
@@ -138,6 +138,34 @@ export default async function Home(props: PageProps) {
           </div>
           <div className="row mt-24">
             <div className="col-md-12">
+              <div className="d-flex align-items-center gap-24 mb-24" data-aos="fade-up">
+                <style dangerouslySetInnerHTML={{__html: `
+                  @media (max-width: 768px) {
+                    .recent-projects-heading { font-size: 1.2rem !important; white-space: nowrap; }
+                    .recent-projects-heading img { width: 14px !important; height: 14px !important; }
+                  }
+                `}} />
+                <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.4)' }} />
+                <h2 className="section-heading recent-projects-heading" style={{ margin: 0, padding: 0 }}>
+                  <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
+                  Recent Projects
+                  <Image src="/assets/images/star-2.png" alt="Star" width={0} height={0} sizes="100vw" style={{ width: 'auto', height: 'auto', display: 'inline-block' }} />
+                </h2>
+                <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.4)' }} />
+              </div>
+              <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24 projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent', alignItems: 'stretch' }}>
+                {[
+                  projectData.find(p => p.title === 'Periderm CLI'),
+                  projectData.find(p => p.title === 'Lincoln Impact Foundation'),
+                  projectData.find(p => p.title.includes('Onarietta Remet'))
+                ].filter(Boolean).map((project, index) => (
+                  <ProjectItem key={`recent-project-${index}`} project={project!} showWordPress={false} isHomePage={true} />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="row mt-24">
+            <div className="col-md-12">
               <div className="blog-service-profile-wrap d-flex gap-24">
                 <ResumeBox />
                 <ProfileContactBox
@@ -149,15 +177,6 @@ export default async function Home(props: PageProps) {
                   className="flex-1"
                 />
                 <ShowcaseProjectsBox />
-              </div>
-            </div>
-          </div>
-          <div className="row mt-24">
-            <div className="col-md-12">
-              <div className="blog-service-profile-wrap d-flex gap-24 projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent' }}>
-                {projectData.filter(p => p.isPersonal).slice(0, 3).map((project, index) => (
-                  <ProjectItem key={`personal-project-${index}`} project={project} showWordPress={false} />
-                ))}
               </div>
             </div>
           </div>

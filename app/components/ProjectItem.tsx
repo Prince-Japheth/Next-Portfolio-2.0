@@ -17,9 +17,10 @@ interface ProjectItemProps {
     isPersonal?: boolean;
   };
   showWordPress?: boolean;
+  isHomePage?: boolean;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = false }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = false, isHomePage = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -91,7 +92,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
 
   return (
     <>
-      <div data-aos="zoom-in" className="project-item-card flex-1 d-flex flex-column">
+      <div data-aos="zoom-in" className={`project-item-card flex-1 d-flex flex-column ${isHomePage ? 'h-full' : ''}`} style={isHomePage ? { height: '100%' } : undefined}>
         <div className="project-item flex-1 shadow-box">
           <div 
             className="overlay-link" 
@@ -174,7 +175,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
         {project.link.startsWith('http') && !showWordPress && (
           <a
             href={`/projects/${slug}`}
-            className="view-details-btn mb-5 shadow-box"
+            className={`view-details-btn shadow-box ${!isHomePage ? 'mb-5' : ''}`}
             title="View Details"
             onClick={(e) => {
               // Force a full page reload to avoid navigation issues

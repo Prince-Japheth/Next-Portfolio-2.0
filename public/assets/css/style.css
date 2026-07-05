@@ -1251,7 +1251,7 @@ ol {
         background: #2222229f;
         backdrop-filter: blur(10px);
         border-radius: 100px;
-        padding: 10px 20px;
+        padding: 10px 10px;
         box-shadow: 0 8px 32px 0 rgba(var(--primary_color), 0.3), 0 16px 48px 0 rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.18);
         z-index: 1000;
@@ -1394,6 +1394,9 @@ ol {
     
     .about-area .about-me-box .img-box {
         margin: auto;
+        height: 224px !important;
+        width: 100%;
+        max-width: 224px;
     }
 }
 
