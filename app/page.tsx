@@ -9,6 +9,8 @@ import HeroInfoBox from "./components/HeroInfoBox";
 import HeroMarquee from "./components/HeroMarquee";
 import Link from "next/link";
 import Image from "next/image";
+import ProjectItem from "./components/ProjectItem";
+import { projectData } from "./data/projects";
 
 export const metadata: Metadata = {
   title: "Japheth Jerry — Software Engineer & Cyber Security Specialist",
@@ -147,6 +149,15 @@ export default async function Home(props: PageProps) {
                   className="flex-1"
                 />
                 <ShowcaseProjectsBox />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-24">
+            <div className="col-md-12">
+              <div className="blog-service-profile-wrap d-flex gap-24 projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent' }}>
+                {projectData.filter(p => p.isPersonal).slice(0, 3).map((project, index) => (
+                  <ProjectItem key={`personal-project-${index}`} project={project} showWordPress={false} />
+                ))}
               </div>
             </div>
           </div>
