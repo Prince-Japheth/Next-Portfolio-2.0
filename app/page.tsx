@@ -175,6 +175,7 @@ export default async function Home(props: PageProps) {
                 <style dangerouslySetInnerHTML={{__html: `
                   @media (max-width: 768px) {
                     .mobile-equal-width > div { width: 50% !important; flex: 0 0 50% !important; }
+                    .mobile-equal-width { gap: 12px !important; }
                   }
                 `}} />
                 <div className="d-flex gap-24 flex-1 mobile-equal-width">
