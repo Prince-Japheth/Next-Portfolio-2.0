@@ -2887,10 +2887,7 @@ ol {
         width: calc(50% - 12px);
     }
 
-    .about-area .container>.row:nth-child(2) .blog-service-profile-wrap>div:nth-child(2) {
-        order: 3;
 
-    }
 
 
     .about-area .container>.row:nth-child(3) .col-md-6 {
