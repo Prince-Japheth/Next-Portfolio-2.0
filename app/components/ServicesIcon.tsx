@@ -4,11 +4,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { useWordpress } from "../providers/WordpressProvider";
 
-const ServicesIcon = () => {
+interface ServicesIconProps {
+    originalStyle?: boolean;
+}
+
+const ServicesIcon = ({ originalStyle = false }: ServicesIconProps) => {
     const { isWordpress } = useWordpress();
 
     return (
-        <div data-aos="zoom-in" className="h-full">
+        <div data-aos="zoom-in" className={`h-full ${originalStyle ? 'original-style-active' : ''}`}>
+            {originalStyle && (
+                <style dangerouslySetInnerHTML={{__html: `
+                    .original-style-active .icon-boxes {
+                        margin-top: 46px !important;
+                        margin-bottom: 56px !important;
+                    }
+                    @media (max-width: 800px) {
+                        .original-style-active .icon-boxes {
+                            margin-top: 31px !important;
+                            margin-bottom: 39px !important;
+                        }
+                    }
+                `}} />
+            )}
             <div className="about-services-box info-box shadow-box h-full">
                 <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
                 <div className="icon-boxes">

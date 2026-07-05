@@ -149,7 +149,7 @@ export default function About() {
         <div className="row ">
           <div className="col-md-12">
             <div className="d-flex profile-contact-resume-wrap gap-24 justify-content-between">
-              <ServicesIcon />
+              <ServicesIcon originalStyle={true} />
 
               <ResumeBox />
               <div className="d-none d-lg-flex">
