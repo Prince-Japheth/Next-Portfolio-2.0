@@ -25,7 +25,7 @@ export const projectData: Project[] = [
   // },
     {
     title: 'Periderm CLI',
-    category: 'Web Development',
+    category: 'Web Development, CLI',
     tools: 'TypeScript, Node.js, React, Vite, TanStack, Supabase',
     image: './assets/images/project-61.avif',
     link: 'https://periderm-cli.vercel.app/',
@@ -599,6 +599,7 @@ export const categories = [
   'Personal Projects',
   'Mobile Development',
   'Web Development',
+  'CLI',
   'UI/UX DESIGN',
   'Graphic Design'
 ]; 

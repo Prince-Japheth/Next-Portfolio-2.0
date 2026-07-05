@@ -1245,8 +1245,8 @@ ol {
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80%;
-        max-width: 800px;
+        width: 65%;
+        max-width: 650px;
         /* background: rgba(var(--dark), 0.2); */
         background: #2222229f;
         backdrop-filter: blur(10px);
