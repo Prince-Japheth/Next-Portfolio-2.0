@@ -291,6 +291,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
         >
           <div 
             className="project-details-modal-content custom-scrollbar"
+            data-lenis-prevent="true"
             style={{
               width: '100%',
               maxWidth: '1200px',
