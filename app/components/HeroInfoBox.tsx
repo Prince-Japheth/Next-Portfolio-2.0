@@ -23,7 +23,7 @@ export default function HeroInfoBox() {
     <div className="infos">
       <h4 itemProp="jobTitle">Software Engineer & Cyber Security Specialist</h4>
       <h1 itemProp="name">Japheth Jerry.</h1>
-      <p itemProp="description">Software Engineer and Cyber Security Specialist. Always learning, always building.</p>
+      <p itemProp="description">Building secure, scalable software architectures. Focused on blending robust development with advanced cybersecurity to deliver resilient, state-of-the-art products.</p>
       <Link href="/about" className="about-btn">
         <Image src="/assets/images/icon.svg" alt="Button" width={30} height={30} />
       </Link>

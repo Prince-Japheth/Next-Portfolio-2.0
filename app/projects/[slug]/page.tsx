@@ -4,7 +4,6 @@ import { projectData } from '../../data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
-import DOMPurify from 'isomorphic-dompurify';
 
 // Generate metadata for each project
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -122,7 +121,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(JSON.stringify({
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             "name": currentProject.title,
@@ -140,13 +139,13 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
             "dateCreated": new Date().toISOString(),
             "genre": currentProject.category,
             "keywords": currentProject.tools,
-            "image": currentProject.image.startsWith('http') ? currentProject.image : `https://www.japhethjerry.space${currentProject.image}`,
+            "image": currentProject.image.startsWith('http') ? currentProject.image : `https://www.japhethjerry.space${currentProject.image.startsWith('./') ? currentProject.image.slice(1) : (currentProject.image.startsWith('/') ? currentProject.image : '/' + currentProject.image)}`,
             "url": `https://www.japhethjerry.space/projects/${slug}`,
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": `https://www.japhethjerry.space/projects/${slug}`
             }
-          }))
+          }).replace(/</g, '\\u003c')
         }}
       />
       

@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import DOMPurify from 'isomorphic-dompurify';
 
 interface BreadcrumbItem {
   label: string;
@@ -83,7 +82,7 @@ const Breadcrumbs: React.FC = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(JSON.stringify({
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": breadcrumbs.map((breadcrumb, index) => ({
@@ -92,7 +91,7 @@ const Breadcrumbs: React.FC = () => {
               "name": breadcrumb.label,
               "item": `https://www.japhethjerry.space${breadcrumb.href}`
             }))
-          }))
+          }).replace(/</g, '\\u003c')
         }}
       />
     </nav>
