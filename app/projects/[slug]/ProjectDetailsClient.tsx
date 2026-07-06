@@ -11,9 +11,10 @@ interface ProjectDetailsClientProps {
   currentProject: Project;
   nextProject: Project;
   allProjects: Project[];
+  onClose?: () => void;
 }
 
-export default function ProjectDetailsClient({ currentProject, nextProject, allProjects }: ProjectDetailsClientProps) {
+export default function ProjectDetailsClient({ currentProject, nextProject, allProjects, onClose }: ProjectDetailsClientProps) {
   const router = useRouter();
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
 
@@ -87,9 +88,9 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   return (
     <main className="project-details-wrap">
       <div className="container">
-        <div style={{ marginBottom: '20px' }} data-aos="fade-down">
+        <div style={{ marginBottom: '20px' }} data-aos="fade-down" suppressHydrationWarning>
           <button 
-            onClick={() => router.back()} 
+            onClick={() => onClose ? onClose() : router.back()} 
             className="big-btn shadow-box"
             style={{ 
               display: 'inline-flex', 
@@ -110,7 +111,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
             Back
           </button>
         </div>
-        <div className="project-details-content d-flex gap-24" data-aos="zoom-in">
+        <div className="project-details-content d-flex gap-24" data-aos="zoom-in" suppressHydrationWarning>
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
@@ -209,7 +210,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         </div>
 
         {/* Rest of the content */}
-        <div data-aos="zoom-in">
+        <div data-aos="zoom-in" suppressHydrationWarning>
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important' }}>
             <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
             <div className="left-details" style={{ padding: '20px !important' }}>
@@ -253,7 +254,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           </div>
         </div>
 
-        <div className="container d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <div className="container d-flex align-items-center justify-content-center" data-aos="zoom-in" suppressHydrationWarning>
           {nextProject.link.startsWith('http') && (
             <Link href={`/projects/${nextProject.title.toLowerCase().replace(/[|]/g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} className="big-btn shadow-box">
               Next Project: {nextProject.title}

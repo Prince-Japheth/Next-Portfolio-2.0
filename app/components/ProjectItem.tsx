@@ -6,6 +6,8 @@ import { useBrowser } from '../context/BrowserContext';
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import Image from "next/image";
+import ProjectDetailsClient from '../projects/[slug]/ProjectDetailsClient';
+import { projectData, Project } from '../data/projects';
 
 interface ProjectItemProps {
   project: {
@@ -15,6 +17,7 @@ interface ProjectItemProps {
     image: string;
     link: string;
     isPersonal?: boolean;
+    brief?: string;
   };
   showWordPress?: boolean;
   isHomePage?: boolean;
@@ -30,6 +33,33 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
   const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup');
   const { minimizedBrowsers, activeBrowser } = useBrowser();
   const router = useRouter();
+
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+
+  const fullProject = projectData.find(p => p.title === project.title) as Project;
+  const currentProjectIndex = projectData.findIndex(p => p.title === project.title);
+  
+  let nextProjectIndex = (currentProjectIndex + 1) % projectData.length;
+  while (!projectData[nextProjectIndex].link.startsWith('http')) {
+    nextProjectIndex = (nextProjectIndex + 1) % projectData.length;
+    if (nextProjectIndex === currentProjectIndex) break;
+  }
+  const nextProject = projectData[nextProjectIndex];
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isDetailsModalOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('lenis-stopped');
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.classList.remove('lenis-stopped');
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.classList.remove('lenis-stopped');
+    };
+  }, [isDetailsModalOpen]);
 
   // Watch for active browser changes
   useEffect(() => {
@@ -154,6 +184,11 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
                 )}
               </h1>
               <span style={{ fontSize: '12px !important' }}>{showWordPress ? 'WordPress' : project.tools}</span>
+              {isHomePage && project.brief && (
+                <p style={{ marginTop: '12px', fontSize: '15px', lineHeight: '1.6', color: 'white' }}>
+                  {project.brief}
+                </p>
+              )}
             </div>
             <div 
               role="button"
@@ -173,18 +208,24 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
           </div>
         </div>
         {project.link.startsWith('http') && !showWordPress && (
-          <a
-            href={`/projects/${slug}`}
+          <button
             className={`view-details-btn shadow-box ${!isHomePage ? 'mb-5' : ''}`}
             title="View Details"
             onClick={(e) => {
-              // Force a full page reload to avoid navigation issues
-              e.preventDefault();
-              window.location.href = `/projects/${slug}`;
+              if (typeof window !== 'undefined' && window.innerWidth > 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsDetailsModalOpen(true);
+              } else {
+                // Force a full page reload to avoid navigation issues
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = `/projects/${slug}`;
+              }
             }}
           >
             View Details
-          </a>
+          </button>
         )}
       </div>
 
@@ -226,6 +267,51 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
           url={project.link}
           title={project.title}
         />
+      )}
+
+      {/* Project Details Modal for PC */}
+      {isDetailsModalOpen && fullProject && (
+        <div 
+          className="project-details-modal-overlay" 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            backdropFilter: 'blur(10px)',
+            zIndex: 99999,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '40px 20px'
+          }}
+          onClick={() => setIsDetailsModalOpen(false)}
+        >
+          <div 
+            className="project-details-modal-content custom-scrollbar"
+            style={{
+              width: '100%',
+              maxWidth: '1200px',
+              height: '100%',
+              backgroundColor: 'var(--bg-color, #1a1a1a)',
+              borderRadius: '24px',
+              overflowY: 'auto',
+              position: 'relative',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+            }}
+            onClick={e => e.stopPropagation()}
+          >
+            <ProjectDetailsClient 
+              currentProject={fullProject} 
+              nextProject={nextProject}
+              allProjects={projectData} 
+              onClose={() => setIsDetailsModalOpen(false)}
+            />
+          </div>
+        </div>
       )}
     </>
   );

@@ -149,6 +149,6 @@ html.lenis, html.lenis body {
     flex-direction: column !important;
   }
   div.projects-area.recent-projects-area .project-item > .d-flex {
-    margin-top: auto !important;
+    margin-bottom: auto !important;
   }
 }
