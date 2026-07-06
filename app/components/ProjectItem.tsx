@@ -296,7 +296,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
               width: '100%',
               maxWidth: '1200px',
               height: '100%',
-              backgroundColor: 'var(--bg-color, #1a1a1a)',
+              backgroundColor: '#0F0F0F',
               borderRadius: '24px',
               overflowY: 'auto',
               position: 'relative',
