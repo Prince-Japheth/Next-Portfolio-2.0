@@ -2070,7 +2070,7 @@ ol {
 }
 
 .project-details-wrap .big-btn {
-    margin-top: 100px;
+    margin-top: 40px;
     color: #fff;
     font-size: 20px;
     opacity: 0.9;
@@ -3189,6 +3189,7 @@ ol {
 /* Project Details Page Specific Styles */
 .project-details-wrap {
   padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 .project-details-content {
