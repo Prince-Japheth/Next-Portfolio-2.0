@@ -152,11 +152,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
               }}
             >
               <Image 
-                key={project.image} // Force re-render when image changes
+                key={project.image}
                 ref={imageRef} 
                 src={getImageSrc(project.image)}
                 alt={project.title}
                 fill
+                sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 350px"
                 style={{ 
                   objectFit: 'cover',
                   borderRadius: '30px',

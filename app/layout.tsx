@@ -178,26 +178,34 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Fonts */}
+        {/* Fonts - non-blocking */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+          media="print"
+        />
+        <noscript>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        </noscript>
 
-        {/* External Stylesheets - Use media attribute for non-blocking load */}
-        <link rel="stylesheet" href="/assets/css/iconoir-subset.css" />
+        {/* External Stylesheets - all non-blocking */}
+        <link rel="stylesheet" href="/assets/css/iconoir-subset.css" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/iconoir-subset.css" /></noscript>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="print" />
         <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css" /></noscript>
         <link rel="stylesheet" href="/assets/css/style.css" media="print" />
         <noscript><link rel="stylesheet" href="/assets/css/style.css" /></noscript>
         <script dangerouslySetInnerHTML={{
           __html: `
-            setTimeout(function() {
+            (function() {
               var links = document.querySelectorAll('link[media="print"]');
-              links.forEach(function(link) {
-                link.media = 'all';
-              });
-            }, 0);
+              links.forEach(function(link) { link.media = 'all'; });
+            })();
           `
         }} />
 

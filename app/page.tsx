@@ -98,12 +98,13 @@ export default async function Home(props: PageProps) {
 
                 <Image
                   src="/assets/images/bg1.png"
-                  alt="BG"
+                  alt=""
+                  aria-hidden="true"
                   className="bg-img"
-                  width={600}
-                  height={600}
-                  priority
-                  loading="eager"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  fetchPriority="low"
                 />
                 <div className="img-box">
                   <div className="profile-image-container">
