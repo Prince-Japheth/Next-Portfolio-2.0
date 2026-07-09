@@ -460,9 +460,8 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
     },
     theme: () => {
       return [
-        'Terminal Theme: Kali Linux',
-        'Background: Dark translucent with glassmorphism effect',
-        'Text: Green on dark background',
+        'Terminal Theme: Original Custom Theme',
+        'Text: Optimized for readability',
         'Window Controls: Unix-style (close, minimize, maximize)',
         'Prompt: root@kali:~/portfolio$'
       ];
@@ -871,6 +870,29 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
 
   return (
     <div className="terminal-overlay" role="button" tabIndex={0} onClick={onClose} onKeyDown={(e) => e.key === 'Enter' && onClose()}>
+      <style>{`
+        .terminal-body {
+          font-family: 'Fira Code', 'Consolas', monospace !important;
+        }
+        .terminal-line {
+          color: #f8f9fa !important;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        .terminal-prompt {
+          color: #4ade80 !important;
+          font-weight: 600 !important;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        .terminal-input {
+          color: #4ade80 !important;
+          background: transparent !important;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        .terminal-input-line {
+          display: flex;
+          align-items: center;
+        }
+      `}</style>
       <div className={`terminal-container ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`} role="button" tabIndex={-1} onClick={(e) => e.stopPropagation()} onKeyDown={(e) => e.stopPropagation()}>
         <div className="terminal-header">
           <div className="terminal-title">Terminal</div>
@@ -916,4 +938,4 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
       </div>
     </div>
   );
-} 
+}
