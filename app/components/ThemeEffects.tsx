@@ -37,7 +37,7 @@ const ThemeEffects = () => {
       if (!cursor) return;
 
       const cursorScale = document.querySelectorAll(
-        "a, Link, button, .img-box, .image-inner img, p, h1, h2, h3, h4, h5, .pop-up, .trigger, .share, #close, .toggle, #vimeo, #youtube, .link, .gallery"
+        "a, button, .shadow-box, .overlay-link, .img-box, .image-inner img, p, h1, h2, h3, h4, h5, .pop-up, .trigger, .share, #close, .toggle, #vimeo, #youtube, .link, .gallery"
       );
       let mouseX = 0;
       let mouseY = 0;
