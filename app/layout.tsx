@@ -167,10 +167,6 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        {/* Noindex for Netlify domains - will be handled by middleware */}
-
-        <link rel="canonical" href="https://www.japhethjerry.space/" />
-
         {/* Favicon Links */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo.png" />

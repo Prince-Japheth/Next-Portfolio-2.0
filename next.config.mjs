@@ -3,6 +3,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Permanently redirect non-www → www so Google consolidates on one canonical
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'japhethjerry.space' }],
+        destination: 'https://www.japhethjerry.space/:path*',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
