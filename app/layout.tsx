@@ -185,8 +185,7 @@ export default function RootLayout({
         />
 
         {/* External Stylesheets - Use media attribute for non-blocking load */}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" media="print" />
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" /></noscript>
+        <link rel="stylesheet" href="/assets/css/iconoir-subset.css" />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="print" />
         <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css" /></noscript>
         <link rel="stylesheet" href="/assets/css/style.css" media="print" />

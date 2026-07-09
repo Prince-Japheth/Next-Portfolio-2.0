@@ -138,7 +138,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
             style={{ cursor: 'pointer' }}
             aria-label={`View ${project.title} project details`}
           />
-          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+          <Image src="/assets/images/bg1.png" alt="" aria-hidden="true" className="bg-img" width={600} height={600} loading="lazy" fetchPriority="low" />
           <div className="project-img">
             <div
               className="image-container"

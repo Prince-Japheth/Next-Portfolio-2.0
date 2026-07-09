@@ -18,12 +18,16 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
   const { isLoading } = useLoading();
 
   useEffect(() => {
-    // Initialize animations once hydration is complete
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-out-cubic',
-    });
+    // Defer AOS init until after first paint to avoid TBT impact
+    const t = setTimeout(() => {
+      AOS.init({
+        duration: 600,
+        once: true,
+        easing: 'ease-out-cubic',
+        offset: 50,
+      });
+    }, 200);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -31,9 +35,9 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
       {isClient && <div className="cursor d-none d-md-block"></div>}
       <ThemeEffects />
       
-      {!isLoading && (
+      {!isLoading && isClient && (
         <Particles
-          particleCount={200}
+          particleCount={80}
           scrollFactor={1.5}
           particleSpread={10}
           speed={0.1}

@@ -50,34 +50,28 @@ const ThemeEffects = () => {
 
       window.addEventListener("mousemove", onMouseMove);
 
-      // Animation Loop
-      const ticker = gsap.to(
-        {},
-        {
-          duration: 0.016,
-          repeat: -1,
-          onRepeat: () => {
-            gsap.set(cursor, {
-              css: {
-                left: mouseX,
-                top: mouseY,
-              },
-            });
-          },
-        }
-      );
+      let rafId: number;
+      const cursorEl = cursor as HTMLElement;
+      const animate = () => {
+        const scale = cursorEl.dataset.scale || '1';
+        cursorEl.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(${scale})`;
+        rafId = requestAnimationFrame(animate);
+      };
+      rafId = requestAnimationFrame(animate);
 
       // Handle hover effects
       cursorScale.forEach((link) => {
         link.addEventListener("mouseenter", () => {
-          cursor.classList.add("grow");
           if (link.classList.contains("small")) {
-            cursor.classList.remove("grow");
-            cursor.classList.add("grow-small");
+            (cursor as HTMLElement).dataset.scale = '1.5';
+          } else {
+            (cursor as HTMLElement).dataset.scale = '2';
           }
+          cursor.classList.add("grow");
         });
 
         link.addEventListener("mouseleave", () => {
+          (cursor as HTMLElement).dataset.scale = '1';
           cursor.classList.remove("grow");
           cursor.classList.remove("grow-small");
         });
@@ -85,7 +79,7 @@ const ThemeEffects = () => {
 
       return () => {
         window.removeEventListener("mousemove", onMouseMove);
-        ticker.kill();
+        cancelAnimationFrame(rafId);
       };
     };
 

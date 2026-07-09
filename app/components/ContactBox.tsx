@@ -12,7 +12,7 @@ const ContactBox: React.FC<ContactBoxProps> = ({ className = "col-md-6" }) => {
     <div className={className} data-aos="zoom-in">
       <div className="about-contact-box info-box shadow-box">
         <Link href="/contact" className="overlay-link" aria-label="Contact me" />
-        <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+        <Image src="/assets/images/bg1.png" alt="" aria-hidden="true" className="bg-img" width={600} height={600} loading="lazy" fetchPriority="low" />
         <Image 
           src="/assets/images/icon2.png" 
           alt="Icon" 

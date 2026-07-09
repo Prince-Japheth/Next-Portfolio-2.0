@@ -28,7 +28,8 @@ const ServicesIcon = ({ originalStyle = false }: ServicesIconProps) => {
                 `}} />
             )}
             <div className="about-services-box info-box shadow-box h-full">
-                <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+                <Link href="/service" className="overlay-link" aria-label="View services" />
+                <Image src="/assets/images/bg1.png" alt="" aria-hidden="true" className="bg-img" width={600} height={600} loading="lazy" fetchPriority="low" />
                 <div className="icon-boxes">
                     <div className="skill-card">
                         <i className="iconoir-mobile-dev-mode" />

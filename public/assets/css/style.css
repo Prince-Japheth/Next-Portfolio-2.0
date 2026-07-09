@@ -30,28 +30,28 @@
 
 .cursor {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 40px;
     height: 40px;
     margin-left: -20px;
     margin-top: -20px;
     border-radius: 50%;
     border: 2px solid var(--primary_color);
-    transition: transform 0.3s ease;
     transform-origin: center center;
     pointer-events: none;
     z-index: 5000;
     display: flex;
     align-items: center;
     justify-content: center;
+    will-change: transform;
 }
 
 .grow,
 .grow-small {
-    transform: scale(2);
     background: #FFFF;
     mix-blend-mode: difference;
     border: none;
-    /* border-style: dashed; */
 }
 
 .grow-small {

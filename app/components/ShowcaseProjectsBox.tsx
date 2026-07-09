@@ -82,7 +82,7 @@ const ShowcaseProjectsBox = () => {
               className="project-shocase-img"
               fill
               style={{ objectFit: 'cover' }}
-              sizes="(max-width: 767px) 100vw, 220px"
+              sizes="(max-width: 767px) 100vw, 300px"
               priority
             />
           </div>

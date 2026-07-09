@@ -93,7 +93,9 @@ export default async function Home(props: PageProps) {
         <div className="container">
           <div className="row">
             <div className="col-md-6 mb-4 mb-md-0" data-aos="zoom-in">
-              <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person">
+              <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person" style={{ position: 'relative' }}>
+                <Link href="/about" className="overlay-link" aria-label="Learn more about Japheth Jerry" />
+
                 <Image
                   src="/assets/images/bg1.png"
                   alt="BG"

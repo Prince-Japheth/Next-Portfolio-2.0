@@ -11,7 +11,7 @@ const ClientStatsBox = () => {
     return (
       <div className="col-md-6" data-aos="zoom-in">
         <div className="about-client-box info-box shadow-box" style={{ padding: '30px' }}>
-          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+          <Image src="/assets/images/bg1.png" alt="" aria-hidden="true" className="bg-img" width={600} height={600} loading="lazy" fetchPriority="low" />
           <div className="wordpress-packages-box" style={{ position: 'relative', zIndex: 2, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
             <h4 style={{ fontSize: '18px', marginBottom: '20px', color: '#fff', textTransform: 'uppercase', letterSpacing: '1px' }}>WordPress Packages</h4>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '8px' }}>
