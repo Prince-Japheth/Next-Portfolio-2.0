@@ -30,7 +30,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const isImageLink = project.link.includes('./assets/images/');
-  const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup');
+  const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup') || project.link.includes('picatip') || project.link.includes('topix');
   const { minimizedBrowsers, activeBrowser } = useBrowser();
   const router = useRouter();
 
@@ -124,8 +124,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
     <>
       <div data-aos="zoom-in" className={`project-item-card flex-1 d-flex flex-column ${isHomePage ? 'h-full' : ''}`} style={isHomePage ? { height: '100%' } : undefined}>
         <div className="project-item flex-1 shadow-box">
-          <div 
-            className="overlay-link" 
+          <div
+            className="overlay-link"
             role="button"
             tabIndex={0}
             onClick={handleClick}
@@ -136,6 +136,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
               }
             }}
             style={{ cursor: 'pointer' }}
+            aria-label={`View ${project.title} project details`}
           />
           <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
           <div className="project-img">

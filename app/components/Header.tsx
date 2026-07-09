@@ -87,12 +87,16 @@ const Header = () => {
                     </li>
                     <li className={pathname === "/about" || pathname === "/resume" ? "active d-block d-md-none" : "d-block d-md-none"}>
                       <div className="about-dropdown-container" ref={dropdownRef}>
-                        <a
+                        <Link
+                          href="/about"
                           className="about-link d-block d-md-none"
-                          onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                            e.preventDefault();
+                            setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                          }}
                         >
                           About
-                        </a>
+                        </Link>
                         <div className={`about-dropdown ${isAboutDropdownOpen ? 'visible' : 'hidden'}`}>
                           <Link href="/about" className={`dropdown-item ${pathname === "/about" ? "active-about" : ""}`}>
                             About
@@ -160,6 +164,8 @@ const Header = () => {
           <button
             className="terminal-button"
             onClick={() => setIsTerminalOpen(true)}
+            aria-label="Open terminal"
+            title="Open terminal"
           >
             <i className="iconoir-terminal" style={{ fontSize: '24px', color: '#fff' }} />
           </button>

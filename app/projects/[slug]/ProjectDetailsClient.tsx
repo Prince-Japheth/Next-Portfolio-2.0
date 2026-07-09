@@ -37,6 +37,8 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     currentProject.link.includes('bondyt') ||
     currentProject.link.includes('frat') ||
     currentProject.link.includes('popkup') ||
+    currentProject.link.includes('picatip') ||
+    currentProject.link.includes('play') ||
     currentProject.link.includes('topix');
 
   const handleNextProject = () => {

@@ -23,7 +23,19 @@ export const projectData: Project[] = [
   //   description: 'The site features unique interactive elements like an in-site terminal for navigation and an embedded browser component that allows visitors to explore my projects without leaving the site - features I added to showcase both technical innovation and user experience considerations. With a focus on accessibility (WCAG 2.1) and responsive design, the site achieves a Lighthouse performance score above 90 while delivering smooth animations and transitions. The design system emphasizes visual consistency and typography, creating an engaging experience that effectively presents my work while demonstrating my technical expertise. This portfolio project demonstrates my front-end development capabilities through a modern, performant website built with Next.js and TypeScript. I implemented server-side rendering for optimal performance, while maintaining a clean component architecture with React.',
   //   status: 'Completed'
   // },
-    {
+  {
+    "title": "PicaTip",
+    "category": "Web Development",
+    "tools": "Next.js, React, TypeScript, Tailwind CSS, Redux Toolkit, Framer Motion, Serwist",
+    "image": "./assets/images/project-62.avif",
+    "link": "https://picatip.com",
+    "brief": "An AI-powered sports prediction platform delivering real-time football and basketball analytics, intelligent booking codes, and comprehensive match intelligence for sports enthusiasts.",
+    "about": "PicaTip is a premium Next.js application that leverages advanced AI systems to analyze sports patterns, forecast outcomes, and provide prediction intelligence across football and basketball. The platform features real-time match tracking, confidence ratings, and smart booking code generation.",
+    "description": "Architected and developed PicaTip, a comprehensive AI-powered sports prediction platform built with Next.js 16 and React 19. Engineered a sophisticated dashboard system featuring AI Prediction Intelligence, Live Games tracking with real-time WebSocket updates, Bet Analyzer, and a Free-bet zone for high-confidence opportunities. Implemented a modular Redux Toolkit state management system with typed hooks for complex data flow across prediction generation, live game tracking, and user analytics. Built a premium UI using Tailwind CSS with custom design system, glassmorphism effects, and smooth Framer Motion animations for an exceptional user experience. Developed a PWA-ready application with Serwist service worker integration for offline capabilities and push notifications. Created comprehensive authentication flows, subscription management, survey systems, and support modules. The platform features advanced prediction generators with customizable parameters including match count, probability thresholds, and league filtering. Implemented real-time odds tracking, momentum analysis, and trend visualization for live games. Built a scalable architecture supporting multiple dashboard views including Overview, Analytics, Live Games, History, and Settings. The application demonstrates enterprise-grade performance with type-safe TypeScript enforcement, responsive design across all devices, and a dark-mode-first aesthetic optimized for extended viewing sessions.",
+    "status": "Completed",
+    "isPersonal": false
+  },
+  {
     title: 'Periderm CLI',
     category: 'Web Development, CLI',
     tools: 'TypeScript, Node.js, React, Vite, TanStack, Supabase',
@@ -97,7 +109,7 @@ export const projectData: Project[] = [
     category: 'Web Development',
     tools: 'React.js, Next.js, Tailwind, CSS',
     image: './assets/images/project-53.avif',
-    link: 'https://onarietta.vercel.app/',
+    link: 'https://www.onariettaremet.com/',
     brief: "An immersive digital exhibition platform designed to showcase the artist's portfolio with high-performance interactive elements and elegant visual aesthetics.",
     about: 'A captivating digital showcase for the artist Onarietta Remet, designed to immerse visitors in her artistic journey while providing an elegant platform to explore her portfolio and upcoming exhibitions.',
     description: "This project showcases a perfect blend of technical excellence and artistic sensibility. The website delivers an immersive digital experience that balances technical performance with artistic expression. Built with Next.js and Tailwind CSS, it demonstrates modern web architecture while maintaining clean, maintainable code. The site achieves exceptional performance with a 95+ Lighthouse score while delivering a visually stunning experience that effectively showcases the artist's work. Beyond the frontend implementation, I handled comprehensive SEO optimization including meta tags, structured data, and Google Search Console integration. The server-side implementation leverages Next.js's built-in features for optimal performance and SEO, while implementing proper caching strategies and image optimization. The attention to detail in animations, transitions, and responsive design reflects a deep understanding of how technical implementation should serve user experience. This project exemplifies full-stack thinking - bridging technical implementation with user-centered design while maintaining high performance standards.",

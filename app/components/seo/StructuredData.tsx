@@ -200,6 +200,100 @@ const StructuredData = () => {
     "mainEntity": { "@id": personId }
   };
 
+  // Project schemas for better SEO
+  const generateSlug = (title: string) => {
+    return title
+      .toLowerCase()
+      .replace(/[|]/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  };
+
+  const projects = [
+    {
+      title: 'PicaTip',
+      slug: 'picatip',
+      image: `${siteUrl}/assets/images/project-62.avif`,
+      description: 'An AI-powered sports prediction platform delivering real-time football and basketball analytics, intelligent booking codes, and comprehensive match intelligence for sports enthusiasts.',
+      tools: 'Next.js, React, TypeScript, Tailwind CSS, Redux Toolkit, Framer Motion, Serwist',
+      url: 'https://picatip.com'
+    },
+    {
+      title: 'Periderm CLI',
+      slug: 'periderm-cli',
+      image: `${siteUrl}/assets/images/project-61.avif`,
+      description: 'An enterprise-grade CLI and web platform offering a 150+ point pre-launch scanner. Automatically catching user-losing bugs, legal liabilities, revenue leaks, and runaway cloud bills before they hit production.',
+      tools: 'TypeScript, Node.js, React, Vite, TanStack, Supabase',
+      url: 'https://periderm-cli.vercel.app/'
+    },
+    {
+      title: 'Popkup',
+      slug: 'popkup',
+      image: `${siteUrl}/assets/images/project-59.avif`,
+      description: 'An all-in-one e-commerce platform built with Next.js, enabling brands to launch storefronts, connect with influencers, and seamlessly manage checkout and shipping workflows.',
+      tools: 'Next.js, React, TypeScript, Tailwind CSS',
+      url: 'https://popkup.com/'
+    },
+    {
+      title: 'Lincoln Impact Foundation',
+      slug: 'lincoln-impact-foundation',
+      image: `${siteUrl}/assets/images/project-4.avif`,
+      description: 'A comprehensive digital platform supporting donation processing, scholarship applications, and impact tracking to empower the foundation\'s operations.',
+      tools: 'Laravel, MySQL, JavaScript, jQuery, CSS, SASS, Bootstrap',
+      url: 'https://lincolnfoundations.org'
+    },
+    {
+      title: 'Onarietta Remet | Official Site',
+      slug: 'onarietta-remet-official-site',
+      image: `${siteUrl}/assets/images/project-53.avif`,
+      description: 'An immersive digital exhibition platform designed to showcase the artist\'s portfolio with high-performance interactive elements and elegant visual aesthetics.',
+      tools: 'React.js, Next.js, Tailwind, CSS',
+      url: 'https://www.onariettaremet.com/'
+    },
+    {
+      title: 'J3 Global Ventures Limited',
+      slug: 'j3-global-ventures-limited',
+      image: `${siteUrl}/assets/images/project-58.avif`,
+      description: 'A professional corporate website for J3 Global Ventures Limited, a leading conglomerate specializing in diverse industries including confectionery, beverages, import/export, and farming.',
+      tools: 'NextJs, Typescript, CSS, Bootstrap',
+      url: 'https://j3globalventures.vercel.app/'
+    },
+    {
+      title: 'LCDP School Management System',
+      slug: 'lcdp-school-management-system',
+      image: `${siteUrl}/assets/images/project-52.avif`,
+      description: 'A school management system designed for LCDP, providing efficient and user-friendly management of school activities.',
+      tools: 'JavaScript, Html, PHP Laravel, MySQL, jQuery, CSS, Bootstrap',
+      url: 'https://gudu.lcpd.net/'
+    }
+  ];
+
+  const projectItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${fullName} Projects`,
+    "description": "Portfolio of software development projects",
+    "itemListElement": projects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "name": project.title,
+        "description": project.description,
+        "image": project.image,
+        "url": `${siteUrl}/projects/${project.slug}`,
+        "author": { "@id": personId },
+        "creator": { "@id": personId },
+        "keywords": project.tools,
+        "inLanguage": "en",
+        "about": {
+          "@type": "Thing",
+          "name": "Software Development"
+        }
+      }
+    }))
+  };
+
   try {
     return (
       <>
@@ -210,6 +304,7 @@ const StructuredData = () => {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema).replace(/</g, '\\u003c') }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema).replace(/</g, '\\u003c') }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema).replace(/</g, '\\u003c') }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectItemListSchema).replace(/</g, '\\u003c') }} />
       </>
     );
   } catch (error) {

@@ -17,7 +17,7 @@ export default function SearchContent() {
 
   const handleVisitProject = (e: React.MouseEvent, project: any) => {
     e.preventDefault();
-    const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup') || project.link.includes('topix');
+    const isExternalLink = project.link.includes('play') || project.link.includes('figma') || project.link.includes('bondyt') || project.link.includes('frat') || project.link.includes('popkup') || project.link.includes('topix') || project.link.includes('picatip');
     
     if (isExternalLink || (typeof window !== 'undefined' && window.innerWidth <= 768)) {
       window.open(project.link, '_blank');

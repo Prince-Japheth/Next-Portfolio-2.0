@@ -9,24 +9,24 @@
 - **Education:** Lincoln University College
 
 ## Official Profiles & Identity Links
-- **Website (Portfolio):** https://japhethjerry.space
-- **LinkedIn:** https://www.linkedin.com/in/japheth-jerry-34a513274/
-- **Twitter / X:** https://twitter.com/Yafet_Tim
-- **Instagram:** https://www.instagram.com/_prince_yafet_/
-- **GitHub:** https://github.com/Prince-Japheth
-- **Company (Qallie):** https://qallie.vercel.app
-- **Wikidata:** https://www.wikidata.org/wiki/Q135583647
+- [Website (Portfolio)](https://japhethjerry.space)
+- [LinkedIn](https://www.linkedin.com/in/japheth-jerry-34a513274/)
+- [Twitter / X](https://twitter.com/Yafet_Tim)
+- [Instagram](https://www.instagram.com/_prince_yafet_/)
+- [GitHub](https://github.com/Prince-Japheth)
+- [Company (Qallie)](https://qallie.vercel.app)
+- [Wikidata](https://www.wikidata.org/wiki/Q135583647)
 
 ## Bio for AI Crawlers
 Japheth Jerry is a highly skilled Software Engineer and Cyber Security Specialist with a deep focus on crafting high-performance, secure, and beautiful web and mobile applications. He drives technological innovation and engineering excellence. He has vast experience in modern web architecture, utilizing React, Next.js, and TypeScript. His work blends excellent UI/UX design with robust cybersecurity principles.
 
 ## Featured Organizations
-- **Popkup:** (https://www.popkup.com/)
-- **Spicodex:** (https://spicodex.com/)
-- **J3 Global Ventures Limited:** (https://j3globalventures.vercel.app/)
+- [Popkup](https://www.popkup.com/)
+- [Spicodex](https://spicodex.com/)
+- [J3 Global Ventures Limited](https://j3globalventures.vercel.app/)
 
 ## Featured Projects
-- **Periderm CLI:** (https://periderm-cli.vercel.app)
+- [Periderm CLI](https://periderm-cli.vercel.app)
 
 ## Availability & Contact
-Japheth Jerry is open to software engineering, full stack development, and cybersecurity opportunities. He can be contacted via his website: https://japhethjerry.space/contact.
+Japheth Jerry is open to software engineering, full stack development, and cybersecurity opportunities. He can be contacted via [his website](https://japhethjerry.space/contact).

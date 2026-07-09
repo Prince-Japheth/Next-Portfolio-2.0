@@ -41,8 +41,8 @@ const ResumeBox = () => {
         }
       `}</style>
       <div className="about-blog-box info-box shadow-box h-full resume-card">
-        <Link href="/resume" className="overlay-link" />
-        <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={800} height={800} />
+        <Link href="/resume" className="overlay-link" aria-label="View resume" />
+        <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={800} height={800} loading="eager" priority />
         <div className="resume-icon-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="200" height="109" viewBox="0 0 24 24" fill="none" style={{ height: "auto", maxWidth: "100%" }}>
             <path d="M21 7v10c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5V7c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5Z" stroke="#ffffff" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>

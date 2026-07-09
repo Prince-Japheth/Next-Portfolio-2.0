@@ -73,8 +73,8 @@ const ShowcaseProjectsBox = () => {
       `}</style>
       <div data-aos="zoom-in" className="parentofshowcaseprojectbox">
         <div className="about-profile-box info-box shadow-box h-full">
-          <Link href="/projects" className="overlay-link" />
-          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
+          <Link href="/projects" className="overlay-link" aria-label="View projects" />
+          <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} loading="eager" priority />
           <div className="project-shocase-img-wrap">
             <Image
               src={getImagePath(currentProject.image)}

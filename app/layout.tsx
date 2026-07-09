@@ -188,10 +188,23 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        {/* External Stylesheets */}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+        {/* External Stylesheets - Use media attribute for non-blocking load */}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" media="print" />
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" /></noscript>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css" /></noscript>
+        <link rel="stylesheet" href="/assets/css/style.css" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/style.css" /></noscript>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            setTimeout(function() {
+              var links = document.querySelectorAll('link[media="print"]');
+              links.forEach(function(link) {
+                link.media = 'all';
+              });
+            }, 0);
+          `
+        }} />
 
         {/* SEO - Site Name Optimization */}
         <meta property="og:site_name" content="Japheth Jerry" />
