@@ -32,7 +32,7 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
 
   return (
     <>
-      {isClient && <div className="cursor d-none d-md-block"></div>}
+      <div className="cursor d-none d-md-block" />
       <ThemeEffects />
       
       {!isLoading && isClient && (

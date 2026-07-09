@@ -83,8 +83,11 @@ const ThemeEffects = () => {
       };
     };
 
-    // Initialize cursor
-    const cleanupCursor = initCursorEffect();
+    // Initialize cursor after paint
+    let cleanupCursor: (() => void) | undefined;
+    const cursorTimer = setTimeout(() => {
+      cleanupCursor = initCursorEffect() ?? undefined;
+    }, 50);
 
     // Expose reinit function for route changes
     if (typeof window !== "undefined") {
@@ -94,6 +97,7 @@ const ThemeEffects = () => {
     }
 
     return () => {
+      clearTimeout(cursorTimer);
       if (cleanupCursor) cleanupCursor();
     };
   }, []);
