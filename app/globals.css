@@ -139,16 +139,56 @@ html.lenis, html.lenis body {
 }
 
 /* Recent Projects Specific Adjustments */
-@media (min-width: 768px) {
-  div.projects-area.recent-projects-area .project-item-card {
-    height: auto !important;
-  }
-  div.projects-area.recent-projects-area .project-item {
-    height: 100% !important;
-    display: flex !important;
+/* 2 cards per row */
+div.projects-area.recent-projects-area {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+div.projects-area.recent-projects-area .project-item-card {
+  height: auto !important;
+  width: calc(50% - 12px) !important;
+  flex: none !important;
+}
+
+/* Row layout: image left, info right */
+div.projects-area.recent-projects-area .project-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  height: auto !important;
+  gap: 16px !important;
+}
+
+div.projects-area.recent-projects-area .project-item .project-img {
+  flex: 0 0 200px !important;
+  width: 200px !important;
+  min-height: 200px !important;
+  margin-bottom: 0 !important;
+}
+
+div.projects-area.recent-projects-area .project-item > .d-flex {
+  flex: 1 !important;
+  margin-bottom: 0 !important;
+  align-items: center !important;
+}
+
+/* Mobile: 1 card per row, revert inner layout to column */
+@media (max-width: 767px) {
+  div.projects-area.recent-projects-area {
     flex-direction: column !important;
   }
-  div.projects-area.recent-projects-area .project-item > .d-flex {
-    margin-bottom: auto !important;
+  div.projects-area.recent-projects-area .project-item-card {
+    width: 100% !important;
+  }
+  div.projects-area.recent-projects-area .project-item {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  div.projects-area.recent-projects-area .project-item .project-img {
+    flex: none !important;
+    width: 100% !important;
+    min-height: 180px !important;
+    margin-bottom: 13px !important;
   }
 }

@@ -154,15 +154,11 @@ export default async function Home(props: PageProps) {
                 <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.4)' }} />
               </div>
               <div className="blog-service-profile-wrap d-flex flex-column flex-md-row gap-24 projects-area recent-projects-area" style={{ padding: 0, margin: 0, border: 'none', background: 'transparent', alignItems: 'stretch' }}>
-                <style dangerouslySetInnerHTML={{__html: `
-                  @media (max-width: 768px) {
-                    .recent-projects-area .project-item-card { width: 100% !important; flex: none !important; }
-                  }
-                `}} />
                 {[
                   projectData.find(p => p.title === 'Periderm CLI'),
-                  projectData.find(p => p.title === 'Lincoln Impact Foundation'),
-                  projectData.find(p => p.title.includes('Onarietta Remet'))
+                  projectData.find(p => p.title === 'PicaTip'),
+                  projectData.find(p => p.title.includes('Onarietta Remet')),
+                  projectData.find(p => p.title === 'Lincoln Impact Foundation')
                 ].filter(Boolean).map((project, index) => (
                   <ProjectItem key={`recent-project-${index}`} project={project!} showWordPress={false} isHomePage={true} />
                 ))}
