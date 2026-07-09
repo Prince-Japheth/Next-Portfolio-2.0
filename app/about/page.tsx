@@ -148,6 +148,13 @@ export default function About() {
         </div>
         <div className="row ">
           <div className="col-md-12">
+            <style>{`
+              @media (min-width: 992px) {
+                .profile-contact-resume-wrap > * {
+                  flex: 1 1 0%;
+                }
+              }
+            `}</style>
             <div className="d-flex profile-contact-resume-wrap gap-24 justify-content-between">
               <ServicesIcon originalStyle={true} />
 
@@ -155,7 +162,7 @@ export default function About() {
               <div className="d-none d-lg-flex">
                 <ProfileContactBox
                   showGithub={true}
-                  showLinkedin={false}
+                  showLinkedin={true}
                   showMail={true}
                   showInstagram={true}
                   showWhatsapp={false}
