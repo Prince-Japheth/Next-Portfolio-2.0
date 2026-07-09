@@ -194,12 +194,12 @@ export default function RootLayout({
         </noscript>
 
         {/* External Stylesheets - all non-blocking */}
-        <link rel="stylesheet" href="/assets/css/iconoir-subset.css" media="print" />
-        <noscript><link rel="stylesheet" href="/assets/css/iconoir-subset.css" /></noscript>
+        <link rel="stylesheet" href="/assets/css/iconoir-subset.min.css" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/iconoir-subset.min.css" /></noscript>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="print" />
         <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css" /></noscript>
-        <link rel="stylesheet" href="/assets/css/style.css" media="print" />
-        <noscript><link rel="stylesheet" href="/assets/css/style.css" /></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css" /></noscript>
         <script dangerouslySetInnerHTML={{
           __html: `
             (function() {
