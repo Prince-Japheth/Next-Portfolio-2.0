@@ -268,17 +268,23 @@ export default function ProjectsClient() {
             ))}
           </div>
           <div className="col-md-8">
-            {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => (
-              <div key={`row-${i}`} className="d-flex gap-24">
-                {secondColumnProjects.slice(i * 2, i * 2 + 2).map((project, index) => (
-                  <ProjectItem 
-                    key={`desktop-second-${i}-${project.title}-${project.image}`} 
-                    project={project} 
-                    showWordPress={wordpress}
-                  />
-                ))}
-              </div>
-            ))}
+            {Array.from({ length: Math.ceil(secondColumnProjects.length / 2) }, (_, i) => {
+              const rowProjects = secondColumnProjects.slice(i * 2, i * 2 + 2);
+              return (
+                <div key={`row-${i}`} className="d-flex gap-24">
+                  {rowProjects.map((project, index) => (
+                    <ProjectItem 
+                      key={`desktop-second-${i}-${project.title}-${project.image}`} 
+                      project={project} 
+                      showWordPress={wordpress}
+                    />
+                  ))}
+                  {rowProjects.length === 1 && (
+                    <div className="flex-1 d-none d-md-block"></div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
