@@ -59,6 +59,18 @@ export const projectData: Project[] = [
     status: 'Completed'
   },
   {
+    title: 'Ransomware Canary',
+    category: 'CLI',
+    tools: 'Python, watchdog, psutil, pystray, PIL',
+    image: './assets/images/project-63.avif',
+    link: 'https://github.com/Prince-Japheth/RansomwareCanary',
+    brief: 'A zero-infrastructure, behavioral detection agent designed to intercept and neutralize ransomware attacks in real-time.',
+    about: 'Ransomware Canary is an endpoint security tool utilizing Deception Technology to deploy invisible honeyfiles and actively neutralize threats.',
+    description: 'Architected a Zero-Infrastructure Endpoint Protection Agent that provides active defense against ransomware. Unlike passive monitoring tools, it neutralizes threats in real-time by detecting behavioral anomalies (mass encryption) rather than relying on file signatures. Built with Python, watchdog, and psutil, the system utilizes Deception Technology to deploy invisible honeyfiles into critical directories. When an unauthorized modification is detected, the generic kernel-level monitoring system triggers an immediate Active Defense Response, terminating the hostile process before data damage occurs. Features a cross-platform design compatible with Linux, Windows, and macOS, including a silent background operation mode with a system tray visual status indicator. Compiled into self-contained standalone binaries for easy deployment in air-gapped or low-bandwidth environments.',
+    status: 'Completed',
+    isPersonal: true
+  },
+  {
     "title": "Popkup",
     "category": "Web Development",
     "tools": "Next.js, React, TypeScript, Tailwind CSS",
