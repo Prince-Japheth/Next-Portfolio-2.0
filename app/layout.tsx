@@ -178,7 +178,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Fonts - non-blocking */}
+        {/* Fonts — preload for early fetch, stylesheet for application */}
         <link
           rel="preload"
           as="style"
@@ -187,27 +187,12 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
-          media="print"
         />
-        <noscript>
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        </noscript>
 
-        {/* External Stylesheets - all non-blocking */}
-        <link rel="stylesheet" href="/assets/css/iconoir-subset.min.css" media="print" />
-        <noscript><link rel="stylesheet" href="/assets/css/iconoir-subset.min.css" /></noscript>
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="print" />
-        <noscript><link rel="stylesheet" href="/assets/css/bootstrap.min.css" /></noscript>
-        <link rel="stylesheet" href="/assets/css/style.min.css" media="print" />
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css" /></noscript>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              var links = document.querySelectorAll('link[media="print"]');
-              links.forEach(function(link) { link.media = 'all'; });
-            })();
-          `
-        }} />
+        {/* External Stylesheets */}
+        <link rel="stylesheet" href="/assets/css/iconoir-subset.min.css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/css/style.min.css" />
 
         {/* SEO - Site Name Optimization */}
         <meta property="og:site_name" content="Japheth Jerry" />
@@ -252,6 +237,90 @@ export default function RootLayout({
             transform: none !important; 
             transition: none !important; 
           }
+
+          /* Critical preloader styles – inlined so the spinner is visible
+             immediately during SSR→hydration before style.css loads */
+
+          /* Critical preloader styles — inlined for immediate visibility */
+          .preloader {
+            position: fixed;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-color: #111;
+            transform-origin: bottom;
+            z-index: 111111;
+          }
+          .preloader .black_wall {
+            height: 100%;
+            background-color: #222;
+            transform-origin: top;
+            animation: preloader_slide 0.5s ease-in-out 0s 1 normal both;
+          }
+          /* Exit: fade the whole preloader out (no slide/glitch) */
+          .preloader.off {
+            animation: preloader-fade-out 0.6s ease both;
+          }
+          @keyframes preloader-fade-out {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+          }
+          @keyframes preloader_slide {
+            from { transform: scaleY(1); }
+            to   { transform: scaleY(0); }
+          }
+          #wifi-loader {
+            --primary_color: #ffbc5e;
+            --front-color: var(--primary_color);
+            --back-color: rgba(255,188,94,0.2);
+            --text-color: rgba(255,188,94,0.5);
+            width: 86px; height: 86px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #wifi-loader svg {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #wifi-loader svg circle {
+            fill: none;
+            stroke-width: 6px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transform-origin: center;
+          }
+          #wifi-loader svg.circle-outer  { height: 86px; width: 86px; animation: rotate-outer 4.1s linear infinite; }
+          #wifi-loader svg.circle-middle  { height: 60px; width: 60px; animation: rotate-middle 3.7s linear infinite; }
+          #wifi-loader svg.circle-inner   { height: 34px; width: 34px; animation: rotate-inner 3.1s linear infinite; }
+          #wifi-loader svg.circle-outer  circle { stroke-dasharray: 251; animation: dash-outer 3s ease-in-out infinite; }
+          #wifi-loader svg.circle-middle circle { stroke-dasharray: 170; animation: dash-middle 2s ease-in-out infinite; }
+          #wifi-loader svg.circle-inner  circle { stroke-dasharray: 88;  animation: dash-inner 1.5s ease-in-out infinite; }
+          #wifi-loader svg.circle-outer  circle.back  { stroke: var(--back-color); }
+          #wifi-loader svg.circle-middle circle.back  { stroke: var(--back-color); }
+          #wifi-loader svg.circle-inner  circle.back  { stroke: var(--back-color); }
+          #wifi-loader svg.circle-outer  circle.front { stroke: var(--front-color); }
+          #wifi-loader svg.circle-middle circle.front { stroke: var(--front-color); }
+          #wifi-loader svg.circle-inner  circle.front { stroke: var(--front-color); }
+          #wifi-loader .text {
+            position: absolute; bottom: -40px;
+            display: flex; justify-content: center; align-items: center;
+            text-transform: lowercase; font-weight: 500;
+            font-size: 14px; letter-spacing: 0.2px;
+          }
+          #wifi-loader .text::before, #wifi-loader .text::after { content: attr(data-text); }
+          #wifi-loader .text::before { color: var(--text-color); }
+          #wifi-loader .text::after  { color: var(--front-color); animation: pulse 2s ease-in-out infinite; position: absolute; left: 0; }
+          @keyframes rotate-outer  { 0%{transform:rotate(0deg) scale(1)} 33%{transform:rotate(120deg) scale(1.1)} 66%{transform:rotate(240deg) scale(0.9)} 100%{transform:rotate(360deg) scale(1)} }
+          @keyframes rotate-middle { 0%{transform:rotate(360deg) scale(1)} 40%{transform:rotate(210deg) scale(0.9)} 80%{transform:rotate(60deg) scale(1.1)}  100%{transform:rotate(0deg) scale(1)} }
+          @keyframes rotate-inner  { 0%{transform:rotate(0deg) scale(1)} 25%{transform:rotate(-90deg) scale(1.1)} 75%{transform:rotate(-270deg) scale(0.9)} 100%{transform:rotate(-360deg) scale(1)} }
+          @keyframes dash-outer  { 0%{stroke-dasharray:25 100;stroke-dashoffset:0}  33%{stroke-dasharray:50 75;stroke-dashoffset:125}  66%{stroke-dasharray:25 100;stroke-dashoffset:-125} 100%{stroke-dasharray:25 100;stroke-dashoffset:0} }
+          @keyframes dash-middle { 0%{stroke-dasharray:25 75;stroke-dashoffset:0}   40%{stroke-dasharray:50 50;stroke-dashoffset:-100} 80%{stroke-dasharray:25 75;stroke-dashoffset:100}  100%{stroke-dasharray:25 75;stroke-dashoffset:0} }
+          @keyframes dash-inner  { 0%{stroke-dasharray:25 50;stroke-dashoffset:0}   25%{stroke-dasharray:35 40;stroke-dashoffset:75}   75%{stroke-dasharray:25 50;stroke-dashoffset:-75} 100%{stroke-dasharray:25 50;stroke-dashoffset:0} }
+          @keyframes pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
         `}</style>
       </head>
       <body>

@@ -18,7 +18,8 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
   const { isLoading } = useLoading();
 
   useEffect(() => {
-    // Defer AOS init until after first paint to avoid TBT impact
+    if (isLoading) return; // not ready yet — effect will re-run when it flips
+    // Preloader fade-out is 600 ms; add a small buffer before AOS fires.
     const t = setTimeout(() => {
       AOS.init({
         duration: 600,
@@ -26,9 +27,9 @@ export function ClientLayoutBody({ children, isClient }: { children: React.React
         easing: 'ease-out-cubic',
         offset: 50,
       });
-    }, 200);
+    }, 700);
     return () => clearTimeout(t);
-  }, []);
+  }, [isLoading]); // re-run when preloader is dismissed
 
   return (
     <>
