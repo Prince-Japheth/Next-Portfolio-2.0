@@ -116,7 +116,19 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         <div className="project-details-content d-flex gap-24" data-aos="zoom-in" suppressHydrationWarning>
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
-            <div className="project-details-2-img shadow-box" style={{ borderRadius: '30px', padding: '1px', height: '100%' }}>
+            <div 
+              className="project-details-2-img shadow-box" 
+              style={{ borderRadius: '30px', padding: '1px', height: '100%', cursor: hasHttpLink ? 'pointer' : 'default' }}
+              onClick={hasHttpLink ? handleVisitProject : undefined}
+              role={hasHttpLink ? "button" : undefined}
+              tabIndex={hasHttpLink ? 0 : undefined}
+              onKeyDown={(e) => {
+                if (hasHttpLink && (e.key === 'Enter' || e.key === ' ')) {
+                  e.preventDefault();
+                  handleVisitProject(e as any);
+                }
+              }}
+            >
               <Image
                 src={getImagePath(currentProject.image)}
                 alt={currentProject.title}

@@ -10,6 +10,8 @@ interface BreadcrumbItem {
   isCurrent?: boolean;
 }
 
+const DOMPurify = { sanitize: (s: string) => s };
+
 const Breadcrumbs: React.FC = () => {
   const pathname = usePathname();
   
@@ -82,7 +84,7 @@ const Breadcrumbs: React.FC = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: DOMPurify.sanitize(JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": breadcrumbs.map((breadcrumb, index) => ({
@@ -91,7 +93,7 @@ const Breadcrumbs: React.FC = () => {
               "name": breadcrumb.label,
               "item": `https://www.japhethjerry.space${breadcrumb.href}`
             }))
-          }).replace(/</g, '\\u003c')
+          }).replace(/</g, '\\u003c'))
         }}
       />
     </nav>

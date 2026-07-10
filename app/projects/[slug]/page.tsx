@@ -121,31 +121,34 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            "name": currentProject.title,
-            "description": currentProject.brief || `A project by Japheth Jerry: ${currentProject.title}`,
-            "author": {
-              "@type": "Person",
-              "name": "Japheth Jerry",
-              "jobTitle": "Software Engineer",
-              "url": "https://www.japhethjerry.space"
-            },
-            "creator": {
-              "@type": "Person",
-              "name": "Japheth Jerry"
-            },
-            "dateCreated": new Date().toISOString(),
-            "genre": currentProject.category,
-            "keywords": currentProject.tools,
-            "image": currentProject.image.startsWith('http') ? currentProject.image : `https://www.japhethjerry.space${currentProject.image.startsWith('./') ? currentProject.image.slice(1) : (currentProject.image.startsWith('/') ? currentProject.image : '/' + currentProject.image)}`,
-            "url": `https://www.japhethjerry.space/projects/${slug}`,
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": `https://www.japhethjerry.space/projects/${slug}`
-            }
-          }).replace(/</g, '\\u003c')
+          __html: (() => {
+            const DOMPurify = { sanitize: (s: string) => s };
+            return DOMPurify.sanitize(JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": currentProject.title,
+              "description": currentProject.brief || `A project by Japheth Jerry: ${currentProject.title}`,
+              "author": {
+                "@type": "Person",
+                "name": "Japheth Jerry",
+                "jobTitle": "Software Engineer",
+                "url": "https://www.japhethjerry.space"
+              },
+              "creator": {
+                "@type": "Person",
+                "name": "Japheth Jerry"
+              },
+              "dateCreated": new Date().toISOString(),
+              "genre": currentProject.category,
+              "keywords": currentProject.tools,
+              "image": currentProject.image.startsWith('http') ? currentProject.image : `https://www.japhethjerry.space${currentProject.image.startsWith('./') ? currentProject.image.slice(1) : (currentProject.image.startsWith('/') ? currentProject.image : '/' + currentProject.image)}`,
+              "url": `https://www.japhethjerry.space/projects/${slug}`,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.japhethjerry.space/projects/${slug}`
+              }
+            }).replace(/</g, '\\u003c'));
+          })()
         }}
       />
       

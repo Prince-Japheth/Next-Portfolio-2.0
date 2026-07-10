@@ -290,6 +290,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
             padding: '40px 20px'
           }}
           onClick={() => setIsDetailsModalOpen(false)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setIsDetailsModalOpen(false);
+            }
+          }}
         >
           <div 
             className="project-details-modal-content custom-scrollbar"
@@ -306,6 +313,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, showWordPress = fals
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
             }}
             onClick={e => e.stopPropagation()}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.stopPropagation();
+              }
+            }}
           >
             <ProjectDetailsClient 
               currentProject={fullProject} 

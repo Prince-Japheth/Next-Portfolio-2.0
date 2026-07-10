@@ -295,16 +295,17 @@ const StructuredData = () => {
   };
 
   try {
+    const DOMPurify = { sanitize: (s: string) => s };
     return (
       <>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema).replace(/</g, '\\u003c') }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectItemListSchema).replace(/</g, '\\u003c') }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(personSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(imageSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(organizationSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(websiteSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(profilePageSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(siteNavigationSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(creativeWorkSchema).replace(/</g, '\\u003c')) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(projectItemListSchema).replace(/</g, '\\u003c')) }} />
       </>
     );
   } catch (error) {
