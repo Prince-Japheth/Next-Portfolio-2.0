@@ -222,7 +222,7 @@ const StructuredData = () => {
       title: 'Periderm CLI',
       slug: 'periderm-cli',
       image: `${siteUrl}/assets/images/project-61.avif`,
-      description: 'An enterprise-grade CLI and web platform offering a 150+ point pre-launch scanner. Automatically catching user-losing bugs, legal liabilities, revenue leaks, and runaway cloud bills before they hit production.',
+      description: 'An enterprise-grade platform offering a 150+ point pre-launch scanner. Automatically catching user-losing bugs, legal liabilities, revenue leaks, and runaway cloud bills before they hit production.',
       tools: 'TypeScript, Node.js, React, Vite, TanStack, Supabase',
       url: 'https://periderm-cli.vercel.app/'
     },

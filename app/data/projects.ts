@@ -41,7 +41,7 @@ export const projectData: Project[] = [
     tools: 'TypeScript, Node.js, React, Vite, TanStack, Supabase',
     image: './assets/images/project-61.avif',
     link: 'https://periderm-cli.vercel.app/',
-    brief: 'An enterprise-grade CLI and web platform offering a 150+ point pre-launch scanner. Automatically catching user-losing bugs, legal liabilities, revenue leaks, and runaway cloud bills before they hit production.',
+    brief: 'An enterprise-grade platform offering a 150+ point pre-launch scanner. Automatically catching user-losing bugs, legal liabilities, revenue leaks, and runaway cloud bills before they hit production.',
     about: 'Periderm is a pre-launch scanner built for makers shipping fast with AI. It acts as a thin, reliable shell between your code and the chaos of production, providing a senior engineer’s opinion on every change.',
     description: 'Architected and developed Periderm CLI, a comprehensive SaaS platform and pre-launch scanner designed to safeguard fast-moving applications. It automatically catches missing error boundaries, silent data corruption, routing dead-ends, and security vulnerabilities before production deployment. The platform features an AI deep-review agent that acts as a senior engineer, providing actionable remediation strategies rather than generic warnings. It seamlessly integrates with a full-stack dashboard powered by Vite, React, TanStack Router, and Supabase, allowing teams to track scan histories and manage project health. With Periderm, developers can build fast with AI while ensuring their products don\'t lose users, drain their wallets, or become legal nightmares.',
     status: 'Completed',

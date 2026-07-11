@@ -18,6 +18,17 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   const router = useRouter();
   const [isBrowserOpen, setIsBrowserOpen] = useState(false);
 
+  useEffect(() => {
+    // Reset window scroll position
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Reset modal scroll position if inside a modal
+    const modalContent = document.querySelector('.project-details-modal-content');
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
+  }, [currentProject?.title]);
+
   // Early return if no currentProject
   if (!currentProject) {
     return (
@@ -90,7 +101,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
   return (
     <main className="project-details-wrap">
       <div className="container">
-        <div style={{ marginBottom: '20px' }} data-aos="fade-down" suppressHydrationWarning>
+        <div style={{ marginBottom: '20px' }} data-aos={onClose ? undefined : "fade-down"} suppressHydrationWarning>
           <button 
             onClick={() => onClose ? onClose() : router.back()} 
             className="big-btn shadow-box"
@@ -113,7 +124,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
             Back
           </button>
         </div>
-        <div className="project-details-content d-flex gap-24" data-aos="zoom-in" suppressHydrationWarning>
+        <div className="project-details-content d-flex gap-24" data-aos={onClose ? undefined : "zoom-in"} suppressHydrationWarning>
           {/* Left side - Image */}
           <div className="project-details-image flex-1">
             <div 
@@ -224,7 +235,7 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
         </div>
 
         {/* Rest of the content */}
-        <div data-aos="zoom-in" suppressHydrationWarning>
+        <div data-aos={onClose ? undefined : "zoom-in"} suppressHydrationWarning>
           <div className="project-about-2 d-flex shadow-box mb-24" style={{ padding: '20px !important' }}>
             <Image src="/assets/images/bg1.png" alt="Background" className="bg-img" width={600} height={600} />
             <div className="left-details" style={{ padding: '20px !important' }}>
@@ -268,9 +279,24 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
           </div>
         </div>
 
-        <div className="container d-flex align-items-center justify-content-center" data-aos="zoom-in" suppressHydrationWarning>
+        <div className="container d-flex align-items-center justify-content-center" data-aos={onClose ? undefined : "zoom-in"} suppressHydrationWarning style={{ marginTop: '20px' }}>
           {nextProject.link.startsWith('http') && (
-            <Link href={`/projects/${nextProject.title.toLowerCase().replace(/[|]/g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} className="big-btn shadow-box">
+            <Link 
+              href={`/projects/${nextProject.title.toLowerCase().replace(/[|]/g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} 
+              className="big-btn shadow-box"
+              style={{
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                width: 'fit-content',
+                maxWidth: '100%',
+                padding: '12px 24px',
+                fontSize: 'clamp(14px, 3vw, 16px)',
+                display: 'inline-block',
+                textAlign: 'center',
+                margin: '0 auto'
+              }}
+            >
               Next Project: {nextProject.title}
             </Link>
           )}
