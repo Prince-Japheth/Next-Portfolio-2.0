@@ -9,8 +9,8 @@ const ClientStatsBox = () => {
 
   if (isWordpress) {
     return (
-      <div className="col-md-6" data-aos="zoom-in">
-        <div className="about-client-box info-box shadow-box" style={{ padding: '30px' }}>
+      <div className="col-md-6 h-100" data-aos="zoom-in">
+        <div className="about-client-box info-box shadow-box h-100" style={{ padding: '30px' }}>
           <Image src="/assets/images/bg1.png" alt="" aria-hidden="true" className="bg-img" width={600} height={600} loading="lazy" fetchPriority="low" />
           <div className="wordpress-packages-box" style={{ position: 'relative', zIndex: 2, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
             <h4 style={{ fontSize: '18px', marginBottom: '20px', color: '#fff', textTransform: 'uppercase', letterSpacing: '1px' }}>WordPress Packages</h4>
@@ -34,8 +34,8 @@ const ClientStatsBox = () => {
   }
 
   return (
-    <div className="col-md-6" data-aos="zoom-in">
-      <div className="about-client-box info-box shadow-box">
+    <div className="col-md-6 h-100" data-aos="zoom-in">
+      <div className="about-client-box info-box shadow-box h-100 d-flex flex-column justify-content-center">
         <Image src="/assets/images/bg1.png" alt="BG" className="bg-img" width={600} height={600} />
         <div className="clients d-flex align-items-start gap-24 justify-content-center">
           <div className="client-item">

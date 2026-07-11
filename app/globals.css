@@ -173,14 +173,18 @@ div.projects-area.recent-projects-area .project-item > .d-flex {
   align-items: center !important;
 }
 
-/* Mobile: 1 card per row, revert inner layout to column */
-@media (max-width: 767px) {
+/* Tablet: 1 card per row */
+@media (max-width: 991px) {
   div.projects-area.recent-projects-area {
     flex-direction: column !important;
   }
   div.projects-area.recent-projects-area .project-item-card {
     width: 100% !important;
   }
+}
+
+/* Mobile: inner layout to column */
+@media (max-width: 767px) {
   div.projects-area.recent-projects-area .project-item {
     flex-direction: column !important;
     gap: 0 !important;

@@ -74,7 +74,19 @@ export default function Contact() {
                 style={{ width: 'auto', height: 'auto' }}
               />
               <h1>Let’s work <span>together.</span></h1>
-              <form action="https://formspree.io/f/mqakppnn" method="POST" id="contactForm">
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get('name');
+                  const email = formData.get('_replyto');
+                  const message = formData.get('message');
+                  const subject = encodeURIComponent(`Contact Form Submission from ${name}`);
+                  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                  window.location.href = `mailto:${CONTACT_EMAILS.PRIMARY}?subject=${subject}&body=${body}`;
+                }} 
+                id="contactForm"
+              >
                 <div className="alert alert-success messenger-box-contact__msg" style={{ display: 'none' }} role="alert">
                   Your message was sent successfully.
                 </div>
