@@ -92,7 +92,7 @@ export default async function Home(props: PageProps) {
       <section className="about-area">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 mb-4 mb-lg-0" data-aos="zoom-in">
+            <div className="col-12 col-md-6 mb-4 mb-md-0" data-aos="zoom-in">
               <article className="about-me-box shadow-box" itemScope itemType="https://schema.org/Person" style={{ position: 'relative' }}>
                 <Link href="/about" className="overlay-link" aria-label="Learn more about Japheth Jerry" />
 
@@ -128,7 +128,7 @@ export default async function Home(props: PageProps) {
                 <HeroInfoBox />
               </article>
             </div>
-            <div className="col-lg-6 d-flex">
+            <div className="col-12 col-md-6 d-flex">
               <div className="about-resume-wrap d-flex flex-1 flex-column">
                 <div data-aos="zoom-in">
                   <HeroMarquee />
