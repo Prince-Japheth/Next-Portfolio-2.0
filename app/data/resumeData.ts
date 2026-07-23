@@ -20,7 +20,7 @@ export const skills = [
     tooltipText: "Bootstrap & Reactstrap",
   },
   {
-    iconSrc: "https://www.cdnlogo.com/logos/t/58/tailwindcss.svg",
+    iconSrc: "https://static.cdnlogo.com/logos/t/42/tailwind-css_thumb.png",
     iconAlt: "Tailwind CSS logo",
     tooltipText: "Tailwind CSS",
   },
