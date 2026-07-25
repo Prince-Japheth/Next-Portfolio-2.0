@@ -50,7 +50,8 @@ export default function ProjectDetailsClient({ currentProject, nextProject, allP
     currentProject.link.includes('popkup') ||
     currentProject.link.includes('picatip') ||
     currentProject.link.includes('play') ||
-    currentProject.link.includes('topix');
+    currentProject.link.includes('topix') ||
+    currentProject.link.includes('github');
 
   const handleNextProject = () => {
     const currentIndex = allProjects.findIndex(p => p.title === currentProject.title);
