@@ -256,7 +256,7 @@ export const projectData: Project[] = [
     category: 'Web Development',
     tools: 'Next.js, TypeScript, Tailwind CSS',
     image: './assets/images/project-50.avif',
-    link: 'https://bondyt.com',
+    link: 'https://bondyt-app-website.vercel.app/',
     brief: 'Official website for Bondyt, showcasing their services and portfolio. Built with Next.js, TypeScript, and Tailwind CSS.',
     about: 'A high-performance corporate website that effectively represents Bondyt\'s brand identity while delivering an exceptional user experience. The platform serves as the primary touchpoint for users to discover and engage with Bondyt\'s services.',
     description: 'Led the development of Bondyt\'s official website. Engineered a performant web application using Next.js and TypeScript, achieving a 98/100 Lighthouse score and sub-1s page loads. Implemented server-side rendering and static generation strategies for optimal SEO and initial load performance. Built a comprehensive component library using TypeScript and Tailwind CSS, reducing development time by 40% and ensuring consistent design implementation. Integrated real-time analytics and A/B testing to optimize conversion rates, resulting in a 35% increase in user engagement. Developed a robust content management system enabling the marketing team to update content without developer intervention. Implemented advanced caching strategies and CDN integration, maintaining 99.9% uptime under high traffic conditions. Created a scalable architecture supporting multiple language versions and regional content variations. The website\'s performance and user experience improvements directly contributed to a 45% increase in app downloads and a 30% reduction in customer support inquiries.',
