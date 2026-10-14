@@ -160,17 +160,29 @@ export const toolsAndProductivity = [
 ];
 
 export const experienceData = [
+{
+  "period": "July - October 2026",
+  "title": "Frontend Developer",
+  "employmentType": "CONTRACT",
+  "companyUrl": "https://wittytech.io/",
+  "companyIcon": "/company-witty.svg",
+  "companyName": "Witty",
+  "responsibilities": [
+    "Built Witty’s public-facing platform for its trade and cross-border payments business.",
+    "Contributed frontend updates to existing trade and partner platforms at trade.wittytech.io and partners.wittytech.io."
+  ]
+},
   {
-    period: "2025 - Present",
-    title: "Software Engineer",
-    employmentType: "FULL-TIME",
-    companyUrl: "https://www.popkup.com/",
-    companyIcon: "https://popkup.com/favicon.png",
+    period: "2025 - 2026",
+    title: "Lead Frontend Developer",
+    employmentType: "CONTRACT",
+    companyUrl: "/projects/popkup",
+    companyIcon: "/assets/images/project-59.avif",
     companyName: "Popkup",
     responsibilities: [
-      "Spearheaded the development of intuitive web and mobile app interfaces, translating design concepts into functional prototypes and high-quality user experiences.",
-      "Managed effective integration and consumption of APIs, with a strong focus on mobile-optimized feature design.",
-      "Actively monitored industry trends to ensure innovative and compliant software solutions, meeting all project specifications and deadlines."
+      "Led frontend development of Popkup’s commerce platform and PicaTip, a Popkup product, using Next.js and TypeScript.",
+      "Built brand storefronts, checkout flows, and administrative interfaces, integrating payment and shipping APIs.",
+      "Implemented verification, support-ticket, and dispute-management interfaces."
     ]
   },
   {
@@ -200,7 +212,7 @@ export const experienceData = [
     ]
   },
   {
-    period: "2024 - Present",
+    period: "2024 - 2025",
     title: "Software Engineer",
     employmentType: "FULL-TIME",
     companyUrl: "https://spicodex.com/",

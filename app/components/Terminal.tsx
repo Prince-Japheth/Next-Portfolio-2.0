@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { projectData, categories } from '../data/projects';
+import { experienceData } from '../data/resumeData';
 import '../../public/assets/css/terminal.css';
 
 interface TerminalProps {
@@ -682,25 +683,15 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
       return [
         '💼 Work Experience:',
         '',
-        'Full-Stack Developer & UI/UX Designer',
-        'Freelance & Contract Work (2020 - Present)',
-        '',
-        'Key Achievements:',
-        '  • Developed 50+ web applications and mobile apps',
-        '  • Led development of enterprise-grade systems',
-        '  • Achieved 95+ Lighthouse performance scores',
-        '  • Implemented security best practices (OWASP)',
-        '  • Managed projects serving 5000+ users',
-        '',
-        'Specializations:',
-        '  • E-commerce platforms',
-        '  • Educational management systems',
-        '  • Social media applications',
-        '  • Corporate websites',
-        '  • Mobile app development'
+        ...experienceData.flatMap(role => [
+          `${role.title} — ${role.companyName}`,
+          `${role.period} · ${role.employmentType}`,
+          ...role.responsibilities.map(item => `  • ${item}`),
+          ''
+        ])
       ];
     },
-    
+
     education: () => {
       return [
         '🎓 Education Background:',

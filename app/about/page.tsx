@@ -112,13 +112,18 @@ export default function About() {
               <h3>EXPERIENCE</h3>
               <ul style={{ display: 'inline-block' }}>
                 <li>
+                  <p className="date">July - October 2026 · Contract</p>
+                  <h2>Frontend Developer</h2>
+                  <p className="type">Witty</p>
+                </li>
+                <li>
                   <p className="date">2025 - Present</p>
                   <h2>Software Engineering Consultant / Dir. of Finance</h2>
                   <p className="type">J3 Global Ventures Limited</p>
                 </li>
                 <li>
-                  <p className="date">2025 - Present</p>
-                  <h2>Software Engineer</h2>
+                  <p className="date">2025 - 2026 · Contract</p>
+                  <h2>Lead Frontend Developer</h2>
                   <p className="type">Popkup</p>
                 </li>
               </ul>
