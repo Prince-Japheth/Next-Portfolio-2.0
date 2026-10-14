@@ -160,7 +160,7 @@ export default async function Home(props: PageProps) {
                 {[
                   projectData.find(p => p.title === 'Periderm CLI'),
                   projectData.find(p => p.title === 'PicaTip'),
-                  projectData.find(p => p.title.includes('Onarietta Remet')),
+                  projectData.find(p => p.title.startsWith('Simi |')),
                   projectData.find(p => p.title === 'Lincoln Impact Foundation')
                 ].filter(Boolean).map((project, index) => (
                   <ProjectItem key={`recent-project-${index}`} project={project!} showWordPress={false} isHomePage={true} />

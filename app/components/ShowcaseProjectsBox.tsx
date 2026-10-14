@@ -22,6 +22,7 @@ const ShowcaseProjectsBox = () => {
   const lastIndex = projectData.findIndex(p => p.title === lastProjectTitle);
   // Filter out projects that should be hidden and graphic design projects
   const showcaseProjects = (lastIndex !== -1 ? projectData.slice(0, lastIndex + 1) : projectData)
+    .filter(p => p.availability !== 'archived')
     .filter(p => !hideImageTitles.includes(p.title) && p.category !== 'Graphic Design' && !p.category.includes('Graphic Design'));
 
   const [currentIndex, setCurrentIndex] = useState(0);

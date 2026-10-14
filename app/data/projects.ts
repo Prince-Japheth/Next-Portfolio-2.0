@@ -9,6 +9,7 @@ export interface Project {
   description: string;  // For the detailed section below
   status: 'Completed' | 'In Progress' | 'On Hold';  // Project status
   isPersonal?: boolean;
+  availability?: 'archived';
 }
 
 export const projectData: Project[] = [
@@ -75,11 +76,12 @@ export const projectData: Project[] = [
     "category": "Web Development",
     "tools": "Next.js, React, TypeScript, Tailwind CSS",
     "image": "./assets/images/project-59.avif",
-    "link": "https://popkup.com/",
-    "brief": "An all-in-one e-commerce platform built with Next.js, enabling brands to launch storefronts, connect with influencers, and seamlessly manage checkout and shipping workflows.",
+    "link": '/projects/popkup',
+    "brief": "Past client project — no longer publicly live. An all-in-one e-commerce platform built with Next.js, enabling brands to launch storefronts, connect with influencers, and seamlessly manage checkout and shipping workflows.",
     "about": "This project demonstrates my ability to build complex, scalable SaaS platforms. It bridges the gap between commerce and influence through an intuitive storefront builder, robust administrative modules, and advanced e-commerce capabilities.",
     "description": "Architected and developed a full-scale e-commerce and influencer marketing platform using Next.js and TypeScript. Built dynamic brand storefront routing to handle individualized creator shops while ensuring high performance and SEO. Integrated complex third-party payment and shipping APIs to calculate real-time delivery summaries and process seamless checkout flows. Engineered a comprehensive admin dashboard featuring a Trust & Reputation system, complete with verification workflows, ticket management, and dispute resolution modules. Implemented advanced features including service worker integration for push notifications and robust state management for a responsive user experience. This project highlights my capability to build and scale complex architectures that handle multi-tenant e-commerce operations while maintaining an intuitive and highly engaging user interface.",
-    "status": "Completed"
+    "status": "Completed",
+    availability: 'archived'
   },
   {
     title: 'Topix',
@@ -132,11 +134,12 @@ export const projectData: Project[] = [
     category: 'Mobile Development',
     tools: 'React Native, JavaScript',
     image: './assets/images/project-45.avif',
-    link: 'https://www.instagram.com/bondyttech/',
-    brief: 'A mobile application for merchants to manage their business operations. Built with React Native, providing a native experience across iOS and Android platforms.',
+    link: '/projects/bondyt-merchant',
+    brief: 'Past client project — no longer publicly live. A mobile application for merchants to manage their business operations. Built with React Native, providing a native experience across iOS and Android platforms.',
     about: 'A cross-platform mobile app empowering merchants to streamline their operations and connect with Bondyt users, enabling them to showcase and deliver their products and services through an integrated business platform.',
     description: 'Led frontend development of a production-grade merchant app serving thousands of active users daily. Implemented complex UI components and state management using React Native, ensuring smooth 60fps animations and responsive interactions. Integrated REST APIs and WebSocket connections for real-time updates, handling data synchronization and offline capabilities. Managed app signing and keystore configurations for both Android and iOS platforms. Optimized app performance through efficient component rendering and image caching, achieving sub-100ms response times. Implemented secure authentication flows and payment gateway integration on the client side. Developed a robust error handling system with automatic crash reporting and recovery mechanisms. Created a comprehensive analytics dashboard for merchants to track sales, customer engagement, and business metrics in real-time. Built a scalable notification system supporting push notifications, in-app alerts, and email notifications for critical business events.',
-    status: 'Completed'
+    status: 'Completed',
+    availability: 'archived'
   },
   {
     title: 'Lincoln Impact Foundation',
@@ -177,11 +180,12 @@ export const projectData: Project[] = [
     category: 'Mobile Development',
     tools: 'React Native, TypeScript',
     image: './assets/images/project-51.avif',
-    link: 'https://www.instagram.com/bondyttech/',
-    brief: 'A dating application built with React Native and TypeScript, featuring advanced social features like location-based matching, event discovery, and interactive content sharing.',
+    link: '/projects/bondyt',
+    brief: 'Past client project — no longer publicly live. A dating application built with React Native and TypeScript, featuring advanced social features like location-based matching, event discovery, and interactive content sharing.',
     about: 'Joined as a frontend developer to revamp and enhance a struggling dating app, taking ownership of critical user-facing features and implementing complex social interactions.',
     description: 'Focused on core social features and user engagement. Engineered a performant card-swipe interface with smooth animations and gesture handling, achieving 60fps performance on mid-range devices. Implemented a sophisticated Travel Mode feature enabling users to change locations and discover matches in new areas, integrating with geolocation services and optimizing location-based queries. Developed a real-time matching system with instant notifications and interactive match screens, handling complex state management for user interactions. Built an Instagram-style Reels feature with video playback, social interactions (likes, comments), and content downloading capabilities. Created an event discovery system allowing users to find and purchase tickets for local social events, integrating with payment gateways and implementing real-time ticket availability. Optimized app performance through efficient component rendering and state management, reducing load times by 40% and improving user retention. Implemented robust error handling and offline capabilities to ensure smooth user experience in varying network conditions.',
-    status: 'Completed'
+    status: 'Completed',
+    availability: 'archived'
   },
   {
     "title": "Lincoln E-Library Platform",
