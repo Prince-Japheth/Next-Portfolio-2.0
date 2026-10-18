@@ -138,7 +138,7 @@ export default function About() {
               <h3>EDUCATION</h3>
               <ul>
                 <li>
-                  <p className="date">2025 - Present</p>
+                  <p className="date">2025 - 2027 (Expected)</p>
                   <h2>BSc in Cybersecurity and Networking</h2>
                   <p className="type">Lincoln University College</p>
                 </li>

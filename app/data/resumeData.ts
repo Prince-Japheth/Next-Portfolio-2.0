@@ -1,5 +1,31 @@
 export const skills = [
   {
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    iconAlt: "Angular logo",
+    tooltipText: "Angular",
+  },
+  {
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+    iconAlt: "Svelte logo",
+    tooltipText: "Svelte",
+  },
+  {
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
+    iconAlt: "Swift logo",
+    tooltipText: "Swift",
+  },
+  {
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    iconAlt: "Flutter logo",
+    tooltipText: "Flutter",
+  },
+  {
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/zustand/zustand-original.svg",
+    iconAlt: "Zustand logo",
+    tooltipText: "Zustand",
+  },
+
+  {
     iconSrc: "https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
     iconAlt: "HTML5 logo",
     tooltipText: "HTML",
@@ -274,10 +300,9 @@ export const experienceData = [
 
 export const educationData = [
   {
-    period: "2025 - Present",
+    period: "2025 - 2027 (Expected)",
     title: "BSc in Cybersecurity and Networking",
-    school: "Lincoln University College",
-    details: "Currently studying"
+    school: "Lincoln University College"
   },
   {
     period: "2023 - 2025",
