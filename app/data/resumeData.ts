@@ -273,11 +273,12 @@ export const experienceData = [
 ];
 
 export const educationData = [
-  // {
-  //   period: "2025 - 2027 (Expected)",
-  //   title: "Bachelor of Computer Science (Hons) Networking & Cyber Security",
-  //   school: "Lincoln University College, Malaysia"
-  // },
+  {
+    period: "2025 - Present",
+    title: "BSc in Cybersecurity and Networking",
+    school: "Lincoln University College",
+    details: "Currently studying"
+  },
   {
     period: "2023 - 2025",
     title: "Associate Degree in Computer Software Engineering",
