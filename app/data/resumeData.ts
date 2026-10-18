@@ -160,18 +160,6 @@ export const toolsAndProductivity = [
 ];
 
 export const experienceData = [
-{
-  "period": "July - October 2026",
-  "title": "Frontend Developer",
-  "employmentType": "CONTRACT",
-  "companyUrl": "https://wittytech.io/",
-  "companyIcon": "/company-witty.svg",
-  "companyName": "Witty",
-  "responsibilities": [
-    "Built Witty’s public-facing platform for its trade and cross-border payments business.",
-    "Contributed frontend updates to existing trade and partner platforms at trade.wittytech.io and partners.wittytech.io."
-  ]
-},
   {
     period: "2025 - 2026",
     title: "Lead Frontend Developer",
@@ -185,6 +173,18 @@ export const experienceData = [
       "Implemented verification, support-ticket, and dispute-management interfaces."
     ]
   },
+{
+  "period": "July - October 2026",
+  "title": "Frontend Developer",
+  "employmentType": "CONTRACT",
+  "companyUrl": "https://wittytech.io/",
+  "companyIcon": "/company-witty.svg",
+  "companyName": "Witty",
+  "responsibilities": [
+    "Built Witty’s public-facing platform for its trade and cross-border payments business.",
+    "Contributed frontend updates to existing trade and partner platforms at trade.wittytech.io and partners.wittytech.io."
+  ]
+},
   {
     period: "2025 - Present",
     title: "Software Engineering Consultant / Dir. of Finance",
